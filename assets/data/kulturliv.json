@@ -1,0 +1,114 @@
+[
+  {
+    "id": "DK_CULT_001",
+    "topic": "dansk_kulturliv",
+    "q": "Hvem skrev i 1950erne romanen Den kroniske uskyld?",
+    "options": ["Klaus Rifbjerg", "Peter Høeg", "Ludvig Holberg"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_002",
+    "topic": "dansk_kulturliv",
+    "q": "Hvem har skrevet romanen Barndommens Gade fra 1943?",
+    "options": ["Tove Ditlevsen", "Naja Marie Aidt", "Leonora Christina Skov"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_003",
+    "topic": "dansk_kulturliv",
+    "q": "Hvem skrev romanerne Pelle Erobreren og Ditte Menneskebarn i begyndelsen af 1900-tallet?",
+    "options": ["Martin Andersen Nexø", "Klaus Rifbjerg", "Steen Steensen Blicher"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_004",
+    "topic": "dansk_kulturliv",
+    "q": "Hvad er Yahya Hassan (1995-2020) særligt kendt for?",
+    "options": ["Han var digter", "Han var musiker", "Han var fodboldspiller"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_005",
+    "topic": "dansk_kulturliv",
+    "q": "Hvilken dansk forfatter har skrevet bogen 'Den Afrikanske Farm'?",
+    "options": ["Karen Blixen", "Tove Ditlevsen", "H.C. Andersen"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_006",
+    "topic": "dansk_kulturliv",
+    "q": "Hvilken af følgende fortællinger er skrevet af H.C. Andersen?",
+    "options": ["Den grimme ælling", "Hans og Grete", "Skønheden og udyret"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_007",
+    "topic": "dansk_kulturliv",
+    "q": "Hvilken forfatter har blandt andet skrevet Lykke-Per?",
+    "options": ["Henrik Pontoppidan", "Herman Bang", "Søren Kierkegaard"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_008",
+    "topic": "dansk_kulturliv",
+    "q": "Hvilken dansker fik i 1944 Nobelprisen i litteratur?",
+    "options": ["Johannes V. Jensen", "N.F.S. Grundtvig", "Karen Blixen"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_009",
+    "topic": "dansk_kulturliv",
+    "q": "Hvad er Suzanne Brøgger og Naja Marie Aidt især kendte for?",
+    "options": ["De er forfattere", "De er skuespillere", "De er malere"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_010",
+    "topic": "dansk_kulturliv",
+    "q": "Hvad er Inger Christensen (1935-2009) særlig kendt for?",
+    "options": ["Hun var digter", "Hun var kunstmaler", "Hun var skuespiller"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_011",
+    "topic": "dansk_kulturliv",
+    "q": "I hvilken dansk by kan man besøge H.C. Andersens Hus?",
+    "options": ["Odense", "Aarhus", "København"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_012",
+    "topic": "dansk_kulturliv",
+    "q": "Hvem er kendt for at have beskrevet, hvordan man skal opføre sig i ’Takt og Tone – Hvordan Vi Omgås’ fra 1918?",
+    "options": ["Emma Gad", "Herman Bang", "Karen Blixen"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_013",
+    "topic": "dansk_kulturliv",
+    "q": "Hvem har skrevet teksten til Der er et yndigt land, som er nationalsang i Danmark?",
+    "options": ["Adam Oehlenschläger", "Karen Blixen", "Ludvig Holberg"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_014",
+    "topic": "dansk_kulturliv",
+    "q": "Hvilken dansk komponist er kendt for blandt andet sine operaer?",
+    "options": ["Carl Nielsen", "C.V. Jørgensen", "Kim Larsen"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_015",
+    "topic": "dansk_kulturliv",
+    "q": "Hvad hed forsangeren i bandet Gasolin?",
+    "options": ["Kim Larsen", "Steffen Brandt", "Michael Bundesen"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_CULT_016",
+    "topic": "dansk_kulturliv",
+    "q": "Hvornår levede komponisten Carl Nielsen?",
+    "options": ["1865-1931", "1870-1940", "1892-1965"],
+    "correctIndex": 0
+  }
+]

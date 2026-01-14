@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Gratis test – Indfødsretsprøven | indfodsretsprove.dk</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://indfodsretsprove.dk/gratis-prove" />
+
+  <meta name="description"
+    content="Tag en gratis test til indfødsretsprøven med 45 spørgsmål baseret på tidligere officielle prøver. 45 minutters tidsbegrænsning, automatisk bedømmelse og realistisk resultat – perfekt forberedelse til indfødsretsprøven." />
+
+  <meta name="keywords"
+    content="gratis indfødsretsprøve, gratis test indfødsretsprøven, øve indfødsretsprøve, indfødsretsprøve spørgsmål, dansk statsborgerskab test, indfødsretsprøve 45 spørgsmål, test Danmark" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gratis test til Indfødsretsprøven – 45 spørgsmål" />
+  <meta property="og:description"
+    content="Prøv en gratis test med 45 spørgsmål fra tidligere officielle indfødsretsprøver. 45 minutter, bestå/ikke bestå og komplet resultatvisning." />
+  <meta property="og:url" content="https://indfodsretsprove.dk/gratis-prove" />
+  <meta property="og:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gratis test – Indfødsretsprøven" />
+  <meta name="twitter:description"
+    content="Øv dig med 45 realistiske spørgsmål og 45 minutters tidsbegrænsning. Få en ægte prøveoplevelse gratis." />
+  <meta name="twitter:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg" />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/testpages.css">
+</head>
+
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark">
+        <div class="brand-title">Indfodsretsprove.dk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/gratis-prove/">Gratis test</a>
+        <a href="/kontakt/">Kontakt</a>
+		<a href="https://civiclearn.com/denmark/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        drevet af <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/denmark/checkout" class="btn-small-purple">Få fuld adgang</a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+<section id="freeTestIntro" class="free-test-intro">
+  <div class="free-test-intro-inner">
+
+    <button class="intro-dismiss" aria-label="Skjul introduktion">
+      ✕
+    </button>
+
+    <h2>Gratis prøvesimulation – Indfødsretsprøven</h2>
+
+    <p>
+      Denne gratis test er en <strong>realistisk simulation</strong> af
+      <strong>Indfødsretsprøven</strong>.
+      Den officielle prøve følger samme struktur med faste svarmuligheder og en fastsat tidsramme, men gennemføres på papir.
+    </p>
+
+    <p>
+      <strong>Spørgsmålene</strong> i denne test stammer – med undtagelse af
+      spørgsmål om aktuelle begivenheder – fra
+      <strong>tidligere officielle indfødsretsprøver</strong>
+      eller er udarbejdet i samme stil og sværhedsgrad.
+    </p>
+
+    <div class="intro-rules">
+      <h3>For at bestå prøven skal du:</h3>
+      <ul>
+        <li>svare rigtigt på <strong>mindst 36 ud af 45 spørgsmål</strong></li>
+        <li>have <strong>højst én fejl</strong> i de
+          <strong>5 spørgsmål om danske værdier</strong></li>
+      </ul>
+    </div>
+
+    <p>
+      Du har <strong>45 minutter</strong> til testen,
+      hvilket svarer til cirka <strong>ét minut pr. spørgsmål</strong>,
+      præcis som ved den rigtige prøve.
+    </p>
+
+    <p class="intro-note">
+      Dette er en trænings- og øvesimulation.
+      Resultatet kan ikke bruges som officielt bevis.
+    </p>
+
+<button class="intro-cta">
+  Luk introduktion
+</button>
+
+
+  </div>
+</section>
+
+  <div class="test-header">
+    <div>
+      <div class="badge">Gratis test – 45 spørgsmål</div>
+      <div class="progress" id="progressLabel">Spørgsmål 1 af 45 · Point 0</div>
+    </div>
+    <div class="timer badge" id="timer">45:00</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-title" id="qTitle">…</div>
+    <div class="choices" id="choices"></div>
+
+    <div class="controls">
+      <button class="btn secondary" id="btnPrev" disabled>← Forrige</button>
+      <button class="btn" id="btnNext" disabled>Næste →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultPanel" class="result-panel" style="display:none;">
+    <h2>Testresultat</h2>
+    <div id="gradeStamp" class="result-stamp"></div>
+    <p id="resultText" class="result-text"></p>
+
+    <div class="result-chart-container">
+      <canvas id="resultChart"></canvas>
+    </div>
+
+    <div class="cta">
+      <a href="https://civiclearn.com/denmark/checkout" class="btn">
+        Få fuld adgang til alle prøver
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2026 <span class="cl-footer-brand">CivicLearn</span> — Alle rettigheder forbeholdes.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+/* ======================================================
+   GRATIS PRØVE — INDFØDSRETSPRØVEN (OFFICIELLE REGLER)
+   - 45 spørgsmål
+   - Bestå: mindst 36/45
+   - Danske værdier: sidste 5 spørgsmål, max 1 fejl (>= 4/5)
+   - Timer: 45 minutter
+   ====================================================== */
+
+// Q format: first option is correct (same convention as your existing prototype)
+const QUESTIONS = [
+  { q: "Hvor blev der i 1970 indviet en bro?", a: ["Over Lillebælt mellem Jylland og Fyn", "Over Storebælt mellem Fyn og Sjælland", "Over Øresund mellem Danmark og Sverige"] },
+  { q: "Hvilke af følgende opgaver har kommunerne ansvar for?", a: ["De har ansvar for blandt andet folkeskolen og ældreplejen.", "De har ansvar for blandt andet gymnasier og politi.", "De har ansvar for blandt andet sygehuse og den offentlige sygesikring."] },
+  { q: "Hvad indebar den seneste ændring af grundloven i 1953 blandt andet?", a: ["At kvinder fik mulighed for at arve tronen", "At Danmark blev medlem af FN", "At valgretsalderen blev sænket til 18 år"] },
+  { q: "Ombudsmanden er en kontrolinstans i forhold til offentlige myndigheders afgørelser. Hvem vælger ombudsmanden?", a: ["Folketinget", "Regeringen", "Befolkningen"] },
+  { q: "Hvad er Knud Rasmussen (1879-1933) særlig kendt for?", a: ["Han var polarforsker", "Han var atomfysiker", "Han var billedhugger"] },
+  { q: "Hvad er Susanne Bier (født 1960) særligt kendt for?", a: ["Hun er filminstruktør", "Hun er fysiker", "Hun er politiker"] },
+  { q: "Hvilken ø er blandt andet kendt for sine runde kirker?", a: ["Bornholm", "Samsø", "Langeland"] },
+  { q: "Er Danmarks monark (kongen eller dronningen) omfattet af religionsfriheden?", a: ["Nej", "Ja"] },
+  { q: "Hvad er Vitus Bering særligt kendt for?", a: ["Han var opdagelsesrejsende", "Han var filosof", "Han var komponist"] },
+  { q: "Hvor ligger Danmarks højeste naturlige punkt?", a: ["I Østjylland", "I Nordsjælland", "I Sønderjylland"] },
+  { q: "Hvad handler Paris-aftalen, som FN vedtog i 2015, især om?", a: ["Klima", "Forsvar", "Kriminalitet"] },
+  { q: "Hvilken politisk bevægelse var rødstrømpebevægelsen en del af?", a: ["Kvindebevægelsen i 70’erne", "Arbejderbevægelsen i 30’erne", "Miljøbevægelsen i 90’erne"] },
+  { q: "Hvor mange af medlemmerne til Folketinget vælges på Færøerne?", a: ["2", "4", "6"] },
+  { q: "Indtil hvornår var Grønland en dansk koloni?", a: ["1953", "2005", "1901"] },
+  { q: "Hvad var August Bournonville kendt for?", a: ["For sine balletter til Det Kongelige Teater", "For sine malerier af danske slotte og landskaber", "For sine skulpturer af den græske mytologis guder"] },
+  { q: "Hvem skrev i 1950erne romanen Den kroniske uskyld?", a: ["Klaus Rifbjerg", "Peter Høeg", "Ludvig Holberg"] },
+  { q: "For hvilken film har Bille August vundet en Oscar?", a: ["Pelle Erobreren", "Jerusalem", "Zappa"] },
+  { q: "Hvilken arkitekt har sammen med Erik Møller tegnet rådhuset i Aarhus?", a: ["Arne Jacobsen", "Vilhelm Dahlerup", "Bjarke Ingels"] },
+  { q: "I 1933 indgik Socialdemokratiet, Det Radikale Venstre og Venstre et forlig, der skulle løse økonomiske og sociale problemer i samfundet. Hvilket forlig?", a: ["Kanslergadeforliget.", "Septemberforliget.", "Velfærdsforliget."] },
+  { q: "Hvilket land blev Dansk Vestindien solgt til i 1917?", a: ["USA", "Storbritannien", "Frankrig"] },
+  { q: "Hvad kaldes den styreform, der blev indført i Danmark i 1661?", a: ["Enevælde", "Adelsvælde", "Folkestyre"] },
+  { q: "Hvilket område mistede Danmark i 1814 efter Napoleonskrigene?", a: ["Norge", "England", "Grønland"] },
+  { q: "I hvilket af følgende årtier var Thorvald Stauning statsminister?", a: ["1930’erne", "1950’erne", "1970’erne"] },
+  { q: "Hvad hedder den ældste by i Danmark?", a: ["Ribe", "Esbjerg", "Frederikshavn"] },
+  { q: "Hvem skrev omkring 1200-tallet værket Gesta Danorum, som anses for at være den første samlede Danmarkshistorie?", a: ["Saxo", "Absalon", "Ansgar"] },
+  { q: "I hvilket årti åbnede Danmarks første jernbane?", a: ["1840’erne", "1740’erne", "1790’erne"] },
+  { q: "Hvilket af følgende danske politiske partier er ældst?", a: ["Venstre", "Enhedslisten", "Dansk Folkeparti"] },
+  { q: "Hvilket parti tilhørte Helle Thorning-Schmidt, da hun var statsminister i perioden 2011-15?", a: ["Socialdemokraterne", "Radikale Venstre", "Venstre"] },
+  { q: "Hvem var statsminister i Firkløverregeringen i 1980'erne?", a: ["Poul Schlüter fra Det Konservative Folkeparti", "Uffe Ellemann-Jensen fra Venstre", "Poul Nyrup Rasmussen fra Socialdemokratiet"] },
+  { q: "Hvornår blev Moderaterne valgt til Folketinget første gang?", a: ["2022", "2007", "2015"] },
+  { q: "Hvem har skrevet et stort antal af salmerne i Den Danske Salmebog?", a: ["N.F.S. Grundtvig", "Ludvig Holberg", "Herman Bang"] },
+  { q: "Hvilket land kommer dronning Mary oprindeligt fra?", a: ["Australien", "Canada", "Storbritannien"] },
+  { q: "Hvor ligger flest danske konger og dronninger begravet?", a: ["Roskilde Domkirke", "Viborg Domkirke", "Ribe Domkirke"] },
+  { q: "Hvilken rettighed fik kvinder i Danmark i 1973?", a: ["Retten til fri abort", "Retten til ligeløn", "Retten til skilsmisse"] },
+  { q: "Hvad hed forsangeren i bandet Gasolin?", a: ["Kim Larsen", "Steffen Brandt", "Michael Bundesen"] },
+  { q: "Under 1. Verdenskrig var Danmark", a: ["neutralt", "allieret med Tyskland", "allieret med Frankrig og Storbritannien"] },
+  { q: "Hvilken ændring i værnepligten blev omtalt i slutningen af 2025?", a: ["Længere tjenestetid og flere værnepligtige, med kvinder registreringspligtige fra 2025.", "Fuld afskaffelse af værnepligten.", "Reduktion af tjenestetiden til to måneder."] },
+  { q: "Hvad var Danmarks og Grønlands fælles budskab til USA i januar 2026?", a: ["At Grønland ikke er til salg.", "At der var åbning for forhandlinger om ejerskab.", "At sagen ville blive afgjort i NATO."] },
+  { q: "Hvilken historisk ændring skete der for PostNord i Danmark fra den 1. januar 2026?", a: ["PostNord stoppede fuldstændig med at omdele landsdækkende breve.", "PostNord blev solgt til en privat amerikansk investorgruppe.", "Alle postbude blev erstattet af selvkørende leveringsrobotter."] },
+  { q: "Hvad er Danmarks position i debatten om EU’s asylpolitik ifølge rapporter fra december 2025?", a: ["Asylbehandling i sikre tredjelande.", "Fuldstændigt åbne grænser for alle migranter.", "Udmeldelse af det europæiske asylsamarbejde."] },
+
+  // --- DANSKE VÆRDIER (skal være de sidste 5) ---
+  { q: "Kan man ifølge dansk lov blive straffet med fængsel, hvis man ulovligt tvinger nogen til en religiøs vielse?", a: ["Ja", "Nej"], values: true },
+  { q: "Er det ifølge dansk lov lovligt at have samleje med en person under 15 år, hvis personen har givet samtykke til samlejet?", a: ["Nej", "Ja"], values: true },
+  { q: "Kan man komme i fængsel for at sende sit barn til udlandet til forhold, der bringer barnets sundhed eller udvikling i alvorlig fare (genopdragelsesrejse)?", a: ["Ja", "Nej"], values: true },
+  { q: "Er det ifølge dansk lov tilladt at slå sin ægtefælle?", a: ["Nej", "Ja"], values: true },
+  { q: "Er Danmark blandt de tre lande i verden, som menes at have mindst korruption i den offentlige sektor ifølge Transparency International (Corruption Perception Index, 2021)?", a: ["Ja", "Nej"], values: true }
+];
+
+/* --- Official scoring rules (as you specified) --- */
+const TOTAL_QUESTIONS = 45;
+const PASS_TOTAL = 36;
+const VALUES_COUNT = 5;
+const MAX_VALUES_ERRORS = 1;
+const TEST_MINUTES = 45;
+
+/* --- Safety checks --- */
+if (QUESTIONS.length !== TOTAL_QUESTIONS) {
+  console.error("Gratis prøve: QUESTIONS must be exactly 45. Current:", QUESTIONS.length);
+}
+
+/* --- helpers --- */
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* --- Build model (first answer is correct, but choices are shuffled) --- */
+const model = QUESTIONS.map((item, idx) => {
+  const correct = item.a[0];
+  const shuffled = shuffle(item.a);
+  return {
+    index: idx,
+    text: item.q,
+    isValues: !!item.values,
+    choices: shuffled.map(opt => ({ text: opt, isCorrect: opt === correct })),
+    answered: false,
+    pickedIndex: -1
+  };
+});
+
+/* --- DOM --- */
+const qTitle = document.getElementById('qTitle');
+const choicesEl = document.getElementById('choices');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const progressLabel = document.getElementById('progressLabel');
+const timerEl = document.getElementById('timer');
+
+const resultPanel = document.getElementById('resultPanel');
+const resultText = document.getElementById('resultText');
+const gradeStamp = document.getElementById('gradeStamp');
+
+/* --- State --- */
+let qi = 0;
+let score = 0;
+let valuesScore = 0;
+const total = model.length;
+
+/* --- Timer (45 minutes) --- */
+let timerSec = TEST_MINUTES * 60;
+timerEl.textContent = `${String(TEST_MINUTES).padStart(2,'0')}:00`;
+
+const timerInt = setInterval(() => {
+  timerSec--;
+  if (timerSec < 0) {
+    clearInterval(timerInt);
+    finishTest();
+    return;
+  }
+  const m = Math.floor(timerSec / 60).toString().padStart(2, '0');
+  const s = (timerSec % 60).toString().padStart(2, '0');
+  timerEl.textContent = `${m}:${s}`;
+}, 1000);
+
+/* --- Render --- */
+function renderQuestion() {
+  const q = model[qi];
+
+  // label values questions clearly (last 5)
+  const prefix = q.isValues ? "Danske værdier · " : "";
+  qTitle.textContent = prefix + q.text;
+
+  choicesEl.innerHTML = "";
+
+  q.choices.forEach((c, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (q.answered ? ' disabled' : '');
+    btn.textContent = c.text;
+    btn.addEventListener('click', () => pick(idx));
+    choicesEl.appendChild(btn);
+  });
+
+  btnPrev.disabled = (qi === 0);
+  btnNext.disabled = false;
+
+  // show both scores in-progress (helps users understand values weight)
+  const valuesInfo = ` · Værdier ${valuesScore}/${VALUES_COUNT}`;
+  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}${valuesInfo}`;
+
+  if (q.answered) applyRevealStyles();
+
+  btnNext.textContent = (qi === total - 1) ? "Se resultat →" : "Næste →";
+}
+
+/* --- Pick --- */
+function pick(idx) {
+  const q = model[qi];
+  if (q.answered) return;
+
+  q.answered = true;
+  q.pickedIndex = idx;
+
+  const correct = q.choices[idx].isCorrect;
+  if (correct) {
+    score++;
+    if (q.isValues) valuesScore++;
+  }
+
+  applyRevealStyles();
+
+  btnNext.disabled = false;
+
+  const valuesInfo = ` · Værdier ${valuesScore}/${VALUES_COUNT}`;
+  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}${valuesInfo}`;
+
+  btnNext.textContent = (qi === total - 1) ? "Se resultat →" : "Næste →";
+}
+
+/* --- Reveal styling (same behavior as your existing prototype) --- */
+function applyRevealStyles() {
+  const q = model[qi];
+  const buttons = Array.from(choicesEl.querySelectorAll('button'));
+  buttons.forEach((btn, i) => {
+    const choice = q.choices[i];
+    btn.classList.add('disabled');
+    if (choice.isCorrect) btn.classList.add('correct');
+    if (q.pickedIndex === i && !choice.isCorrect) btn.classList.add('wrong');
+  });
+}
+
+/* --- Navigation --- */
+btnPrev.addEventListener('click', () => {
+  if (qi > 0) { qi--; renderQuestion(); }
+});
+
+btnNext.addEventListener('click', () => {
+  if (!model[qi].answered) return;
+  if (qi === total - 1) finishTest();
+  else { qi++; renderQuestion(); }
+});
+
+/* --- Finish + grading (official rules) --- */
+function finishTest() {
+  clearInterval(timerInt);
+
+  const wrong = total - score;
+  const valuesWrong = VALUES_COUNT - valuesScore;
+
+  const passedTotal = score >= PASS_TOTAL;
+  const passedValues = valuesWrong <= MAX_VALUES_ERRORS;
+  const pass = passedTotal && passedValues;
+
+  gradeStamp.textContent = pass ? "Bestået!" : "Ikke bestået";
+  gradeStamp.className = "result-stamp " + (pass ? "pass" : "fail");
+
+  let reason = "";
+  if (pass) {
+    reason = "Du opfylder både kravet om mindst 36 rigtige og værdikravet (max 1 fejl).";
+  } else if (!passedTotal && passedValues) {
+    reason = `Du mangler rigtige svar samlet. Kravet er mindst ${PASS_TOTAL}/45.`;
+  } else if (passedTotal && !passedValues) {
+    reason = "Du har for mange fejl i danske værdier (max 1 fejl).";
+  } else {
+    reason = `Du opfylder hverken kravet om mindst ${PASS_TOTAL}/45 eller værdikravet.`;
+  }
+
+  resultText.textContent =
+    `Slutscore: ${score}/45. Forkerte: ${wrong}. ` +
+    `Danske værdier: ${valuesScore}/5 (fejl: ${valuesWrong}). ` +
+    reason;
+
+  renderChart(score, wrong);
+
+  // show result panel (same id as your prototype)
+  if (resultPanel) resultPanel.style.display = "block";
+}
+
+/* --- Chart --- */
+function renderChart(correct, wrong) {
+  const canvas = document.getElementById('resultChart');
+  if (!canvas || !window.Chart) return;
+
+  const ctx = canvas.getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Korrekte', 'Forkerte'],
+      datasets: [{ data: [correct, wrong] }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: 'Fordeling af svar (45 spørgsmål)' }
+      }
+    }
+  });
+}
+
+/* --- Start --- */
+renderQuestion();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const intro = document.getElementById("freeTestIntro");
+  if (!intro) return;
+
+  function hideIntro() {
+    intro.style.display = "none";
+  }
+
+  const closeBtn = intro.querySelector(".intro-dismiss");
+  const ctaBtn   = intro.querySelector(".intro-cta");
+
+  if (closeBtn) closeBtn.addEventListener("click", hideIntro);
+  if (ctaBtn)   ctaBtn.addEventListener("click", hideIntro);
+});
+</script>
+
+
+
+
+</body>
+</html>

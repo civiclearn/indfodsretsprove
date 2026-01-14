@@ -1,0 +1,134 @@
+[
+  {
+    "id": "DK_HIST_001",
+    "topic": "historie",
+    "q": "Hvornår ophørte unionen mellem Danmark og Norge?",
+    "options": ["1814", "1723", "1905"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_002",
+    "topic": "historie",
+    "q": "Under 1. Verdenskrig var Danmark",
+    "options": [
+      "neutralt",
+      "allieret med Tyskland",
+      "allieret med Frankrig og Storbritannien"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_003",
+    "topic": "historie",
+    "q": "Der kom knap 240.000 krigsflygtninge til Danmark efter 2. Verdenskrigs afslutning. Fra hvilket land?",
+    "options": ["Tyskland", "Frankrig", "England"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_004",
+    "topic": "historie",
+    "q": "I 1933 indgik Socialdemokratiet, Det Radikale Venstre og Venstre et forlig, der skulle løse økonomiske og sociale problemer. Hvilket forlig?",
+    "options": [
+      "Kanslergadeforliget",
+      "Septemberforliget",
+      "Velfærdsforliget"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_005",
+    "topic": "historie",
+    "q": "Hvad valgte Danmark at gøre under 1. Verdenskrig efter pres fra Tyskland?",
+    "options": [
+      "At lægge miner ud i danske farvande",
+      "At overgive Jylland til Tyskland",
+      "At internere jøder i fangelejre"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_006",
+    "topic": "historie",
+    "q": "Hvad var baggrunden for Kanslergadeforliget i 1933?",
+    "options": [
+      "Økonomiske problemer",
+      "Integrationsproblemer",
+      "Miljøproblemer"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_007",
+    "topic": "historie",
+    "q": "I hvilket af følgende årtier var Thorvald Stauning statsminister?",
+    "options": ["1930’erne", "1950’erne", "1970’erne"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_008",
+    "topic": "historie",
+    "q": "Hvornår blev det ved en folkeafstemning i Island besluttet at oprette en republik, der var uafhængig af Danmark?",
+    "options": ["1944", "1904", "1984"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_009",
+    "topic": "historie",
+    "q": "Efter 2. Verdenskrig modtog Danmark og andre europæiske lande økonomisk støtte gennem Marshall-planen. Fra hvilket land kom støtten?",
+    "options": ["USA", "Sovjetunionen", "Sverige"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_010",
+    "topic": "historie",
+    "q": "I 1933 indgik regeringen og de gamle politiske partier Kanslergadeforliget. Hvad ville regeringen opnå med forliget?",
+    "options": [
+      "At mildne den økonomiske krise",
+      "At begrænse indvandringen"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_011",
+    "topic": "historie",
+    "q": "Var Danmark besat af tyske tropper under 1. Verdenskrig?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_012",
+    "topic": "historie",
+    "q": "I forbindelse med hvilken krig blev Danmark ramt af influenzaepidemien Den Spanske Syge?",
+    "options": [
+      "1. Verdenskrig",
+      "2. Slesvigske Krig",
+      "2. Verdenskrig"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_013",
+    "topic": "historie",
+    "q": "Hvilken konge fik skrevet på den ene af Jellingstenene, at han gjorde danerne kristne?",
+    "options": [
+      "Harald Blåtand",
+      "Valdemar Sejr",
+      "Svend Tveskæg"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_014",
+    "topic": "historie",
+    "q": "I hvilket århundrede blev England erobret af den danske konge Svend Tveskæg?",
+    "options": ["1000-tallet", "1300-tallet", "1600-tallet"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_HIST_015",
+    "topic": "historie",
+    "q": "Hvilket af følgende lande blev erobret af Svend Tveskæg i 1000-tallet?",
+    "options": ["England", "Frankrig", "Polen"],
+    "correctIndex": 0
+  }
+]

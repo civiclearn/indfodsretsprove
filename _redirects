@@ -1,0 +1,56 @@
+# =====================================================
+# indfodsretsprove.dk — legacy → new structure
+# Permanent redirects (301)
+# =====================================================
+
+# --- Core pages (extension cleanup / removed features) ---
+/ansvarsfraskrivelse.html               /ansvarsfraskrivelse                    301
+/privatslivpolitik.html                 /privatlivspolitik                      301
+/information.html                       /om-proeven                             301
+/logind.html                            /                                       301
+/logind-tc.php                          /                                       301
+/bekraeftelse.html                      /                                       301
+/vaelg-din-pakke.html                   /                                       301
+/garanteret-succes.html                 /                                       301
+/find-dit-niveau.html                   /                                       301
+/lov.html                               /om-proeven                             301
+/audio                                  /                                       301
+/mobile-test/                           /gratis-prove                           301
+/hjaelp.php                             /kontakt                                301
+
+# --- Knowledge / subject pages (.html → clean) ---
+/historie.html                          /historie                               301
+/demokrati.html                         /demokrati                              301
+/oekonomi.html                          /oekonomi                               301
+/kulturliv.html                         /kulturliv                              301
+/danmark-og-omverdenen.html             /danmark-og-omverdenen                  301
+/temaopslag.html                        /temaopslag                             301
+
+# --- Forbered dig (.html → clean / consolidation) ---
+/forbered-dig/kunst.html                /forbered-dig/kunst                     301
+/forbered-dig/vikingetiden.html         /forbered-dig/vikingetiden              301
+/forbered-dig/faeroeerne.html           /forbered-dig/faeroeerne                301
+/forbered-dig/kirke-og-religion.html    /forbered-dig/kirke-og-religion          301
+/forbered-dig/island.html               /forbered-dig/faeroeerne                301
+/forbered-dig/struensee.html            /artikler/indfodsretsproven-2026         301
+
+# --- Aktuelle spørgsmål (dated → latest test page) ---
+/forbered-dig/aktuelle-spoergsmaal-2017.html   /seneste-indfodsretsprove          301
+/forbered-dig/aktuelle-spoergsmaal-2018a.html  /seneste-indfodsretsprove          301
+
+# --- Test centre lists / registration ---
+/testcentre.html                        /find-dit-testcenter                    301
+/newreg2/                               /find-dit-testcenter                    301
+
+# --- Test centres (renamed / normalised only) ---
+/test-centre/speak-helsingor-school-Danish   /test-centre/speak-helsingor          301
+/test-centre/hellerup                       /test-centre/speak-hellerup          301
+/test-centre/sprogskolen-i-kolding          /test-centre/sprogskolen-kolding      301
+/test-centre/job-og-sprog-djurs              /test-centre/job-sprog-djurs          301
+/test-centre/center-for-dansk-og-integration /test-centre/cdi-koege               301
+
+# --- AOF / A2B consolidation (only where slug changed) ---
+/test-centre/AOF-Job-og-Dansk-Odense         /test-centre/aof-job-og-dansk-odense  301
+/test-centre/AOF-Job-og-Dansk-Svendborg      /test-centre/aof-aarhus               301
+/test-centre/a2b-mariagerfjord               /test-centre/a2b-aarhus               301
+/test-centre/a2b-tonder                      /test-centre/a2b-thisted              301

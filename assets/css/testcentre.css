@@ -1,0 +1,64 @@
+.testcentre-info {
+  background: #ffffff;
+  border: 1px solid #e6e6ef;
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 24px rgba(20, 20, 60, 0.06);
+}
+
+.testcentre-title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.testcentre-name {
+  margin-bottom: 0.5rem;
+}
+
+.testcentre-note {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.testcentre-details {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background: #f7f8fc;
+  border-radius: 10px;
+}
+
+.testcentre-details p {
+  margin: 0.5rem 0;
+}
+
+.testcentre-email {
+  word-break: break-all;
+}
+
+.testcentre-disclaimer {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.testcentre-link {
+  margin-top: 1rem;
+}
+
+.testcentre-link a {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--cl-purple, #6b4eff);
+  text-decoration: none;
+}
+
+.testcentre-link a:hover {
+  text-decoration: underline;
+}
+.article-cta-top,
+.article-cta-bottom {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

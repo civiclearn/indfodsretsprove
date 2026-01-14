@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Kontakt – Indfodsretsprove.dk</title>
+  <meta name="description" content="Kontakt Indfodsretsprove.dk for hjælp med login, adgang, betaling eller generelle spørgsmål om indfødsretsprøven. Vi svarer hurtigst muligt." />
+  <link rel="canonical" href="https://indfodsretsprove.dk/kontakt/" />
+
+
+  <!-- GLOBAL -->
+  <link rel="stylesheet" href="/assets/css/shared.css">
+
+  <!-- PAGE SPECIFIC -->
+  <link rel="stylesheet" href="/assets/css/contact.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark">
+        <div class="brand-title">Indfodsretsprove.dk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/om-proeven/">Om prøven</a>
+        <a href="/gratis-prove/">Gratis test</a>
+        <a href="/kontakt/" class="active">Kontakt</a>
+        <a href="https://civiclearn.com/denmark/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        drevet af <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/denmark/checkout" class="btn-small-purple">
+        Opret Konto
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<main class="contact-main">
+
+  <h1>Kontakt</h1>
+
+  <!-- PRE-FORM INFORMATION -->
+  <section class="contact-info-stack">
+
+    <div class="contact-info-card info-primary">
+      <h3>Har du allerede købt adgang?</h3>
+      <p>
+        Din konto er allerede aktiv på CivicLearn.
+        Gå til <a href="https://civiclearn.com/denmark/login">login</a>
+        og indtast den e-mail, du brugte ved køb – du modtager en adgangskode via e-mail.
+      </p>
+    </div>
+
+    <div class="contact-info-card info-warning">
+      <h3>Forkert eller glemt e-mail?</h3>
+      <p>
+        Hvis du ikke er sikker på, hvilken e-mail du brugte, kan vi hjælpe.
+        Angiv dit navn og cirka købsdato i beskeden nedenfor.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-form-wrapper">
+
+    <form
+      action="https://formspree.io/f/maqqwydr"
+      method="POST"
+      class="contact-form"
+    >
+
+      <div class="field">
+        <label for="name">Navn *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label for="category">Hvad drejer din henvendelse sig om? *</label>
+        <select id="category" name="category" required>
+          <option value="">Vælg en kategori</option>
+          <option value="login">Login / manglende adgang</option>
+          <option value="wrong_email">Forkert eller glemt e-mail</option>
+          <option value="payment">Betaling</option>
+          <option value="exam">Spørgsmål om prøven</option>
+          <option value="other">Andet</option>
+        </select>
+      </div>
+
+      <div class="contact-helper">
+        <strong>Tip:</strong>
+        Ved loginproblemer – tjek spam-mappen og vent et par minutter på adgangskoden.
+      </div>
+
+      <div class="field">
+        <label for="message">Besked *</label>
+        <small class="field-hint">
+          Beskriv dit problem kort og præcist.
+          Ved loginproblemer: angiv e-mail og cirka købsdato.
+        </small>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-purple">
+        Send besked
+      </button>
+
+    </form>
+	<div class="contact-success" id="contactSuccess">
+  Tak! Din besked er sendt.  
+  Vi svarer hurtigst muligt.
+</div>
+
+<div class="contact-error" id="contactError">
+  Noget gik galt. Prøv igen senere eller skriv direkte til
+  <a href="mailto:admin@civiclearn.com">admin@civiclearn.com</a>.
+</div>
+
+
+  </section>
+
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2026 <span class="cl-footer-brand">CivicLearn</span> by Testrada — Alle rettigheder forbeholdes.
+  </div>
+</footer>
+<script>
+  const form = document.querySelector(".contact-form");
+  const successBox = document.getElementById("contactSuccess");
+  const errorBox = document.getElementById("contactError");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    successBox.style.display = "none";
+    errorBox.style.display = "none";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successBox.style.display = "block";
+      } else {
+        errorBox.style.display = "block";
+      }
+
+    } catch (err) {
+      errorBox.style.display = "block";
+    }
+  });
+</script>
+
+
+</body>
+</html>

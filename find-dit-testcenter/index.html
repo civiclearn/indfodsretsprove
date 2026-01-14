@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test Locator – Find dit testcenter til indfødsretsprøven</title>
+  
+  <!-- SEO -->
+<link rel="canonical" href="https://indfodsretsprove.dk/find-dit-testcenter/" />
+
+<meta name="description"
+      content="Find dit nærmeste testcenter til indfødsretsprøven. Se alle officielle teststeder i Danmark, filtrér efter region og by, og få overblik over adresser, kontaktoplysninger og udbydere.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find testcenter til indfødsretsprøven – Kort og oversigt">
+<meta property="og:description"
+      content="Oversigt over alle officielle testcentre i Danmark til indfødsretsprøven. Søg, filtrér og find det nærmeste teststed.">
+<meta property="og:url" content="https://indfodsretsprove.dk/find-dit-testcenter/">
+<meta property="og:image" content="/assets/images/og-default.jpg">
+
+
+  <!-- GLOBAL -->
+  <link rel="stylesheet" href="/assets/css/shared.css" />
+  <link rel="stylesheet" href="/assets/css/abouttest.css" />
+
+  <!-- LEAFLET (NO GOOGLE MAPS) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <style>
+    /* ---------- HERO ---------- */
+    .testlocator-hero {
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+    }
+
+    .testlocator-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8102e;
+      margin-bottom: 0.35rem;
+    }
+
+    .testlocator-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-bottom: 0.6rem;
+    }
+
+    .testlocator-hero h1 span {
+      background: linear-gradient(90deg, #6d4aff, #c8102e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .testlocator-hero p {
+      margin: 0.2rem 0;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: #433f49;
+    }
+
+    .testlocator-note {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+      color: #7a7483;
+    }
+
+    /* ---------- MAP SECTION ---------- */
+    .testlocator-map-section {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+    }
+
+    .testlocator-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      background: linear-gradient(
+        90deg,
+        rgba(109, 74, 255, 0.08),
+        rgba(200, 16, 46, 0.05)
+      );
+      border: 1px solid rgba(109, 74, 255, 0.2);
+    }
+
+    .testlocator-toolbar label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #433f49;
+      margin-right: 0.35rem;
+    }
+
+    .testlocator-select,
+    .testlocator-search {
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 0.45rem 0.85rem;
+      font-size: 0.9rem;
+      outline: none;
+      background: #fff;
+      min-width: 180px;
+    }
+
+    .testlocator-search {
+      flex: 1 1 190px;
+    }
+
+    .testlocator-button {
+      border-radius: 999px;
+      border: none;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #6d4aff;
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(109, 74, 255, 0.3);
+      white-space: nowrap;
+    }
+
+    .testlocator-button span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    .testlocator-button.secondary {
+      background: #ffffff;
+      color: #6d4aff;
+      border: 1px solid rgba(109, 74, 255, 0.6);
+      box-shadow: none;
+    }
+
+    .testlocator-map {
+      width: 100%;
+      height: 420px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Position custom locate button on map */
+    .testlocator-map .leaflet-control-container .leaflet-top.leaflet-left {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    .testlocator-locate-btn {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1000;
+      border-radius: 999px;
+      border: none;
+      padding: 0.55rem 0.7rem;
+      background: #ffffff;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .testlocator-locate-btn span {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 2px solid #6d4aff;
+      box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.25);
+      position: relative;
+    }
+
+    .testlocator-locate-btn span::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: 999px;
+      background: #c8102e;
+    }
+
+    /* ---------- LIST SECTION ---------- */
+    .testlocator-list-section {
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+
+    .testlocator-list-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .testlocator-list-subtitle {
+      font-size: 0.95rem;
+      color: #7a7483;
+      margin-bottom: 1.3rem;
+    }
+
+    .testlocator-region-heading {
+      margin: 1.7rem 0 0.9rem;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .testlocator-region-pill {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(200, 16, 46, 0.45);
+      color: #c8102e;
+      background: rgba(200, 16, 46, 0.06);
+    }
+
+    .testlocator-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .testlocator-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.1rem 1rem;
+      border-left: 4px solid #6d4aff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      position: relative;
+    }
+
+    .testlocator-card.highlight {
+      border-left-color: #c8102e;
+      box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.35);
+    }
+
+    .testlocator-card-title {
+      font-weight: 700;
+      margin-bottom: 0.1rem;
+    }
+
+    .testlocator-card-meta {
+      font-size: 0.9rem;
+      color: #433f49;
+    }
+
+    .testlocator-card-meta span {
+      display: block;
+    }
+
+
+
+    .testlocator-tag {
+      position: absolute;
+      top: -6px;
+      right: 8px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #fdf2f3;
+      color: #c8102e;
+      border: 1px solid rgba(200, 16, 46, 0.35);
+    }
+
+    .testlocator-card-actions {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .testlocator-card-actions a,
+    .testlocator-card-actions button {
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: #fff;
+      font-size: 0.85rem;
+      padding: 0.28rem 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: #433f49;
+    }
+
+    .testlocator-card-actions a.primary {
+      border-color: rgba(109, 74, 255, 0.7);
+      color: #6d4aff;
+    }
+
+    .testlocator-card-actions a:hover,
+    .testlocator-card-actions button:hover {
+      background: #f7f4ff;
+    }
+
+    .testlocator-empty-state {
+      font-size: 0.95rem;
+      color: #7a7483;
+      margin-top: 0.6rem;
+    }
+
+    @media (max-width: 768px) {
+      .testlocator-map {
+        height: 360px;
+      }
+
+      .testlocator-toolbar {
+        align-items: stretch;
+      }
+
+      .testlocator-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+.centres-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.deadline-badge {
+  background: #f3efff;
+  border: 1px solid #d8ccff;
+  color: #3b2b7a;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+
+.deadline-badge span {
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark" />
+        <div class="brand-title">Indfodsretsprove.dk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/om-proven">Om prøven</a>
+        <a href="/gratis-prove">Gratis test</a>
+        <a href="/kontakt">Kontakt</a>
+		<a href="https://civiclearn.com/denmark/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        drevet af <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/denmark/checkout.html" class="btn-small-purple">Opret Konto</a>
+    </div>
+  </div>
+</header>
+
+<main class="cl-main">
+  <section class="testlocator-hero">
+    <div class="testlocator-eyebrow">Test Locator</div>
+    <h1>Find dit <span>testcenter</span> til Indfødsretsprøven</h1>
+    <p>
+      Her kan du finde officielle testcentre i hele Danmark, der afholder
+      <strong>indfødsretsprøven</strong>. Brug kortet, søg efter by eller sprogcenter,
+      og filtrér efter region, så du hurtigt finder et sted tæt på dig.
+    </p>
+    <p class="testlocator-note">
+      Bemærk: Oplysninger om datoer og tilmeldingsfrister gives af det enkelte sprogcenter.
+    </p>
+  </section>
+
+<section class="testlocator-map-section">
+  <div class="testlocator-toolbar">
+
+    <!-- REGION FILTER -->
+    <div style="display:flex; align-items:center; gap:0.4rem;">
+      <label for="regionFilter">Region</label>
+      <select id="regionFilter" class="testlocator-select">
+        <option value="all">Alle regioner</option>
+        <option value="Hovedstaden">Region Hovedstaden</option>
+        <option value="Midtjylland">Region Midtjylland</option>
+        <option value="Nordjylland">Region Nordjylland</option>
+        <option value="Sjælland">Region Sjælland</option>
+        <option value="Syddanmark">Region Syddanmark</option>
+      </select>
+    </div>
+
+    <!-- CITY FILTER -->
+    <select id="cityFilter" class="testlocator-select">
+      <option value="all">Alle byer</option>
+      <!-- JS will auto-populate cities -->
+    </select>
+
+    <!-- SEARCH FIELD -->
+    <input
+      id="searchInput"
+      class="testlocator-search"
+      type="text"
+      placeholder="Søg efter by eller sprogcenter…"
+    />
+
+    <!-- NEAREST-CENTER BUTTON -->
+    <button id="nearestBtn" class="testlocator-button">
+      <span class="icon">◎</span>
+      Find nærmeste center
+    </button>
+
+  </div>
+
+  <!-- MAP -->
+  <div id="testlocator-map" class="testlocator-map"></div>
+</section>
+
+<section class="testlocator-list-section">
+
+  <div class="centres-header">
+    <h2>Alle testcentre</h2>
+
+    <div class="deadline-badge" id="deadlineBadge">
+      ⏳ Tilmeldingsfrist: <strong>29. april 2026</strong>
+      <span id="deadlineCountdown"></span>
+    </div>
+  </div>
+
+  <div id="testlocator-list"></div>
+</section>
+
+
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2026 <span class="cl-footer-brand">CivicLearn</span> by Testrada — Alle rettigheder forbeholdes.
+  </div>
+</footer>
+
+<script>
+  
+const TEST_CENTERS = [
+  // ---------- REGION HOVEDSTADEN ----------
+  {
+    id: "campus-bornholm",
+    name: "Campus Bornholm",
+    region: "Hovedstaden",
+    city: "Rønne",
+    address: "Minervavej 1, 3700 Rønne",
+    phone: "56 95 97 00",
+    email: "post@cabh.dk",
+    website: "https://www.campusbornholm.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.106764,
+    lng: 14.712542
+  },
+  {
+    id: "speak-hellerup",
+    name: "Speak – School of Danish, Hellerup",
+    region: "Hovedstaden",
+    city: "Hellerup",
+    address: "Bernstorffsvej 20, 1. sal, 2900 Hellerup",
+    phone: "39 46 30 50",
+    email: "hello@speakspeak.dk",
+    website: "https://speakspeak.dk/da/undervisningssteder/speak-hellerup/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "Private",
+    lat: 55.727666,
+    lng: 12.556747
+  },
+  {
+    id: "speak-helsingor",
+    name: "Speak – School of Danish, Helsingør",
+    region: "Hovedstaden",
+    city: "Helsingør",
+    address: "Jernbanegade 7, 1. sal, 3000 Helsingør",
+    phone: "39 46 30 40",
+    email: "helsingor@speakspeak.dk",
+    website: "https://speakspeak.dk/da/undervisningssteder/speak-helsingoer/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Private",
+    lat: 56.033245,
+    lng: 12.613273
+  },
+  {
+    id: "sprogcenter-fureso",
+    name: "Sprogcenter Furesø",
+    region: "Hovedstaden",
+    city: "Farum",
+    address: "Hvedemarken 3, 3520 Farum",
+    phone: "72 35 50 50",
+    email: "sprogcenter@furesoe.dk",
+    website: "https://sprogcenter.furesoe.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.819549,
+    lng: 12.373496
+  },
+  {
+    id: "sprogcenter-nordsjaelland",
+    name: "Sprogcenter Nordsjælland",
+    region: "Hovedstaden",
+    city: "Hillerød",
+    address: "Milnersvej 41 C, 3400 Hillerød",
+    phone: "72 32 85 00",
+    email: "sproghill@hillerod.dk",
+    website: "https://www.scno.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.920338,
+    lng: 12.295826
+  },
+  {
+    id: "studieskolen-kobenhavn",
+    name: "Studieskolen",
+    region: "Hovedstaden",
+    city: "København",
+    address: "Borgergade 12, 1300 København K",
+    phone: "33 18 79 00",
+    email: "info@studieskolen.dk",
+    website: "https://www.studieskolen.dk/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "Private",
+    lat: 55.68278138,
+    lng: 12.58453256
+  },
+    {
+    id: "jobcenter-kbh-danskuddannelse",
+    name: "Jobcenter København Danskuddannelse",
+    region: "Hovedstaden",
+    city: "Rønne",
+    address: "Emdrupvej 72, 2400 København NV",
+    phone: "82 56 52 00",
+    email: "csi-sprogcenter@kk.dk",
+    website: "https://www.kk.dk/borger/uddannelse/danskuddannelse-til-nyankomne-udlaendinge",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.72294391,
+    lng: 12.54197660
+  },
+  {
+    id: "ucplus-kobenhavn",
+    name: "UCplus København",
+    region: "Hovedstaden",
+    city: "København",
+    address: "Gyldenløvesgade 11, 2. sal, 1600 København K",
+    phone: "44 87 01 66",
+    email: "cph@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-koebenhavn/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "UCplus",
+    lat: 55.6799240,
+    lng: 12.5628498
+  },
+  {
+    id: "ucplus-skovlunde",
+    name: "UCplus Skovlunde",
+    region: "Hovedstaden",
+    city: "Skovlunde",
+    address: "Mileparken 12 A, 2740 Skovlunde",
+    phone: "44 47 61 70",
+    email: "info@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-skovlunde/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 55.7137262,
+    lng: 12.4235557
+  },
+  {
+    id: "vskdansk",
+    name: "VSKdansk",
+    region: "Hovedstaden",
+    city: "Glostrup",
+    address: "Skolevej 6, 2600 Glostrup",
+    phone: "43 28 35 00",
+    email: "sprogcenter@brondby.dk",
+    website: "https://vskdansk.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.66700966794868,
+    lng: 12.39612740793341
+  },
+
+  // ---------- REGION MIDTJYLLAND ----------
+  {
+    id: "a2b-aarhus",
+    name: "A2B Aarhus",
+    region: "Midtjylland",
+    city: "Aarhus",
+    address: "Ingerslevs Boulevard 3B, 8000 Aarhus C",
+    phone: "24 88 48 15",
+    email: "sprogaarhus@a2b.dk",
+    website: "https://www.a2b.dk/sprogcenter-aarhus/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "A2B",
+    lat: 56.1451337217631,
+    lng: 10.195374112736484
+  },
+  {
+    id: "aof-aarhus",
+    name: "AOF Job og Dansk Aarhus",
+    region: "Midtjylland",
+    city: "Aarhus",
+    address: "Paludan Müllers Vej 82-84, 8200 Aarhus N",
+    phone: "92 90 10 89",
+    email: "aarhus@aofjobogdansk.dk",
+    website: "https://www.aofsydjylland.dk",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "AOF",
+    lat: 56.17618624370611,
+    lng: 10.18030732272029
+  },
+  {
+    id: "job-sprog-djurs",
+    name: "Job & Sprog Djurs",
+    region: "Midtjylland",
+    city: "Grenaa",
+    address: "Ålsrodevej 3, Ålsø, 8500 Grenaa",
+    phone: "30 63 15 36",
+    email: "sprogundervisning@norddjurs.dk",
+    website: "https://www.jobogsprogdjurs.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 56.406882,
+    lng: 10.91522
+  },
+  {
+    id: "sprogcenter-midt-herning",
+    name: "Sprogcenter Midt Herning",
+    region: "Midtjylland",
+    city: "Herning",
+    address: "Mercurvej 1 C, 1. sal, 7400 Herning",
+    phone: "61 80 92 61",
+    email: "herning@sprogcentermidt.dk",
+    website: "https://www.sprogcentermidt.dk/kontakt-os/herning/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "Municipal",
+    lat: 56.135487,
+    lng: 8.999843
+  },
+  {
+    id: "sprogcenter-midt-horsens",
+    name: "Sprogcenter Midt Horsens",
+    region: "Midtjylland",
+    city: "Horsens",
+    address: "Emil Møllers Gade 30, 2. sal, 8700 Horsens",
+    phone: "76 25 99 25",
+    email: "kontakt@sprogcentermidt.dk",
+    website: "https://www.sprogcentermidt.dk/kontakt-os/horsens/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.866039212999716,
+    lng: 9.840606476067931
+  },
+  
+    {
+    id: "sprogcentret-holstebro",
+    name: "Sprogcenter Nordvestjylland",
+    region: "Midtjylland",
+    city: "Holstebro",
+    address: "Danmarksgade 13 C, 7500 Holstebro",
+    phone: "96 11 39 00",
+    email: "kontakt@sprogcenternordvestjylland.dk",
+    website: "https://sprogcenternordvestjylland.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 56.3608463,
+    lng: 8.62143880
+  },
+  {
+    id: "sprogcenter-randers",
+    name: "Sprogcenter Randers",
+    region: "Midtjylland",
+    city: "Randers C",
+    address: "Vestergade 34, 8900 Randers C",
+    phone: "89 15 77 00",
+    email: "sprogcenter@randers.dk",
+    website: "https://sprogcenter.randers.dk/sprogcenter-randers/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 56.4615268,
+    lng: 10.0289039
+  },
+  {
+    id: "sprogcenter-skive",
+    name: "Sprogcenter Skive",
+    region: "Midtjylland",
+    city: "Skive",
+    address: "Dalgas Allé 20, 7800 Skive",
+    phone: "99 15 35 30",
+    email: "sprogcenter@skivekommune.dk",
+    website: "https://www.sprogcenter-skive.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 56.55050060,
+    lng: 9.012801446
+  },
+  {
+    id: "sprogcenter-viborg",
+    name: "Sprogcenter Viborg",
+    region: "Midtjylland",
+    city: "Viborg",
+    address: "Vævervej 10A, 8800 Viborg",
+    phone: "87 87 46 87",
+    email: "sprogcenterviborg@viborg.dk",
+    website: "https://sprogcenter.viborg.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 56.4620400,
+    lng: 9.40217501
+  },
+  {
+    id: "ucplus-sprogcenter-ringkobing-skjern",
+    name: "UCplus Ringkøbing-Skjern",
+    region: "Midtjylland",
+    city: "Ringkøbing",
+    address: "Vasevej 24, 6950 Ringkøbing",
+    phone: "31 12 06 67",
+    email: "ringkoebing@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/ringkoebing-skjern/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 56.0940515,
+    lng: 8.26036248
+  },
+  {
+    id: "ucplus-silkeborg",
+    name: "UCplus Silkeborg",
+    region: "Midtjylland",
+    city: "Silkeborg",
+    address: "Dalgasgade 24 A, 8600 Silkeborg",
+    phone: "31 27 45 40",
+    email: "ansk@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-silkeborg/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 56.16360003,
+    lng: 9.532322711
+  },
+
+  // ---------- REGION NORDJYLLAND ----------
+  {
+    id: "a2b-hjorring",
+    name: "A2B Hjørring",
+    region: "Nordjylland",
+    city: "Hjørring",
+    address: "Strømgade 6, 1, 9800 Hjørring",
+    phone: "82 10 00 77",
+    email: "sproghjoerring@a2b.dk",
+    website: "https://www.a2b.dk/sprogcenter-hjoerring/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "A2B",
+    lat: 57.4607409,
+    lng: 9.9863504
+  },
+  {
+    id: "sprogcenter-aalborg",
+    name: "Sprogcenter Aalborg",
+    region: "Nordjylland",
+    city: "Aalborg",
+    address: "Strandvejen 35B, 9000 Aalborg",
+    phone: "99 31 58 10",
+    email: "sprogcenter@aalborg.dk",
+    website: "https://sprogcenter.aalborg.dk/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "Municipal",
+    lat: 57.05377,
+    lng: 9.907094
+  },
+    {
+    id: "a2b-jammerbugt",
+    name: "A2B Jammerbugt",
+    region: "Nordjylland",
+    city: "Birkelse",
+    address: "Gammel Landevej 70, 9440 Birkelse",
+    phone: "25 42 22 92",
+    email: "sprogjammerbugt@a2b.dk",
+    website: "https://www.a2b.dk/sprogcenter-jammerbugt/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "A2B",
+    lat: 57.151442,
+    lng: 9.6873089
+  },
+  {
+    id: "a2b-mors",
+    name: "A2B Mors",
+    region: "Nordjylland",
+    city: "Nykøbing Mors",
+    address: "Limfjordsvej 95, 7900 Nykøbing Mors",
+    phone: "27 61 16 04",
+    email: "sprogmors@a2b.dk",
+    website: "https://www.a2b.dk/sprogcenter-mors/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "A2B",
+    lat: 56.7851027,
+    lng: 8.83445612
+  },
+  {
+    id: "a2b-thisted",
+    name: "A2B Thisted",
+    region: "Nordjylland",
+    city: "Thisted",
+    address: "Munkevej 9, 7700 Thisted",
+    phone: "27 61 16 04",
+    email: "sprogthisted-mors@a2b.dk",
+    website: "https://www.a2b.dk/sprogcenter-thisted/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "A2B",
+    lat: 56.955571,
+    lng: 8.6999871
+  },
+  {
+    id: "region-nordjylland",
+    name: "AOF Region Nordjylland",
+    region: "Nordjylland",
+    city: "Brønderslev",
+    address: "Grønnegade 15, 9700 Brønderslev",
+    phone: "98 28 28 98",
+    email: "info@aof-rn.dk",
+    website: "https://www.aofnordjylland.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "AOF",
+    lat: 57.270225,
+    lng: 9.9482043
+  },
+  {
+    id: "hf-vucnord-sprogcenter-vesthimmerland",
+    name: "HF&VUCNORD, Sprogcenter Vesthimmerland",
+    region: "Nordjylland",
+    city: "Aars",
+    address: "Jyllandsgade 50B",
+    phone: "99 30 07 60",
+    email: "sprogcenter@vucnord.dk",
+    website: "https://www.vucnord.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "HF/VUC",
+    lat: 56.801249,
+    lng: 9.5222063
+  },
+  {
+    id: "sprogcenter-frederikshavn",
+    name: "Sprogcenter Frederikshavn",
+    region: "Nordjylland",
+    city: "Frederikshavn",
+    address: "Hånbækvej 32 B, 9900 Frederikshavn",
+    phone: "98 45 72 00",
+    email: "sprogcenter@frederikshavn.dk",
+    website: "https://www.frederikshavn.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 57.4305692,
+    lng: 10.5040601
+  },
+
+  // ---------- REGION SJÆLLAND ----------
+  {
+    id: "cdi-koege",
+    name: "Center for Dansk og Integration, CDI Køge",
+    region: "Sjælland",
+    city: "Køge",
+    address: "Ølbycenter 53, 4600 Køge",
+    phone: "56 67 66 60",
+    email: "cdi@koege.dk",
+    website: "https://www.danskogintegration.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.480452,
+    lng: 12.176553
+  },
+  {
+    id: "clavis-greve",
+    name: "CLAVIS Sprog og Kompetence – Greve",
+    region: "Sjælland",
+    city: "Greve",
+    address: "Frydenhøj Allé 73, 2670 Greve",
+    phone: "41 73 81 00",
+    email: "kontakt@clavis.org",
+    website: "https://www.clavis.org/til-kursister/danskuddannelse/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "CLAVIS",
+    lat: 55.596144,
+    lng: 12.334128
+  },
+  {
+    id: "sprogcenter-naestved",
+    name: "Sprogcenter Næstved",
+    region: "Sjælland",
+    city: "Næstved",
+    address: "Nygårdsvej 110, 4700 Næstved",
+    phone: "55 88 68 00",
+    email: "sprogcenter@naestved.dk",
+    website: "https://www.sprogcenternaestved.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.232352594,
+    lng: 11.793627121
+  },
+    {
+    id: "guldborgsund-sprog-og-integrationscenter",
+    name: "Guldborgsund Sprogskole",
+    region: "Sjælland",
+    city: "Nykøbing Falster",
+    address: "Thorsensvej 11, 4800 Nykøbing Falster",
+    phone: "54 73 10 00",
+    email: "sprogcenter@guldborgsund.dk",
+    website: "https://www.guldborgsund.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 54.77372113,
+    lng: 11.86930608
+  },
+  {
+    id: "kalundborg-sprogcenter",
+    name: "Kalundborg Sprogcenter",
+    region: "Sjælland",
+    city: "Svebølle",
+    address: "Højvangen 9, 4470 Svebølle",
+    phone: "59 53 57 90",
+    email: "sprogcenter@kalundborg.dk",
+    website: "https://www.kalundborg.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.64884972,
+    lng: 11.28937424
+  },
+  {
+    id: "lolland-nakskov",
+    name: "Lolland Sprogskole",
+    region: "Sjælland",
+    city: "Nakskov",
+    address: "Søvej 6, 4900 Nakskov",
+    phone: "54 67 67 67",
+    email: "sprogskole@lolland.dk",
+    website: "https://www.lolland.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 54.8354308,
+    lng: 11.1388686
+  },
+  {
+    id: "slagelse-sprogcenter",
+    name: "Slagelse Sprogcenter",
+    region: "Sjælland",
+    city: "Slagelse",
+    address: "Sct. Pedersgade 18, 4200 Slagelse",
+    phone: "58 57 36 00",
+    email: "sprogcenter@slagelse.dk",
+    website: "https://www.slagelse.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.4035402,
+    lng: 11.3449898
+  },
+  {
+    id: "ucplus-holbaek",
+    name: "UCplus Holbæk",
+    region: "Sjælland",
+    city: "Holbæk",
+    address: "Ahlgade 61-63, 4300 Holbæk",
+    phone: "42 90 91 52",
+    email: "holbaek@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-holbaek/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 55.7170266, 
+    lng: 11.7168586
+  },
+  {
+    id: "ucplus-ringsted",
+    name: "UCplus Ringsted",
+    region: "Sjælland",
+    city: "Ringsted",
+    address: "Nørregade 19, 1. sal, 4100 Ringsted",
+    phone: "30 14 88 18",
+    email: "ringsted@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-ringsted/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 55.44694566,
+    lng: 11.78880968
+  },
+  {
+    id: "ucplus-roskilde",
+    name: "UCplus Roskilde",
+    region: "Sjælland",
+    city: "Roskilde",
+    address: "Bakkesvinget 67, 4000 Roskilde",
+    phone: "23 90 84 60",
+    email: "roskilde@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-roskilde/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 55.6273726,
+    lng: 12.0746339
+  },
+
+  // ---------- REGION SYDDANMARK ----------
+  {
+    id: "aof-esbjerg",
+    name: "AOF Job og Dansk, Esbjerg, Vejen og Varde",
+    region: "Syddanmark",
+    city: "Esbjerg",
+    address: "Hededammen 5, 6705 Esbjerg",
+    phone: "76 10 63 50",
+    email: "esbjerg@aofjobogdansk.dk",
+    website: "https://aofsydjylland.dk",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "AOF",
+    lat: 55.485368,
+    lng: 8.497449
+  },
+  {
+    id: "sprogskolen-kolding",
+    name: "Sprogskolen i Kolding",
+    region: "Syddanmark",
+    city: "Kolding",
+    address: "Ågade 27, 6000 Kolding",
+    phone: "79 79 83 00",
+    email: "sprogskolen@kolding.dk",
+    website: "https://sprogskolen.kolding.dk/",
+    levels: ["PD1", "PD2", "PD3", "SP", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.486524,
+    lng: 9.480897
+  },
+  {
+    id: "sprogcenter-vejle",
+    name: "Sprogcenter Vejle",
+    region: "Syddanmark",
+    city: "Vejle",
+    address: "Damhaven 13 A, 7100 Vejle",
+    phone: "76 81 38 00",
+    email: "sprogcenter@vejle.dk",
+    website: "https://sprogcentervejle.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.703414,
+    lng: 9.525755
+  },
+    {
+    id: "aof-job-og-dansk-odense",
+    name: "AOF Job og Dansk – Fyn",
+    region: "Syddanmark",
+    city: "Odense",
+    address: "Østergade 32, 5000 Odense",
+    phone: "76 10 63 70",
+    email: "fyn@aofjobogdansk.dk",
+    website: "https://aofsydjylland.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "AOF",
+    lat: 55.40130671,
+    lng: 10.3948372
+  },
+  {
+    id: "aof-job-og-dansk-sydjylland-aabenraa",
+    name: "AOF Job og Dansk, Sydjylland",
+    region: "Syddanmark",
+    city: "Aabenraa",
+    address: "Ramsherred 25, 6200 Aabenraa",
+    phone: "60 37 83 22",
+    email: "esbjerg@aofjobogdansk.dk",
+    website: "https://aofsydjylland.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "AOF",
+    lat: 55.04668256, 
+    lng: 9.418408146
+  },
+  {
+    id: "sprogcenter-haderslev",
+    name: "Haderslev Sprogcenter",
+    region: "Syddanmark",
+    city: "Haderslev",
+    address: "Simmerstedvej 1, 1. sal, 6100 Haderslev",
+    phone: "74 34 79 00",
+    email: "sprogcenter@haderslev.dk",
+    website: "http://www.haderslevsprogcenter.dk/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.254836,
+    lng: 9.4851962
+  },
+  {
+    id: "nyborg-sprogskole",
+    name: "Nyborg Sprogskole",
+    region: "Syddanmark",
+    city: "Nyborg",
+    address: "Skovbrynet 17, 5800 Nyborg",
+    phone: "63 33 78 88",
+    email: "sprogskole@nyborg.dk",
+    website: "https://www.nyborg.dk/da/borger-og-selvbetjening/job-og-ledighed/kurser-uddannelse-og-efteruddannelse/nyborg-sprogskole/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "Municipal",
+    lat: 55.31801045,
+    lng: 10.80659346
+  },
+  {
+    id: "ucplus-soenderborg",
+    name: "UCplus Sønderborg",
+    region: "Syddanmark",
+    city: "Sønderborg",
+    address: "Sundmarksvej 12, 6400 Sønderborg",
+    phone: "31 18 31 89",
+    email: "soenderborg@ucplus.dk",
+    website: "https://ucplusdansk.dk/sprogcentre/sprogcenter-soenderborg/",
+    levels: ["PD1", "PD2", "PD3", "MP", "IP"],
+    provider: "UCplus",
+    lat: 54.913364, 
+    lng: 9.8015477
+  }
+  
+];
+
+// ------------------ INIT MAP ------------------
+const map = L.map("testlocator-map", { zoomControl: true });
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+map.setView([56.0, 10.0], 6);
+
+const centerIcon = L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  shadowSize: [41, 41]
+});
+
+const markers = [];
+const boundsLatLngs = [];
+
+TEST_CENTERS.forEach(center => {
+  if (typeof center.lat === "number" && typeof center.lng === "number") {
+    const marker = L.marker([center.lat, center.lng], { icon: centerIcon })
+      .addTo(map)
+      .bindPopup(
+        `<strong>${center.name}</strong><br>${center.address}<br>${center.city}<br>` +
+        (center.phone ? `Tlf.: ${center.phone}<br>` : "") +
+        (center.website ? `<a href="${center.website}" target="_blank">Besøg hjemmeside</a>` : "")
+      );
+
+    markers.push({ centerId: center.id, marker });
+    boundsLatLngs.push([center.lat, center.lng]);
+  }
+});
+
+if (boundsLatLngs.length) {
+  map.fitBounds(L.latLngBounds(boundsLatLngs).pad(0.15));
+}
+
+// ------------------ ELEMENTS ------------------
+const regionFilter = document.getElementById("regionFilter");
+const cityFilter   = document.getElementById("cityFilter");
+const searchInput  = document.getElementById("searchInput");
+const listContainer = document.getElementById("testlocator-list");
+
+// ------------------ POPULATE CITY FILTER ------------------
+(function populateCities() {
+  const cities = [...new Set(TEST_CENTERS.map(c => c.city).filter(Boolean))].sort();
+  cities.forEach(city => {
+    const opt = document.createElement("option");
+    opt.value = city;
+    opt.textContent = city;
+    cityFilter.appendChild(opt);
+  });
+})();
+
+// ------------------ RENDER LIST ------------------
+function groupByRegion(centers) {
+  const result = {};
+  centers.forEach(c => {
+    if (!result[c.region]) result[c.region] = [];
+    result[c.region].push(c);
+  });
+  return result;
+}
+
+function renderList(list) {
+  listContainer.innerHTML = "";
+
+  const grouped = groupByRegion(list);
+
+  Object.keys(grouped).sort().forEach(region => {
+    const regionTitle = document.createElement("h3");
+    regionTitle.className = "testlocator-region-heading";
+    regionTitle.innerHTML = `
+      <span>${region}</span>
+      <span class="testlocator-region-pill">Testcentre</span>
+    `;
+    listContainer.appendChild(regionTitle);
+
+    const wrap = document.createElement("div");
+    wrap.className = "testlocator-cards";
+
+    grouped[region].forEach(center => {
+      const card = document.createElement("article");
+      card.className = "testlocator-card";
+      card.dataset.centerId = center.id;
+
+      card.innerHTML = `
+        <span class="testlocator-tag">${center.provider}</span>
+        <div class="testlocator-card-title">${center.name}</div>
+        <div class="testlocator-card-meta">
+          <span>${center.address}</span>
+          <span>${center.city}</span>
+          ${center.phone ? `<span>Tlf.: <a href="tel:${center.phone.replace(/[^0-9+]/g, "")}">${center.phone}</a></span>` : ""}
+          ${center.email ? `<span>E-mail: <a href="mailto:${center.email}">${center.email}</a></span>` : ""}
+        </div>
+        
+        <div class="testlocator-card-actions">
+  <button type="button"
+          data-action="focus-map"
+          data-center-id="${center.id}">
+    Vis på kort
+  </button>
+
+  <a href="/test-centre/${center.id}/" class="primary">
+    Se testcenter
+  </a>
+
+</div>
+
+      `;
+      wrap.appendChild(card);
+    });
+
+    listContainer.appendChild(wrap);
+  });
+}
+
+renderList(TEST_CENTERS);
+
+// ------------------ FILTERING ------------------
+function applyFilters() {
+  const region = regionFilter.value;
+  const city   = cityFilter.value;
+  const term   = searchInput.value.trim().toLowerCase();
+
+  const filtered = TEST_CENTERS.filter(c => {
+    if (region !== "all" && c.region !== region) return false;
+    if (city !== "all" && c.city !== city) return false;
+
+    if (term) {
+      const hay = `${c.name} ${c.city} ${c.address} ${c.provider}`.toLowerCase();
+      if (!hay.includes(term)) return false;
+    }
+    return true;
+  });
+
+  renderList(filtered);
+}
+
+regionFilter.addEventListener("change", applyFilters);
+cityFilter.addEventListener("change", applyFilters);
+searchInput.addEventListener("input", applyFilters);
+
+// ------------------ MAP ↔ LIST SYNC ------------------
+function highlightCard(id) {
+  document.querySelectorAll(".testlocator-card.highlight")
+    .forEach(c => c.classList.remove("highlight"));
+
+  const card = document.querySelector(`.testlocator-card[data-center-id="${id}"]`);
+  if (card) {
+    card.classList.add("highlight");
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+function focusMarker(id) {
+  const item = markers.find(m => m.centerId === id);
+  const center = TEST_CENTERS.find(c => c.id === id);
+
+  if (item) {
+    map.setView(item.marker.getLatLng(), 11);
+    item.marker.openPopup();
+  } else if (center && center.lat && center.lng) {
+    map.setView([center.lat, center.lng], 11);
+  }
+
+  highlightCard(id);
+  document.getElementById("testlocator-map").scrollIntoView({ behavior: "smooth" });
+}
+
+listContainer.addEventListener("click", e => {
+  const btn = e.target.closest("[data-action='focus-map']");
+  if (!btn) return;
+  focusMarker(btn.dataset.centerId);
+});
+
+markers.forEach(({ centerId, marker }) => {
+  marker.on("click", () => highlightCard(centerId));
+});
+
+// ------------------ GEOLOCATION (NEAREST CENTER) ------------------
+function findNearest(lat, lng) {
+  const user = L.latLng(lat, lng);
+  let best = null, bestDist = Infinity;
+
+  markers.forEach(m => {
+    const d = user.distanceTo(m.marker.getLatLng());
+    if (d < bestDist) {
+      bestDist = d;
+      best = m;
+    }
+  });
+
+  if (!best) {
+    alert("Ingen testcentre har koordinater endnu.");
+    return;
+  }
+
+  map.setView(best.marker.getLatLng(), 11);
+  best.marker.openPopup();
+  highlightCard(best.centerId);
+}
+
+document.getElementById("nearestBtn").addEventListener("click", () => {
+  if (!navigator.geolocation) {
+    alert("Din browser understøtter ikke geolokation.");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    pos => findNearest(pos.coords.latitude, pos.coords.longitude),
+    () => alert("Kunne ikke hente position.")
+  );
+});
+</script>
+<script>
+(function () {
+  const target = new Date("2026-04-29T23:59:59");
+  const el = document.getElementById("deadlineCountdown");
+  if (!el) return;
+
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      el.textContent = "– fristen er i dag";
+      return;
+    }
+
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    el.textContent = `· ${days} dage tilbage`;
+  }
+
+  update();
+  setInterval(update, 60 * 60 * 1000);
+})();
+</script>
+
+
+</body>
+</html>

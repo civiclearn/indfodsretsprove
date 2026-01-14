@@ -1,0 +1,150 @@
+[
+  {
+    "id": "DK_EXT_001",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvornår blev Danmark medlem af EU (som dengang hed EF)?",
+    "options": ["1973", "1963", "1953"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_002",
+    "topic": "danmark_og_omverdenen",
+    "q": "Deltager Danmark i EU's forsvars- og sikkerhedspolitik?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_003",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvem består Europa-Parlamentet af?",
+    "options": [
+      "Politikere direkte valgt af EU’s befolkninger",
+      "Embedsmænd udpeget af EU-Kommissionen",
+      "Ministre fra medlemsstaternes regeringer"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_004",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvem består Rådet for Den Europæiske Union af?",
+    "options": [
+      "Ministre fra medlemsstaternes regeringer",
+      "Politikere direkte valgt af EU's befolkninger",
+      "Embedsmænd udpeget af EU-Kommissionen"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_005",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvilket parti fik flest stemmer ved valget til Europa-Parlamentet i Danmark i juni 2024?",
+    "options": [
+      "Socialistisk Folkeparti",
+      "Danmarksdemokraterne",
+      "Radikale Venstre"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_006",
+    "topic": "danmark_og_omverdenen",
+    "q": "Er Europa-Parlamentets medlemmer direkte valgt af befolkningerne i EU’s medlemslande?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_007",
+    "topic": "danmark_og_omverdenen",
+    "q": "Har Danmark forbehold for EU’s forsvars- og sikkerhedspolitik?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_008",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvordan vælges medlemmerne af Europa-Parlamentet?",
+    "options": [
+      "De vælges ved direkte valg i medlemslandene",
+      "De vælges af medlemslandenes regeringer",
+      "De vælges af medlemslandenes parlamenter"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_009",
+    "topic": "danmark_og_omverdenen",
+    "q": "Er der direkte valg til Europa-Parlamentet?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_010",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvor ofte afholdes der valg til Europa-Parlamentet?",
+    "options": [
+      "Hvert femte år",
+      "Hvert tredje år",
+      "Hvert andet år"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_011",
+    "topic": "danmark_og_omverdenen",
+    "q": "Har man pligt til at stemme ved valg til Europa-Parlamentet?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_012",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvor tit er der valg til Europa-Parlamentet?",
+    "options": [
+      "Hvert 5. år",
+      "Hvert 4. år",
+      "Hvert 3. år"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_013",
+    "topic": "danmark_og_omverdenen",
+    "q": "Har Danmark medlemmer i Europa-Parlamentet?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_014",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvilken rolle har Rådet for Den Europæiske Union?",
+    "options": [
+      "Rådet udøver sammen med Europa-Parlamentet EU’s lovgivende funktion",
+      "Rådet er den EU-institution, der kommer med forslag til ny lovgivning",
+      "Rådet sikrer, at EU-lovgivningen bliver overholdt"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_015",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvad stemte danskerne om ved en folkeafstemning i 2015?",
+    "options": [
+      "Om at omdanne EU-retsforbeholdet",
+      "Om at ændre tronfølgeloven",
+      "Om at adskille folkekirken fra staten"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_EXT_016",
+    "topic": "danmark_og_omverdenen",
+    "q": "Hvilket emne har der været afholdt flest folkeafstemninger om i Danmark siden 1953?",
+    "options": [
+      "Danmarks forhold til EU",
+      "Grundloven",
+      "Valgretsalderen"
+    ],
+    "correctIndex": 0
+  }
+]

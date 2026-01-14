@@ -1,0 +1,84 @@
+/* ================================
+   REVIEWS — INTRO + MASONRY FLOW
+   ================================ */
+
+/* ---------- Intro / Context Card ---------- */
+
+.reviews-intro {
+  max-width: 760px;
+  margin: 16px auto 24px;
+  padding: 14px 18px;
+
+  background: #f7f4ff;
+  border-radius: 14px;
+  border-left: 4px solid #6b4eff;
+
+  font-size: 15px;
+  line-height: 1.6;
+  color: #2f2f2f;
+}
+
+.reviews-intro p {
+  margin: 0;
+}
+
+.reviews-intro p + p {
+  margin-top: 8px;
+}
+
+/* ---------- Reviews Masonry Grid ---------- */
+
+.reviews-list {
+  column-count: 1;
+  column-gap: 18px;
+  margin-top: 18px;
+}
+
+.review-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+
+  padding: 14px 16px 14px 18px;
+  background: #fbfaff;
+  border-radius: 12px;
+  border-left: 4px solid #6b4eff;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.035);
+}
+
+/* Author */
+.review-author {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #1f1f1f;
+}
+
+/* Text */
+.review-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #2f2f2f;
+  white-space: pre-wrap;
+}
+
+/* Meta (hidden by design) */
+.review-meta {
+  display: none;
+}
+
+/* ---------- Responsive Columns ---------- */
+
+@media (min-width: 900px) {
+  .reviews-list {
+    column-count: 2;
+    column-gap: 22px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .reviews-list {
+    column-count: 3;
+    column-gap: 26px;
+  }
+}

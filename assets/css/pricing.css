@@ -1,0 +1,218 @@
+/* ======================================================
+   PRICING — FINAL, CLEAN, SINGLE SOURCE
+   ====================================================== */
+
+.premium-pricing {
+  padding: 80px 24px;
+}
+
+.pricing-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+}
+
+/* ==============================
+   LEFT: PRICE
+   ============================== */
+
+.pricing-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* BADGES */
+
+.pricing-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pricing-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.pricing-badge.primary {
+  background: #e9e3ff;
+  color: #5b3df5;
+}
+
+.pricing-badge.subtle {
+  background: #f3f3f3;
+  color: #555;
+}
+
+/* HEADLINE */
+
+.pricing-headline {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 14px;
+}
+
+/* PRICE */
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-amount {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.price-currency {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* TRUST PILLS */
+
+.pricing-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 18px;
+}
+
+.trust-pill {
+  font-size: 12px;
+  background: #f6f5ff;
+  color: #4a3fe0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* CORE VALUE */
+
+.pricing-intro {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.pricing-intro strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pricing-intro .muted {
+  font-size: 14px;
+  color: rgba(0,0,0,0.55);
+  margin-top: 6px;
+}
+
+/* CTA */
+
+.pricing-cta {
+  margin-top: 32px;
+  padding: 18px;
+  text-align: center;
+  background: #6b4eff;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.pricing-cta:hover {
+  background: #5a3ee0;
+}
+
+/* GUARANTEE */
+
+.pricing-guarantee {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+}
+
+/* ==============================
+   RIGHT: FEATURE CARDS
+   ============================== */
+
+.pricing-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: #faf9ff;
+  border: 1px solid #eeeaff;
+  border-radius: 18px;
+  padding: 22px 24px;
+}
+
+.feature-card h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6b4eff;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(0,0,0,0.85);
+}
+
+/* HIGHLIGHT CARD */
+
+.feature-card.highlight {
+  background: linear-gradient(135deg, #f1edff, #faf9ff);
+  border-color: #dcd6ff;
+}
+.pricing-proof {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pricing-proof-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 900px) {
+  .pricing-shell {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+
+  .pricing-features {
+    grid-template-columns: 1fr;
+  }
+}
+.pricing-stars {
+  color: #1f1f1f; /* or inherit */
+  font-size: 12px;
+  letter-spacing: 1px;
+}

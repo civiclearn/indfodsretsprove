@@ -1,0 +1,86 @@
+[
+  {
+    "q": "Hvor ligger Aarhus?",
+    "options": ["I Jylland", "På Fyn", "På Sjælland"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvor i Danmark ligger København?",
+    "options": ["På Sjælland", "I Jylland", "På Fyn"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Over hvilket farvand blev der først indviet en bro?",
+    "options": ["Lillebælt", "Øresund", "Storebælt"],
+    "correctIndex": 0
+  },
+  {
+    "q": "I hvilket årti blev den første Lillebæltsbro åbnet?",
+    "options": ["I 1930'erne", "I 1960erne", "I 1990'erne"],
+    "correctIndex": 0
+  },
+  {
+    "q": "I hvilket år blev Øresundsbroen åbnet?",
+    "options": ["I 2000", "I 1985", "I 1970"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvor højt er Danmarks højeste naturlige punkt?",
+    "options": [
+      "Cirka 170 meter over havets overflade",
+      "Cirka 470 meter over havets overflade",
+      "Cirka 770 meter over havets overflade"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvor ligger Danmarks højeste naturlige punkt?",
+    "options": ["I Østjylland", "I Nordsjælland", "I Sønderjylland"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvilken ø er blandt andet kendt for sine runde kirker?",
+    "options": ["Bornholm", "Samsø", "Langeland"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Danmark består af halvøen Jylland og en række større eller mindre øer. Hvor mange øer?",
+    "options": ["443", "29", "8"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvad hedder den største by på Fyn?",
+    "options": ["Odense", "Aalborg", "Århus"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvilke lande forbindes af Øresundsbroen?",
+    "options": ["Danmark og Sverige", "Danmark og Polen", "Danmark og Tyskland"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvilket land grænser Danmark op til ved landegrænsen i Sønderjylland?",
+    "options": ["Tyskland", "Nederlandene", "Sverige"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvor mange mennesker bor der i Danmark?",
+    "options": ["Ca. 5,8 mio.", "Ca. 41/2 mio.", "Ca. 31/2 mio."],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvor stort er Danmarks areal?",
+    "options": ["Cirka 43.000 km2", "Cirka 163.000 km2", "Cirka 283.000 km2"],
+    "correctIndex": 0
+  },
+  {
+    "q": "I hvilken landsdel ligger Århus?",
+    "options": ["Jylland", "Sjælland", "Fyn"],
+    "correctIndex": 0
+  },
+  {
+    "q": "Hvilken by er Danmarks største?",
+    "options": ["København", "Århus", "Odense"],
+    "correctIndex": 0
+  }
+]

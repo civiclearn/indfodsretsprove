@@ -1,0 +1,118 @@
+[
+  {
+    "title": "Det danske demokrati",
+    "desc": "Grundlov, Folketing, valg og magtens tredeling – eksamensrelevant overblik.",
+    "url": "/demokrati/",
+    "image": "/assets/images/articles/demokrati.webp"
+  },
+  {
+    "title": "Danmarks historie",
+    "desc": "De vigtigste historiske perioder, begivenheder og personer.",
+    "url": "/historie/",
+    "image": "/assets/images/articles/historie.webp"
+  },
+  {
+    "title": "Dansk kulturliv",
+    "desc": "Kunst, litteratur, film og kultur – det, du skal kende til prøven.",
+    "url": "/kulturliv/",
+    "image": "/assets/images/articles/kulturliv.webp"
+  },
+  {
+    "title": "Økonomi og velfærd i Danmark",
+    "desc": "Skat, arbejdsmarked og velfærdsstat forklaret kort og klart.",
+    "url": "/oekonomi/",
+    "image": "/assets/images/articles/oekonomi.webp"
+  },
+  {
+    "title": "Temaopslag",
+    "desc": "Vigtige temaer samlet på tværs af historie, demokrati og samfund.",
+    "url": "/temaopslag/",
+    "image": "/assets/images/articles/temaopslag.webp"
+  },
+  {
+    "title": "Danmark og omverdenen",
+    "desc": "EU, internationale relationer og Danmarks rolle i verden.",
+    "url": "/danmark-og-omverdenen/",
+    "image": "/assets/images/articles/danmark-og-omverdenen.webp"
+  },
+
+  {
+    "title": "Vikingetiden",
+    "desc": "Kort og eksamensrelevant overblik over vikingetiden i Danmark.",
+    "url": "/forbered-dig/vikingetiden/",
+    "image": "/assets/images/articles/vikingetiden.webp"
+  },
+  {
+    "title": "Kunst i Danmark",
+    "desc": "Dansk kunst, arkitektur og kulturarv – det vigtigste til prøven.",
+    "url": "/forbered-dig/kunst/",
+    "image": "/assets/images/articles/kunst.webp"
+  },
+  {
+    "title": "Kirke og religion",
+    "desc": "Folkekirken, trosfrihed og religionens rolle i Danmark.",
+    "url": "/forbered-dig/kirke-og-religion/",
+    "image": "/assets/images/articles/kirke-og-religion.webp"
+  },
+  {
+    "title": "Færøerne",
+    "desc": "Færøernes status, selvstyre og forhold til Danmark.",
+    "url": "/forbered-dig/faeroeerne/",
+    "image": "/assets/images/articles/faeroeerne.webp"
+  },
+
+  {
+    "title": "Hvad skal man kunne til indfødsretsprøven?",
+    "desc": "Overblik over emner og krav i den officielle prøve.",
+    "url": "/artikler/hvad-skal-man-kunne-til-indfodsretsproven/index.html",
+    "image": "/assets/images/articles/hvad-skal-man-kunne-til-indfodsretsproven.webp"
+  },
+  {
+    "title": "Hvordan foregår indfødsretsprøven?",
+    "desc": "Format, regler og hvad du kan forvente på prøvedagen.",
+    "url": "/artikler/hvordan-foregar-indfodsretsproven/index.html",
+    "image": "/assets/images/articles/hvordan-foregar-indfodsretsproven.webp"
+  },
+  {
+    "title": "Hvad sker der, hvis man ikke består indfødsretsprøven?",
+    "desc": "Konsekvenser og muligheder, hvis man dumper prøven.",
+    "url": "/artikler/hvad-sker-der-hvis-man-ikke-bestar-indfodsretsproven/index.html",
+    "image": "/assets/images/articles/hvad-sker-der-hvis-man-ikke-bestar-indfodsretsproven.webp"
+  },
+  {
+    "title": "Indfødsretsprøven 2026",
+    "desc": "Vigtige datoer, regler og forberedelse til 2026.",
+    "url": "/artikler/indfodsretsproven-2026/index.html",
+    "image": "/assets/images/articles/indfodsretsproven-2026.webp"
+  },
+  {
+    "title": "Særlige vilkår ved indfødsretsprøven",
+    "desc": "Dysleksi og andre særlige behov – muligheder for støtte.",
+    "url": "/artikler/indfodsretsproven-saerlige-vilkar-dysleksi/index.html",
+    "image": "/assets/images/articles/indfodsretsproven-saerlige-vilkar-dysleksi.webp"
+  },
+  {
+    "title": "Indfødsretsprøve vs. medborgerskabsprøve",
+    "desc": "Forskelle, formål og hvem der skal tage hvilken prøve.",
+    "url": "/artikler/indfodsretsprove-vs-medborgerskabsprove/index.html",
+    "image": "/assets/images/articles/indfodsretsprove-vs-medborgerskabsprove.webp"
+  },
+  {
+    "title": "Krav til dansk statsborgerskab",
+    "desc": "De centrale krav samlet ét sted.",
+    "url": "/artikler/krav-til-dansk-statsborgerskab/index.html",
+    "image": "/assets/images/articles/krav-til-dansk-statsborgerskab.webp"
+  },
+  {
+    "title": "Top 10: Dansk geografi",
+    "desc": "De vigtigste geografiske fakta til indfødsretsprøven.",
+    "url": "/artikler/top-10-dansk-geografi-indfodsretsprove/index.html",
+    "image": "/assets/images/articles/top-10-dansk-geografi-indfodsretsprove.webp"
+  },
+  {
+    "title": "Top 10: Dansk litteratur",
+    "desc": "De vigtigste forfattere og værker til prøven.",
+    "url": "/artikler/top-10-dansk-litteratur-indfodsretsprove/index.html",
+    "image": "/assets/images/articles/top-10-dansk-litteratur-indfodsretsprove.webp"
+  }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "id": "DK_ECON_001",
+    "topic": "arbejdsmarked",
+    "q": "Hvad er et samarbejdsudvalg?",
+    "options": [
+      "Et udvalg på en arbejdsplads med repræsentanter fra ledelsen og de ansatte",
+      "Et udvalg, hvor ledere i offentlige og private virksomheder samarbejder"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_002",
+    "topic": "arbejdsmarked",
+    "q": "Må en arbejdsgiver fyre en ansat kvinde, fordi hun er gravid?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_003",
+    "topic": "arbejdsmarked",
+    "q": "Hvem repræsenterer DA, når der skal forhandles kollektive overenskomster på det danske arbejdsmarked?",
+    "options": ["Arbejdsgiverne", "Regeringen", "Lønmodtagerne"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_004",
+    "topic": "arbejdsmarked",
+    "q": "Hvor stor en andel af danske lønmodtagere er medlem af en faglig organisation?",
+    "options": ["Ca. 70 %", "Ca. 50 %", "Ca. 90 %"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_005",
+    "topic": "arbejdsmarked",
+    "q": "Hvad er en kollektiv overenskomst?",
+    "options": [
+      "En aftale mellem en fagforening og en arbejdsgiverorganisation om løn- og arbejdsvilkår",
+      "En aftale mellem staten, regionerne og kommunerne om fordeling af skatteindtægter"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_006",
+    "topic": "arbejdsmarked",
+    "q": "Hvor stor en del af alle lønmodtagere arbejder i dag i den offentlige sektor?",
+    "options": ["Cirka en tredjedel", "Cirka to tredjedele"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_007",
+    "topic": "arbejdsmarked",
+    "q": "Hvordan har dagpengeperioden for arbejdsløse udviklet sig siden 1994?",
+    "options": ["Den er blevet kortere", "Den er blevet længere", "Den er uændret"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_008",
+    "topic": "arbejdsmarked",
+    "q": "Hvor stor en andel af kvinder i Danmark mellem 16 og 64 år er i beskæftigelse?",
+    "options": ["Cirka 75 procent", "Cirka 45 procent", "Cirka 60 procent"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_009",
+    "topic": "arbejdsmarked",
+    "q": "Hvordan har arbejdsløsheden i Danmark overordnet udviklet sig de sidste ti år?",
+    "options": ["Den er faldet", "Den er vokset"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_010",
+    "topic": "arbejdsmarked",
+    "q": "Har lønmodtagere pligt til at være medlem af en fagforening?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_011",
+    "topic": "arbejdsmarked",
+    "q": "Bestemmer man selv, om man vil være medlem af en fagforening?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_012",
+    "topic": "arbejdsmarked",
+    "q": "Fra hvilken alder må man arbejde i sin fritid?",
+    "options": ["Fra man er 13 år", "Fra man er 10 år", "Fra man er 8 år"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_013",
+    "topic": "arbejdsmarked",
+    "q": "Er det gratis at være medlem af en fagforening?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_014",
+    "topic": "arbejdsmarked",
+    "q": "Hvor mange procent af lønmodtagerne i Danmark er medlem af en a-kasse?",
+    "options": ["Ca. 70 %", "Ca. 40 %", "Ca. 20 %"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_015",
+    "topic": "arbejdsmarked",
+    "q": "Hvor mange timer er en arbejdsuge normalt i Danmark?",
+    "options": ["37 timer", "30 timer", "45 timer"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_ECON_016",
+    "topic": "arbejdsmarked",
+    "q": "Hvilket af følgende områder har Septemberforliget fra 1899 i særlig høj grad haft betydning for?",
+    "options": ["Det danske arbejdsmarked", "Det danske skattesystem", "Det danske uddannelsessystem"],
+    "correctIndex": 0
+  }
+]

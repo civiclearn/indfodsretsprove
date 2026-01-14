@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Seneste indfødsretsprøve – 26. november 2025 | indfodsretsprove.dk</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://indfodsretsprove.dk/seneste-indfodsretsprove" />
+
+  <meta name="description"
+    content="Information om den seneste indfødsretsprøve afholdt den 26. november 2025. Se prøvens struktur, vigtige datoer og hvordan du bedst forbereder dig til indfødsretsprøven." />
+
+  <meta name="keywords"
+    content="seneste indfødsretsprøve, indfødsretsprøve november 2025, indfødsretsprøven 26 november, dansk statsborgerskab prøve, forberedelse indfødsretsprøven" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seneste indfødsretsprøve – 26. november 2025" />
+  <meta property="og:description"
+    content="Overblik over den seneste indfødsretsprøve afholdt den 26. november 2025 samt vejledning til forberedelse." />
+  <meta property="og:url" content="https://indfodsretsprove.dk/seneste-indfodsretsprove" />
+  <meta property="og:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Seneste indfødsretsprøve – 26. november 2025" />
+  <meta name="twitter:description"
+    content="Se information om indfødsretsprøven af 26. november 2025 og hvordan du forbereder dig bedst." />
+  <meta name="twitter:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg" />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/testpages.css">
+</head>
+
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark">
+        <div class="brand-title">Indfodsretsprove.dk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/gratis-prove/">Gratis test</a>
+        <a href="/kontakt/">Kontakt</a>
+		<a href="https://civiclearn.com/denmark/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        drevet af <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/denmark/checkout" class="btn-small-purple">Få fuld adgang</a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+<section id="freeTestIntro" class="free-test-intro">
+  <div class="free-test-intro-inner">
+
+    <button class="intro-dismiss" aria-label="Skjul introduktion">
+      ✕
+    </button>
+
+    <h2 class="intro-title">
+  Seneste indfødsretsprøve
+  <span class="intro-date-pill">26. november 2025</span>
+</h2>
+
+    <p>
+      Denne side viser den <strong>senest afholdte indfødsretsprøve</strong>,
+      sammensat ud fra de <strong>officielle spørgsmål</strong>, som blev brugt
+      ved den seneste prøveafholdelse.
+    </p>
+
+    <p>
+      Prøven følger samme <strong>format, struktur og sværhedsgrad</strong>
+      som den rigtige indfødsretsprøve:
+      45 spørgsmål med faste svarmuligheder og de samme officielle beståkrav.
+    </p>
+
+    <div class="intro-rules">
+      <h3>For at bestå prøven skal du:</h3>
+      <ul>
+        <li>svare rigtigt på <strong>mindst 36 ud af 45 spørgsmål</strong></li>
+        <li>have <strong>højst én fejl</strong> i de
+          <strong>5 spørgsmål om danske værdier</strong></li>
+      </ul>
+    </div>
+
+    <p>
+      Du har <strong>45 minutter</strong> til at gennemføre prøven,
+      svarende til cirka <strong>ét minut pr. spørgsmål</strong>,
+      præcis som ved den officielle prøve.
+    </p>
+
+    <p class="intro-note">
+      Denne visning er til orientering og træning.
+      Resultatet kan ikke bruges som officielt bevis,
+      og kommende prøver kan indeholde andre spørgsmål.
+    </p>
+
+    <button class="intro-cta">
+      Luk introduktion
+    </button>
+
+  </div>
+</section>
+
+
+  <div class="test-header">
+    <div>
+      <div class="badge">Gratis test – 45 spørgsmål</div>
+      <div class="progress" id="progressLabel">Spørgsmål 1 af 45 · Point 0</div>
+    </div>
+    <div class="timer badge" id="timer">45:00</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-title" id="qTitle">…</div>
+    <div class="choices" id="choices"></div>
+
+    <div class="controls">
+      <button class="btn secondary" id="btnPrev" disabled>← Forrige</button>
+      <button class="btn" id="btnNext" disabled>Næste →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultPanel" class="result-panel" style="display:none;">
+    <h2>Testresultat</h2>
+    <div id="gradeStamp" class="result-stamp"></div>
+    <p id="resultText" class="result-text"></p>
+
+    <div class="result-chart-container">
+      <canvas id="resultChart"></canvas>
+    </div>
+
+    <div class="cta">
+      <a href="https://civiclearn.com/denmark/checkout" class="btn">
+        Få fuld adgang til alle prøver
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2026 <span class="cl-footer-brand">CivicLearn</span> — Alle rettigheder forbeholdes.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+/* ======================================================
+   GRATIS PRØVE — INDFØDSRETSPRØVEN (OFFICIELLE REGLER)
+   - 45 spørgsmål
+   - Bestå: mindst 36/45
+   - Danske værdier: sidste 5 spørgsmål, max 1 fejl (>= 4/5)
+   - Timer: 45 minutter
+   ====================================================== */
+
+// Q format: first option is correct (same convention as your existing prototype)
+const QUESTIONS = [
+  { q: "Hvilken politisk bevægelse var rødstrømpebevægelsen en del af?", a: ["Kvindebevægelsen i 70’erne", "Arbejderbevægelsen i 30’erne", "Miljøbevægelsen i 90’erne"] },
+  { q: "Var Danmark besat af tyske tropper under 1. verdenskrig (1914-18)?", a: ["Nej", "Ja"] },
+  { q: "Over hvilket farvand åbnede en bro i 1935?", a: ["Lillebælt", "Storebælt", "Øresund"] },
+  { q: "Hvornår blev det ved en folkeafstemning i Island besluttet at oprette en republik, der var uafhængig af Danmark?", a: ["1944", "1904", "1984"] },
+  { q: "Hvilket parti tilhørte Helle Thorning-Schmidt, da hun var statsminister i perioden 2011-15?", a: ["Socialdemokraterne", "Radikale Venstre", "Venstre"] },
+  { q: "Kan en regering bestå af et eller flere partier, der ikke tilsammen har flertal i Folketinget?", a: ["Ja", "Nej"] },
+  { q: "Hvor høj er valgdeltagelsen normalt til folketingsvalg?", a: ["Cirka 85 procent", "Cirka 70 procent", "Cirka 55 procent"] },
+  { q: "Hvem er den lovgivende, den udøvende og den dømmende magt fordelt mellem?", a: ["Folketinget, regeringen og domstolene", "Folketinget, kommunerne og domstolene", "Regeringen, regionerne og kommunerne"] },
+  { q: "Hvad er Sofie Gråbøl (f. 1968) særligt kendt for?", a: ["Hun er skuespiller", "Hun er forfatter", "Hun er kunstmaler"] },
+  { q: "Hvad hed forsangeren i bandet Gasolin?", a: ["Kim Larsen", "Michael Bundesen", "Steffen Brandt"] },
+  { q: "Hvilken af følgende fortællinger er skrevet af H.C. Andersen?", a: ["Den grimme ælling", "Skønheden og udyret", "Hans og Grete"] },
+  { q: "Hvem er kendt for at have skrevet manuskriptet til tv-serien Matador?", a: ["Lise Nørgaard", "Anders Thomas Jensen", "Nils Malmros"] },
+  { q: "Hvilket af følgende årtier var især kendetegnet ved høj vækst, fuld beskæftigelse og stor stigning i produktionen?", a: ["1960’erne", "1970’erne", "1980’erne"] },
+  { q: "Hvilken af følgende virksomheder er kendt for at producere vindmøller?", a: ["Vestas", "Mærsk", "Novo Nordisk"] },
+  { q: "Hvad er den kriminelle lavalder i Danmark?", a: ["15 år", "12 år", "18 år"] },
+  { q: "Hvilken ændring trådte i kraft i 2025 angående den fri abort?", a: ["Grænsen for fri abort blev hævet fra 12 til 18 uger", "Grænsen for fri abort blev sænket fra 12 til 9 uger"] },
+  { q: "Hvad indebar den seneste ændring af grundloven i 1953 blandt andet?", a: ["At kvinder fik mulighed for at arve tronen", "At valgretsalderen blev sænket til 18 år", "At Danmark blev medlem af FN"] },
+  { q: "Hvilket af følgende partier er ældst?", a: ["Radikale Venstre", "SF", "Enhedslisten"] },
+  { q: "Hvilket land blev Dansk Vestindien solgt til i 1917?", a: ["USA", "Storbritannien", "Frankrig"] },
+  { q: "Fik kvinder valgret til Folketinget med grundloven i 1849?", a: ["Nej", "Ja"] },
+  { q: "Hvilket symbol indgår i Grønlands flag?", a: ["En cirkel", "En trekant", "Et kors"] },
+  { q: "Gælder grundloven på Færøerne og i Grønland?", a: ["Ja", "Nej"] },
+  { q: "Hvilken tidligere dansk statsminister var generalsekretær for NATO i 2009-2014?", a: ["Anders Fogh Rasmussen", "Poul Nyrup Rasmussen", "Lars Løkke Rasmussen"] },
+  { q: "Hvilket kontinent modtager den største andel af Danmarks udviklingsbistand?", a: ["Afrika", "Sydamerika", "Asien"] },
+  { q: "Er Europa-Parlamentets medlemmer direkte valgt af befolkningerne i EU’s medlemslande?", a: ["Ja", "Nej"] },
+  { q: "Hvad handler Paris-aftalen, som FN vedtog i 2015, især om?", a: ["Klima", "Forsvar", "Kriminalitet"] },
+  { q: "Har Danmark forbehold for EU’s forsvars- og sikkerhedspolitik?", a: ["Nej", "Ja"] },
+  { q: "Hvilket af følgende lande blev erobret af Svend Tveskæg i 1000-tallet?", a: ["England", "Polen", "Frankrig"] },
+  { q: "Hvad hedder den ældste by i Danmark?", a: ["Ribe", "Esbjerg", "Frederikshavn"] },
+  { q: "Hvad indebar stavnsbåndet i 1700-tallet?", a: ["At bønderne havde begrænset ret til at flytte", "At kongen havde eneret på at handle med udlandet", "At kristendommen var den eneste tilladte religion"] },
+  { q: "Hvilken af følgende åbnede i Danmark i 1840'erne?", a: ["Den første jernbane", "Den første motorvej", "Den første lufthavn"] },
+  { q: "På hvilket slot i København bor kongen og hans familie en del af året?", a: ["Amalienborg", "Rosenborg", "Christiansborg"] },
+  { q: "Hvilket af følgende områder har kommunerne ansvaret for at drive?", a: ["Folkeskolerne", "Domstolene", "Sygehusene"] },
+  { q: "Hvilke myndigheder udskriver skatter?", a: ["Staten og kommunerne", "Staten og regionerne", "Regionerne og kommunerne"] },
+  { q: "Hvilket år fik personer af samme køn ret til at indgå et registreret partnerskab?", a: ["1989", "1972", "1955"] },
+  { q: "Hvad har Danmark formandskabet for mellem 1. juli og 31. december 2025?", a: ["Rådet for Den Europæiske Union", "FN’s Sikkerhedsråd", "Nordisk Ministerråd"] },
+  { q: "Hvilket parti fik flest stemmer på landsplan ved kommunalvalget den 18. november 2025?", a: ["Socialdemokratiet", "Venstre", "Det Konservative Folkeparti"] },
+  { q: "Hvilken dansk cykelrytter vandt Vuelta a España i 2025?", a: ["Jonas Vingegaard", "Mattias Skjelmose", "Magnus Cort"] },
+  { q: "På hvilke af følgende dagligvarer er priserne steget mest det seneste år (okt. 2024–okt. 2025)?", a: ["Okse- og kalvekød", "Mel og gryn", "Friske grøntsager"] },
+  { q: "Hvorfor blev Københavns Lufthavn lukket om aftenen den 22. september 2025?", a: ["Der var rapporteret droner ved lufthavnen", "Medarbejderne strejkede", "En stormflod ramte lufthavnen"] },
+
+  // --- DANSKE VÆRDIER (sidste 5) ---
+  { q: "Kan man ifølge dansk lov blive straffet med fængsel i 16 år, hvis man med vold eller trussel om vold forsøger at forhindre Folketinget i at træffe en beslutning?", a: ["Ja", "Nej"], values: true },
+  { q: "Er der i dansk lov en regel om, at en arbejdsgiver skal give kvinder og mænd lige løn for samme arbejde?", a: ["Ja", "Nej"], values: true },
+  { q: "Er det som udgangspunkt strafbart at udtale sig kritisk om andres religion?", a: ["Nej", "Ja"], values: true },
+  { q: "Hvor stor en andel af borgerne i Danmark finder det uacceptabelt, at en mand indimellem slår sin partner?", a: ["94 procent", "65 procent", "37 procent"], values: true },
+  { q: "Hvor stor en andel af borgerne i Danmark har tillid til, at politiet vil hjælpe dem, hvis de har brug for det?", a: ["Cirka 85 procent", "Cirka 60 procent", "Cirka 35 procent"], values: true }
+];
+
+
+/* --- Official scoring rules (as you specified) --- */
+const TOTAL_QUESTIONS = 45;
+const PASS_TOTAL = 36;
+const VALUES_COUNT = 5;
+const MAX_VALUES_ERRORS = 1;
+const TEST_MINUTES = 45;
+
+/* --- Safety checks --- */
+if (QUESTIONS.length !== TOTAL_QUESTIONS) {
+  console.error("Gratis prøve: QUESTIONS must be exactly 45. Current:", QUESTIONS.length);
+}
+
+/* --- helpers --- */
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* --- Build model (first answer is correct, but choices are shuffled) --- */
+const model = QUESTIONS.map((item, idx) => {
+  const correct = item.a[0];
+  const shuffled = shuffle(item.a);
+  return {
+    index: idx,
+    text: item.q,
+    isValues: !!item.values,
+    choices: shuffled.map(opt => ({ text: opt, isCorrect: opt === correct })),
+    answered: false,
+    pickedIndex: -1
+  };
+});
+
+/* --- DOM --- */
+const qTitle = document.getElementById('qTitle');
+const choicesEl = document.getElementById('choices');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const progressLabel = document.getElementById('progressLabel');
+const timerEl = document.getElementById('timer');
+
+const resultPanel = document.getElementById('resultPanel');
+const resultText = document.getElementById('resultText');
+const gradeStamp = document.getElementById('gradeStamp');
+
+/* --- State --- */
+let qi = 0;
+let score = 0;
+let valuesScore = 0;
+const total = model.length;
+
+/* --- Timer (45 minutes) --- */
+let timerSec = TEST_MINUTES * 60;
+timerEl.textContent = `${String(TEST_MINUTES).padStart(2,'0')}:00`;
+
+const timerInt = setInterval(() => {
+  timerSec--;
+  if (timerSec < 0) {
+    clearInterval(timerInt);
+    finishTest();
+    return;
+  }
+  const m = Math.floor(timerSec / 60).toString().padStart(2, '0');
+  const s = (timerSec % 60).toString().padStart(2, '0');
+  timerEl.textContent = `${m}:${s}`;
+}, 1000);
+
+/* --- Render --- */
+function renderQuestion() {
+  const q = model[qi];
+
+  // label values questions clearly (last 5)
+  const prefix = q.isValues ? "Danske værdier · " : "";
+  qTitle.textContent = prefix + q.text;
+
+  choicesEl.innerHTML = "";
+
+  q.choices.forEach((c, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (q.answered ? ' disabled' : '');
+    btn.textContent = c.text;
+    btn.addEventListener('click', () => pick(idx));
+    choicesEl.appendChild(btn);
+  });
+
+  btnPrev.disabled = (qi === 0);
+  btnNext.disabled = false;
+
+  // show both scores in-progress (helps users understand values weight)
+  const valuesInfo = ` · Værdier ${valuesScore}/${VALUES_COUNT}`;
+  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}${valuesInfo}`;
+
+  if (q.answered) applyRevealStyles();
+
+  btnNext.textContent = (qi === total - 1) ? "Se resultat →" : "Næste →";
+}
+
+/* --- Pick --- */
+function pick(idx) {
+  const q = model[qi];
+  if (q.answered) return;
+
+  q.answered = true;
+  q.pickedIndex = idx;
+
+  const correct = q.choices[idx].isCorrect;
+  if (correct) {
+    score++;
+    if (q.isValues) valuesScore++;
+  }
+
+  applyRevealStyles();
+
+  btnNext.disabled = false;
+
+  const valuesInfo = ` · Værdier ${valuesScore}/${VALUES_COUNT}`;
+  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}${valuesInfo}`;
+
+  btnNext.textContent = (qi === total - 1) ? "Se resultat →" : "Næste →";
+}
+
+/* --- Reveal styling (same behavior as your existing prototype) --- */
+function applyRevealStyles() {
+  const q = model[qi];
+  const buttons = Array.from(choicesEl.querySelectorAll('button'));
+  buttons.forEach((btn, i) => {
+    const choice = q.choices[i];
+    btn.classList.add('disabled');
+    if (choice.isCorrect) btn.classList.add('correct');
+    if (q.pickedIndex === i && !choice.isCorrect) btn.classList.add('wrong');
+  });
+}
+
+/* --- Navigation --- */
+btnPrev.addEventListener('click', () => {
+  if (qi > 0) { qi--; renderQuestion(); }
+});
+
+btnNext.addEventListener('click', () => {
+  if (!model[qi].answered) return;
+  if (qi === total - 1) finishTest();
+  else { qi++; renderQuestion(); }
+});
+
+/* --- Finish + grading (official rules) --- */
+function finishTest() {
+  clearInterval(timerInt);
+
+  const wrong = total - score;
+  const valuesWrong = VALUES_COUNT - valuesScore;
+
+  const passedTotal = score >= PASS_TOTAL;
+  const passedValues = valuesWrong <= MAX_VALUES_ERRORS;
+  const pass = passedTotal && passedValues;
+
+  gradeStamp.textContent = pass ? "Bestået!" : "Ikke bestået";
+  gradeStamp.className = "result-stamp " + (pass ? "pass" : "fail");
+
+  let reason = "";
+  if (pass) {
+    reason = "Du opfylder både kravet om mindst 36 rigtige og værdikravet (max 1 fejl).";
+  } else if (!passedTotal && passedValues) {
+    reason = `Du mangler rigtige svar samlet. Kravet er mindst ${PASS_TOTAL}/45.`;
+  } else if (passedTotal && !passedValues) {
+    reason = "Du har for mange fejl i danske værdier (max 1 fejl).";
+  } else {
+    reason = `Du opfylder hverken kravet om mindst ${PASS_TOTAL}/45 eller værdikravet.`;
+  }
+
+  resultText.textContent =
+    `Slutscore: ${score}/45. Forkerte: ${wrong}. ` +
+    `Danske værdier: ${valuesScore}/5 (fejl: ${valuesWrong}). ` +
+    reason;
+
+  renderChart(score, wrong);
+
+  // show result panel (same id as your prototype)
+  if (resultPanel) resultPanel.style.display = "block";
+}
+
+/* --- Chart --- */
+function renderChart(correct, wrong) {
+  const canvas = document.getElementById('resultChart');
+  if (!canvas || !window.Chart) return;
+
+  const ctx = canvas.getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Korrekte', 'Forkerte'],
+      datasets: [{ data: [correct, wrong] }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: 'Fordeling af svar (45 spørgsmål)' }
+      }
+    }
+  });
+}
+
+/* --- Start --- */
+renderQuestion();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const intro = document.getElementById("freeTestIntro");
+  if (!intro) return;
+
+  function hideIntro() {
+    intro.style.display = "none";
+  }
+
+  const closeBtn = intro.querySelector(".intro-dismiss");
+  const ctaBtn   = intro.querySelector(".intro-cta");
+
+  if (closeBtn) closeBtn.addEventListener("click", hideIntro);
+  if (ctaBtn)   ctaBtn.addEventListener("click", hideIntro);
+});
+</script>
+
+
+
+
+</body>
+</html>

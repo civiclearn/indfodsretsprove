@@ -1,0 +1,142 @@
+[
+  {
+    "id": "DK_DEM_001",
+    "topic": "demokrati",
+    "q": "Kan et folketingsmedlem, som træder ud af sit parti, fortsat sidde i Folketinget?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_002",
+    "topic": "demokrati",
+    "q": "Hvem kan blive medlem af et folketingsudvalg?",
+    "options": [
+      "Kun medlemmer af Folketinget",
+      "Enhver borger",
+      "Kun embedsmænd, der er ansat i et ministerium"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_003",
+    "topic": "demokrati",
+    "q": "Hvem udskriver valg til Folketinget?",
+    "options": [
+      "Statsministeren",
+      "Folketingets Ombudsmand",
+      "Folketingets formand"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_004",
+    "topic": "demokrati",
+    "q": "Hvem underskriver en lov, før den kan træde i kraft?",
+    "options": [
+      "Kongen og en minister",
+      "Kun justitsministeren",
+      "Kun statsministeren"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_005",
+    "topic": "demokrati",
+    "q": "Hvad betyder det parlamentariske princip?",
+    "options": [
+      "At en regering ikke kan dannes eller blive ved magten, hvis den har et flertal i Folketinget imod sig",
+      "At der kun kan dannes flertalsregeringer",
+      "At der kun kan udskrives valg hvert fjerde år"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_006",
+    "topic": "demokrati",
+    "q": "Kan man vælges til Folketinget mere end én gang?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_007",
+    "topic": "demokrati",
+    "q": "Hvad hedder de fem regioner, som Danmark er inddelt i?",
+    "options": [
+      "Region Hovedstaden, Region Sjælland, Region Syddanmark, Region Midtjylland og Region Nordjylland",
+      "Region Hovedstaden, Region Sjælland, Region Syddanmark, Region Midtjylland og Bornholmsregionen",
+      "Region København, Region Roskilde, Region Odense, Region Århus og Region Aalborg"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_008",
+    "topic": "demokrati",
+    "q": "Er domstolene en del af den lovgivende magt?",
+    "options": ["Nej", "Ja"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_009",
+    "topic": "demokrati",
+    "q": "Hvad er en mindretalsregering?",
+    "options": [
+      "En regering, der består af et eller flere partier, som ikke har flertal i Folketinget",
+      "En regering, der laver love til fordel for mindretallene i samfundet"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_010",
+    "topic": "demokrati",
+    "q": "Hvornår er det grundlovsdag?",
+    "options": [
+      "Den 5. juni",
+      "Den 9. april",
+      "Den 8. marts"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_011",
+    "topic": "demokrati",
+    "q": "Er medlemmer af Folketinget normalt medlem af et politisk parti?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_012",
+    "topic": "demokrati",
+    "q": "Har regeringen den udøvende magt?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_013",
+    "topic": "demokrati",
+    "q": "Hvem er den øverste politiske leder af en kommune?",
+    "options": [
+      "En borgmester",
+      "En kontorchef",
+      "En dommer"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_014",
+    "topic": "demokrati",
+    "q": "Hvor mange procent af den voksne befolkning er medlem af et politisk parti i Danmark?",
+    "options": [
+      "Ca. 5 %",
+      "Ca. 25 %",
+      "Ca. 45 %"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "DK_DEM_015",
+    "topic": "demokrati",
+    "q": "Kan man skrive til medlemmer af Folketinget, hvis man gerne vil gøre opmærksom på et problem i samfundet?",
+    "options": ["Ja", "Nej"],
+    "correctIndex": 0
+  }
+]
