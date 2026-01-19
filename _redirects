@@ -4,6 +4,7 @@
 # =====================================================
 
 # --- Core pages (extension cleanup / removed features) ---
+/spoergsmaal/*  /  301
 /ansvarsfraskrivelse.html               /ansvarsfraskrivelse                    301
 /privatslivpolitik.html                 /privatlivspolitik                      301
 /information.html                       /om-proeven                             301
