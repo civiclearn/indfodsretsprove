@@ -127,6 +127,7 @@
 
 .btn-purple {
   margin-top: 0.5rem;
+  font-family: inherit;
   align-self: flex-start;
   background: #6b4eff;
   color: #fff;
