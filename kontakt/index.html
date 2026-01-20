@@ -49,6 +49,63 @@
   </div>
 </header>
 
+<main class="contact-main">
+
+  <h1>Kontakt</h1>
+
+  <!-- PRE-FORM INFORMATION -->
+  <section class="contact-info-stack">
+
+    <div class="contact-info-card info-warning">
+      <h3>Forkert eller glemt e-mail?</h3>
+      <p>
+        Hvis du ikke er sikker på, hvilken e-mail du brugte, kan vi hjælpe.
+        Angiv dit navn og cirka købsdato i beskeden nedenfor.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-form-wrapper">
+
+    <form id="contactForm" class="contact-form">
+
+      <!-- Honeypot (anti-bot) -->
+      <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+
+      <div class="field">
+        <label>Navn*</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="field">
+        <label>E-mail*</label>
+        <input type="email" name="_replyto" required>
+      </div>
+
+      <div class="field">
+        <label>Besked*</label>
+        <textarea name="message" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-purple">
+        Send beskeden
+      </button>
+
+      <div id="successMessage" class="contact-feedback success">
+        Din besked er sendt.
+      </div>
+
+      <div id="errorMessage" class="contact-feedback error">
+        Der opstod en fejl. Prøv igen.
+      </div>
+
+    </form>
+
+  </section>
+
+</main>
 
 
 <footer class="cl-footer">
