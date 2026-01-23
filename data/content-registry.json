@@ -35,5 +35,34 @@
   "section": "historie",
   "title": "Absalon og middelalderens magt",
   "publish_at": "2026-02-01"
+},
+{
+  "url": "/artikler/danmarks-historie-overblik/",
+  "type": "article",
+  "section": "historie",
+  "title": "Danmarks historie – overblik og perioder",
+  "publish_at": "2026-01-25"
+},
+{
+  "url": "/artikler/vikingetiden-i-danmark/",
+  "type": "article",
+  "section": "historie",
+  "title": "Vikingetiden i Danmark",
+  "publish_at": "2026-03-01"
+},
+{
+  "url": "/artikler/middelalderen-og-kirkens-magt/",
+  "type": "article",
+  "section": "historie",
+  "title": "Middelalderen og kirkens magt",
+  "publish_at": "2026-02-20"
+},
+{
+  "url": "/artikler/absalon-og-valdemarerne/",
+  "type": "article",
+  "section": "historie",
+  "title": "Absalon og Valdemarerne",
+  "publish_at": "2026-03-10"
 }
+
 ]
