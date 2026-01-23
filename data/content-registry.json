@@ -344,4 +344,40 @@
   "title": "Internationale missioner",
   "publish_at": "2027-01-10"
 },
+{
+  "url": "/artikler/dansk-litteratur-klassikere/",
+  "type": "article",
+  "section": "kultur",
+  "title": "Dansk litteratur – klassikere",
+  "publish_at": "2027-01-25"
+},
+{
+  "url": "/artikler/dansk-litteratur-i-dag/",
+  "type": "article",
+  "section": "kultur",
+  "title": "Dansk litteratur i dag",
+  "publish_at": "2027-02-09"
+},
+{
+  "url": "/artikler/dansk-billedkunst/",
+  "type": "article",
+  "section": "kultur",
+  "title": "Dansk billedkunst",
+  "publish_at": "2027-02-24"
+},
+{
+  "url": "/artikler/dansk-musik/",
+  "type": "article",
+  "section": "kultur",
+  "title": "Dansk musik",
+  "publish_at": "2027-03-11"
+},
+{
+  "url": "/artikler/dansk-arkitektur-og-design/",
+  "type": "article",
+  "section": "kultur",
+  "title": "Dansk arkitektur og design",
+  "publish_at": "2027-03-26"
+},
+
 ]
