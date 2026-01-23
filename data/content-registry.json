@@ -1,16 +1,31 @@
 [
-  {
-    "url": "/demokrati/",
-    "type": "hub",
-    "section": "demokrati",
-    "title": "Det danske demokrati",
-    "publish_at": null
-  },
-  {
-    "url": "/artikler/indfodsretsproven-2026/",
-    "type": "article",
-    "section": "om-proeven",
-    "title": "Indfødsretsprøven 2026",
-    "publish_at": "2026-01-10T08:00:00Z"
-  }
+  { "url": "/", "type": "page", "section": "core", "title": "Forside", "publish_at": null },
+  { "url": "/kontakt/", "type": "page", "section": "core", "title": "Kontakt", "publish_at": null },
+  { "url": "/om-proeven/", "type": "page", "section": "core", "title": "Om indfødsretsprøven", "publish_at": null },
+  { "url": "/gratis-prove/", "type": "page", "section": "core", "title": "Gratis prøve", "publish_at": null },
+  { "url": "/find-dit-testcenter/", "type": "page", "section": "core", "title": "Find dit testcenter", "publish_at": null },
+
+  { "url": "/demokrati/", "type": "hub", "section": "demokrati", "title": "Det danske demokrati", "publish_at": null },
+  { "url": "/historie/", "type": "hub", "section": "historie", "title": "Danmarks historie", "publish_at": null },
+  { "url": "/kulturliv/", "type": "hub", "section": "kultur", "title": "Dansk kulturliv", "publish_at": null },
+  { "url": "/oekonomi/", "type": "hub", "section": "oekonomi", "title": "Økonomi og velfærd i Danmark", "publish_at": null },
+  { "url": "/temaopslag/", "type": "hub", "section": "tema", "title": "Temaopslag", "publish_at": null },
+  { "url": "/danmark-og-omverdenen/", "type": "hub", "section": "omverden", "title": "Danmark og omverdenen", "publish_at": null },
+  { "url": "/forbered-dig/", "type": "hub", "section": "forberedelse", "title": "Forbered dig", "publish_at": null },
+  { "url": "/test-centre/", "type": "hub", "section": "testcentre", "title": "Testcentre", "publish_at": null },
+
+  { "url": "/forbered-dig/vikingetiden/", "type": "article", "section": "historie", "title": "Vikingetiden", "publish_at": null },
+  { "url": "/forbered-dig/kunst/", "type": "article", "section": "kultur", "title": "Kunst i Danmark", "publish_at": null },
+  { "url": "/forbered-dig/kirke-og-religion/", "type": "article", "section": "samfund", "title": "Kirke og religion", "publish_at": null },
+  { "url": "/forbered-dig/faeroeerne/", "type": "article", "section": "rigsfaellesskab", "title": "Færøerne", "publish_at": null },
+
+  { "url": "/artikler/hvad-skal-man-kunne-til-indfodsretsproven/", "type": "article", "section": "om-proeven", "title": "Hvad skal man kunne til indfødsretsprøven?", "publish_at": null },
+  { "url": "/artikler/hvordan-foregar-indfodsretsproven/", "type": "article", "section": "om-proeven", "title": "Hvordan foregår indfødsretsprøven?", "publish_at": null },
+  { "url": "/artikler/hvad-sker-der-hvis-man-ikke-bestar-indfodsretsproven/", "type": "article", "section": "om-proeven", "title": "Hvad sker der, hvis man ikke består indfødsretsprøven?", "publish_at": null },
+  { "url": "/artikler/indfodsretsproven-2026/", "type": "article", "section": "om-proeven", "title": "Indfødsretsprøven 2026", "publish_at": null },
+  { "url": "/artikler/indfodsretsproven-saerlige-vilkar-dysleksi/", "type": "article", "section": "om-proeven", "title": "Særlige vilkår ved indfødsretsprøven", "publish_at": null },
+  { "url": "/artikler/indfodsretsprove-vs-medborgerskabsprove/", "type": "article", "section": "om-proeven", "title": "Indfødsretsprøve vs. medborgerskabsprøve", "publish_at": null },
+  { "url": "/artikler/krav-til-dansk-statsborgerskab/", "type": "article", "section": "statsborgerskab", "title": "Krav til dansk statsborgerskab", "publish_at": null },
+  { "url": "/artikler/top-10-dansk-geografi-indfodsretsprove/", "type": "article", "section": "tema", "title": "Top 10: Dansk geografi", "publish_at": null },
+  { "url": "/artikler/top-10-dansk-litteratur-indfodsretsprove/", "type": "article", "section": "kultur", "title": "Top 10: Dansk litteratur", "publish_at": null }
 ]

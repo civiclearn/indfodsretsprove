@@ -2,6 +2,7 @@ export async function onRequest({ request }) {
   const BASE_URL = "https://indfodsretsprove.dk";
   let urls = [];
 
+  // 1) Content registry (pages, hubs, articles)
   try {
     const registryUrl = new URL("/data/content-registry.json", request.url);
     const res = await fetch(registryUrl);
@@ -9,17 +10,33 @@ export async function onRequest({ request }) {
       const data = await res.json();
       const now = new Date();
 
-      urls = data
-        .filter(item => {
-          if (!item.url) return false;
-          if (!item.publish_at) return true;
-          return new Date(item.publish_at) <= now;
-        })
-        .map(item => item.url);
+      urls.push(
+        ...data
+          .filter(item => {
+            if (!item.url) return false;
+            if (!item.publish_at) return true;
+            return new Date(item.publish_at) <= now;
+          })
+          .map(item => item.url)
+      );
     }
   } catch (_) {}
 
-  // de-duplicate, just in case
+  // 2) Test centres (separate source)
+  try {
+    const centresUrl = new URL("/test-centre/centres.json", request.url);
+    const res = await fetch(centresUrl);
+    if (res.ok) {
+      const centres = await res.json();
+      urls.push(
+        ...centres
+          .map(c => `/test-centre/${c.slug}/`)
+          .filter(Boolean)
+      );
+    }
+  } catch (_) {}
+
+  // de-duplicate
   urls = [...new Set(urls)];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
