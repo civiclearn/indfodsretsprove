@@ -27,5 +27,13 @@
   { "url": "/artikler/indfodsretsprove-vs-medborgerskabsprove/", "type": "article", "section": "om-proeven", "title": "Indfødsretsprøve vs. medborgerskabsprøve", "publish_at": null },
   { "url": "/artikler/krav-til-dansk-statsborgerskab/", "type": "article", "section": "statsborgerskab", "title": "Krav til dansk statsborgerskab", "publish_at": null },
   { "url": "/artikler/top-10-dansk-geografi-indfodsretsprove/", "type": "article", "section": "tema", "title": "Top 10: Dansk geografi", "publish_at": null },
-  { "url": "/artikler/top-10-dansk-litteratur-indfodsretsprove/", "type": "article", "section": "kultur", "title": "Top 10: Dansk litteratur", "publish_at": null }
+  
+  { "url": "/artikler/top-10-dansk-litteratur-indfodsretsprove/", "type": "article", "section": "kultur", "title": "Top 10: Dansk litteratur", "publish_at": null },
+{
+  "url": "/artikler/absalon/",
+  "type": "article",
+  "section": "historie",
+  "title": "Absalon og middelalderens magt",
+  "publish_at": "2026-02-01"
+}
 ]
