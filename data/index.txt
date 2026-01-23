@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Danmark under 1. Verdenskrig | Indfødsretsprove.dk</title>
+
+  <meta name="description"
+        content="Eksamensrelevant overblik over Danmark under 1. Verdenskrig: neutralitet, forsyningskrise og politiske konsekvenser.">
+
+  <meta name="keywords"
+        content="Danmark under 1. Verdenskrig, neutralitet, 1914-1918, forsyningskrise, politik, indfødsretsprøven">
+
+  <link rel="canonical"
+        href="https://indfodsretsprove.dk/artikler/danmark-under-1-verdenskrig/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Danmark under 1. Verdenskrig">
+  <meta property="og:description"
+        content="Hvordan blev Danmark påvirket af 1. Verdenskrig, selvom landet var neutralt?">
+  <meta property="og:image"
+        content="https://indfodsretsprove.dk/assets/images/articles/1-verdenskrig.webp">
+  <meta property="og:url"
+        content="https://indfodsretsprove.dk/artikler/danmark-under-1-verdenskrig/">
+  <meta property="og:site_name" content="Indfødsretsprove.dk">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Danmark under 1. Verdenskrig">
+  <meta name="twitter:description"
+        content="Kort og klart overblik over Danmarks rolle under 1. Verdenskrig.">
+  <meta name="twitter:image"
+        content="https://indfodsretsprove.dk/assets/images/articles/1-verdenskrig.webp">
+
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark">
+        <div class="brand-title">Indfodsretsprove.dk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/om-proeven/">Om prøven</a>
+        <a href="/gratis-prove/">Gratis test</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="https://civiclearn.com/denmark/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        drevet af <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/denmark/checkout"
+         class="btn-small-purple">Opret konto</a>
+    </div>
+
+  </div>
+</header>
+
+<section class="article-hero">
+  <h1>Danmark under 1. Verdenskrig</h1>
+  <p class="article-subtitle">
+    Neutralitet, krise og politiske forandringer i perioden 1914–1918.
+  </p>
+</section>
+
+<section class="article-cta-top">
+  <h3>Forbered dig struktureret til indfødsretsprøven</h3>
+  <p>Få overblik over Danmarks rolle i globale konflikter.</p>
+  <a href="https://civiclearn.com/denmark/checkout" class="cta-purple">
+    Få fuld adgang
+  </a>
+</section>
+
+<section class="article-body">
+
+  <h2>Danmarks neutralitet</h2>
+  <p>
+    Da 1. Verdenskrig brød ud i 1914,
+    valgte Danmark at forblive neutralt.
+    Erfaringerne fra nederlaget i 1864
+    gjorde landet forsigtigt i udenrigspolitikken.
+  </p>
+  <p>
+    Neutraliteten betød,
+    at Danmark ikke deltog militært i krigen,
+    men landet blev alligevel påvirket.
+  </p>
+
+  <h2>Økonomiske og sociale konsekvenser</h2>
+  <p>
+    Krigen førte til handelsblokader
+    og mangel på varer.
+    Fødevarer blev dyre,
+    og der opstod forsyningsproblemer.
+  </p>
+  <p>
+    Staten indførte rationering
+    for at sikre befolkningens forsyning.
+  </p>
+
+  <h2>Politisk samarbejde</h2>
+  <p>
+    For at håndtere krisen
+    samarbejdede de politiske partier
+    på tværs af uenigheder.
+  </p>
+  <p>
+    Dette lagde grunden
+    for en stærkere rolle til staten
+    i økonomien og samfundet.
+  </p>
+
+  <h2>Genforeningen i 1920</h2>
+  <p>
+    Selvom Danmark var neutralt,
+    fik krigen stor betydning for landets grænser.
+    Efter krigen stemte befolkningen i Nordslesvig
+    om deres tilhørsforhold.
+  </p>
+  <p>
+    I 1920 blev Sønderjylland
+    genforenet med Danmark.
+  </p>
+
+  <h2>Hvorfor er perioden vigtig til prøven?</h2>
+  <p>
+    1. Verdenskrig viser,
+    hvordan internationale konflikter
+    også påvirker neutrale lande.
+  </p>
+  <p>
+    Perioden forklarer udviklingen
+    mod øget statslig regulering
+    og senere velfærdspolitik.
+  </p>
+
+</section>
+
+<section class="article-mini-quiz">
+  <h2>Test dig selv: Danmark og 1. Verdenskrig</h2>
+
+  <div class="mini-q-grid">
+
+    <div class="mini-q-card" data-correct="1">
+      <p class="mini-q-title">
+        Hvilken rolle havde Danmark under 1. Verdenskrig?
+      </p>
+      <button class="mini-q-option" data-id="1">Neutralt land</button>
+      <button class="mini-q-option" data-id="2">Allieret</button>
+      <button class="mini-q-option" data-id="3">Centralmagt</button>
+    </div>
+
+    <div class="mini-q-card" data-correct="2">
+      <p class="mini-q-title">
+        Hvad blev indført for at håndtere vareknaphed?
+      </p>
+      <button class="mini-q-option" data-id="1">Fri handel</button>
+      <button class="mini-q-option" data-id="2">Rationering</button>
+      <button class="mini-q-option" data-id="3">Skattelettelser</button>
+    </div>
+
+    <div class="mini-q-card" data-correct="3">
+      <p class="mini-q-title">
+        Hvad skete der i 1920 som følge af krigen?
+      </p>
+      <button class="mini-q-option" data-id="1">Indførelse af enevælde</button>
+      <button class="mini-q-option" data-id="2">Afskaffelse af Grundloven</button>
+      <button class="mini-q-option" data-id="3">Genforeningen med Sønderjylland</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="article-cta-bottom">
+  <h3>Klar til indfødsretsprøven?</h3>
+  <p>Træn målrettet og få styr på Danmarks rolle i verdenshistorien.</p>
+  <a href="https://civiclearn.com/denmark/checkout"
+     class="cta-purple">Start træningen</a>
+</section>
+
+<section class="article-related">
+  <h2>Flere artikler</h2>
+  <div class="related-grid"></div>
+</section>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © <span id="footer-year"></span>
+    <span class="cl-footer-brand">CivicLearn</span> by Testrada —
+    Alle rettigheder forbeholdes.
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.mini-q-card').forEach(card => {
+  const correctId = card.getAttribute('data-correct');
+  card.querySelectorAll('.mini-q-option').forEach(option => {
+    option.addEventListener('click', () => {
+      if (card.classList.contains('answered')) return;
+      const selected = option.getAttribute('data-id');
+      if (selected === correctId) option.classList.add('correct');
+      else option.classList.add('wrong');
+      card.querySelector(`.mini-q-option[data-id="${correctId}"]`)
+          .classList.add('correct');
+      card.classList.add('answered');
+    });
+  });
+});
+document.getElementById("footer-year").textContent =
+  new Date().getFullYear();
+</script>
+
+<script>
+(async function () {
+  const container = document.querySelector('.related-grid');
+  if (!container) return;
+
+  const currentUrl = window.location.pathname;
+
+  const res = await fetch('/artikler/articles.json');
+  const all = await res.json();
+
+  const others = all.filter(a => a.url !== currentUrl);
+  const selected = others.sort(() => Math.random() - 0.5).slice(0, 3);
+
+  container.innerHTML = selected.map(a => `
+    <a class="related-card" href="${a.url}">
+      <img src="${a.image}" alt="${a.title}">
+      <div class="related-card-body">
+        <h3>${a.title}</h3>
+        <p>${a.desc}</p>
+      </div>
+    </a>
+  `).join('');
+})();
+</script>
+
+</body>
+</html>
