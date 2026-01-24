@@ -574,14 +574,16 @@ Inkluderer spørgsmål om danske værdier og aktuelle samfundsforhold.
 <section class="home-articles">
   <div class="section-heading">
     <div class="section-kicker">Videre læsning</div>
-    <h2 class="section-title">Populære artikler om indfødsretsprøven</h2>
+    <h2 class="section-title">Udvalgte artikler til indfødsretsprøven</h2>
     <p class="section-lead">
       Baggrund, forklaringer og vigtige emner fra prøvens pensum.
     </p>
   </div>
 
   <div class="home-articles-grid" id="homeArticlesGrid"></div>
-</section>
+</section> <p class="home-articles-more">
+  <a href="/artikler/">Se alle artikler →</a>
+</p>
 
 
 
@@ -648,7 +650,7 @@ document.querySelectorAll(".faq-item").forEach(item => {
   const shuffled = all.sort(() => Math.random() - 0.5);
 
   // Take first 3
-  const selected = shuffled.slice(0, 3);
+  const selected = shuffled.slice(0, 6);
 
   grid.innerHTML = selected.map(a => `
     <a href="${a.url}" class="home-article-card">
