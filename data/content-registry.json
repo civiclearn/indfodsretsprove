@@ -29,6 +29,14 @@
   { "url": "/artikler/top-10-dansk-geografi-indfodsretsprove/", "type": "article", "section": "tema", "title": "Top 10: Dansk geografi", "publish_at": null },
   
   { "url": "/artikler/top-10-dansk-litteratur-indfodsretsprove/", "type": "article", "section": "kultur", "title": "Top 10: Dansk litteratur", "publish_at": null },
+
+{
+  "url": "/artikler/danmarks-historie-overblik/",
+  "type": "article",
+  "section": "historie",
+  "title": "Danmarks historie – overblik og perioder",
+  "publish_at": "2026-01-25"
+},
 {
   "url": "/artikler/absalon/",
   "type": "article",
@@ -37,11 +45,25 @@
   "publish_at": "2026-02-01"
 },
 {
-  "url": "/artikler/danmarks-historie-overblik/",
+  "url": "/artikler/middelalderen-og-kirkens-magt/",
   "type": "article",
   "section": "historie",
-  "title": "Danmarks historie – overblik og perioder",
-  "publish_at": "2026-01-25"
+  "title": "Middelalderen og kirkens magt",
+  "publish_at": "2026-02-08"
+},
+{
+  "url": "/artikler/regeringens-opgaver/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Regeringens opgaver",
+  "publish_at": "2026-02-15"
+},
+{
+  "url": "/artikler/kommuner-og-regioner/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Kommuner og regioner",
+  "publish_at": "2026-02-22"
 },
 {
   "url": "/artikler/vikingetiden-i-danmark/",
@@ -51,109 +73,242 @@
   "publish_at": "2026-03-01"
 },
 {
-  "url": "/artikler/middelalderen-og-kirkens-magt/",
+  "url": "/artikler/faeroeerne-i-rigsfaellesskabet/",
   "type": "article",
-  "section": "historie",
-  "title": "Middelalderen og kirkens magt",
-  "publish_at": "2026-02-20"
+  "section": "micro",
+  "title": "Færøerne i Rigsfællesskabet",
+  "publish_at": "2026-03-08"
 },
 {
   "url": "/artikler/absalon-og-valdemarerne/",
   "type": "article",
   "section": "historie",
   "title": "Absalon og Valdemarerne",
-  "publish_at": "2026-03-10"
+  "publish_at": "2026-03-15"
 },
 {
   "url": "/artikler/jellingestenene-og-kristningen/",
   "type": "article",
   "section": "historie",
   "title": "Jellingestenene og kristningen",
-  "publish_at": "2026-03-20"
+  "publish_at": "2026-03-22"
+},
+{
+  "url": "/artikler/monarkiets-rolle-i-dag/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Monarkiets rolle i dag",
+  "publish_at": "2026-03-29"
 },
 {
   "url": "/artikler/reformationen-i-danmark/",
   "type": "article",
   "section": "historie",
   "title": "Reformationen i Danmark",
-  "publish_at": "2026-04-01"
+  "publish_at": "2026-04-05"
+},
+{
+  "url": "/artikler/folketingsvalg-saadan-fungerer-det/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Folketingsvalg – sådan fungerer det",
+  "publish_at": "2026-04-12"
 },
 {
   "url": "/artikler/enevaelden-hvad-betod-den/",
   "type": "article",
   "section": "historie",
   "title": "Enevælden – hvad betød den?",
-  "publish_at": "2026-04-15"
+  "publish_at": "2026-04-19"
+},
+{
+  "url": "/artikler/stemmeret-i-danmark/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Stemmeret i Danmark",
+  "publish_at": "2026-04-26"
+},
+{
+  "url": "/artikler/politiske-partier-i-danmark/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Politiske partier i Danmark",
+  "publish_at": "2026-05-03"
 },
 {
   "url": "/artikler/grundloven-af-1849/",
   "type": "article",
   "section": "historie",
   "title": "Grundloven af 1849",
-  "publish_at": "2026-05-01"
+  "publish_at": "2026-05-10"
+},
+{
+  "url": "/artikler/domstolene/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Domstolene",
+  "publish_at": "2026-05-17"
+},
+{
+  "url": "/artikler/retssikkerhed-og-rettigheder/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Retssikkerhed og rettigheder",
+  "publish_at": "2026-05-24"
 },
 {
   "url": "/artikler/krigen-i-1864-og-konsekvenserne/",
   "type": "article",
   "section": "historie",
   "title": "Krigen i 1864 og konsekvenserne",
-  "publish_at": "2026-05-15"
+  "publish_at": "2026-05-31"
+},
+{
+  "url": "/artikler/hvad-er-velfaerdsstaten/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Hvad er velfærdsstaten",
+  "publish_at": "2026-06-07"
 },
 {
   "url": "/artikler/arbejderbevaegelsens-opstaaen/",
   "type": "article",
   "section": "historie",
   "title": "Arbejderbevægelsens opståen",
-  "publish_at": "2026-06-01"
+  "publish_at": "2026-06-14"
+},
+{
+  "url": "/artikler/skatter-i-danmark/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Skatter i Danmark",
+  "publish_at": "2026-06-21"
 },
 {
   "url": "/artikler/danmark-under-1-verdenskrig/",
   "type": "article",
   "section": "historie",
   "title": "Danmark under 1. Verdenskrig",
-  "publish_at": "2026-06-15"
+  "publish_at": "2026-06-28"
+},
+{
+  "url": "/artikler/sociale-ydelser/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Sociale ydelser",
+  "publish_at": "2026-07-05"
 },
 {
   "url": "/artikler/krisepolitik-i-1930erne/",
   "type": "article",
   "section": "historie",
   "title": "Krisepolitik i 1930’erne",
-  "publish_at": "2026-07-01"
+  "publish_at": "2026-07-12"
+},
+{
+  "url": "/artikler/den-offentlige-sektor/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Den offentlige sektor",
+  "publish_at": "2026-07-19"
 },
 {
   "url": "/artikler/samarbejdspolitikken-1940-43/",
   "type": "article",
   "section": "historie",
   "title": "Samarbejdspolitikken 1940–43",
-  "publish_at": "2026-07-15"
+  "publish_at": "2026-07-26"
+},
+{
+  "url": "/artikler/landbrugets-rolle/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Landbrugets rolle",
+  "publish_at": "2026-08-02"
 },
 {
   "url": "/artikler/modstandsbevaegelsen/",
   "type": "article",
   "section": "historie",
   "title": "Modstandsbevægelsen",
-  "publish_at": "2026-08-01"
+  "publish_at": "2026-08-09"
+},
+{
+  "url": "/artikler/industrien-i-danmark/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Industrien i Danmark",
+  "publish_at": "2026-08-16"
 },
 {
   "url": "/artikler/ungdomsoproeret-i-1960erne/",
   "type": "article",
   "section": "historie",
   "title": "Ungdomsoprøret i 1960’erne",
-  "publish_at": "2026-08-15"
+  "publish_at": "2026-08-23"
+},
+{
+  "url": "/artikler/serviceerhverv/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Serviceerhverv",
+  "publish_at": "2026-08-30"
 },
 {
   "url": "/artikler/globalisering-og-danmark-efter-1990/",
   "type": "article",
   "section": "historie",
   "title": "Globalisering og Danmark efter 1990",
-  "publish_at": "2026-09-01"
+  "publish_at": "2026-09-06"
+},
+{
+  "url": "/artikler/den-danske-model/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Den danske model",
+  "publish_at": "2026-09-13"
+},
+{
+  "url": "/artikler/fagforeninger/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Fagforeninger",
+  "publish_at": "2026-09-20"
 },
 {
   "url": "/artikler/danmark-og-eu/",
   "type": "article",
   "section": "historie",
   "title": "Danmark og EU",
-  "publish_at": "2026-10-01"
+  "publish_at": "2026-09-27"
+},
+{
+  "url": "/artikler/arbejdsloeshed-og-dagpenge/",
+  "type": "article",
+  "section": "oekonomi",
+  "title": "Arbejdsløshed og dagpenge",
+  "publish_at": "2026-10-04"
+},
+{
+  "url": "/artikler/danmark-i-eu/",
+  "type": "article",
+  "section": "omverdenen",
+  "title": "Danmark i EU",
+  "publish_at": "2026-10-11"
+},
+{
+  "url": "/artikler/eu-institutionerne/",
+  "type": "article",
+  "section": "omverdenen",
+  "title": "EU-institutionerne",
+  "publish_at": "2026-10-18"
+},
+{
+  "url": "/artikler/de-danske-eu-forbehold/",
+  "type": "article",
+  "section": "omverdenen",
+  "title": "De danske EU-forbehold i dag",
+  "publish_at": "2026-10-25"
 },
 {
   "url": "/artikler/grundlovens-vigtigste-principper/",
@@ -163,221 +318,222 @@
   "publish_at": "2026-11-01"
 },
 {
-  "url": "/artikler/magtens-tredeling/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Magtens tredeling",
-  "publish_at": "2026-12-01"
-},
-{
-  "url": "/artikler/regeringens-opgaver/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Regeringens opgaver",
-  "publish_at": "2026-02-10"
-},
-{
-  "url": "/artikler/kommuner-og-regioner/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Kommuner og regioner",
-  "publish_at": "2026-02-25"
-},
-{
-  "url": "/artikler/monarkiets-rolle-i-dag/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Monarkiets rolle i dag",
-  "publish_at": "2026-03-05"
-},
-{
-  "url": "/artikler/folketingsvalg-saadan-fungerer-det/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Folketingsvalg – sådan fungerer det",
-  "publish_at": "2026-03-25"
-},
-{
-  "url": "/artikler/stemmeret-i-danmark/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Stemmeret i Danmark",
-  "publish_at": "2026-04-05"
-},
-{
-  "url": "/artikler/politiske-partier-i-danmark/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Politiske partier i Danmark",
-  "publish_at": "2026-04-20"
-},
-{
-  "url": "/artikler/domstolene/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Domstolene",
-  "publish_at": "2026-04-25"
-},
-{
-  "url": "/artikler/retssikkerhed-og-rettigheder/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Retssikkerhed og rettigheder",
-  "publish_at": "2026-05-05"
-},
-{
-  "url": "/artikler/ytringsfrihedens-graenser/",
-  "type": "article",
-  "section": "demokrati",
-  "title": "Ytringsfrihedens grænser",
-  "publish_at": "2026-05-25"
-},
-{
-  "url": "/artikler/hvad-er-velfaerdsstaten/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Hvad er velfærdsstaten",
-  "publish_at": "2026-05-30"
-},
-{
-  "url": "/artikler/skatter-i-danmark/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Skatter i Danmark",
-  "publish_at": "2026-06-14"
-},
-{
-  "url": "/artikler/sociale-ydelser/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Sociale ydelser",
-  "publish_at": "2026-06-29"
-},
-{
-  "url": "/artikler/den-offentlige-sektor/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Den offentlige sektor",
-  "publish_at": "2026-07-14"
-},
-{
-  "url": "/artikler/landbrugets-rolle/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Landbrugets rolle",
-  "publish_at": "2026-07-29"
-},
-{
-  "url": "/artikler/industrien-i-danmark/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Industrien i Danmark",
-  "publish_at": "2026-08-13"
-},
-{
-  "url": "/artikler/serviceerhverv/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Serviceerhverv",
-  "publish_at": "2026-08-28"
-},
-{
-  "url": "/artikler/den-danske-model/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Den danske model",
-  "publish_at": "2026-09-12"
-},
-{
-  "url": "/artikler/fagforeninger/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Fagforeninger",
-  "publish_at": "2026-09-27"
-},
-{
-  "url": "/artikler/arbejdsloeshed-og-dagpenge/",
-  "type": "article",
-  "section": "oekonomi",
-  "title": "Arbejdsløshed og dagpenge",
-  "publish_at": "2026-10-12"
-},
-{
-  "url": "/artikler/danmark-i-eu/",
-  "type": "article",
-  "section": "omverdenen",
-  "title": "Danmark i EU",
-  "publish_at": "2026-10-27"
-},
-{
-  "url": "/artikler/eu-institutionerne/",
-  "type": "article",
-  "section": "omverdenen",
-  "title": "EU-institutionerne",
-  "publish_at": "2026-11-11"
-},
-{
-  "url": "/artikler/de-danske-eu-forbehold/",
-  "type": "article",
-  "section": "omverdenen",
-  "title": "De danske EU-forbehold i dag",
-  "publish_at": "2026-11-26"
-},
-{
   "url": "/artikler/fn-og-danmark/",
   "type": "article",
   "section": "omverdenen",
   "title": "FN og Danmark",
-  "publish_at": "2026-12-11"
+  "publish_at": "2026-11-08"
+},
+{
+  "url": "/artikler/magtens-tredeling/",
+  "type": "article",
+  "section": "demokrati",
+  "title": "Magtens tredeling",
+  "publish_at": "2026-11-15"
 },
 {
   "url": "/artikler/nato-og-dansk-forsvar/",
   "type": "article",
   "section": "omverdenen",
   "title": "NATO og dansk forsvar",
-  "publish_at": "2026-12-26"
+  "publish_at": "2026-11-22"
 },
 {
   "url": "/artikler/internationale-missioner/",
   "type": "article",
   "section": "omverdenen",
   "title": "Internationale missioner",
-  "publish_at": "2027-01-10"
+  "publish_at": "2026-11-29"
 },
 {
   "url": "/artikler/dansk-litteratur-klassikere/",
   "type": "article",
   "section": "kultur",
   "title": "Dansk litteratur – klassikere",
-  "publish_at": "2027-01-25"
+  "publish_at": "2026-12-06"
 },
 {
   "url": "/artikler/dansk-litteratur-i-dag/",
   "type": "article",
   "section": "kultur",
   "title": "Dansk litteratur i dag",
-  "publish_at": "2027-02-09"
+  "publish_at": "2026-12-13"
 },
 {
   "url": "/artikler/dansk-billedkunst/",
   "type": "article",
   "section": "kultur",
   "title": "Dansk billedkunst",
-  "publish_at": "2027-02-24"
+  "publish_at": "2026-12-20"
 },
 {
   "url": "/artikler/dansk-musik/",
   "type": "article",
   "section": "kultur",
   "title": "Dansk musik",
-  "publish_at": "2027-03-11"
+  "publish_at": "2026-12-27"
 },
 {
   "url": "/artikler/dansk-arkitektur-og-design/",
   "type": "article",
   "section": "kultur",
   "title": "Dansk arkitektur og design",
-  "publish_at": "2027-03-26"
+  "publish_at": "2027-01-03"
 },
+{
+  "url": "/artikler/dansk-film/",
+  "type": "article",
+  "section": "kultur",
+  "title": "Dansk film",
+  "publish_at": "2027-01-10"
+},
+{
+  "url": "/artikler/danmarks-landsdele/",
+  "type": "article",
+  "section": "micro",
+  "title": "Danmarks landsdele",
+  "publish_at": "2027-01-17"
+},
+{
+  "url": "/artikler/de-stoerste-oeer-i-danmark/",
+  "type": "article",
+  "section": "micro",
+  "title": "De største øer i Danmark",
+  "publish_at": "2027-01-24"
+},
+{
+  "url": "/artikler/danmarks-klima/",
+  "type": "article",
+  "section": "micro",
+  "title": "Danmarks klima",
+  "publish_at": "2027-01-31"
+},
+{
+  "url": "/artikler/kendte-danske-sevaerdigheder/",
+  "type": "article",
+  "section": "micro",
+  "title": "Kendte danske seværdigheder",
+  "publish_at": "2027-02-07"
+},
+{
+  "url": "/artikler/dannebrog-historie-og-betydning/",
+  "type": "article",
+  "section": "micro",
+  "title": "Dannebrog – historie og betydning",
+  "publish_at": "2027-02-14"
+},
+{
+  "url": "/artikler/kongehuset-i-dag/",
+  "type": "article",
+  "section": "micro",
+  "title": "Kongehuset i dag",
+  "publish_at": "2027-02-21"
+},
+{
+  "url": "/artikler/indvandring-gennem-tiden/",
+  "type": "article",
+  "section": "micro",
+  "title": "Indvandring gennem tiden",
+  "publish_at": "2027-02-28"
+},
+{
+  "url": "/artikler/nutidig-indvandring/",
+  "type": "article",
+  "section": "micro",
+  "title": "Nutidig indvandring",
+  "publish_at": "2027-03-07"
+},
+{
+  "url": "/artikler/groenland-i-rigsfaellesskabet/",
+  "type": "article",
+  "section": "micro",
+  "title": "Grønland i Rigsfællesskabet",
+  "publish_at": "2027-03-14"
+},
+{
+  "url": "/artikler/nordisk-samarbejde/",
+  "type": "article",
+  "section": "micro",
+  "title": "Nordisk samarbejde",
+  "publish_at": "2027-03-21"
+},
+{
+  "url": "/artikler/kendte-danske-videnskabsfolk/",
+  "type": "article",
+  "section": "micro",
+  "title": "Kendte danske videnskabsfolk",
+  "publish_at": "2027-03-28"
+},
+{
+  "url": "/artikler/folkekirken/",
+  "type": "article",
+  "section": "micro",
+  "title": "Folkekirken",
+  "publish_at": "2027-04-04"
+},
+{
+  "url": "/artikler/andre-religioner-i-danmark/",
+  "type": "article",
+  "section": "micro",
+  "title": "Andre religioner i Danmark",
+  "publish_at": "2027-04-11"
+},
+{
+  "url": "/artikler/danske-hoejtider/",
+  "type": "article",
+  "section": "micro",
+  "title": "Danske højtider",
+  "publish_at": "2027-04-18"
+},
+{
+  "url": "/artikler/danske-traditioner/",
+  "type": "article",
+  "section": "micro",
+  "title": "Danske traditioner",
+  "publish_at": "2027-04-25"
+},
+{
+  "url": "/artikler/n-f-s-grundtvig/",
+  "type": "article",
+  "section": "micro",
+  "title": "N.F.S. Grundtvig",
+  "publish_at": "2027-05-02"
+},
+{
+  "url": "/artikler/hoejskolebevaegelsen/",
+  "type": "article",
+  "section": "micro",
+  "title": "Højskolebevægelsen",
+  "publish_at": "2027-05-09"
+},
+{
+  "url": "/artikler/folkeskole-i-danmark/",
+  "type": "article",
+  "section": "micro",
+  "title": "Folkeskole i Danmark",
+  "publish_at": "2027-05-16"
+},
+{
+  "url": "/artikler/uddannelsessystemet/",
+  "type": "article",
+  "section": "micro",
+  "title": "Uddannelsessystemet i Danmark",
+  "publish_at": "2027-05-23"
+},
+{
+  "url": "/artikler/familieformer-i-danmark/",
+  "type": "article",
+  "section": "micro",
+  "title": "Familieformer i Danmark",
+  "publish_at": "2027-05-30"
+},
+{
+  "url": "/artikler/rettigheder-i-familielivet/",
+  "type": "article",
+  "section": "micro",
+  "title": "Rettigheder i familielivet",
+  "publish_at": "2027-06-06"
+},
+
 
 ]

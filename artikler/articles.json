@@ -1,118 +1,476 @@
 [
   {
-    "title": "Det danske demokrati",
-    "desc": "Grundlov, Folketing, valg og magtens tredeling – eksamensrelevant overblik.",
-    "url": "/demokrati/",
-    "image": "/assets/images/articles/demokrati.webp"
+    "url": "/artikler/./",
+    "title": "Artikler til indfødsretsprøven",
+    "image": "/assets/images/articles/hero-articles.webp",
+    "desc": "Dybdegående artikler om demokrati, historie, kultur, økonomi og Danmarks forhold til omverdenen – målrettet indfødsretsprøven."
   },
   {
-    "title": "Danmarks historie",
-    "desc": "De vigtigste historiske perioder, begivenheder og personer.",
-    "url": "/historie/",
-    "image": "/assets/images/articles/historie.webp"
+    "url": "/artikler/absalon-og-valdemarerne/",
+    "title": "Absalon og Valdemarerne",
+    "image": "/assets/images/articles/absalon-valdemarerne.webp",
+    "desc": "Forstå samarbejdet mellem Absalon og Valdemarerne og deres betydning for kongemagt og stat i middelalderens Danmark."
   },
   {
-    "title": "Dansk kulturliv",
-    "desc": "Kunst, litteratur, film og kultur – det, du skal kende til prøven.",
-    "url": "/kulturliv/",
-    "image": "/assets/images/articles/kulturliv.webp"
+    "url": "/artikler/absalon/",
+    "title": "Absalon og middelalderens magt",
+    "image": "/assets/images/articles/absalon.webp",
+    "desc": "Hvem var Absalon, og hvorfor er han vigtig i Danmarks middelalder? Eksamensrelevant overblik over kirke, kongemagt og politisk magt."
   },
   {
-    "title": "Økonomi og velfærd i Danmark",
-    "desc": "Skat, arbejdsmarked og velfærdsstat forklaret kort og klart.",
-    "url": "/oekonomi/",
-    "image": "/assets/images/articles/oekonomi.webp"
+    "url": "/artikler/andre-religioner-i-danmark/",
+    "title": "Andre religioner i Danmark",
+    "image": "/assets/images/articles/religioner.webp",
+    "desc": "Eksamensrelevant overblik over andre religioner i Danmark: religionsfrihed, hovedretninger og deres plads i det danske samfund."
   },
   {
-    "title": "Temaopslag",
-    "desc": "Vigtige temaer samlet på tværs af historie, demokrati og samfund.",
-    "url": "/temaopslag/",
-    "image": "/assets/images/articles/temaopslag.webp"
+    "url": "/artikler/arbejderbevaegelsens-opstaaen/",
+    "title": "Arbejderbevægelsens opståen",
+    "image": "/assets/images/articles/arbejderbevægelsen.webp",
+    "desc": "Eksamensrelevant overblik over arbejderbevægelsens opståen i Danmark: industrialisering, fagforeninger og politisk organisering."
   },
   {
-    "title": "Danmark og omverdenen",
-    "desc": "EU, internationale relationer og Danmarks rolle i verden.",
-    "url": "/danmark-og-omverdenen/",
-    "image": "/assets/images/articles/danmark-og-omverdenen.webp"
-  },
-
-  {
-    "title": "Vikingetiden",
-    "desc": "Kort og eksamensrelevant overblik over vikingetiden i Danmark.",
-    "url": "/forbered-dig/vikingetiden/",
-    "image": "/assets/images/articles/vikingetiden.webp"
+    "url": "/artikler/arbejdsloeshed-og-dagpenge/",
+    "title": "Arbejdsløshed og dagpenge",
+    "image": "/assets/images/articles/dagpenge.webp",
+    "desc": "Eksamensrelevant overblik over arbejdsløshed og dagpenge i Danmark: rettigheder, betingelser og rolle i velfærdsstaten."
   },
   {
-    "title": "Kunst i Danmark",
-    "desc": "Dansk kunst, arkitektur og kulturarv – det vigtigste til prøven.",
-    "url": "/forbered-dig/kunst/",
-    "image": "/assets/images/articles/kunst.webp"
+    "url": "/artikler/danmark-i-eu/",
+    "title": "Danmark i EU",
+    "image": "/assets/images/articles/danmark-eu.webp",
+    "desc": "Eksamensrelevant overblik over Danmarks rolle i EU i dag: samarbejde, indflydelse, forpligtelser og betydning for dansk politik."
   },
   {
-    "title": "Kirke og religion",
-    "desc": "Folkekirken, trosfrihed og religionens rolle i Danmark.",
-    "url": "/forbered-dig/kirke-og-religion/",
-    "image": "/assets/images/articles/kirke-og-religion.webp"
+    "url": "/artikler/danmark-og-eu/",
+    "title": "Danmark og EU",
+    "image": "/assets/images/articles/eu.webp",
+    "desc": "Eksamensrelevant overblik over Danmarks forhold til EU: medlemskab, samarbejde, forbehold og betydning for dansk politik og hverdag."
   },
   {
-    "title": "Færøerne",
-    "desc": "Færøernes status, selvstyre og forhold til Danmark.",
-    "url": "/forbered-dig/faeroeerne/",
-    "image": "/assets/images/articles/faeroeerne.webp"
+    "url": "/artikler/danmark-under-1-verdenskrig/",
+    "title": "Danmark under 1. Verdenskrig",
+    "image": "/assets/images/articles/1-verdenskrig.webp",
+    "desc": "Eksamensrelevant overblik over Danmark under 1. Verdenskrig: neutralitet, forsyningskrise og politiske konsekvenser."
   },
-
   {
+    "url": "/artikler/danmarks-historie-overblik/",
+    "title": "Danmarks historie – overblik og perioder",
+    "image": "/assets/images/articles/historie.webp",
+    "desc": "Et klart overblik over Danmarks historie og de vigtigste perioder – fra oldtid til nutid. Eksamensrelevant til indfødsretsprøven."
+  },
+  {
+    "url": "/artikler/danmarks-klima/",
+    "title": "Danmarks klima",
+    "image": "/assets/images/articles/danmarks-klima.webp",
+    "desc": "Eksamensrelevant overblik over Danmarks klima: tempereret kystklima, årstider, vind, nedbør og klimaforandringer."
+  },
+  {
+    "url": "/artikler/danmarks-landsdele/",
+    "title": "Danmarks landsdele",
+    "image": "/assets/images/articles/danmarks-landsdele.webp",
+    "desc": "Eksamensrelevant overblik over Danmarks landsdele: Jylland, Fyn, Sjælland og øerne samt deres geografiske og kulturelle kendetegn."
+  },
+  {
+    "url": "/artikler/dannebrog-historie-og-betydning/",
+    "title": "Dannebrog – historie og betydning",
+    "image": "/assets/images/articles/dannebrog.webp",
+    "desc": "Eksamensrelevant overblik over Dannebrog: flagets historie, myten om 1219, brug i dag og betydning for dansk identitet."
+  },
+  {
+    "url": "/artikler/dansk-arkitektur-og-design/",
+    "title": "Dansk arkitektur og design",
+    "image": "/assets/images/articles/dansk-arkitektur-design.webp",
+    "desc": "Eksamensrelevant overblik over dansk arkitektur og design: kendte arkitekter, designere, funktionalisme og international betydning."
+  },
+  {
+    "url": "/artikler/dansk-billedkunst/",
+    "title": "Dansk billedkunst",
+    "image": "/assets/images/articles/dansk-billedkunst.webp",
+    "desc": "Eksamensrelevant overblik over dansk billedkunst: centrale perioder, kunstnere og billedkunstens rolle i dansk kultur."
+  },
+  {
+    "url": "/artikler/dansk-film/",
+    "title": "Dansk film",
+    "image": "/assets/images/articles/dansk-film.webp",
+    "desc": "Eksamensrelevant overblik over dansk film: kendte instruktører, Dogmebevægelsen og filmens rolle i dansk kultur."
+  },
+  {
+    "url": "/artikler/dansk-litteratur-i-dag/",
+    "title": "Dansk litteratur i dag",
+    "image": "/assets/images/articles/dansk-litteratur-nutid.webp",
+    "desc": "Eksamensrelevant overblik over dansk litteratur i dag: moderne forfattere, temaer, genrer og litteraturens rolle i det danske samfund."
+  },
+  {
+    "url": "/artikler/dansk-litteratur-klassikere/",
+    "title": "Dansk litteratur – klassikere",
+    "image": "/assets/images/articles/dansk-litteratur.webp",
+    "desc": "Eksamensrelevant overblik over klassiske værker og forfattere i dansk litteratur: centrale navne, perioder og kulturel betydning."
+  },
+  {
+    "url": "/artikler/dansk-musik/",
+    "title": "Dansk musik",
+    "image": "/assets/images/articles/dansk-musik.webp",
+    "desc": "Eksamensrelevant overblik over dansk musik: fællessang, klassisk musik, pop og rock samt kendte danske musikere og bands."
+  },
+  {
+    "url": "/artikler/danske-hoejtider/",
+    "title": "Danske højtider",
+    "image": "/assets/images/articles/hoejtider.webp",
+    "desc": "Eksamensrelevant overblik over danske højtider: kristne og nationale højtider samt deres betydning i Danmark."
+  },
+  {
+    "url": "/artikler/danske-traditioner/",
+    "title": "Danske traditioner",
+    "image": "/assets/images/articles/traditioner.webp",
+    "desc": "Eksamensrelevant overblik over danske traditioner i hverdagen og ved højtider: sociale normer, fællesskab og kulturelle kendetegn."
+  },
+  {
+    "url": "/artikler/de-danske-eu-forbehold/",
+    "title": "De danske EU-forbehold i dag",
+    "image": "/assets/images/articles/eu-forbehold.webp",
+    "desc": "Opdateret overblik over de danske EU-forbehold: hvad der gælder i dag, hvad der er ændret, og hvorfor forsvarsforbeholdet blev afskaffet i 2022."
+  },
+  {
+    "url": "/artikler/de-stoerste-oeer-i-danmark/",
+    "title": "De største øer i Danmark",
+    "image": "/assets/images/articles/danmarks-oeer.webp",
+    "desc": "Eksamensrelevant overblik over de største øer i Danmark: Sjælland, Vendsyssel-Thy, Fyn, Lolland, Bornholm og Falster med centrale fakta og byer."
+  },
+  {
+    "url": "/artikler/den-danske-model/",
+    "title": "Den danske model",
+    "image": "/assets/images/articles/danske-model.webp",
+    "desc": "Eksamensrelevant overblik over den danske model: arbejdsmarkedets parter, overenskomster og trepartssamarbejde."
+  },
+  {
+    "url": "/artikler/den-offentlige-sektor/",
+    "title": "Den offentlige sektor",
+    "image": "/assets/images/articles/offentlig-sektor.webp",
+    "desc": "Eksamensrelevant overblik over den offentlige sektor i Danmark: opgaver, opbygning og betydning for velfærdsstaten."
+  },
+  {
+    "url": "/artikler/diskrimination-i-danmark/",
+    "title": "Diskrimination i Danmark",
+    "image": "/assets/images/articles/diskrimination.webp",
+    "desc": "Eksamensrelevant overblik over diskrimination i Danmark: ligebehandling, lovgivning, beskyttede grupper og myndighedernes rolle."
+  },
+  {
+    "url": "/artikler/domstolene/",
+    "title": "Domstolene",
+    "image": "/assets/images/articles/domstole.webp",
+    "desc": "Eksamensrelevant overblik over domstolene i Danmark: den dømmende magt, domstolenes opgaver, uafhængighed og retssikkerhed."
+  },
+  {
+    "url": "/artikler/enevaelden-hvad-betod-den/",
+    "title": "Enevælden – hvad betød den?",
+    "image": "/assets/images/articles/enevaelden.webp",
+    "desc": "Eksamensrelevant forklaring af enevælden i Danmark: hvad den var, hvordan den fungerede, og hvorfor den blev indført."
+  },
+  {
+    "url": "/artikler/eu-institutionerne/",
+    "title": "EU-institutionerne",
+    "image": "/assets/images/articles/eu-institutioner.webp",
+    "desc": "Eksamensrelevant overblik over EU-institutionerne: Europa-Kommissionen, Ministerrådet, Europa-Parlamentet og EU-Domstolen."
+  },
+  {
+    "url": "/artikler/faeroeerne-i-rigsfaellesskabet/",
+    "title": "Færøerne i Rigsfællesskabet",
+    "image": "/assets/images/articles/faeroeerne.webp",
+    "desc": "Eksamensrelevant overblik over Færøernes rolle i Rigsfællesskabet: historisk baggrund, hjemmestyre, ansvarsområder og forholdet til Danmark."
+  },
+  {
+    "url": "/artikler/fagforeninger/",
+    "title": "Fagforeninger",
+    "image": "/assets/images/articles/fagforeninger.webp",
+    "desc": "Eksamensrelevant overblik over fagforeninger i Danmark: formål, rolle på arbejdsmarkedet og betydning for den danske model."
+  },
+  {
+    "url": "/artikler/familieformer-i-danmark/",
+    "title": "Familieformer i Danmark",
+    "image": "/assets/images/articles/familieformer.webp",
+    "desc": "Eksamensrelevant overblik over familieformer i Danmark: kernefamilie, enlige forældre, regnbuefamilier, samliv og børns rettigheder."
+  },
+  {
+    "url": "/artikler/fn-og-danmark/",
+    "title": "FN og Danmark",
+    "image": "/assets/images/articles/fn-danmark.webp",
+    "desc": "Eksamensrelevant overblik over Danmarks rolle i FN: internationalt samarbejde, fredsbevarelse, menneskerettigheder og diplomati."
+  },
+  {
+    "url": "/artikler/folkekirken/",
+    "title": "Folkekirken",
+    "image": "/assets/images/articles/folkekirken.webp",
+    "desc": "Eksamensrelevant overblik over Folkekirken i Danmark: grundlag, organisation, rolle i samfundet og forholdet til staten."
+  },
+  {
+    "url": "/artikler/folkeskole-i-danmark/",
+    "title": "Folkeskole i Danmark",
+    "image": "/assets/images/articles/folkeskole.webp",
+    "desc": "Eksamensrelevant overblik over folkeskolen i Danmark: formål, opbygning, klassetrin, fag, skolepligt og betydning i velfærdssamfundet."
+  },
+  {
+    "url": "/artikler/folketingets-rolle/",
+    "title": "Folketingets rolle",
+    "image": "/assets/images/articles/folketinget.webp",
+    "desc": "Eksamensrelevant forklaring af Folketingets rolle i Danmark: lovgivning, kontrol med regeringen, valg og politisk arbejde."
+  },
+  {
+    "url": "/artikler/folketingsvalg-saadan-fungerer-det/",
+    "title": "Folketingsvalg – sådan fungerer det",
+    "image": "/assets/images/articles/valg.webp",
+    "desc": "Eksamensrelevant gennemgang af folketingsvalg i Danmark: valgret, opstilling, stemmeafgivning, mandatfordeling og regeringens dannelse."
+  },
+  {
+    "url": "/artikler/globalisering-og-danmark-efter-1990/",
+    "title": "Globalisering og Danmark efter 1990",
+    "image": "/assets/images/articles/globalisering.webp",
+    "desc": "Eksamensrelevant overblik over globalisering og Danmark efter 1990: økonomi, arbejdsmarked, kultur og internationale relationer."
+  },
+  {
+    "url": "/artikler/groenland-i-rigsfaellesskabet/",
+    "title": "Grønland i Rigsfællesskabet",
+    "image": "/assets/images/articles/groenland.webp",
+    "desc": "Eksamensrelevant overblik over Grønlands rolle i Rigsfællesskabet: historisk baggrund, hjemmestyre og selvstyre, ansvarsområder samt aktuel debat om USA’s interesse i Grønland."
+  },
+  {
+    "url": "/artikler/grundloven-af-1849/",
+    "title": "Grundloven af 1849",
+    "image": "/assets/images/articles/grundloven-1849.webp",
+    "desc": "Eksamensrelevant overblik over Grundloven af 1849: afskaffelsen af enevælden, demokratiske rettigheder og magtens deling."
+  },
+  {
+    "url": "/artikler/grundlovens-vigtigste-principper/",
+    "title": "Grundlovens vigtigste principper",
+    "image": "/assets/images/articles/grundloven.webp",
+    "desc": "Eksamensrelevant overblik over Grundlovens vigtigste principper: demokrati, rettigheder, magtens tredeling, Folketinget, regering og domstole."
+  },
+  {
+    "url": "/artikler/hoejskolebevaegelsen/",
+    "title": "Højskolebevægelsen",
+    "image": "/assets/images/articles/hoejskole.webp",
+    "desc": "Eksamensrelevant overblik over højskolebevægelsen i Danmark: baggrund, formål, indhold og betydning for samfund og demokrati."
+  },
+  {
+    "url": "/artikler/hvad-er-velfaerdsstaten/",
+    "title": "Hvad er velfærdsstaten",
+    "image": "/assets/images/articles/velfaerd.webp",
+    "desc": "Eksamensrelevant forklaring af velfærdsstaten i Danmark: grundprincipper, ydelser, finansiering og betydning for samfundet."
+  },
+  {
+    "url": "/artikler/hvad-skal-man-kunne-til-indfodsretsproven/",
     "title": "Hvad skal man kunne til indfødsretsprøven?",
-    "desc": "Overblik over emner og krav i den officielle prøve.",
-    "url": "/artikler/hvad-skal-man-kunne-til-indfodsretsproven/index.html",
-    "image": "/assets/images/articles/hvad-skal-man-kunne-til-indfodsretsproven.webp"
+    "image": "/assets/images/articles/hvad-skal-man-kunne.webp",
+    "desc": "Overblik over, hvad man skal kunne til indfødsretsprøven: demokrati, historie, kultur og samfundsforhold – forklaret klart og eksamensrelevant."
   },
   {
+    "url": "/artikler/hvordan-foregar-indfodsretsproven/",
     "title": "Hvordan foregår indfødsretsprøven?",
-    "desc": "Format, regler og hvad du kan forvente på prøvedagen.",
-    "url": "/artikler/hvordan-foregar-indfodsretsproven/index.html",
-    "image": "/assets/images/articles/hvordan-foregar-indfodsretsproven.webp"
+    "image": "/assets/images/articles/hvordan-foregar-indfodsretsproven.webp",
+    "desc": "Få en klar forklaring på, hvordan indfødsretsprøven foregår: tilmelding, prøvedag, spørgsmål, tidsramme og resultat."
   },
   {
-    "title": "Hvad sker der, hvis man ikke består indfødsretsprøven?",
-    "desc": "Konsekvenser og muligheder, hvis man dumper prøven.",
-    "url": "/artikler/hvad-sker-der-hvis-man-ikke-bestar-indfodsretsproven/index.html",
-    "image": "/assets/images/articles/hvad-sker-der-hvis-man-ikke-bestar-indfodsretsproven.webp"
+    "url": "/artikler/indfodsretsproven-2026/",
+    "title": "Indfødsretsprøven 2026 – alt du skal vide",
+    "image": "/assets/images/articles/indfodsretsproven-2026.webp",
+    "desc": "Få det fulde overblik over indfødsretsprøven 2026: format, krav, indhold og hvordan du forbereder dig bedst til indfødsret testen."
   },
   {
-    "title": "Indfødsretsprøven 2026",
-    "desc": "Vigtige datoer, regler og forberedelse til 2026.",
-    "url": "/artikler/indfodsretsproven-2026/index.html",
-    "image": "/assets/images/articles/indfodsretsproven-2026.webp"
+    "url": "/artikler/industrien-i-danmark/",
+    "title": "Industrien i Danmark",
+    "image": "/assets/images/articles/industri.webp",
+    "desc": "Eksamensrelevant overblik over industrien i Danmark: udvikling, betydning for økonomien og rolle i det moderne samfund."
   },
   {
-    "title": "Særlige vilkår ved indfødsretsprøven",
-    "desc": "Dysleksi og andre særlige behov – muligheder for støtte.",
-    "url": "/artikler/indfodsretsproven-saerlige-vilkar-dysleksi/index.html",
-    "image": "/assets/images/articles/indfodsretsproven-saerlige-vilkar-dysleksi.webp"
+    "url": "/artikler/indvandring-gennem-tiden/",
+    "title": "Indvandring gennem tiden",
+    "image": "/assets/images/articles/indvandring.webp",
+    "desc": "Eksamensrelevant overblik over indvandring gennem tiden i Danmark – historiske perioder, grupper og hovedtræk."
   },
   {
-    "title": "Indfødsretsprøve vs. medborgerskabsprøve",
-    "desc": "Forskelle, formål og hvem der skal tage hvilken prøve.",
-    "url": "/artikler/indfodsretsprove-vs-medborgerskabsprove/index.html",
-    "image": "/assets/images/articles/indfodsretsprove-vs-medborgerskabsprove.webp"
+    "url": "/artikler/internationale-missioner/",
+    "title": "Internationale missioner",
+    "image": "/assets/images/articles/internationale-missioner.webp",
+    "desc": "Eksamensrelevant overblik over Danmarks internationale missioner: formål, typer af missioner og Danmarks bidrag i udlandet."
   },
   {
-    "title": "Krav til dansk statsborgerskab",
-    "desc": "De centrale krav samlet ét sted.",
-    "url": "/artikler/krav-til-dansk-statsborgerskab/index.html",
-    "image": "/assets/images/articles/krav-til-dansk-statsborgerskab.webp"
+    "url": "/artikler/jellingestenene-og-kristningen/",
+    "title": "Jellingestenene og kristningen",
+    "image": "/assets/images/articles/jellingestenene.webp",
+    "desc": "Eksamensrelevant forklaring af Jellingestenene og kristningen af Danmark – symbolik, magt og historisk betydning."
   },
   {
-    "title": "Top 10: Dansk geografi",
-    "desc": "De vigtigste geografiske fakta til indfødsretsprøven.",
-    "url": "/artikler/top-10-dansk-geografi-indfodsretsprove/index.html",
-    "image": "/assets/images/articles/top-10-dansk-geografi-indfodsretsprove.webp"
+    "url": "/artikler/kendte-danske-sevaerdigheder/",
+    "title": "Kendte danske seværdigheder",
+    "image": "/assets/images/articles/danske-sevaerdigheder.webp",
+    "desc": "Overblik over Danmarks vigtigste seværdigheder: natur, byer, slotte, museer og UNESCO-verdensarv. Introduktion til centrale steder i hele landet."
   },
   {
-    "title": "Top 10: Dansk litteratur",
-    "desc": "De vigtigste forfattere og værker til prøven.",
-    "url": "/artikler/top-10-dansk-litteratur-indfodsretsprove/index.html",
-    "image": "/assets/images/articles/top-10-dansk-litteratur-indfodsretsprove.webp"
+    "url": "/artikler/kendte-danske-videnskabsfolk/",
+    "title": "Kendte danske videnskabsfolk",
+    "image": "/assets/images/articles/videnskab.webp",
+    "desc": "Eksamensrelevant overblik over kendte danske videnskabsfolk og deres bidrag til forskning og samfund."
+  },
+  {
+    "url": "/artikler/kommuner-og-regioner/",
+    "title": "Kommuner og regioner",
+    "image": "/assets/images/articles/kommuner.webp",
+    "desc": "Eksamensrelevant overblik over kommuner og regioner i Danmark: opgaver, ansvar og forskellen mellem lokalt og regionalt niveau."
+  },
+  {
+    "url": "/artikler/kongehuset-i-dag/",
+    "title": "Kongehuset i dag",
+    "image": "/assets/images/articles/kongehuset.webp",
+    "desc": "Eksamensrelevant overblik over det danske kongehus i dag: monarkiets rolle, regenten, tronfølgen og kongehusets opgaver."
+  },
+  {
+    "url": "/artikler/krigen-i-1864-og-konsekvenserne/",
+    "title": "Krigen i 1864 og konsekvenserne",
+    "image": "/assets/images/articles/1864.webp",
+    "desc": "Eksamensrelevant overblik over Krigen i 1864: baggrund, forløb og de politiske og nationale konsekvenser for Danmark."
+  },
+  {
+    "url": "/artikler/krisepolitik-i-1930erne/",
+    "title": "Krisepolitik i 1930’erne",
+    "image": "/assets/images/articles/krisepolitik-1930.webp",
+    "desc": "Eksamensrelevant overblik over krisepolitikken i 1930’erne: økonomisk krise, arbejdsløshed og politiske løsninger i Danmark."
+  },
+  {
+    "url": "/artikler/landbrugets-rolle/",
+    "title": "Landbrugets rolle",
+    "image": "/assets/images/articles/landbrug.webp",
+    "desc": "Eksamensrelevant overblik over landbrugets rolle i Danmark: betydning for økonomien, eksporten og samfundet."
+  },
+  {
+    "url": "/artikler/magtens-tredeling/",
+    "title": "Magtens tredeling",
+    "image": "/assets/images/articles/magt.webp",
+    "desc": "Eksamensrelevant forklaring af magtens tredeling i Danmark: den lovgivende, udøvende og dømmende magt og hvorfor princippet er centralt for demokratiet."
+  },
+  {
+    "url": "/artikler/middelalderen-og-kirkens-magt/",
+    "title": "Middelalderen og kirkens magt",
+    "image": "/assets/images/articles/middelalderen.webp",
+    "desc": "Eksamensrelevant overblik over middelalderen i Danmark og kirkens politiske og samfundsmæssige magt."
+  },
+  {
+    "url": "/artikler/modstandsbevaegelsen/",
+    "title": "Modstandsbevægelsen",
+    "image": "/assets/images/articles/modstandsbevaegelsen.webp",
+    "desc": "Eksamensrelevant overblik over modstandsbevægelsen i Danmark under besættelsen: sabotage, illegalt arbejde og befrielsen i 1945."
+  },
+  {
+    "url": "/artikler/monarkiets-rolle-i-dag/",
+    "title": "Monarkiets rolle i dag",
+    "image": "/assets/images/articles/monarki.webp",
+    "desc": "Eksamensrelevant forklaring af monarkiets rolle i Danmark i dag: kongehuset, dronningens funktion og forholdet til demokrati og Grundloven."
+  },
+  {
+    "url": "/artikler/n-f-s-grundtvig/",
+    "title": "N.F.S. Grundtvig",
+    "image": "/assets/images/articles/grundtvig.webp",
+    "desc": "Eksamensrelevant overblik over N.F.S. Grundtvig: liv, tanker, betydning for kirke, skole og dansk kultur."
+  },
+  {
+    "url": "/artikler/nato-og-dansk-forsvar/",
+    "title": "NATO og dansk forsvar",
+    "image": "/assets/images/articles/nato-danmark.webp",
+    "desc": "Eksamensrelevant overblik over NATO og dansk forsvar: medlemskab, kollektivt forsvar, forpligtelser og Danmarks rolle i alliancen."
+  },
+  {
+    "url": "/artikler/nordisk-samarbejde/",
+    "title": "Nordisk samarbejde",
+    "image": "/assets/images/articles/norden.webp",
+    "desc": "Eksamensrelevant overblik over det nordiske samarbejde: formål, institutioner og betydning for Danmark."
+  },
+  {
+    "url": "/artikler/nutidig-indvandring/",
+    "title": "Nutidig indvandring i Danmark",
+    "image": "/assets/images/articles/indvandring.webp",
+    "desc": "Eksamensrelevant overblik over nutidig indvandring i Danmark: hovedgrupper, årsager og centrale begreber til indfødsretsprøven."
+  },
+  {
+    "url": "/artikler/politiske-partier-i-danmark/",
+    "title": "Politiske partier i Danmark",
+    "image": "/assets/images/articles/partier.webp",
+    "desc": "Eksamensrelevant overblik over politiske partier i Danmark: partiernes rolle, højre–venstre, rød og blå blok samt partiernes betydning for demokratiet."
+  },
+  {
+    "url": "/artikler/reformationen-i-danmark/",
+    "title": "Reformationen i Danmark",
+    "image": "/assets/images/articles/reformationen.webp",
+    "desc": "Eksamensrelevant gennemgang af reformationen i Danmark i 1536 – bruddet med den katolske kirke og magtens forandring."
+  },
+  {
+    "url": "/artikler/regeringens-opgaver/",
+    "title": "Regeringens opgaver",
+    "image": "/assets/images/articles/regeringen.webp",
+    "desc": "Eksamensrelevant forklaring af regeringens opgaver i Danmark: udøvende magt, lovforslag, administration og forholdet til Folketinget."
+  },
+  {
+    "url": "/artikler/retssikkerhed-og-rettigheder/",
+    "title": "Retssikkerhed og rettigheder",
+    "image": "/assets/images/articles/retssikkerhed.webp",
+    "desc": "Eksamensrelevant overblik over retssikkerhed og rettigheder i Danmark: Grundloven, borgernes beskyttelse, domstolenes rolle og myndigheders ansvar."
+  },
+  {
+    "url": "/artikler/rettigheder-i-familielivet/",
+    "title": "Rettigheder i familielivet",
+    "image": "/assets/images/articles/familierettigheder.webp",
+    "desc": "Eksamensrelevant overblik over rettigheder i familielivet i Danmark: ægteskab, skilsmisse, forældremyndighed, barsel og børns rettigheder."
+  },
+  {
+    "url": "/artikler/samarbejdspolitikken-1940-43/",
+    "title": "Samarbejdspolitikken 1940–43",
+    "image": "/assets/images/articles/samarbejdspolitikken.webp",
+    "desc": "Eksamensrelevant overblik over samarbejdspolitikken i Danmark 1940–43 under den tyske besættelse: baggrund, indhold og konsekvenser."
+  },
+  {
+    "url": "/artikler/serviceerhverv/",
+    "title": "Serviceerhverv",
+    "image": "/assets/images/articles/service.webp",
+    "desc": "Eksamensrelevant overblik over serviceerhverv i Danmark: typer af service, betydning for økonomien og arbejdsmarkedet."
+  },
+  {
+    "url": "/artikler/skatter-i-danmark/",
+    "title": "Skatter i Danmark",
+    "image": "/assets/images/articles/skatter.webp",
+    "desc": "Eksamensrelevant overblik over skatter i Danmark: hvorfor vi betaler skat, typer af skatter og deres betydning for velfærdsstaten."
+  },
+  {
+    "url": "/artikler/sociale-ydelser/",
+    "title": "Sociale ydelser",
+    "image": "/assets/images/articles/sociale-ydelser.webp",
+    "desc": "Eksamensrelevant overblik over sociale ydelser i Danmark: formål, typer af ydelser og deres rolle i velfærdsstaten."
+  },
+  {
+    "url": "/artikler/stemmeret-i-danmark/",
+    "title": "Stemmeret i Danmark",
+    "image": "/assets/images/articles/stemmeret.webp",
+    "desc": "Eksamensrelevant overblik over stemmeret i Danmark: hvem kan stemme, alderskrav, valgtyper og forskellen på statsborgere og andre borgere."
+  },
+  {
+    "url": "/artikler/uddannelsessystemet/",
+    "title": "Uddannelsessystemet i Danmark",
+    "image": "/assets/images/articles/uddannelsessystem.webp",
+    "desc": "Eksamensrelevant overblik over uddannelsessystemet i Danmark: grundskole, ungdomsuddannelser, erhvervsuddannelser og videregående uddannelser."
+  },
+  {
+    "url": "/artikler/ungdomsoproeret-i-1960erne/",
+    "title": "Ungdomsoprøret i 1960’erne",
+    "image": "/assets/images/articles/ungdomsoproeret.webp",
+    "desc": "Eksamensrelevant overblik over ungdomsoprøret i 1960’erne: værdier, protester, uddannelse og samfundsforandringer i Danmark."
+  },
+  {
+    "url": "/artikler/vikingetiden-i-danmark/",
+    "title": "Vikingetiden i Danmark",
+    "image": "/assets/images/articles/vikingetiden-1.webp",
+    "desc": "Et klart og eksamensrelevant overblik over vikingetiden i Danmark – samfund, religion, handel og kristning."
+  },
+  {
+    "url": "/artikler/ytringsfrihedens-graenser/",
+    "title": "Ytringsfrihedens grænser",
+    "image": "/assets/images/articles/ytringsfrihed.webp",
+    "desc": "Eksamensrelevant overblik over ytringsfrihedens grænser i Danmark: Grundloven, lovlige begrænsninger, ansvar og beskyttelse mod had og trusler."
   }
 ]
