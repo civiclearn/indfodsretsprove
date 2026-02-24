@@ -54,6 +54,43 @@
 
   <link rel="stylesheet" href="/assets/css/newhome.css">
   <link rel="stylesheet" href="/assets/css/pricing.css">
+  <style>
+    /* Tab switcher — additive only, no overrides */
+    .pricing-tabs{display:flex;align-items:flex-end;max-width:1100px;margin:0 auto;padding:0 0 0 28px;position:relative;z-index:2;}
+    .pricing-tab{padding:12px 28px 16px;border-radius:14px 14px 0 0;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;user-select:none;margin-bottom:-2px;}
+    .pricing-tab.tab-solo{background:#fff;color:#7c3aed;border:2px solid #e2e5ea;border-bottom-color:#fff;z-index:10;}
+    .pricing-tab.tab-solo:not(.active){background:#f3f0ff;border-color:#ddd6fe;border-bottom-color:#e2e5ea;color:#8b7abf;z-index:4;}
+    .pricing-tab.tab-combo{background:#C8102E;color:#fff;border:2px solid #a00d24;border-bottom-color:transparent;margin-left:-6px;z-index:3;padding-top:11px;box-shadow:0 -4px 12px rgba(200,16,46,.15);}
+    .pricing-tab.tab-combo.active{z-index:10;border-bottom-color:#fff;box-shadow:0 -4px 16px rgba(200,16,46,.25);}
+    .pricing-tab.tab-combo:not(.active){z-index:4;border-bottom-color:#e2e5ea;animation:peek 4s ease-in-out infinite;}
+    .pricing-tab.tab-combo:not(.active):hover{animation:none;transform:translateY(-6px);box-shadow:0 8px 24px rgba(200,16,46,.35);}
+    @keyframes peek{0%,80%,100%{transform:translateY(0)}86%{transform:translateY(-5px)}92%{transform:translateY(0)}}
+    .tab-flag{display:inline-block;width:18px;height:12px;border-radius:2px;overflow:hidden;vertical-align:middle;margin-right:6px;position:relative;top:-1px;}
+    .tab-flag svg{display:block;}
+    .tab-save{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:8px;margin-left:8px;vertical-align:middle;}
+    .pricing-tab.tab-combo:not(.active) .tab-save{animation:spulse 4s ease-in-out infinite;}
+    @keyframes spulse{0%,80%,100%{background:rgba(255,255,255,.2)}86%{background:rgba(255,255,255,.4)}92%{background:rgba(255,255,255,.2)}}
+
+    /* Layer crossfade */
+    .pricing-layer{display:none;}
+    .pricing-layer.visible{display:contents;}
+
+    /* Combo-only additions */
+    .price-was{font-size:20px;color:#b0b0b0;text-decoration:line-through;font-weight:400;margin-right:4px;}
+    .pricing-badge.combo{background:#fef2f2;color:#C8102E;}
+    .trust-pill.green{background:#ecfdf5;color:#059669;}
+    .pricing-cta.combo{background:#C8102E;}
+    .pricing-cta.combo:hover{background:#a00d24;}
+    .feature-card.combo-card{background:#fef2f2;border-color:#fecaca;}
+    .feature-card.combo-card h4{color:#C8102E;}
+
+    @media(max-width:600px){
+      .pricing-tabs{padding-left:16px;}
+      .pricing-tab{padding:10px 16px 12px;font-size:.84rem;}
+      .pricing-tab.tab-combo{padding-top:9px;}
+      .tab-save{margin-left:4px;font-size:.62rem;}
+    }
+  </style>
 </head>
 
 
@@ -292,122 +329,186 @@
 
 <!-- PRICING -->
 <section class="premium-pricing">
+
+  <!-- FOLDER TABS -->
+  <div class="pricing-tabs">
+    <div class="pricing-tab tab-solo active" id="tabSolo">
+      <span class="tab-flag"><svg viewBox="0 0 18 12"><rect width="18" height="12" fill="#c8102e"/><rect x="0" y="4.8" width="18" height="2.4" fill="#fff"/><rect x="4.8" y="0" width="2.4" height="12" fill="#fff"/></svg></span>
+      Indfødsretsprøven
+    </div>
+    <div class="pricing-tab tab-combo" id="tabCombo">
+      + Dansk 3
+      <span class="tab-save">SPAR 399 kr</span>
+    </div>
+  </div>
+
   <div class="pricing-shell">
 
-    <!-- LEFT: PRICE -->
-    <div class="pricing-main">
+    <!-- SOLO LAYER (display:contents = transparent to grid) -->
+    <div class="pricing-layer visible" id="layerSolo">
 
-      <!-- TOP BADGES -->
-      <div class="pricing-badges">
-        <span class="pricing-badge primary">Premium adgang</span>
-        <span class="pricing-badge subtle">Opdateret for 2026</span>
-      </div>
-
-      <h3 class="pricing-headline">
-        Alt du behøver for at bestå indfødsretsprøven
-      </h3>
-
-<!-- PRICE -->
-<div class="pricing-price">
-  <span class="price-amount">499</span>
-  <span class="price-currency">kr</span>
-</div>
-
-<!-- SOCIAL PROOF -->
-<div class="pricing-proof">
-  <span class="pricing-stars">★★★★★</span>
-  <span class="pricing-proof-text">
-    Over
-    <a href="/anmeldelser/" class="pricing-proof-link">2.400 anmeldelser</a>
-  </span>
-</div>
-
-<!-- TRUST PILLS -->
-<div class="pricing-trust">
-  
-  <span class="trust-pill">Engangsbetaling</span>
-  <span class="trust-pill">Livstidsadgang</span>
-</div>
-
-      <!-- CORE VALUE (HONEST & CLEAR) -->
-      <div class="pricing-intro">
-        <strong>3000+ spørgsmål baseret på officielle kilder</strong>
-        <p>
-          Spørgsmål fra samtlige tidligere indfødsretsprøver samt det officielle undervisningsmateriale (2025).
-Inkluderer spørgsmål om danske værdier og aktuelle samfundsforhold.
-        </p>
-        <p class="muted">
-          Prioriteret efter relevans og sandsynlighed ved prøven.
+      <div class="pricing-main">
+        <div class="pricing-badges">
+          <span class="pricing-badge primary">Premium adgang</span>
+          <span class="pricing-badge subtle">Opdateret for 2026</span>
+        </div>
+        <h3 class="pricing-headline">
+          Alt du behøver for at bestå indfødsretsprøven
+        </h3>
+        <div class="pricing-price">
+          <span class="price-amount">499</span>
+          <span class="price-currency">kr</span>
+        </div>
+        <div class="pricing-proof">
+          <span class="pricing-stars">★★★★★</span>
+          <span class="pricing-proof-text">
+            Over
+            <a href="/anmeldelser/" class="pricing-proof-link">2.400 anmeldelser</a>
+          </span>
+        </div>
+        <div class="pricing-trust">
+          <span class="trust-pill">Engangsbetaling</span>
+          <span class="trust-pill">Livstidsadgang</span>
+        </div>
+        <div class="pricing-intro">
+          <strong>3000+ spørgsmål baseret på officielle kilder</strong>
+          <p>
+            Spørgsmål fra samtlige tidligere indfødsretsprøver samt det officielle undervisningsmateriale (2025).
+            Inkluderer spørgsmål om danske værdier og aktuelle samfundsforhold.
+          </p>
+          <p class="muted">
+            Prioriteret efter relevans og sandsynlighed ved prøven.
+          </p>
+        </div>
+        <a class="pricing-cta" href="https://civiclearn.com/denmark/checkout">
+          Start nu – få fuld adgang
+        </a>
+        <p class="pricing-guarantee">
+          Sikker betaling · Øjeblikkelig adgang
         </p>
       </div>
 
-      <!-- CTA -->
-      <a class="pricing-cta" href="https://civiclearn.com/denmark/checkout">
-        Start nu – få fuld adgang
-      </a>
-
-      <!-- GUARANTEE -->
-      <p class="pricing-guarantee">
-        Sikker betaling · Øjeblikkelig adgang
-      </p>
+      <div class="pricing-features">
+        <div class="feature-card highlight">
+          <h4>Designet til beståelse</h4>
+          <p>Fokus på officielle emner, eksamensformat og dine svageste områder — ikke tilfældige quizzer.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Forstå prøven</h4>
+          <p>Alle officielle emner: historie, kulturliv, økonomi, omverdenen og temaopslag — med særlig vægt på danske værdier.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Eksamenssimulation</h4>
+          <p>Tidtagne prøver i samme format som den rigtige indfødsretsprøve samt hurtige tests til daglig træning.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Adaptiv træning</h4>
+          <p>Systemet prioriterer automatisk de spørgsmål, du har sværest ved. Flashcards og personlig "My List" sikrer effektiv repetition.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Hold rytmen</h4>
+          <p>Daglige quizzer via Telegram, påmindelser og detaljeret statistik, så du altid ved, hvor du står.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Lær på din måde</h4>
+          <p>Oplæsning af spørgsmål og manualens kapitler samt adgang fra computer, tablet og mobil.</p>
+        </div>
+      </div>
 
     </div>
 
-    <!-- RIGHT: FEATURES (REDUCED, CARD-BASED) -->
-    <div class="pricing-features">
+    <!-- COMBO LAYER (hidden by default) -->
+    <div class="pricing-layer" id="layerCombo">
 
-      <div class="feature-card highlight">
-        <h4>Designet til beståelse</h4>
-        <p>
-          Fokus på officielle emner, eksamensformat og dine svageste områder —
-          ikke tilfældige quizzer.
+      <div class="pricing-main">
+        <div class="pricing-badges">
+          <span class="pricing-badge combo">Kombipakke</span>
+          <span class="pricing-badge subtle">Alt til statsborgerskab</span>
+        </div>
+        <h3 class="pricing-headline">
+          Indfødsretsprøven + Prøve i Dansk 3 — samlet
+        </h3>
+        <div class="pricing-price">
+          <span class="price-was">1.398</span>
+          <span class="price-amount">999</span>
+          <span class="price-currency">kr</span>
+        </div>
+        <div class="pricing-proof">
+          <span class="pricing-stars">★★★★★</span>
+          <span class="pricing-proof-text">
+            Over
+            <a href="/anmeldelser/" class="pricing-proof-link">2.400 anmeldelser</a>
+          </span>
+        </div>
+        <div class="pricing-trust">
+          <span class="trust-pill">Engangsbetaling</span>
+          <span class="trust-pill">Begge prøver</span>
+          <span class="trust-pill green">Spar 399 kr</span>
+        </div>
+        <div class="pricing-intro">
+          <strong>Komplet forberedelse til begge prøver med ét login</strong>
+          <p>
+            3000+ spørgsmål til Indfødsretsprøven + 10 komplette Dansk 3-simulationer med AI-evaluering af læsning, skrivning og mundtlig.
+          </p>
+          <p class="muted">
+            Samme email og adgangskode til begge platforme.
+          </p>
+        </div>
+        <a class="pricing-cta combo" href="https://civiclearn.com/denmark/checkout?plan=bundle">
+          Få begge prøver — spar 399 kr
+        </a>
+        <p class="pricing-guarantee">
+          Sikker betaling · Øjeblikkelig adgang
         </p>
       </div>
 
-      <div class="feature-card">
-        <h4>Forstå prøven</h4>
-        <p>
-          Alle officielle emner: historie, kulturliv, økonomi, omverdenen og
-          temaopslag — med særlig vægt på danske værdier.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h4>Eksamenssimulation</h4>
-        <p>
-          Tidtagne prøver i samme format som den rigtige indfødsretsprøve samt
-          hurtige tests til daglig træning.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h4>Adaptiv træning</h4>
-        <p>
-          Systemet prioriterer automatisk de spørgsmål, du har sværest ved.
-          Flashcards og personlig “My List” sikrer effektiv repetition.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h4>Hold rytmen</h4>
-        <p>
-          Daglige quizzer via Telegram, påmindelser og detaljeret statistik, så
-          du altid ved, hvor du står.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h4>Lær på din måde</h4>
-        <p>
-          Oplæsning af spørgsmål og manualens kapitler samt adgang fra computer,
-          tablet og mobil.
-        </p>
+      <div class="pricing-features">
+        <div class="feature-card combo-card">
+          <h4>Prøve i Dansk 3</h4>
+          <p>10 komplette simulationer med læseforståelse, skriftlig fremstilling og mundtlig kommunikation.</p>
+        </div>
+        <div class="feature-card combo-card">
+          <h4>AI-evaluering</h4>
+          <p>Karakterer på 7-trins-skalaen med detaljeret feedback om styrker, svagheder og forbedringspunkter.</p>
+        </div>
+        <div class="feature-card highlight">
+          <h4>Indfødsretsprøven</h4>
+          <p>3000+ spørgsmål, eksamenssimulationer, adaptiv træning og daglige tests — alt du kender.</p>
+        </div>
+        <div class="feature-card combo-card">
+          <h4>Mundtlig optagelse</h4>
+          <p>Optag dine mundtlige svar direkte i browseren. AI lytter, transskriberer og bedømmer din tale.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Ét login, to platforme</h4>
+          <p>Samme email og adgangskode. Skift frit mellem Indfødsretsprøven og Dansk 3 fra dit dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Bestå begge første gang</h4>
+          <p>De fleste ansøgere skal bestå begge prøver. Forbered dig samlet og spar tid og penge.</p>
+        </div>
       </div>
 
     </div>
 
   </div>
 </section>
+
+<script>
+(function(){
+  var tabSolo=document.getElementById('tabSolo'),tabCombo=document.getElementById('tabCombo');
+  var layerSolo=document.getElementById('layerSolo'),layerCombo=document.getElementById('layerCombo');
+  function switchTo(p){
+    var s=p==='solo';
+    tabSolo.classList.toggle('active',s);
+    tabCombo.classList.toggle('active',!s);
+    layerSolo.classList.toggle('visible',s);
+    layerCombo.classList.toggle('visible',!s);
+  }
+  tabSolo.onclick=function(){switchTo('solo')};
+  tabCombo.onclick=function(){switchTo('combo')};
+})();
+</script>
 
 
 <!-- TESTIMONIALS -->
