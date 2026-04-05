@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generalprøve: Indfødsretsprøven – Lørdag 9. maj 2026 | Indfodsretsprove.dk</title>
+  <meta name="description" content="Gratis generalprøve for indfødsretsprøven. 45 spørgsmål, 45 minutter – præcis som den rigtige prøve. Åben for alle. Lørdag den 9. maj 2026 kl. 13:00.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="Generalprøve: Indfødsretsprøven – Gratis, åben for alle">
+  <meta property="og:description" content="Test dig selv under realistiske forhold. 45 spørgsmål, 45 minutter, ingen hjælpemidler. Lørdag den 9. maj 2026 kl. 13:00. Gratis.">
+  <meta property="og:url" content="https://indfodsretsprove.dk/generalprove/">
+  <meta property="og:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/newhome.css">
+
+  <style>
+    /* ====== GENERALPRØVE-SPECIFIC STYLES ====== */
+
+    .gp-countdown-bar {
+      background: #7c3aed;
+      color: #fff;
+      text-align: center;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .gp-countdown-bar strong {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .gp-hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .gp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #059669;
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .gp-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: #059669;
+      border-radius: 50%;
+    }
+
+    .gp-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #7c3aed;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .gp-hero .hero-subtitle {
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    .gp-date-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      border: 2px solid #7c3aed;
+      border-radius: 16px;
+      padding: 16px 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    .gp-date-num {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #7c3aed;
+      line-height: 1;
+    }
+    .gp-date-details { text-align: left; }
+    .gp-date-line { font-weight: 600; font-size: 1.05rem; color: #1a1a2e; }
+    .gp-time-line { color: #6b7280; font-size: 0.9rem; }
+
+    .gp-cta-wrap { margin-top: 4px; }
+
+    .gp-primary-btn {
+      display: inline-block;
+      background: #7c3aed;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.25);
+    }
+    .gp-primary-btn:hover {
+      background: #6d28d9;
+      transform: translateY(-1px);
+    }
+
+    .gp-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .gp-step {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .gp-step-num {
+      width: 40px; height: 40px;
+      background: #7c3aed;
+      color: #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .gp-step h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+    .gp-step p { font-size: 0.85rem; color: #6b7280; line-height: 1.45; }
+
+    /* Paper preview */
+    .gp-preview-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .gp-paper {
+      background: #fdfcf8;
+      border: 1px solid #d4d0c8;
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 520px;
+      margin: 20px auto 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      display: flex;
+    }
+    .gp-paper-bar {
+      width: 28px;
+      background: linear-gradient(180deg, #e8943c 0%, #d4802e 100%);
+      flex-shrink: 0;
+    }
+    .gp-paper-body {
+      padding: 20px 20px 12px 16px;
+      flex: 1;
+    }
+    .gp-paper-ministry { text-align: right; margin-bottom: 14px; }
+    .gp-paper-ministry-text { font-size: 0.55rem; color: #4a7c9b; line-height: 1.3; }
+    .gp-paper-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;
+    }
+    .gp-paper-meta { font-family: Georgia, serif; font-size: 0.78rem; color: #333; margin-bottom: 3px; }
+    .gp-paper-meta em { font-style: italic; }
+    .gp-paper-q { margin-top: 14px; padding-top: 12px; border-top: 1px solid #e0dcd5; }
+    .gp-paper-q .q-text { font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; color: #222; }
+    .gp-paper-opt { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: #333; padding: 2px 0; }
+    .gp-paper-chk {
+      width: 13px; height: 13px;
+      border: 1.5px solid #666; border-radius: 2px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+    }
+    .gp-paper-chk.marked { color: #7c3aed; font-weight: 700; }
+    .gp-paper-fade {
+      height: 36px;
+      background: linear-gradient(to bottom, transparent, #fdfcf8);
+      margin-top: -36px;
+      position: relative;
+    }
+    .gp-preview-caption {
+      text-align: center; margin-top: 12px;
+      font-size: 0.82rem; color: #6b7280; font-style: italic;
+    }
+
+    /* Benefits */
+    .gp-benefits {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      max-width: 900px; margin: 0 auto;
+    }
+    @media (max-width: 600px) { .gp-benefits { grid-template-columns: 1fr; } }
+    .gp-benefit {
+      background: #fff; border-radius: 14px; padding: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .gp-benefit-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.1rem;
+    }
+    .gp-benefit-icon.ic-purple { background: #ede9fe; }
+    .gp-benefit-icon.ic-red { background: #fef2f2; }
+    .gp-benefit-icon.ic-green { background: #ecfdf5; }
+    .gp-benefit-icon.ic-orange { background: #fff7ed; }
+    .gp-benefit h3 { font-size: 0.92rem; font-weight: 600; margin-bottom: 3px; }
+    .gp-benefit p { font-size: 0.82rem; color: #6b7280; line-height: 1.4; }
+
+    /* Registration */
+    .gp-reg {
+      background: #fff; border-radius: 16px; padding: 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      text-align: center; max-width: 520px; margin: 0 auto;
+    }
+    .gp-reg h2 { font-size: 1.5rem; color: #7c3aed; margin-bottom: 4px; font-weight: 700; }
+    .gp-reg-sub { color: #6b7280; margin-bottom: 20px; font-size: 0.92rem; }
+    .gp-field { margin-bottom: 10px; text-align: left; }
+    .gp-field label { display: block; font-size: 0.82rem; font-weight: 500; margin-bottom: 4px; }
+    .gp-field input {
+      width: 100%; padding: 10px 14px;
+      border: 1.5px solid #e2e5ea; border-radius: 10px;
+      font-family: inherit; font-size: 0.92rem;
+      background: #faf6f1; transition: border-color 0.2s;
+    }
+    .gp-field input:focus { outline: none; border-color: #7c3aed; }
+    .gp-submit {
+      width: 100%; margin-top: 10px; padding: 13px;
+      background: #7c3aed; color: #fff; border: none;
+      border-radius: 12px; font-family: inherit;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 12px rgba(124,58,237,0.2);
+    }
+    .gp-submit:hover { background: #6d28d9; transform: translateY(-1px); }
+    .gp-form-note { font-size: 0.75rem; color: #6b7280; margin-top: 10px; line-height: 1.4; }
+
+    .gp-section { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+
+    .gp-disclaimer {
+      text-align: center; padding: 16px 24px 0;
+      font-size: 0.75rem; color: #9ca3af;
+      max-width: 600px; margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="cl-header">
+  <div class="cl-header-inner">
+    <a href="/" class="cl-logo">
+      <img src="/assets/images/dk.svg" alt="DK" />
+      <span>Indfodsretsprove.dk</span>
+    </a>
+    <nav class="cl-nav">
+      <a href="/gratis-prove">Gratis test</a>
+      <a href="/artikler/">Artikler</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="https://civiclearn.com/denmark/login">Login</a>
+    </nav>
+    <div class="cl-right">
+      <div class="cl-powered">drevet af <span>CivicLearn</span></div>
+      <a href="https://civiclearn.com/denmark/checkout" class="cl-btn">Opret Konto</a>
+    </div>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<div class="gp-countdown-bar">
+  <strong id="gp-countdown"></strong> til Generalprøven
+</div>
+
+<!-- HERO -->
+<div class="gp-hero">
+  <div class="gp-badge">Gratis &amp; åben for alle</div>
+  <h1>Generalprøve<br>Indfødsretsprøven</h1>
+  <p class="hero-subtitle">
+    Test dig selv under realistiske forhold – præcis som den rigtige prøve.
+    45 spørgsmål, 45 minutter, ingen hjælpemidler. Find ud af om du er klar.
+  </p>
+  <div class="gp-date-card">
+    <div class="gp-date-num">9</div>
+    <div class="gp-date-details">
+      <div class="gp-date-line">Lørdag den 9. maj 2026</div>
+      <div class="gp-time-line">kl. 13:00 – 13:45 (dansk tid)</div>
+    </div>
+  </div>
+  <div class="gp-cta-wrap">
+    <a href="#tilmeld" class="gp-primary-btn">Tilmeld dig gratis →</a>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="gp-section">
+  <div class="section-heading">
+    <div class="section-kicker">Sådan foregår det</div>
+    <h2 class="section-title">Fra tilmelding til resultat</h2>
+  </div>
+  <div class="gp-steps">
+    <div class="gp-step">
+      <div class="gp-step-num">1</div>
+      <h3>Tilmeld dig</h3>
+      <p>Angiv dit navn og din e-mail. Det tager 10 sekunder.</p>
+    </div>
+    <div class="gp-step">
+      <div class="gp-step-num">2</div>
+      <h3>Mød op kl. 13:00</h3>
+      <p>Log ind den 9. maj kl. 12:55. Prøven åbner præcis kl. 13:00.</p>
+    </div>
+    <div class="gp-step">
+      <div class="gp-step-num">3</div>
+      <h3>Tag prøven</h3>
+      <p>45 spørgsmål, 45 minutter. Når tiden er gået, lukker prøven automatisk.</p>
+    </div>
+    <div class="gp-step">
+      <div class="gp-step-num">4</div>
+      <h3>Resultater kl. 20:00</h3>
+      <p>Detaljeret analyse med score pr. emne og anbefalinger sendes til din e-mail.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PREVIEW -->
+<div class="gp-section">
+  <div class="section-heading">
+    <div class="section-kicker">Den realistiske oplevelse</div>
+    <h2 class="section-title">Præcis som den officielle prøve</h2>
+    <p class="section-lead">Vi efterligner det officielle format, så du ved hvad du kan forvente den 3. juni.</p>
+  </div>
+  <div class="gp-preview-wrap">
+    <div class="gp-paper">
+      <div class="gp-paper-bar"></div>
+      <div class="gp-paper-body">
+        <div class="gp-paper-ministry">
+          <svg viewBox="0 0 40 32" fill="none" width="32" height="26">
+            <path d="M20 2c1 0 2 1 3 3l2 4h5c1 0 1.5.8.8 1.4l-4 3 1.5 5c.3 1-.8 1.6-1.5 1.1L20 16l-5.8 3.5c-.7.5-1.8-.1-1.5-1.1l1.5-5-4-3c-.7-.6-.2-1.4.8-1.4h5l2-4c1-2 2-3 3-3z" fill="#4a7c9b"/>
+          </svg>
+          <div class="gp-paper-ministry-text">Udlændinge- og<br>Integrationsministeriet</div>
+        </div>
+        <div class="gp-paper-title">Generalprøve<br>Indfødsretsprøven</div>
+        <div class="gp-paper-meta">Hjælpemidler: <em>Ingen</em></div>
+        <div class="gp-paper-meta">Tid: <em>45 minutter</em></div>
+        <div class="gp-paper-meta" style="margin-top:6px;font-size:0.72rem;color:#666;">Lørdag den 9. maj 2026, kl. 13:00–13:45</div>
+        <div class="gp-paper-q">
+          <div class="q-text">1. Hvilken politisk bevægelse var rødstrømpebevægelsen en del af?</div>
+          <div class="gp-paper-opt"><div class="gp-paper-chk"></div> A: Arbejderbevægelsen i 30'erne</div>
+          <div class="gp-paper-opt"><div class="gp-paper-chk marked">✕</div> B: Kvindebevægelsen i 70'erne</div>
+          <div class="gp-paper-opt"><div class="gp-paper-chk"></div> C: Miljøbevægelsen i 90'erne</div>
+        </div>
+        <div class="gp-paper-q">
+          <div class="q-text">2. Var Danmark besat af tyske tropper under 1. verdenskrig?</div>
+          <div class="gp-paper-opt"><div class="gp-paper-chk"></div> A: Ja</div>
+          <div class="gp-paper-opt"><div class="gp-paper-chk"></div> B: Nej</div>
+        </div>
+      </div>
+    </div>
+    <div class="gp-paper-fade"></div>
+    <p class="gp-preview-caption">Prøven efterligner det officielle format. Du markerer dit svar med et kryds – ligesom til den rigtige prøve.</p>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="gp-section">
+  <div class="section-heading">
+    <div class="section-kicker">Mere end bare et resultat</div>
+    <h2 class="section-title">Hvad du får</h2>
+  </div>
+  <div class="gp-benefits">
+    <div class="gp-benefit">
+      <div class="gp-benefit-icon ic-purple">📝</div>
+      <div><h3>Realistisk format</h3><p>Samme format, tidspres og sværhedsgrad som den officielle indfødsretsprøve.</p></div>
+    </div>
+    <div class="gp-benefit">
+      <div class="gp-benefit-icon ic-red">📊</div>
+      <div><h3>Score pr. emne</h3><p>Se præcis hvordan du klarer dig i historie, samfund, kultur, aktuelle emner og værdier.</p></div>
+    </div>
+    <div class="gp-benefit">
+      <div class="gp-benefit-icon ic-green">🎯</div>
+      <div><h3>Anbefalinger</h3><p>Konkrete anbefalinger om hvad du skal fokusere på de sidste uger inden prøven.</p></div>
+    </div>
+    <div class="gp-benefit">
+      <div class="gp-benefit-icon ic-orange">⏱️</div>
+      <div><h3>Tidsstyring</h3><p>Prøv om du kan nå alle 45 spørgsmål på 45 minutter – mange undervurderer tidspresset.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTRATION -->
+<div class="gp-section" id="tilmeld">
+  <div class="gp-reg">
+    <h2>Tilmeld dig Generalprøven</h2>
+    <p class="gp-reg-sub">Lørdag den 9. maj 2026 kl. 13:00. Gratis.</p>
+    <div class="gp-field">
+      <label for="gp-name">Fornavn</label>
+      <input type="text" id="gp-name" placeholder="Dit fornavn" required>
+    </div>
+    <div class="gp-field">
+      <label for="gp-email">E-mail</label>
+      <input type="email" id="gp-email" placeholder="din@email.dk" required>
+    </div>
+    <button class="gp-submit" id="gp-submit-btn">Tilmeld dig gratis</button>
+    <p class="gp-form-note">Vi sender kun én bekræftelsesmail og én påmindelse dagen før. Ingen spam.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="cl-faq">
+  <div class="section-heading">
+    <div class="section-kicker">Ofte stillede spørgsmål</div>
+    <h2 class="section-title">FAQ</h2>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Er det gratis?</span></div>
+    <div class="faq-answer"><p>Ja. Generalprøven er 100% gratis og åben for alle – uanset om du er kunde hos Indfodsretsprove.dk eller ej.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Skal jeg have en konto hos Indfodsretsprove.dk?</span></div>
+    <div class="faq-answer"><p>Nej. Du tilmelder dig med dit navn og din e-mail. Ingen konto, ingen betaling, ingen forpligtelser.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Er spørgsmålene de samme som til den rigtige prøve?</span></div>
+    <div class="faq-answer"><p>Nej. Vi skriver vores egne spørgsmål, men de følger præcis det officielle format: 35 spørgsmål fra lærematerialet, 5 aktuelle spørgsmål og 5 spørgsmål om danske værdier. Sværhedsgraden svarer til den rigtige prøve.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Hvornår får jeg mine resultater?</span></div>
+    <div class="faq-answer"><p>Kl. 20:00 samme aften – sendt direkte til din e-mail med detaljeret analyse opdelt på emner og anbefalinger.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Kan jeg tage prøven senere, hvis jeg ikke kan den 9. maj?</span></div>
+    <div class="faq-answer"><p>Nej. Generalprøven afholdes kun på det annoncerede tidspunkt – præcis som den rigtige prøve. Den næste Generalprøve afholdes før indfødsretsprøven i november 2026.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Hvad sker der, hvis jeg ikke når at svare på alle spørgsmål?</span></div>
+    <div class="faq-answer"><p>Præcis som til den rigtige prøve: når tiden er gået, lukker prøven automatisk. Ubesvarede spørgsmål tæller som forkerte. Det er en del af øvelsen – at lære at styre sin tid.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Hvor mange skal jeg have rigtige for at "bestå"?</span></div>
+    <div class="faq-answer"><p>Samme krav som den rigtige prøve: mindst 36 ud af 45 rigtige svar, og heraf mindst 4 ud af 5 værdispørgsmål. Din resultatmail viser tydeligt om du ville have bestået.</p></div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<p class="gp-disclaimer">
+  Generalprøven er arrangeret af Indfodsretsprove.dk (CivicLearn) og er ikke en officiel prøve.
+  Den er ikke forbundet med Udlændinge- og Integrationsministeriet eller Styrelsen for International Rekruttering og Integration.
+</p>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="footer-year"></span> Indfodsretsprove.dk</div>
+    <div class="footer-links">
+      <a href="/gratis-prove">Gratis test</a>
+      <a href="/artikler/">Artikler</a>
+      <a href="/find-dit-testcenter/">Find testcenter</a>
+      <a href="/kontakt/">Kontakt</a>
+      <a href="/privatlivspolitik/">Privatliv</a>
+      <a href="/handelsbetingelser/">Handelsbetingelser</a>
+      <a href="/ansvarsfraskrivelse/">Ansvarsfraskrivelse</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Countdown
+function updateGPCountdown() {
+  var target = new Date('2026-05-09T13:00:00+02:00');
+  var now = new Date();
+  var diff = target - now;
+  var el = document.getElementById('gp-countdown');
+  if (diff <= 0) { el.textContent = 'Generalprøven er i gang!'; return; }
+  var days = Math.floor(diff / 86400000);
+  var hours = Math.floor((diff % 86400000) / 3600000);
+  if (days > 0) {
+    el.textContent = days + ' dag' + (days !== 1 ? 'e' : '') + ' og ' + hours + ' time' + (hours !== 1 ? 'r' : '');
+  } else {
+    var mins = Math.floor((diff % 3600000) / 60000);
+    el.textContent = hours + ' time' + (hours !== 1 ? 'r' : '') + ' og ' + mins + ' minut' + (mins !== 1 ? 'ter' : '');
+  }
+}
+updateGPCountdown();
+setInterval(updateGPCountdown, 60000);
+
+// FAQ (same as homepage)
+document.querySelectorAll(".faq-item").forEach(function(item) {
+  var q = item.querySelector(".faq-question");
+  q.addEventListener("click", function() {
+    document.querySelectorAll(".faq-item").forEach(function(i) {
+      if (i !== item) i.classList.remove("open");
+    });
+    item.classList.toggle("open");
+  });
+});
+
+// Registration
+document.getElementById('gp-submit-btn').addEventListener('click', function() {
+  var name = document.getElementById('gp-name').value.trim();
+  var email = document.getElementById('gp-email').value.trim();
+  if (!name || !email) { alert('Udfyld venligst både navn og e-mail.'); return; }
+  if (!email.includes('@') || !email.includes('.')) { alert('Angiv venligst en gyldig e-mailadresse.'); return; }
+
+  // TODO: POST to edge function
+  // fetch('https://htgliokekeaovdiafrgs.supabase.co/functions/v1/generalprove-register',
+  //   { method:'POST', headers:{'Content-Type':'application/json'},
+  //     body: JSON.stringify({name:name, email:email}) })
+
+  document.querySelector('.gp-reg').innerHTML =
+    '<div style="padding:28px 0;text-align:center;">' +
+    '<div style="font-size:2.5rem;margin-bottom:10px;">✓</div>' +
+    '<h2 style="color:#7c3aed;margin-bottom:6px;">Du er tilmeldt!</h2>' +
+    '<p style="color:#6b7280;font-size:0.92rem;">Vi har sendt en bekræftelse til <strong>' + email + '</strong>.<br>Vi minder dig om prøven dagen før.</p>' +
+    '<p style="color:#6b7280;font-size:0.82rem;margin-top:12px;">Lørdag den 9. maj 2026 kl. 13:00 – vi ses!</p>' +
+    '</div>';
+});
+
+document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
