@@ -556,24 +556,42 @@ document.querySelectorAll(".faq-item").forEach(function(item) {
 });
 
 // Registration
-document.getElementById('gp-submit-btn').addEventListener('click', function() {
+document.getElementById('gp-submit-btn').addEventListener('click', async function() {
   var name = document.getElementById('gp-name').value.trim();
   var email = document.getElementById('gp-email').value.trim();
   if (!name || !email) { alert('Udfyld venligst både navn og e-mail.'); return; }
   if (!email.includes('@') || !email.includes('.')) { alert('Angiv venligst en gyldig e-mailadresse.'); return; }
 
-  // TODO: POST to edge function
-  // fetch('https://htgliokekeaovdiafrgs.supabase.co/functions/v1/generalprove-register',
-  //   { method:'POST', headers:{'Content-Type':'application/json'},
-  //     body: JSON.stringify({name:name, email:email}) })
+  var btn = document.getElementById('gp-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Tilmelder...';
 
-  document.querySelector('.gp-reg').innerHTML =
-    '<div style="padding:28px 0;text-align:center;">' +
-    '<div style="font-size:2.5rem;margin-bottom:10px;">✓</div>' +
-    '<h2 style="color:#7c3aed;margin-bottom:6px;">Du er tilmeldt!</h2>' +
-    '<p style="color:#6b7280;font-size:0.92rem;">Vi har sendt en bekræftelse til <strong>' + email + '</strong>.<br>Vi minder dig om prøven dagen før.</p>' +
-    '<p style="color:#6b7280;font-size:0.82rem;margin-top:12px;">Lørdag den 9. maj 2026 kl. 13:00 – vi ses!</p>' +
-    '</div>';
+  try {
+    var res = await fetch('https://htgliokekeaovdiafrgs.supabase.co/functions/v1/generalprove-register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email })
+    });
+    var data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || 'Ukendt fejl');
+    }
+
+    document.querySelector('.gp-reg').innerHTML =
+      '<div style="padding:28px 0;text-align:center;">' +
+      '<div style="font-size:2.5rem;margin-bottom:10px;">✓</div>' +
+      '<h2 style="color:#7c3aed;margin-bottom:6px;">Du er tilmeldt!</h2>' +
+      '<p style="color:#6b7280;font-size:0.92rem;">Vi har sendt en bekræftelse til <strong>' + email + '</strong>.<br>Vi minder dig om prøven dagen før.</p>' +
+      '<p style="color:#6b7280;font-size:0.82rem;margin-top:12px;">Lørdag den 9. maj 2026 kl. 13:00 – vi ses!</p>' +
+      '</div>';
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Tilmeld dig gratis';
+    alert('Der opstod en fejl. Prøv venligst igen.');
+    console.error('Registration error:', err);
+  }
 });
 
 document.getElementById("footer-year").textContent = new Date().getFullYear();
