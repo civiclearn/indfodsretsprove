@@ -646,7 +646,7 @@ var API_BASE = 'https://htgliokekeaovdiafrgs.supabase.co/functions/v1';
 
 // ─── TESTING MODE ───
 // Set to true + adjust dates to test locally. Set to false for production.
-var TEST_MODE = false;
+var TEST_MODE = true;
 if (TEST_MODE) {
   var now = new Date();
   EXAM_START = new Date(now.getTime() + 10 * 1000);   // starts in 10 seconds
@@ -775,8 +775,7 @@ function startWaitingCountdown() {
 
     if (days > 0) {
       document.getElementById('wrCountdown').textContent =
-        days + ' dag' + (days !== 1 ? 'e' : '') + ', ' +
-        h + ' t, ' + m + ' min';
+        days + 'd ' + h + 't ' + m + 'm ' + s + 's';
     } else {
       document.getElementById('wrCountdown').textContent =
         String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
