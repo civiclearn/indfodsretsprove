@@ -846,6 +846,7 @@ async function verifyEmail() {
    ================================================================ */
 
 function startExam() {
+  if (examStartedAt) return; // prevent re-entry from countdown interval
   examStartedAt = new Date();
   showState('exam');
 
