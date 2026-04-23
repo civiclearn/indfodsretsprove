@@ -49,6 +49,7 @@
 /test-centre/sprogskolen-i-kolding          /test-centre/sprogskolen-kolding      301
 /test-centre/job-og-sprog-djurs              /test-centre/job-sprog-djurs          301
 /test-centre/center-for-dansk-og-integration /test-centre/cdi-koege               301
+/test-centre/campus-bornholm                 /test-centre/aof-bornholm             301
 
 # --- AOF / A2B consolidation (only where slug changed) ---
 /test-centre/AOF-Job-og-Dansk-Odense         /test-centre/aof-job-og-dansk-odense  301
