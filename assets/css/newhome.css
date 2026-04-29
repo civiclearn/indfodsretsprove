@@ -1223,9 +1223,9 @@ section {
    ------------------------------------------------------ */
 
 .status-pill {
-  position: absolute;
+  display: inline-block;
   margin-left: 8px;
-  transform: translateY(2px);
+  vertical-align: -2px;
 
   padding: 2px 8px;
   font-size: 11px;
