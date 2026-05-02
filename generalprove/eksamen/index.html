@@ -508,11 +508,12 @@
   </div>
 
   <div class="wr-email-box">
-    <h3>Indtast din e-mail</h3>
-    <p>Den e-mail du brugte ved tilmelding.</p>
+    <h3>Dine oplysninger</h3>
+    <p>Navn og e-mail. Resultatet sendes til denne e-mail i aften.</p>
+    <input type="text" id="wrName" placeholder="Dit navn" style="width:100%;padding:10px 14px;border:1.5px solid #e2e5ea;border-radius:10px;font-family:'Lexend',sans-serif;font-size:0.9rem;background:#faf6f1;margin-bottom:8px;">
     <div class="wr-email-row">
       <input type="email" id="wrEmail" placeholder="din@email.dk">
-      <button id="wrVerifyBtn" onclick="verifyEmail()">Bekræft</button>
+      <button id="wrReadyBtn" onclick="markReady()">Bekræft</button>
     </div>
     <div class="wr-status" id="wrStatus"></div>
   </div>
@@ -714,11 +715,35 @@ var QUESTIONS = [
 
 var userEmail = '';
 var userName = '';
-var verified = false;
+var ready = false;             // user has entered name+email and clicked Bekræft
 var examStartedAt = null;
-var answers = {};     // { questionId: selectedOptionIndex }
+var answers = {};              // { questionId: selectedOptionIndex }
 var submitted = false;
 var timerInterval = null;
+var clientAttemptId = null;    // generated once per attempt, kept in localStorage
+
+
+/* ================================================================
+   IDEMPOTENCY ID
+   ================================================================ */
+
+function getOrCreateAttemptId() {
+  var id = localStorage.getItem('gp_attempt_id');
+  if (!id) {
+    // Use crypto.randomUUID where available; fall back to a v4-ish polyfill
+    if (window.crypto && crypto.randomUUID) {
+      id = crypto.randomUUID();
+    } else {
+      id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0;
+        var v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+      });
+    }
+    localStorage.setItem('gp_attempt_id', id);
+  }
+  return id;
+}
 
 
 /* ================================================================
@@ -764,7 +789,7 @@ function startWaitingCountdown() {
 
     if (diff <= 0) {
       document.getElementById('wrCountdown').textContent = '00:00:00';
-      if (verified) startExam();
+      if (ready) startExam();
       return;
     }
 
@@ -785,58 +810,40 @@ function startWaitingCountdown() {
   setInterval(tick, 1000);
 }
 
-async function verifyEmail() {
+function markReady() {
+  var name = document.getElementById('wrName').value.trim();
   var email = document.getElementById('wrEmail').value.trim().toLowerCase();
   var status = document.getElementById('wrStatus');
-  var btn = document.getElementById('wrVerifyBtn');
+  var btn = document.getElementById('wrReadyBtn');
 
-  if (!email || !email.includes('@')) {
+  if (!name) {
+    status.className = 'wr-status err';
+    status.textContent = 'Indtast venligst dit navn.';
+    return;
+  }
+
+  // Basic email shape check (looks-like-an-email; no server lookup)
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     status.className = 'wr-status err';
     status.textContent = 'Angiv en gyldig e-mailadresse.';
     return;
   }
 
-  btn.disabled = true;
-  btn.textContent = '...';
+  userName = name;
+  userEmail = email;
+  ready = true;
 
-  try {
-    var res = await fetch(API_BASE + '/generalprove-verify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
-    });
-    var data = await res.json();
+  status.className = 'wr-status ok';
+  status.textContent = '';
+  document.getElementById('wrReady').style.display = 'block';
+  document.getElementById('wrName').disabled = true;
+  document.getElementById('wrEmail').disabled = true;
+  btn.style.display = 'none';
 
-    if (!res.ok || !data.registered) {
-      status.className = 'wr-status err';
-      status.textContent = 'Denne e-mail er ikke tilmeldt. Tilmeld dig først på indfodsretsprove.dk/generalprove/';
-      btn.disabled = false;
-      btn.textContent = 'Bekræft';
-      return;
-    }
-
-    userEmail = email;
-    userName = data.name || '';
-    verified = true;
-
-    status.className = 'wr-status ok';
-    status.textContent = '';
-    document.getElementById('wrReady').style.display = 'block';
-    document.getElementById('wrEmail').disabled = true;
-    btn.style.display = 'none';
-
-    // If exam already started, go straight in
-    var now = new Date();
-    if (now >= EXAM_START && now < EXAM_END) {
-      startExam();
-    }
-
-  } catch (err) {
-    status.className = 'wr-status err';
-    status.textContent = 'Der opstod en fejl. Prøv igen.';
-    btn.disabled = false;
-    btn.textContent = 'Bekræft';
-    console.error(err);
+  // If exam already started, go straight in
+  var now = new Date();
+  if (now >= EXAM_START && now < EXAM_END) {
+    startExam();
   }
 }
 
@@ -852,6 +859,21 @@ function startExam() {
 
   document.getElementById('examUserName').textContent = userName;
   document.getElementById('examUserEmail').textContent = userEmail;
+
+  // Fire-and-forget start-write. If it fails the submit upsert will create the row.
+  try {
+    fetch(API_BASE + '/generalprove-start', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        client_attempt_id: clientAttemptId,
+        email: userEmail,
+        name: userName,
+        started_at: examStartedAt.toISOString()
+      })
+    }).catch(function(){ /* ignore — submit will recover */ });
+  } catch (_) { /* ignore */ }
 
   renderQuestions();
   startTimer();
@@ -939,8 +961,33 @@ function startTimer() {
 
 
 /* ================================================================
-   SUBMIT
-   ================================================================ */
+   SUBMIT — RESILIENT, JITTERED, BEACON-BACKED
+   ================================================================
+   Flow:
+     1. Persist payload to localStorage immediately.
+     2. Show success screen to user (UI commits instantly).
+     3. Schedule the actual fetch with random jitter.
+        - Manual submit: 0–60s jitter (smooths any clustering, mostly cosmetic)
+        - Auto-submit:   0–15min jitter (spreads the 13:45 cohort across 13:45–14:00)
+     4. On fetch success: clear the localStorage entry.
+     5. On fetch failure (or tab close): localStorage entry persists.
+        - beforeunload/pagehide fires sendBeacon as a last-ditch attempt.
+        - Recovery hook on next page load retries.
+     6. The edge function upserts on client_attempt_id, so duplicate
+        deliveries are safe — they overwrite the same row identically.
+*/
+
+var PENDING_KEY = 'gp_pending_submission';
+
+function persistPending(payload) {
+  try {
+    localStorage.setItem(PENDING_KEY, JSON.stringify(payload));
+  } catch (_) { /* localStorage may be full or disabled; we still try the fetch */ }
+}
+
+function clearPending() {
+  try { localStorage.removeItem(PENDING_KEY); } catch (_) {}
+}
 
 async function submitExam(auto) {
   if (submitted) return;
@@ -955,37 +1002,108 @@ async function submitExam(auto) {
 
   submitted = true;
   var btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Afleverer...';
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Afleveret';
+  }
   if (timerInterval) clearInterval(timerInterval);
 
-  var timeSpentMs = new Date() - examStartedAt;
+  var timeSpentMs = examStartedAt ? (new Date() - examStartedAt) : 0;
   var timeSpentMin = Math.floor(timeSpentMs / 60000);
   var timeSpentSec = Math.floor((timeSpentMs % 60000) / 1000);
 
-  try {
-    await fetch(API_BASE + '/generalprove-submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: userEmail,
-        answers: answers,
-        time_spent_seconds: Math.floor(timeSpentMs / 1000)
-      })
-    });
-  } catch (err) {
-    console.error('Submit error:', err);
-    // Still show confirmation — answers are saved locally as fallback
-  }
+  var payload = {
+    client_attempt_id: clientAttemptId,
+    email: userEmail,
+    name: userName,
+    answers: answers,
+    time_spent_seconds: Math.floor(timeSpentMs / 1000),
+    started_at: examStartedAt ? examStartedAt.toISOString() : null
+  };
 
-  // Show post-exam
+  // 1. Persist FIRST — survives anything from here on.
+  persistPending(payload);
+
+  // 2. UI commits immediately.
   document.getElementById('postEmail').textContent = userEmail;
   document.getElementById('postAnswered').textContent = Object.keys(answers).length;
   document.getElementById('postUnanswered').textContent = QUESTIONS.length - Object.keys(answers).length;
   document.getElementById('postTime').textContent = timeSpentMin + ':' + String(timeSpentSec).padStart(2, '0');
-
   showState('post');
   window.scrollTo(0, 0);
+
+  // 3. Wire unload handlers BEFORE scheduling, so a tab close mid-jitter still delivers.
+  installUnloadBeacon();
+
+  // 4. Schedule jittered delivery.
+  var maxDelayMs = auto ? (15 * 60 * 1000) : (60 * 1000);
+  var delayMs = Math.floor(Math.random() * maxDelayMs);
+  setTimeout(function() { deliverPending(); }, delayMs);
+}
+
+async function deliverPending() {
+  var raw;
+  try { raw = localStorage.getItem(PENDING_KEY); } catch (_) { return; }
+  if (!raw) return; // already delivered
+
+  try {
+    var res = await fetch(API_BASE + '/generalprove-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: raw
+    });
+    if (res && res.ok) {
+      clearPending();
+      // Also wipe the attempt id now that this attempt is fully delivered;
+      // a future visit (e.g. somebody else on the same machine) starts fresh.
+      try { localStorage.removeItem('gp_attempt_id'); } catch (_) {}
+    }
+    // If non-OK, leave it in localStorage — recovery hook will retry.
+  } catch (_) {
+    // Network blip — leave in localStorage for retry.
+  }
+}
+
+function installUnloadBeacon() {
+  function flushBeacon() {
+    var raw;
+    try { raw = localStorage.getItem(PENDING_KEY); } catch (_) { return; }
+    if (!raw) return;
+    try {
+      // sendBeacon is fire-and-forget and survives tab close.
+      // We deliberately do NOT clear localStorage here — beacon has no response,
+      // so the recovery hook will retry next page load if it didn't actually land.
+      // The edge function upserts on client_attempt_id, so a duplicate is harmless.
+      navigator.sendBeacon(
+        API_BASE + '/generalprove-submit',
+        new Blob([raw], { type: 'application/json' })
+      );
+    } catch (_) {}
+  }
+  window.addEventListener('beforeunload', flushBeacon);
+  window.addEventListener('pagehide', flushBeacon);    // iOS Safari, BFCache
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') flushBeacon();
+  });
+}
+
+
+/* ================================================================
+   RECOVERY HOOK
+   ================================================================
+   On every page load, check if a pending submission is sitting in
+   localStorage from a previous session that was interrupted before
+   delivery. If so, try to deliver it now.
+*/
+
+function recoverPendingSubmission() {
+  try {
+    if (localStorage.getItem(PENDING_KEY)) {
+      // Don't await — fire and let it complete in the background.
+      deliverPending();
+    }
+  } catch (_) {}
 }
 
 
@@ -993,6 +1111,8 @@ async function submitExam(auto) {
    INIT
    ================================================================ */
 
+clientAttemptId = getOrCreateAttemptId();
+recoverPendingSubmission();
 route();
 </script>
 
