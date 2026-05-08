@@ -3,6 +3,10 @@
 # Permanent redirects (301)
 # =====================================================
 
+# --- Generalprøve exam moved to civiclearn.com (May 2026) ---
+/generalprove/eksamen/*                 https://civiclearn.com/generalprove/    301
+/generalprove/eksamen                   https://civiclearn.com/generalprove/    301
+
 # --- Core pages (extension cleanup / removed features) ---
 /spoergsmaal/*  /  301
 /ansvarsfraskrivelse.html               /ansvarsfraskrivelse                    301
