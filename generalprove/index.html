@@ -524,9 +524,12 @@
 
 <script>
 // Countdown (exam-status style)
+// gpTarget gets overwritten by generalprove-config on load; hardcoded value
+// below is the safety-net fallback if config is unreachable or returns 204.
+var gpTarget = new Date('2026-05-09T13:00:00+02:00');
+var examTarget = new Date('2026-06-03T00:00:00+02:00'); // real exam, fixed
+
 function updateGPCountdown() {
-  var gpTarget = new Date('2026-05-09T13:00:00+02:00');
-  var examTarget = new Date('2026-06-03T00:00:00+02:00');
   var now = new Date();
 
   // Generalprøve counter
@@ -551,8 +554,24 @@ function updateGPCountdown() {
     examEl.textContent = '0';
   }
 }
-updateGPCountdown();
-setInterval(updateGPCountdown, 60000);
+
+// Try to load the next event from config, then start the countdown.
+// 4-second budget; on failure or 204, keep hardcoded fallback.
+(function bootstrapCountdown() {
+  var done = false;
+  var ctrl = new AbortController();
+  setTimeout(function(){ if (!done) ctrl.abort(); }, 4000);
+  fetch('https://htgliokekeaovdiafrgs.supabase.co/functions/v1/generalprove-config', { signal: ctrl.signal })
+    .then(function(r){ done = true; return r.status === 200 ? r.json() : null; })
+    .then(function(ev){
+      if (ev && ev.exam_start_at) gpTarget = new Date(ev.exam_start_at);
+    })
+    .catch(function(){ /* fallback */ })
+    .finally(function(){
+      updateGPCountdown();
+      setInterval(updateGPCountdown, 60000);
+    });
+})();
 
 // FAQ (same as homepage)
 document.querySelectorAll(".faq-item").forEach(function(item) {
