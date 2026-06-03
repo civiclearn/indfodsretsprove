@@ -97,6 +97,37 @@
     .test-finish-link{background:none;border:none;color:var(--facit-muted);font:inherit;
       font-weight:600;cursor:pointer;text-decoration:underline;}
 
+    /* ---- question navigator ---- */
+    .qnav{margin:16px 0 0;padding:16px 18px;border:1px solid var(--facit-line);
+      border-radius:var(--facit-radius);background:var(--facit-bg-soft);}
+    .qnav-head{display:flex;justify-content:space-between;align-items:center;gap:12px;
+      flex-wrap:wrap;margin-bottom:12px;}
+    .qnav-title{font-weight:700;color:var(--facit-ink);font-size:.95rem;}
+    .qnav-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--facit-muted);}
+    .qnav-key{display:inline-flex;align-items:center;gap:6px;}
+    .qnav-swatch{width:14px;height:14px;border-radius:5px;border:1.5px solid var(--facit-line);
+      background:#fff;display:inline-block;}
+    .qnav-swatch.answered{background:var(--facit-accent);border-color:var(--facit-accent);}
+    .qnav-swatch.vaerdi-dot{background:#fff;border-color:#e0a900;position:relative;}
+    .qnav-swatch.vaerdi-dot::after{content:"";position:absolute;left:50%;bottom:2px;transform:translateX(-50%);
+      width:6px;height:2px;border-radius:2px;background:#e0a900;}
+    .qnav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:8px;}
+    .qnav-cell{position:relative;aspect-ratio:1/1;min-height:40px;border:1.5px solid var(--facit-line);
+      background:#fff;border-radius:10px;font:inherit;font-weight:700;font-size:.92rem;
+      color:var(--facit-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;
+      transition:all .12s ease;}
+    .qnav-cell:hover{border-color:var(--facit-accent);color:var(--facit-accent);transform:translateY(-1px);}
+    .qnav-cell.answered{background:var(--facit-accent);border-color:var(--facit-accent);color:#fff;}
+    .qnav-cell.current{box-shadow:0 0 0 3px var(--facit-accent-soft);border-color:var(--facit-accent);}
+    .qnav-cell.current:not(.answered){color:var(--facit-accent);}
+    .qnav-cell.vaerdi::after{content:"";position:absolute;left:50%;bottom:5px;transform:translateX(-50%);
+      width:10px;height:2px;border-radius:2px;background:#e0a900;}
+    .qnav-cell.answered.vaerdi::after{background:#fff;opacity:.85;}
+    @media(max-width:560px){
+      .qnav-grid{grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:6px;}
+      .qnav-cell{min-height:34px;font-size:.84rem;}
+    }
+
     /* ---- results: rich stats ---- */
     .facit-section{margin:26px 0;}
     .facit-section h3{font-size:1.05rem;font-weight:700;color:var(--facit-ink);
@@ -149,6 +180,31 @@
     .rev-stat{font-size:.85rem;color:var(--facit-muted);margin-top:10px;}
     .rev-stat strong{color:var(--facit-ink);}
 
+    /* ---- coverage badge (selling proof: question is in our database) ---- */
+    .rev-cov{display:flex;align-items:center;gap:10px;margin:12px 0 2px;padding:9px 12px;
+      border-radius:10px;font-size:.86rem;font-weight:600;line-height:1.3;}
+    .rev-cov .cov-ic{flex:0 0 auto;width:18px;height:18px;display:inline-flex;align-items:center;
+      justify-content:center;border-radius:50%;font-size:.7rem;font-weight:800;}
+    .rev-cov .cov-id{margin-left:auto;flex:0 0 auto;font-family:ui-monospace,Menlo,Consolas,monospace;
+      font-weight:700;font-size:.8rem;padding:3px 9px;border-radius:7px;background:rgba(0,0,0,.06);}
+    .rev-cov.exact{background:var(--facit-green-soft);color:#0f7a40;}
+    .rev-cov.exact .cov-ic{background:var(--facit-green);color:#fff;}
+    .rev-cov.topic{background:#eaf3ff;color:#1d5fc4;}
+    .rev-cov.topic .cov-ic{background:#1d5fc4;color:#fff;}
+    .rev-cov.aktuel{background:#fff4e3;color:#a9690a;}
+    .rev-cov.aktuel .cov-ic{background:#e0a900;color:#fff;}
+
+    /* ---- coverage pitch banner ---- */
+    .cov-pitch{margin:6px 0 22px;padding:20px 22px;border-radius:var(--facit-radius);
+      background:linear-gradient(135deg,#f3efff,#eaf3ff);border:1px solid #ddd6fe;}
+    .cov-pitch .cp-big{font-size:1.7rem;font-weight:800;color:var(--facit-accent);line-height:1.1;}
+    .cov-pitch .cp-lead{font-size:1.02rem;color:var(--facit-ink);margin:6px 0 4px;font-weight:600;}
+    .cov-pitch .cp-sub{font-size:.92rem;color:var(--facit-muted);}
+    .cov-pitch .cp-cta{display:inline-block;margin-top:14px;background:var(--facit-accent);color:#fff;
+      text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 22px;border-radius:10px;
+      transition:background .15s ease,transform .15s ease;}
+    .cov-pitch .cp-cta:hover{background:#5739d6;transform:translateY(-1px);}
+
     .facit-note-soft{font-size:.85rem;color:var(--facit-muted);margin-top:10px;}
     .facit-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 18px;}
   </style>
@@ -178,7 +234,7 @@
       <div class="brand-powered">
         drevet af <span>CivicLearn</span>
       </div>
-      <a href="https://civiclearn.com/denmark/checkout" class="btn-small-purple">Få fuld adgang</a>
+      <a href="https://civiclearn.com/indfodsret/checkout" class="btn-small-purple">Få fuld adgang</a>
     </div>
   </div>
 </header>
@@ -268,6 +324,19 @@
         <button class="test-finish-link" id="btnFinishEarly">Afslut og se resultat</button>
       </div>
     </div>
+
+    <!-- Question navigator: jump to any question; spot unanswered at a glance -->
+    <div class="qnav" id="qnav">
+      <div class="qnav-head">
+        <span class="qnav-title">Oversigt</span>
+        <span class="qnav-legend">
+          <span class="qnav-key"><span class="qnav-swatch answered"></span> Besvaret</span>
+          <span class="qnav-key"><span class="qnav-swatch"></span> Ubesvaret</span>
+          <span class="qnav-key"><span class="qnav-swatch vaerdi-dot"></span> Værdier</span>
+        </span>
+      </div>
+      <div class="qnav-grid" id="qnavGrid"></div>
+    </div>
   </div>
 
   <!-- ===== RESULTS ===== -->
@@ -275,6 +344,8 @@
     <h2>Testresultat</h2>
     <div id="gradeStamp" class="result-stamp"></div>
     <p id="resultText" class="result-text"></p>
+
+    <div id="covPitchResult" class="cov-pitch" style="display:none;"></div>
 
     <div class="facit-section" id="percentileWrap" style="display:none;">
       <div class="facit-percentile" id="percentileText"></div>
@@ -301,7 +372,7 @@
     </div>
 
     <div class="cta">
-      <a href="https://civiclearn.com/denmark/checkout" class="btn">
+      <a href="https://civiclearn.com/indfodsret/checkout" class="btn">
         Få fuld adgang til alle prøver
       </a>
     </div>
@@ -315,13 +386,14 @@
       Procenttallene viser, hvor stor en andel der har svaret rigtigt blandt
       dem, der har taget prøven her på siden.
     </p>
+    <div id="covPitchFacit" class="cov-pitch" style="display:none;"></div>
     <div class="facit-toolbar">
       <button class="btn" id="btnTakeFromFacit">Tag prøven selv</button>
     </div>
     <div class="rev-list" id="facitList"></div>
 
     <div class="cta">
-      <a href="https://civiclearn.com/denmark/checkout" class="btn">
+      <a href="https://civiclearn.com/indfodsret/checkout" class="btn">
         Få fuld adgang til alle prøver
       </a>
     </div>
@@ -411,6 +483,9 @@ const QUESTIONS = [
   { n:45, section:"vaerdi", text:"Hvilken placering indtager Danmark ud af 167 lande i verden, når det gælder om at have det bedst fungerende demokrati (ifølge The Economist Democracy Index 2025)?", options:["1-5", "21-25", "41-45"], correct:0 },
 ];
 
+/* --- coverage map: links each official question to our database (selling proof) --- */
+const COVERAGE = {1:{tier:'exact',id:"DK-0147"},2:{tier:'exact',id:"DK-0154"},3:{tier:'exact',id:"DK-0182"},4:{tier:'exact',id:"DK-0141"},5:{tier:'exact',id:"DK-0617"},6:{tier:'exact',id:"DK-0001"},7:{tier:'exact',id:"DK-0006"},8:{tier:'exact',id:"DK-0280"},9:{tier:'topic',id:"DK-1232"},10:{tier:'exact',id:"DK-0316"},11:{tier:'exact',id:"DK-0473"},12:{tier:'exact',id:"DK-0338"},13:{tier:'exact',id:"DK-0518"},14:{tier:'exact',id:"DK-0215"},15:{tier:'topic',id:"DK-0173"},16:{tier:'exact',id:"DK-0126"},17:{tier:'exact',id:"DK-0535"},18:{tier:'exact',id:"DK-0533"},19:{tier:'topic',id:"DK-2088"},20:{tier:'topic',id:"DK-2106"},21:{tier:'exact',id:"DK-0127"},22:{tier:'topic',id:"DK-0462"},23:{tier:'exact',id:"DK-0353"},24:{tier:'exact',id:"DK-0522"},25:{tier:'exact',id:"DK-0422"},26:{tier:'exact',id:"DK-1508"},27:{tier:'exact',id:"DK-0267"},28:{tier:'topic',id:"DK-0238"},29:{tier:'exact',id:"DK-0202"},30:{tier:'exact',id:"DK-0216"},31:{tier:'topic',id:"DK-0831"},32:{tier:'topic',id:"DK-0377"},33:{tier:'topic',id:"DK-1853"},34:{tier:'exact',id:"DK-0167"},35:{tier:'topic',id:"DK-0982"},36:{tier:'aktuel',id:null},37:{tier:'aktuel',id:null},38:{tier:'aktuel',id:null},39:{tier:'aktuel',id:null},40:{tier:'aktuel',id:null},41:{tier:'exact',id:"DK-3055"},42:{tier:'topic',id:"DK-2978"},43:{tier:'exact',id:"DK-3039"},44:{tier:'topic',id:"DK-3052"},45:{tier:'topic',id:"DK-3031"}};
+const COVERAGE_STATS = {exact:27,topic:13,aktuel:5,covered:40,total:45};
 /* --- safety check --- */
 if (QUESTIONS.length !== TOTAL_QUESTIONS) {
   console.error("FEJL: QUESTIONS skal være præcis 45. Antal nu:", QUESTIONS.length);
@@ -479,6 +554,7 @@ function startTest(){
   timerEl.textContent = fmtTime(timerSec);
   timerInt = setInterval(tick, 1000);
   qi = 0;
+  buildNav();
   renderQuestion();
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -513,6 +589,14 @@ function renderQuestion(){
   btnPrev.disabled = (qi === 0);
   btnNext.textContent = (qi === TOTAL_QUESTIONS - 1) ? "Se resultat →" : "Næste →";
   updateProgress();
+  updateNav();
+}
+
+function goToQuestion(i){
+  if (i < 0 || i >= TOTAL_QUESTIONS) return;
+  qi = i;
+  renderQuestion();
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
 function pick(idx){
@@ -521,6 +605,38 @@ function pick(idx){
   Array.from(choicesEl.children).forEach((btn,i) =>
     btn.classList.toggle('facit-selected', i === idx));
   updateProgress();
+  updateNav();
+}
+
+/* ---- question navigator ---- */
+function buildNav(){
+  const grid = $('qnavGrid');
+  if (!grid) return;
+  grid.innerHTML = "";
+  QUESTIONS.forEach((q,i) => {
+    const cell = document.createElement('button');
+    cell.type = 'button';
+    cell.className = 'qnav-cell' + (q.section === 'vaerdi' ? ' vaerdi' : '');
+    cell.textContent = q.n;
+    cell.title = q.section === 'vaerdi' ? `Spørgsmål ${q.n} · Danske værdier` : `Spørgsmål ${q.n}`;
+    cell.addEventListener('click', () => goToQuestion(i));
+    grid.appendChild(cell);
+  });
+  updateNav();
+}
+
+function updateNav(){
+  const grid = $('qnavGrid');
+  if (!grid || !grid.children.length) return;
+  Array.from(grid.children).forEach((cell,i) => {
+    cell.classList.toggle('answered', picks[i] >= 0);
+    cell.classList.toggle('current', i === qi);
+  });
+}
+
+function firstUnanswered(){
+  for (let i=0;i<TOTAL_QUESTIONS;i++){ if (picks[i] < 0) return i; }
+  return -1;
 }
 
 function updateProgress(){
@@ -540,7 +656,18 @@ $('btnFinishEarly').addEventListener('click', confirmFinish);
 
 function confirmFinish(){
   const blanks = TOTAL_QUESTIONS - answeredCount();
-  if (blanks > 0 && !confirm(`Du mangler at besvare ${blanks} spørgsmål. De tæller som forkerte. Vil du aflevere nu?`)) return;
+  if (blanks > 0){
+    const submitAnyway = confirm(
+      `Du mangler at besvare ${blanks} ${blanks === 1 ? 'spørgsmål' : 'spørgsmål'}. ` +
+      `Ubesvarede spørgsmål tæller som forkerte.\n\n` +
+      `Tryk OK for at aflevere alligevel, eller Annullér for at gå til det første ubesvarede spørgsmål.`
+    );
+    if (!submitAnyway){
+      const first = firstUnanswered();
+      if (first >= 0) goToQuestion(first);
+      return;
+    }
+  }
   finishTest(false);
 }
 
@@ -586,6 +713,7 @@ async function finishTest(byTimeout){
   renderChart(total, TOTAL_QUESTIONS - total);
   renderSectionBars();
   renderReview(null); // render immediately without per-question stats
+  renderCoveragePitch('covPitchResult');
 
   // record + fetch stats (never block the result on the network)
   const stats = await recordAndFetchStats({ timeSpent, total });
@@ -727,8 +855,27 @@ function reviewItem(q, userPick, stat, showUserPick){
       (${Number(stat.n_answered).toLocaleString('da-DK')} besvarelser).</div>`;
   }
 
-  item.innerHTML = head + `<div class="rev-opts">${opts}</div>` + statLine;
+  item.innerHTML = head + `<div class="rev-opts">${opts}</div>` + coverageBadge(q.n) + statLine;
   return item;
+}
+
+/* coverage badge — proves the question is in our training database */
+function coverageBadge(num){
+  const c = COVERAGE[num];
+  if (!c) return "";
+  if (c.tier === 'exact'){
+    return `<div class="rev-cov exact"><span class="cov-ic">✓</span>
+      <span>Præcis dette spørgsmål er i vores træningsdatabase</span>
+      <span class="cov-id">${c.id}</span></div>`;
+  }
+  if (c.tier === 'topic'){
+    return `<div class="rev-cov topic"><span class="cov-ic">✓</span>
+      <span>Vi træner dig i præcis dette emne</span>
+      <span class="cov-id">${c.id}</span></div>`;
+  }
+  // aktuel — current-events question, refreshed before each exam (no false DB claim)
+  return `<div class="rev-cov aktuel"><span class="cov-ic">↻</span>
+    <span>Aktuelt spørgsmål · vores aktuelle-modul opdateres før hver prøve</span></div>`;
 }
 
 /* ---------------------------------------------------------------------------
@@ -809,6 +956,20 @@ async function showFacitOnly(){
   const map = statByNum(stats);
   const list = $('facitList'); list.innerHTML = "";
   QUESTIONS.forEach(q => list.appendChild(reviewItem(q, -1, map[q.n], false)));
+  renderCoveragePitch('covPitchFacit');
+}
+
+/* headline sales pitch built from the coverage stats */
+function renderCoveragePitch(elId){
+  const el = $(elId); if (!el) return;
+  const s = COVERAGE_STATS;
+  el.innerHTML =
+    `<div class="cp-big">${s.covered} af ${s.total} spørgsmål</div>` +
+    `<div class="cp-lead">fra den officielle prøve den 3. juni 2026 findes i CivicLearns træningsdatabase — heraf ${s.exact} ordret.</div>` +
+    `<div class="cp-sub">Havde du trænet med os, havde du mødt dem på forhånd. ` +
+    `Databasen rummer over 3.000 spørgsmål med forklaringer, og aktuelle-modulet opdateres før hver prøve.</div>` +
+    `<a class="cp-cta" href="https://civiclearn.com/indfodsret/checkout">Start din træning nu →</a>`;
+  el.style.display = "block";
 }
 
 /* ---------------------------------------------------------------------------
