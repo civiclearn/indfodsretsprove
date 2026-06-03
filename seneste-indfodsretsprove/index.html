@@ -55,17 +55,42 @@
     }
     .facit-hidden{display:none !important;}
 
-    /* intro buttons row */
-    .intro-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px;}
-    .facit-link-btn{background:none;border:none;color:var(--facit-accent);font:inherit;
-      font-weight:600;cursor:pointer;text-decoration:underline;padding:6px 2px;}
+    /* intro buttons row — Start on the left, facit pill pushed to the right */
+    .intro-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      justify-content:space-between;margin-top:8px;}
+    .facit-link-btn{display:inline-flex;align-items:center;gap:8px;
+      background:var(--facit-bg-soft);border:1.5px solid var(--facit-line);
+      color:var(--facit-ink);font:inherit;font-weight:600;font-size:.9rem;
+      cursor:pointer;text-decoration:none;padding:10px 18px;border-radius:999px;
+      transition:border-color .15s ease,box-shadow .15s ease,color .15s ease,background .15s ease;}
+    .facit-link-btn::before{content:"";width:15px;height:15px;flex:0 0 auto;
+      background:currentColor;-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain;
+      -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 11l3 3L22 4'/><path d='M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11'/></svg>");
+      mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 11l3 3L22 4'/><path d='M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11'/></svg>");}
+    .facit-link-btn::after{content:"→";font-weight:700;opacity:.7;}
+    .facit-link-btn:hover{border-color:var(--facit-accent);color:var(--facit-accent);
+      background:#fff;box-shadow:0 3px 12px rgba(108,76,241,.14);}
+    @media(max-width:560px){ .intro-actions{justify-content:flex-start;} }
 
-    /* answered/selected state during the live test (no correctness reveal) */
-    .choice.facit-selected{border-color:var(--facit-accent);box-shadow:0 0 0 2px var(--facit-accent-soft) inset;}
+    /* answered/selected state during the live test (no correctness reveal) — bold + obvious */
+    .choice{display:flex;align-items:center;gap:2px;text-align:left;
+      transition:border-color .15s ease,background .15s ease,box-shadow .15s ease,transform .12s ease;}
+    .choice.facit-selected{
+      border:2px solid var(--facit-accent) !important;
+      background:var(--facit-accent-soft) !important;
+      color:var(--facit-accent) !important;
+      font-weight:600 !important;
+      box-shadow:0 0 0 4px rgba(108,76,241,.16), 0 8px 18px rgba(108,76,241,.18) !important;
+      transform:translateY(-1px);
+    }
+    .choice.facit-selected::after{content:"✓";margin-left:auto;font-weight:800;
+      color:var(--facit-accent);font-size:1.05rem;padding-left:10px;}
     .choice .facit-letter{display:inline-flex;align-items:center;justify-content:center;
-      width:24px;height:24px;border-radius:50%;background:var(--facit-bg-soft);
-      font-weight:700;font-size:.82rem;margin-right:10px;color:var(--facit-ink);flex:0 0 auto;}
-    .choice{display:flex;align-items:center;gap:2px;text-align:left;}
+      width:26px;height:26px;border-radius:50%;background:var(--facit-bg-soft);
+      font-weight:700;font-size:.82rem;margin-right:10px;color:var(--facit-ink);flex:0 0 auto;
+      transition:background .15s ease,color .15s ease,box-shadow .15s ease;}
+    .choice.facit-selected .facit-letter{background:var(--facit-accent) !important;color:#fff !important;
+      box-shadow:0 0 0 3px var(--facit-accent-soft);}
 
     .test-subnav{display:flex;justify-content:space-between;align-items:center;gap:10px;
       margin:14px 0 0;flex-wrap:wrap;}
@@ -209,8 +234,9 @@
       <button class="intro-cta" id="btnStart">
         Start prøven
       </button>
-      <button class="facit-link-btn" id="btnFacitOnly">
-        Jeg har allerede taget prøven – vis facitlisten
+      <button class="facit-link-btn" id="btnFacitOnly"
+        title="Har du allerede taget den rigtige prøve? Se de officielle svar og statistik uden at tage testen.">
+        Se facitlisten
       </button>
     </div>
 
@@ -321,7 +347,7 @@
 
 /* ---- Supabase (offentlig anon-nøgle – samme som dine øvrige Denmark-sider) ---- */
 const SUPABASE_URL  = "https://htgliokekeaovdiafrgs.supabase.co";
-const SUPABASE_ANON = "PUT_YOUR_SUPABASE_ANON_KEY_HERE"; /* <-- indsæt din offentlige anon key */
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh0Z2xpb2tla2Vhb3ZkaWFmcmdzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1NTcxMzMsImV4cCI6MjA3OTEzMzEzM30.nGWQn8GJn7aJct3Fu36p63NQvCqnifiPYQnF8QJKLYs"; /* <-- indsæt din offentlige anon key */
 const EXAM_ID       = "indfodsret-2026-06";
 
 /* ---- Officielle beståkrav ---- */
@@ -563,11 +589,17 @@ async function finishTest(byTimeout){
 
   // record + fetch stats (never block the result on the network)
   const stats = await recordAndFetchStats({ timeSpent, total });
-  if (stats){
+  if (stats && stats.totals && stats.totals.total_attempts > 0){
     statsCache = stats;
     renderPercentile(stats, total);
     renderGlobalStats(stats);
     renderReview(stats);       // re-render review with per-question %
+  } else {
+    // stats couldn't load (network/temporary) — surface it gently, never block the result
+    $('globalStatsWrap').style.display = "block";
+    $('globalStats').innerHTML = "";
+    $('globalStatsNote').textContent =
+      "Statistik kunne ikke indlæses lige nu. Genindlæs siden om lidt for at se, hvordan andre klarer sig.";
   }
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -723,7 +755,7 @@ async function recordAndFetchStats({ timeSpent, total }){
 
   // insert (fire, but await so the new row is counted in the stats we fetch)
   try {
-    await fetch(`${SUPABASE_URL}/rest/v1/facit_attempts`, {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/facit_attempts`, {
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -733,6 +765,10 @@ async function recordAndFetchStats({ timeSpent, total }){
       },
       body: JSON.stringify(row)
     });
+    if (!r.ok){
+      const body = await r.text().catch(()=> "");
+      console.warn("[facit] forsøg ikke gemt — HTTP", r.status, body);
+    }
   } catch(e){ console.warn("[facit] kunne ikke gemme forsøg:", e); }
 
   return fetchStats();
