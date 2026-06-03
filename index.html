@@ -90,6 +90,23 @@
       .pricing-tab.tab-combo{padding-top:9px;}
       .tab-save{margin-left:4px;font-size:.62rem;}
     }
+    /* Latest-exam hero callout — additive, links to the new interactive test */
+    .latest-exam-cta{display:flex;align-items:center;gap:16px;max-width:1100px;margin:18px auto 0;
+      padding:16px 22px;background:#fff;border:2px solid #ffd9dd;border-radius:16px;
+      text-decoration:none;color:#1d2230;box-shadow:0 6px 20px rgba(200,16,46,.08);
+      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+    .latest-exam-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,16,46,.16);border-color:#C8102E;}
+    .lec-pill{flex:0 0 auto;background:#C8102E;color:#fff;font-weight:700;font-size:.72rem;
+      letter-spacing:.06em;padding:6px 12px;border-radius:999px;}
+    .lec-text{flex:1 1 auto;font-size:.96rem;line-height:1.45;}
+    .lec-text strong{display:block;font-size:1.04rem;margin-bottom:2px;}
+    .lec-go{flex:0 0 auto;background:#C8102E;color:#fff;font-weight:600;font-size:.92rem;
+      padding:11px 18px;border-radius:10px;white-space:nowrap;}
+    .latest-exam-cta:hover .lec-go{background:#a00d24;}
+    @media(max-width:640px){
+      .latest-exam-cta{flex-direction:column;align-items:flex-start;gap:10px;margin:14px 16px 0;}
+      .lec-go{width:100%;text-align:center;}
+    }
   </style>
 </head>
 
@@ -167,6 +184,17 @@
 
     </div>
   </section>
+
+  <!-- LATEST EXAM CALLOUT (added) — links to /seneste-indfodsretsprove -->
+  <a href="/seneste-indfodsretsprove" class="latest-exam-cta">
+    <span class="lec-pill">NY</span>
+    <span class="lec-text">
+      <strong>Prøven fra 3. juni 2026 er nu online.</strong>
+      Tag den seneste indfødsretsprøve med alle 45 officielle spørgsmål – få dit resultat
+      med det samme og se, hvor mange der svarer rigtigt på hvert spørgsmål.
+    </span>
+    <span class="lec-go">Tag prøven &rarr;</span>
+  </a>
 
   <!-- HERO CENTER CONTENT (KEEP EXISTING WRAPPER CLASS) -->
   <div class="hero-center hero-center--spaced">
