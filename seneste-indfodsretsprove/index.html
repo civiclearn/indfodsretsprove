@@ -4,36 +4,129 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Seneste indfødsretsprøve – 26. november 2025 | indfodsretsprove.dk</title>
+  <title>Seneste indfødsretsprøve – 3. juni 2026 | indfodsretsprove.dk</title>
 
   <!-- SEO -->
   <link rel="canonical" href="https://indfodsretsprove.dk/seneste-indfodsretsprove" />
 
   <meta name="description"
-    content="Information om den seneste indfødsretsprøve afholdt den 26. november 2025. Se prøvens struktur, vigtige datoer og hvordan du bedst forbereder dig til indfødsretsprøven." />
+    content="Tag den seneste indfødsretsprøve fra 3. juni 2026 online – alle 45 officielle spørgsmål, 45 minutter, automatisk bedømmelse og statistik over hvor mange der svarer rigtigt." />
 
   <meta name="keywords"
-    content="seneste indfødsretsprøve, indfødsretsprøve november 2025, indfødsretsprøven 26 november, dansk statsborgerskab prøve, forberedelse indfødsretsprøven" />
+    content="seneste indfødsretsprøve, indfødsretsprøve juni 2026, indfødsretsprøven 3 juni 2026, dansk statsborgerskab prøve, facitliste indfødsretsprøve, statistik indfødsretsprøve" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Seneste indfødsretsprøve – 26. november 2025" />
+  <meta property="og:title" content="Seneste indfødsretsprøve – 3. juni 2026" />
   <meta property="og:description"
-    content="Overblik over den seneste indfødsretsprøve afholdt den 26. november 2025 samt vejledning til forberedelse." />
+    content="Tag den seneste indfødsretsprøve fra 3. juni 2026 online med alle 45 officielle spørgsmål. Få dit resultat med det samme og se hvordan andre klarede sig." />
   <meta property="og:url" content="https://indfodsretsprove.dk/seneste-indfodsretsprove" />
   <meta property="og:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Seneste indfødsretsprøve – 26. november 2025" />
+  <meta name="twitter:title" content="Seneste indfødsretsprøve – 3. juni 2026" />
   <meta name="twitter:description"
-    content="Se information om indfødsretsprøven af 26. november 2025 og hvordan du forbereder dig bedst." />
+    content="Tag den officielle indfødsretsprøve fra 3. juni 2026 online og se statistik over rigtige og forkerte svar." />
   <meta name="twitter:image" content="https://indfodsretsprove.dk/assets/images/og-default.jpg" />
 
   <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/shared.css">
   <link rel="stylesheet" href="/assets/css/testpages.css">
+
+  <!-- Page-specific styles for the new tracking/stats/review components.
+       Scoped with facit-/rev- prefixes so they never collide with shared.css/testpages.css.
+       Recolour everything from the one accent var below. -->
+  <style>
+    :root{
+      --facit-accent:#6c4cf1;
+      --facit-accent-soft:#efeaff;
+      --facit-green:#1f9d5b;
+      --facit-green-soft:#e6f6ee;
+      --facit-red:#d2453d;
+      --facit-red-soft:#fbe9e8;
+      --facit-ink:#1d2230;
+      --facit-muted:#6b7280;
+      --facit-line:#e7e8ee;
+      --facit-card:#ffffff;
+      --facit-bg-soft:#f6f7fb;
+      --facit-radius:14px;
+    }
+    .facit-hidden{display:none !important;}
+
+    /* intro buttons row */
+    .intro-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px;}
+    .facit-link-btn{background:none;border:none;color:var(--facit-accent);font:inherit;
+      font-weight:600;cursor:pointer;text-decoration:underline;padding:6px 2px;}
+
+    /* answered/selected state during the live test (no correctness reveal) */
+    .choice.facit-selected{border-color:var(--facit-accent);box-shadow:0 0 0 2px var(--facit-accent-soft) inset;}
+    .choice .facit-letter{display:inline-flex;align-items:center;justify-content:center;
+      width:24px;height:24px;border-radius:50%;background:var(--facit-bg-soft);
+      font-weight:700;font-size:.82rem;margin-right:10px;color:var(--facit-ink);flex:0 0 auto;}
+    .choice{display:flex;align-items:center;gap:2px;text-align:left;}
+
+    .test-subnav{display:flex;justify-content:space-between;align-items:center;gap:10px;
+      margin:14px 0 0;flex-wrap:wrap;}
+    .test-finish-link{background:none;border:none;color:var(--facit-muted);font:inherit;
+      font-weight:600;cursor:pointer;text-decoration:underline;}
+
+    /* ---- results: rich stats ---- */
+    .facit-section{margin:26px 0;}
+    .facit-section h3{font-size:1.05rem;font-weight:700;color:var(--facit-ink);
+      margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+    .facit-percentile{font-size:1.08rem;color:var(--facit-ink);
+      background:var(--facit-accent-soft);border-radius:var(--facit-radius);
+      padding:14px 18px;line-height:1.45;}
+    .facit-percentile strong{color:var(--facit-accent);}
+
+    .facit-metricgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+    .facit-metric{background:var(--facit-card);border:1px solid var(--facit-line);
+      border-radius:var(--facit-radius);padding:14px 16px;}
+    .facit-metric .v{font-size:1.5rem;font-weight:700;color:var(--facit-ink);line-height:1.1;}
+    .facit-metric .l{font-size:.82rem;color:var(--facit-muted);margin-top:4px;}
+
+    .facit-sectionbars{display:flex;flex-direction:column;gap:12px;}
+    .facit-bar-row{display:grid;grid-template-columns:160px 1fr 70px;align-items:center;gap:12px;}
+    .facit-bar-track{background:var(--facit-bg-soft);border-radius:999px;height:14px;overflow:hidden;}
+    .facit-bar-fill{height:100%;border-radius:999px;background:var(--facit-accent);}
+    .facit-bar-row .lbl{font-size:.9rem;color:var(--facit-ink);}
+    .facit-bar-row .val{font-size:.88rem;color:var(--facit-muted);text-align:right;}
+    @media(max-width:560px){
+      .facit-bar-row{grid-template-columns:1fr;gap:4px;}
+      .facit-bar-row .val{text-align:left;}
+    }
+
+    /* ---- per-question review / facit list ---- */
+    .rev-list{display:flex;flex-direction:column;gap:14px;}
+    .rev-item{border:1px solid var(--facit-line);border-radius:var(--facit-radius);
+      padding:16px 18px;background:var(--facit-card);}
+    .rev-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px;}
+    .rev-q{font-weight:600;color:var(--facit-ink);line-height:1.4;}
+    .rev-num{color:var(--facit-muted);font-weight:700;margin-right:6px;}
+    .rev-tag{flex:0 0 auto;font-size:.72rem;font-weight:700;letter-spacing:.02em;
+      padding:3px 9px;border-radius:999px;text-transform:uppercase;}
+    .rev-tag.vaerdi{background:#fff3e0;color:#b06a00;}
+    .rev-tag.aktuel{background:#e8f1ff;color:#1d5fc4;}
+    .rev-opts{display:flex;flex-direction:column;gap:7px;margin-top:8px;}
+    .rev-opt{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;
+      border:1px solid var(--facit-line);font-size:.94rem;color:var(--facit-ink);}
+    .rev-opt .rletter{font-weight:700;width:20px;flex:0 0 auto;}
+    .rev-opt .rpct{margin-left:auto;font-size:.82rem;color:var(--facit-muted);flex:0 0 auto;}
+    .rev-opt.is-correct{background:var(--facit-green-soft);border-color:#bfe6ce;color:#0f7a40;font-weight:600;}
+    .rev-opt.is-userwrong{background:var(--facit-red-soft);border-color:#f3c9c6;}
+    .rev-opt .rmark{margin-left:8px;font-size:.78rem;font-weight:700;}
+    .rev-distbar{height:6px;border-radius:999px;background:var(--facit-bg-soft);
+      margin-top:4px;overflow:hidden;flex:1 1 auto;min-width:50px;}
+    .rev-distfill{height:100%;background:#c7cbe0;border-radius:999px;}
+    .rev-opt.is-correct .rev-distfill{background:var(--facit-green);}
+    .rev-stat{font-size:.85rem;color:var(--facit-muted);margin-top:10px;}
+    .rev-stat strong{color:var(--facit-ink);}
+
+    .facit-note-soft{font-size:.85rem;color:var(--facit-muted);margin-top:10px;}
+    .facit-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 18px;}
+  </style>
 </head>
 
 
@@ -76,13 +169,13 @@
 
     <h2 class="intro-title">
   Seneste indfødsretsprøve
-  <span class="intro-date-pill">26. november 2025</span>
+  <span class="intro-date-pill">3. juni 2026</span>
 </h2>
 
     <p>
       Denne side viser den <strong>senest afholdte indfødsretsprøve</strong>,
-      sammensat ud fra de <strong>officielle spørgsmål</strong>, som blev brugt
-      ved den seneste prøveafholdelse.
+      med de <strong>officielle spørgsmål</strong> fra prøveafholdelsen den
+      <strong>3. juni 2026</strong>.
     </p>
 
     <p>
@@ -112,41 +205,94 @@
       og kommende prøver kan indeholde andre spørgsmål.
     </p>
 
-    <button class="intro-cta">
-      Luk introduktion
-    </button>
+    <div class="intro-actions">
+      <button class="intro-cta" id="btnStart">
+        Start prøven
+      </button>
+      <button class="facit-link-btn" id="btnFacitOnly">
+        Jeg har allerede taget prøven – vis facitlisten
+      </button>
+    </div>
 
   </div>
 </section>
 
 
-  <div class="test-header">
-    <div>
-      <div class="badge">Gratis test – 45 spørgsmål</div>
-      <div class="progress" id="progressLabel">Spørgsmål 1 af 45 · Point 0</div>
+  <!-- ===== TEST ===== -->
+  <div id="testArea" class="facit-hidden">
+    <div class="test-header">
+      <div>
+        <div class="badge">Officiel prøve · 3. juni 2026 · 45 spørgsmål</div>
+        <div class="progress" id="progressLabel">Spørgsmål 1 af 45 · besvaret 0/45</div>
+      </div>
+      <div class="timer badge" id="timer">45:00</div>
     </div>
-    <div class="timer badge" id="timer">45:00</div>
+
+    <div class="question-card">
+      <div class="q-title" id="qTitle">…</div>
+      <div class="choices" id="choices"></div>
+
+      <div class="controls">
+        <button class="btn secondary" id="btnPrev" disabled>← Forrige</button>
+        <button class="btn" id="btnNext">Næste →</button>
+      </div>
+
+      <div class="test-subnav">
+        <span class="progress" id="answeredHint"></span>
+        <button class="test-finish-link" id="btnFinishEarly">Afslut og se resultat</button>
+      </div>
+    </div>
   </div>
 
-  <div class="question-card">
-    <div class="q-title" id="qTitle">…</div>
-    <div class="choices" id="choices"></div>
-
-    <div class="controls">
-      <button class="btn secondary" id="btnPrev" disabled>← Forrige</button>
-      <button class="btn" id="btnNext" disabled>Næste →</button>
-    </div>
-  </div>
-
-  <!-- RESULTS -->
-  <div id="resultPanel" class="result-panel" style="display:none;">
+  <!-- ===== RESULTS ===== -->
+  <div id="resultPanel" class="result-panel facit-hidden">
     <h2>Testresultat</h2>
     <div id="gradeStamp" class="result-stamp"></div>
     <p id="resultText" class="result-text"></p>
 
+    <div class="facit-section" id="percentileWrap" style="display:none;">
+      <div class="facit-percentile" id="percentileText"></div>
+    </div>
+
     <div class="result-chart-container">
       <canvas id="resultChart"></canvas>
     </div>
+
+    <div class="facit-section">
+      <h3>Dine point pr. kategori</h3>
+      <div class="facit-sectionbars" id="sectionBars"></div>
+    </div>
+
+    <div class="facit-section" id="globalStatsWrap" style="display:none;">
+      <h3>Sådan klarer alle sig</h3>
+      <div class="facit-metricgrid" id="globalStats"></div>
+      <p class="facit-note-soft" id="globalStatsNote"></p>
+    </div>
+
+    <div class="facit-section">
+      <h3>Gennemgang af alle spørgsmål</h3>
+      <div class="rev-list" id="reviewList"></div>
+    </div>
+
+    <div class="cta">
+      <a href="https://civiclearn.com/denmark/checkout" class="btn">
+        Få fuld adgang til alle prøver
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== FACIT-ONLY ===== -->
+  <div id="facitPanel" class="result-panel facit-hidden">
+    <h2>Facitliste – indfødsretsprøven 3. juni 2026</h2>
+    <p class="result-text">
+      Alle 45 officielle spørgsmål med det korrekte svar markeret.
+      Procenttallene viser, hvor stor en andel der har svaret rigtigt blandt
+      dem, der har taget prøven her på siden.
+    </p>
+    <div class="facit-toolbar">
+      <button class="btn" id="btnTakeFromFacit">Tag prøven selv</button>
+    </div>
+    <div class="rev-list" id="facitList"></div>
 
     <div class="cta">
       <a href="https://civiclearn.com/denmark/checkout" class="btn">
@@ -164,293 +310,483 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-/* ======================================================
-   GRATIS PRØVE — INDFØDSRETSPRØVEN (OFFICIELLE REGLER)
-   - 45 spørgsmål
-   - Bestå: mindst 36/45
-   - Danske værdier: sidste 5 spørgsmål, max 1 fejl (>= 4/5)
-   - Timer: 45 minutter
-   ====================================================== */
+/* ============================================================================
+   SENESTE INDFØDSRETSPRØVE — 3. juni 2026 (officielle spørgsmål + svar)
+   - 45 spørgsmål, fast officiel rækkefølge (A/B/C), ingen blanding
+   - Svar afsløres FØRST efter aflevering (som den rigtige prøve)
+   - Bestå: mindst 36/45 OG højst 1 fejl i værdispørgsmål 41-45
+   - Timer: 45 min, starter ved "Start prøven"
+   - Hvert forsøg gemmes anonymt i Supabase; statistik hentes via get_facit_stats
+   ========================================================================== */
 
-// Q format: first option is correct (same convention as your existing prototype)
+/* ---- Supabase (offentlig anon-nøgle – samme som dine øvrige Denmark-sider) ---- */
+const SUPABASE_URL  = "https://htgliokekeaovdiafrgs.supabase.co";
+const SUPABASE_ANON = "PUT_YOUR_SUPABASE_ANON_KEY_HERE"; /* <-- indsæt din offentlige anon key */
+const EXAM_ID       = "indfodsret-2026-06";
+
+/* ---- Officielle beståkrav ---- */
+const TOTAL_QUESTIONS   = 45;
+const PASS_TOTAL        = 36;
+const VALUES_COUNT      = 5;
+const MAX_VALUES_ERRORS = 1;
+const TEST_MINUTES      = 45;
+
+const SECTION_LABELS = {
+  laere:  "Lærematerialet",
+  aktuel: "Aktuelle spørgsmål",
+  vaerdi: "Danske værdier"
+};
+
 const QUESTIONS = [
-  { q: "Hvilken politisk bevægelse var rødstrømpebevægelsen en del af?", a: ["Kvindebevægelsen i 70’erne", "Arbejderbevægelsen i 30’erne", "Miljøbevægelsen i 90’erne"] },
-  { q: "Var Danmark besat af tyske tropper under 1. verdenskrig (1914-18)?", a: ["Nej", "Ja"] },
-  { q: "Over hvilket farvand åbnede en bro i 1935?", a: ["Lillebælt", "Storebælt", "Øresund"] },
-  { q: "Hvornår blev det ved en folkeafstemning i Island besluttet at oprette en republik, der var uafhængig af Danmark?", a: ["1944", "1904", "1984"] },
-  { q: "Hvilket parti tilhørte Helle Thorning-Schmidt, da hun var statsminister i perioden 2011-15?", a: ["Socialdemokraterne", "Radikale Venstre", "Venstre"] },
-  { q: "Kan en regering bestå af et eller flere partier, der ikke tilsammen har flertal i Folketinget?", a: ["Ja", "Nej"] },
-  { q: "Hvor høj er valgdeltagelsen normalt til folketingsvalg?", a: ["Cirka 85 procent", "Cirka 70 procent", "Cirka 55 procent"] },
-  { q: "Hvem er den lovgivende, den udøvende og den dømmende magt fordelt mellem?", a: ["Folketinget, regeringen og domstolene", "Folketinget, kommunerne og domstolene", "Regeringen, regionerne og kommunerne"] },
-  { q: "Hvad er Sofie Gråbøl (f. 1968) særligt kendt for?", a: ["Hun er skuespiller", "Hun er forfatter", "Hun er kunstmaler"] },
-  { q: "Hvad hed forsangeren i bandet Gasolin?", a: ["Kim Larsen", "Michael Bundesen", "Steffen Brandt"] },
-  { q: "Hvilken af følgende fortællinger er skrevet af H.C. Andersen?", a: ["Den grimme ælling", "Skønheden og udyret", "Hans og Grete"] },
-  { q: "Hvem er kendt for at have skrevet manuskriptet til tv-serien Matador?", a: ["Lise Nørgaard", "Anders Thomas Jensen", "Nils Malmros"] },
-  { q: "Hvilket af følgende årtier var især kendetegnet ved høj vækst, fuld beskæftigelse og stor stigning i produktionen?", a: ["1960’erne", "1970’erne", "1980’erne"] },
-  { q: "Hvilken af følgende virksomheder er kendt for at producere vindmøller?", a: ["Vestas", "Mærsk", "Novo Nordisk"] },
-  { q: "Hvad er den kriminelle lavalder i Danmark?", a: ["15 år", "12 år", "18 år"] },
-  { q: "Hvilken ændring trådte i kraft i 2025 angående den fri abort?", a: ["Grænsen for fri abort blev hævet fra 12 til 18 uger", "Grænsen for fri abort blev sænket fra 12 til 9 uger"] },
-  { q: "Hvad indebar den seneste ændring af grundloven i 1953 blandt andet?", a: ["At kvinder fik mulighed for at arve tronen", "At valgretsalderen blev sænket til 18 år", "At Danmark blev medlem af FN"] },
-  { q: "Hvilket af følgende partier er ældst?", a: ["Radikale Venstre", "SF", "Enhedslisten"] },
-  { q: "Hvilket land blev Dansk Vestindien solgt til i 1917?", a: ["USA", "Storbritannien", "Frankrig"] },
-  { q: "Fik kvinder valgret til Folketinget med grundloven i 1849?", a: ["Nej", "Ja"] },
-  { q: "Hvilket symbol indgår i Grønlands flag?", a: ["En cirkel", "En trekant", "Et kors"] },
-  { q: "Gælder grundloven på Færøerne og i Grønland?", a: ["Ja", "Nej"] },
-  { q: "Hvilken tidligere dansk statsminister var generalsekretær for NATO i 2009-2014?", a: ["Anders Fogh Rasmussen", "Poul Nyrup Rasmussen", "Lars Løkke Rasmussen"] },
-  { q: "Hvilket kontinent modtager den største andel af Danmarks udviklingsbistand?", a: ["Afrika", "Sydamerika", "Asien"] },
-  { q: "Er Europa-Parlamentets medlemmer direkte valgt af befolkningerne i EU’s medlemslande?", a: ["Ja", "Nej"] },
-  { q: "Hvad handler Paris-aftalen, som FN vedtog i 2015, især om?", a: ["Klima", "Forsvar", "Kriminalitet"] },
-  { q: "Har Danmark forbehold for EU’s forsvars- og sikkerhedspolitik?", a: ["Nej", "Ja"] },
-  { q: "Hvilket af følgende lande blev erobret af Svend Tveskæg i 1000-tallet?", a: ["England", "Polen", "Frankrig"] },
-  { q: "Hvad hedder den ældste by i Danmark?", a: ["Ribe", "Esbjerg", "Frederikshavn"] },
-  { q: "Hvad indebar stavnsbåndet i 1700-tallet?", a: ["At bønderne havde begrænset ret til at flytte", "At kongen havde eneret på at handle med udlandet", "At kristendommen var den eneste tilladte religion"] },
-  { q: "Hvilken af følgende åbnede i Danmark i 1840'erne?", a: ["Den første jernbane", "Den første motorvej", "Den første lufthavn"] },
-  { q: "På hvilket slot i København bor kongen og hans familie en del af året?", a: ["Amalienborg", "Rosenborg", "Christiansborg"] },
-  { q: "Hvilket af følgende områder har kommunerne ansvaret for at drive?", a: ["Folkeskolerne", "Domstolene", "Sygehusene"] },
-  { q: "Hvilke myndigheder udskriver skatter?", a: ["Staten og kommunerne", "Staten og regionerne", "Regionerne og kommunerne"] },
-  { q: "Hvilket år fik personer af samme køn ret til at indgå et registreret partnerskab?", a: ["1989", "1972", "1955"] },
-  { q: "Hvad har Danmark formandskabet for mellem 1. juli og 31. december 2025?", a: ["Rådet for Den Europæiske Union", "FN’s Sikkerhedsråd", "Nordisk Ministerråd"] },
-  { q: "Hvilket parti fik flest stemmer på landsplan ved kommunalvalget den 18. november 2025?", a: ["Socialdemokratiet", "Venstre", "Det Konservative Folkeparti"] },
-  { q: "Hvilken dansk cykelrytter vandt Vuelta a España i 2025?", a: ["Jonas Vingegaard", "Mattias Skjelmose", "Magnus Cort"] },
-  { q: "På hvilke af følgende dagligvarer er priserne steget mest det seneste år (okt. 2024–okt. 2025)?", a: ["Okse- og kalvekød", "Mel og gryn", "Friske grøntsager"] },
-  { q: "Hvorfor blev Københavns Lufthavn lukket om aftenen den 22. september 2025?", a: ["Der var rapporteret droner ved lufthavnen", "Medarbejderne strejkede", "En stormflod ramte lufthavnen"] },
-
-  // --- DANSKE VÆRDIER (sidste 5) ---
-  { q: "Kan man ifølge dansk lov blive straffet med fængsel i 16 år, hvis man med vold eller trussel om vold forsøger at forhindre Folketinget i at træffe en beslutning?", a: ["Ja", "Nej"], values: true },
-  { q: "Er der i dansk lov en regel om, at en arbejdsgiver skal give kvinder og mænd lige løn for samme arbejde?", a: ["Ja", "Nej"], values: true },
-  { q: "Er det som udgangspunkt strafbart at udtale sig kritisk om andres religion?", a: ["Nej", "Ja"], values: true },
-  { q: "Hvor stor en andel af borgerne i Danmark finder det uacceptabelt, at en mand indimellem slår sin partner?", a: ["94 procent", "65 procent", "37 procent"], values: true },
-  { q: "Hvor stor en andel af borgerne i Danmark har tillid til, at politiet vil hjælpe dem, hvis de har brug for det?", a: ["Cirka 85 procent", "Cirka 60 procent", "Cirka 35 procent"], values: true }
+  { n:1, section:"laere", text:"I hvilket årti blev Danmark ramt af en flerårig økonomisk krise, som blev udløst af store prisstigninger på olie?", options:["1930'erne", "1950'erne", "1970'erne"], correct:2 },
+  { n:2, section:"laere", text:"Hvordan har de politiske partiers medlemstal overordnet udviklet sig siden 1950?", options:["Det er steget", "Det er faldet"], correct:1 },
+  { n:3, section:"laere", text:"Hvilket politisk parti blev dannet i slutningen af 1950'erne af en gruppe tidligere medlemmer af Danmarks Kommunistiske Parti?", options:["SF", "Alternativet", "Radikale Venstre"], correct:0 },
+  { n:4, section:"laere", text:"Hvad blev der afholdt en folkeafstemning om i 1972?", options:["Danmarks indtræden i EF", "Danmarks indtræden i NATO", "Danmarks indtræden i FN"], correct:0 },
+  { n:5, section:"laere", text:"Hvem har værnepligt i Danmark?", options:["Kun mænd", "Kun kvinder", "Både mænd og kvinder"], correct:2 },
+  { n:6, section:"laere", text:"Hvilken rettighed er sikret i grundloven?", options:["Retten til at få en bolig", "Retten til at få gratis lægehjælp", "Retten til at ytre sig"], correct:2 },
+  { n:7, section:"laere", text:"Hvor længe kan politiet tilbageholde en person, der er anholdt, før personen skal stilles for en dommer?", options:["12 timer", "24 timer", "48 timer"], correct:1 },
+  { n:8, section:"laere", text:"Ved hvilken by i Jylland malede Anna Ancher og Michael Ancher særligt mange af deres billeder i slutningen af 1800-tallet?", options:["Silkeborg", "Skagen", "Viborg"], correct:1 },
+  { n:9, section:"laere", text:"Hvad er Mads Mikkelsen (født 1965) særligt kendt for?", options:["Han er skuespiller", "Han er forfatter", "Han er musiker"], correct:0 },
+  { n:10, section:"laere", text:"Hvad var Inger Christensen (1935-2009) særligt kendt for?", options:["Hun var kunstmaler", "Hun var digter", "Hun var skuespiller"], correct:1 },
+  { n:11, section:"laere", text:"Hvem har skrevet et stort antal salmer i Den Danske Salmebog?", options:["Herman Bang", "Ludvig Holberg", "N.F.S. Grundtvig"], correct:2 },
+  { n:12, section:"laere", text:"Hvad fik videnskabsmanden Niels Bohr Nobelprisen for i 1922?", options:["En metode til måling af lysets hastighed", "En teori om jordens magnetfelt", "En model over atomers opbygning"], correct:2 },
+  { n:13, section:"laere", text:"Hvilken dag markeres kvindernes internationale kampdag?", options:["8. marts", "4. maj", "5. juni"], correct:0 },
+  { n:14, section:"laere", text:"Hvornår blev Nina Bang udnævnt til Danmarks første kvindelige minister?", options:["1924", "1943", "1961"], correct:0 },
+  { n:15, section:"laere", text:"Hvor arbejdede der flest mennesker omkring 1850?", options:["I industrien", "I landbruget", "I fiskeriet"], correct:1 },
+  { n:16, section:"laere", text:"Hvornår førte den danske regering samarbejdspolitik med Tyskland under 2. verdenskrig?", options:["1940-43", "1943-45"], correct:0 },
+  { n:17, section:"laere", text:"Hvor stor en andel af Grønland er dækket af is hele året?", options:["Cirka 40 procent", "Cirka 60 procent", "Cirka 80 procent"], correct:2 },
+  { n:18, section:"laere", text:"Hvor mange indbyggere har Færøerne?", options:["Cirka 55.000", "Cirka 155.000", "Cirka 255.000"], correct:0 },
+  { n:19, section:"laere", text:"Hvilket sjællandsk slot danner rammen om William Shakespeares teaterstykke Hamlet?", options:["Amalienborg", "Kronborg", "Fredensborg Slot"], correct:1 },
+  { n:20, section:"laere", text:"På hvilken dansk ø ligger ruinen Hammershus?", options:["Samsø", "Langeland", "Bornholm"], correct:2 },
+  { n:21, section:"laere", text:"Langs hvilken kyst i Danmark ligger der særligt mange bunkere, som tyskerne fik bygget under 2. Verdenskrig?", options:["Lollands sydkyst", "Sjællands østkyst", "Jyllands vestkyst"], correct:2 },
+  { n:22, section:"laere", text:"Hvilken af følgende byer har flest indbyggere?", options:["Esbjerg", "Aarhus", "Aalborg"], correct:1 },
+  { n:23, section:"laere", text:"Hvor stor en andel af kvinder i Danmark mellem 16 og 64 år er i beskæftigelse?", options:["Cirka 45 procent", "Cirka 60 procent", "Cirka 75 procent"], correct:2 },
+  { n:24, section:"laere", text:"Hvad hedder den organisation, der varetager samarbejdet mellem de nordiske landes parlamenter?", options:["Nordisk Råd", "Foreningen Norden", "Den Nordiske Union"], correct:0 },
+  { n:25, section:"laere", text:"Hvad kendetegnede Danmarks forsvarspolitik gennem det meste af Den Kolde Krig?", options:["Danmark var allieret med Sovjetunionen gennem Warszawa-pagten", "Danmark var neutralt", "Danmark var allieret med USA gennem NATO"], correct:2 },
+  { n:26, section:"laere", text:"Hvad hedder Danmarks EU-kommissær?", options:["Dan Jørgensen", "Astrid Krag", "Morten Bødskov"], correct:0 },
+  { n:27, section:"laere", text:"Hvilke af følgende er navne på guder i vikingetidens religion 'asatroen'?", options:["Thyra og Gorm", "Ingrid og Absalon", "Freja og Thor"], correct:2 },
+  { n:28, section:"laere", text:"Hvad blev resultatet af krigen mod Sverige i 1657-58?", options:["Danmark mistede Skåne", "Danmark erobrede Skåne"], correct:0 },
+  { n:29, section:"laere", text:"Hvornår blev Danmark ramt af pest-epidemien Den Sorte Død, som slog en stor del af befolkningen ihjel?", options:["I 1300-tallet", "I 1600-tallet", "I 1900-tallet"], correct:0 },
+  { n:30, section:"laere", text:"Hvornår trådte Danmarks første grundlov i kraft?", options:["1788", "1814", "1849"], correct:2 },
+  { n:31, section:"laere", text:"Hvem består kommunalbestyrelser af?", options:["Embedsmænd udpeget af regeringen", "Politikere valgt af kommunens befolkning", "Repræsentanter udvalgt af det lokale erhvervs- og foreningsliv"], correct:1 },
+  { n:32, section:"laere", text:"Hvem har ansvaret for driften af ældreplejen?", options:["Kommunerne", "Regionerne", "Staten"], correct:0 },
+  { n:33, section:"laere", text:"Hvad blev aftalt i 'Den Grønne Trepart' mellem regeringen, kommunerne og en række organisationer i juni 2024?", options:["At reducere kvoterne for, hvor meget der må fiskes i dansk farvand", "At en del af Danmarks landbrugsjord skal omdannes til natur", "Et forbud mod atomkraftværker i Danmark"], correct:1 },
+  { n:34, section:"laere", text:"Hvilket af følgende partier har haft statsministerposten i sammenlagt flest år siden systemskiftet i 1901?", options:["Venstre", "Det Konservative Folkeparti"], correct:0 },
+  { n:35, section:"laere", text:"Hvilket parti blev i 2022 stiftet af tidligere minister Inger Støjberg?", options:["Nye Borgerlige", "Moderaterne", "Danmarksdemokraterne"], correct:2 },
+  { n:36, section:"aktuel", text:"I februar 2026 blev der vedtaget en lov om at udbetale en særlig økonomisk støtte til cirka 2 mio. mennesker. Hvad var anledningen?", options:["Stigende fødevarepriser", "Stigende boligpriser", "Stigende priser på offentlig transport"], correct:0 },
+  { n:37, section:"aktuel", text:"Hvilken grønlandsk og hvilken dansk minister deltog i et møde vedrørende Grønland i Washington D.C. den 14. januar 2026?", options:["Naaja Nathanielsen og Troels Lund Poulsen", "Vivian Motzfeldt og Lars Løkke Rasmussen", "Anna Wangenheim og Peter Hummelgaard"], correct:1 },
+  { n:38, section:"aktuel", text:"Hvilket parti gik mest frem i antal stemmer ved folketingsvalget i marts 2026 sammenlignet med folketingsvalget i 2022?", options:["Venstre", "Alternativet", "Dansk Folkeparti"], correct:2 },
+  { n:39, section:"aktuel", text:"Viktor Axelsen (født 1994) stoppede i april 2026 som professionel sportsmand. I hvilken sport var han professionel?", options:["Volleyball", "Badminton", "Bordtennis"], correct:1 },
+  { n:40, section:"aktuel", text:"Hvad kendetegnede vinteren 2025-26 (ifølge Danmarks Meteorologiske Institut)?", options:["Den mest solrige vinter i 13 år", "Den vådeste vinter i 13 år", "Den koldeste vinter i 13 år"], correct:2 },
+  { n:41, section:"vaerdi", text:"Er det muligt for en person over 18 år at få et CPR-nr., der svarer til et andet køn (skifte juridisk køn)?", options:["Ja", "Nej"], correct:0 },
+  { n:42, section:"vaerdi", text:"Kan man ifølge dansk lov indgå ægteskab, hvis man allerede er gift med en anden person?", options:["Ja", "Nej"], correct:1 },
+  { n:43, section:"vaerdi", text:"Kan en forælder ifølge dansk lov bestemme, at kød, der serveres i en børnehave, skal stamme fra dyr, der er rituelt slagtet?", options:["Ja", "Nej"], correct:1 },
+  { n:44, section:"vaerdi", text:"Kan man blive straffet med fængsel, hvis man i sit arbejde som embedsmand ulovligt modtager penge eller gaver?", options:["Ja", "Nej"], correct:0 },
+  { n:45, section:"vaerdi", text:"Hvilken placering indtager Danmark ud af 167 lande i verden, når det gælder om at have det bedst fungerende demokrati (ifølge The Economist Democracy Index 2025)?", options:["1-5", "21-25", "41-45"], correct:0 },
 ];
 
-
-/* --- Official scoring rules (as you specified) --- */
-const TOTAL_QUESTIONS = 45;
-const PASS_TOTAL = 36;
-const VALUES_COUNT = 5;
-const MAX_VALUES_ERRORS = 1;
-const TEST_MINUTES = 45;
-
-/* --- Safety checks --- */
+/* --- safety check --- */
 if (QUESTIONS.length !== TOTAL_QUESTIONS) {
-  console.error("Gratis prøve: QUESTIONS must be exactly 45. Current:", QUESTIONS.length);
+  console.error("FEJL: QUESTIONS skal være præcis 45. Antal nu:", QUESTIONS.length);
 }
 
-/* --- helpers --- */
-function shuffle(arr) {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-/* --- Build model (first answer is correct, but choices are shuffled) --- */
-const model = QUESTIONS.map((item, idx) => {
-  const correct = item.a[0];
-  const shuffled = shuffle(item.a);
-  return {
-    index: idx,
-    text: item.q,
-    isValues: !!item.values,
-    choices: shuffled.map(opt => ({ text: opt, isCorrect: opt === correct })),
-    answered: false,
-    pickedIndex: -1
-  };
-});
-
-/* --- DOM --- */
-const qTitle = document.getElementById('qTitle');
-const choicesEl = document.getElementById('choices');
-const btnPrev = document.getElementById('btnPrev');
-const btnNext = document.getElementById('btnNext');
-const progressLabel = document.getElementById('progressLabel');
-const timerEl = document.getElementById('timer');
-
-const resultPanel = document.getElementById('resultPanel');
-const resultText = document.getElementById('resultText');
-const gradeStamp = document.getElementById('gradeStamp');
-
-/* --- State --- */
+/* ---------------------------------------------------------------------------
+   State + DOM
+--------------------------------------------------------------------------- */
 let qi = 0;
-let score = 0;
-let valuesScore = 0;
-const total = model.length;
-
-/* --- Timer (45 minutes) --- */
+let started = false;
+let finished = false;
+let startTs = null;
+let timerInt = null;
 let timerSec = TEST_MINUTES * 60;
-timerEl.textContent = `${String(TEST_MINUTES).padStart(2,'0')}:00`;
+const picks = new Array(TOTAL_QUESTIONS).fill(-1); // chosen option index per question, -1 = blank
+let statsCache = null;
 
-const timerInt = setInterval(() => {
+const $ = id => document.getElementById(id);
+const introSec    = $('freeTestIntro');
+const testArea    = $('testArea');
+const resultPanel = $('resultPanel');
+const facitPanel  = $('facitPanel');
+
+const qTitle = $('qTitle');
+const choicesEl = $('choices');
+const btnPrev = $('btnPrev');
+const btnNext = $('btnNext');
+const progressLabel = $('progressLabel');
+const timerEl = $('timer');
+const answeredHint = $('answeredHint');
+
+const LETTERS = ['A','B','C','D'];
+
+/* ---------------------------------------------------------------------------
+   Helpers
+--------------------------------------------------------------------------- */
+function answeredCount(){ return picks.filter(p => p >= 0).length; }
+function fmtTime(sec){
+  const m = Math.floor(sec/60).toString().padStart(2,'0');
+  const s = (sec%60).toString().padStart(2,'0');
+  return `${m}:${s}`;
+}
+function deviceClass(){
+  const ua = navigator.userAgent || "";
+  if (/iPad|Tablet|PlayBook|Silk/i.test(ua) || (/Android/i.test(ua) && !/Mobile/i.test(ua))) return "tablet";
+  if (/Mobi|Android|iPhone|iPod|Windows Phone/i.test(ua)) return "mobile";
+  return "desktop";
+}
+function referrerHost(){
+  try { return document.referrer ? new URL(document.referrer).host.slice(0,255) : null; }
+  catch(e){ return null; }
+}
+function hasSupabase(){ return SUPABASE_ANON && SUPABASE_ANON.indexOf("PUT_YOUR") === -1; }
+
+/* ---------------------------------------------------------------------------
+   Test flow
+--------------------------------------------------------------------------- */
+function startTest(){
+  if (started) return;
+  started = true;
+  startTs = Date.now();
+  introSec.style.display = "none";
+  facitPanel.classList.add('facit-hidden');
+  resultPanel.classList.add('facit-hidden');
+  testArea.classList.remove('facit-hidden');
+  timerEl.textContent = fmtTime(timerSec);
+  timerInt = setInterval(tick, 1000);
+  qi = 0;
+  renderQuestion();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function tick(){
   timerSec--;
-  if (timerSec < 0) {
+  if (timerSec <= 0){
+    timerSec = 0;
+    timerEl.textContent = "00:00";
     clearInterval(timerInt);
-    finishTest();
+    finishTest(true);
     return;
   }
-  const m = Math.floor(timerSec / 60).toString().padStart(2, '0');
-  const s = (timerSec % 60).toString().padStart(2, '0');
-  timerEl.textContent = `${m}:${s}`;
-}, 1000);
+  timerEl.textContent = fmtTime(timerSec);
+}
 
-/* --- Render --- */
-function renderQuestion() {
-  const q = model[qi];
-
-  // label values questions clearly (last 5)
-  const prefix = q.isValues ? "Danske værdier · " : "";
-  qTitle.textContent = prefix + q.text;
+function renderQuestion(){
+  const q = QUESTIONS[qi];
+  const tag = q.section === 'vaerdi' ? "Danske værdier · "
+            : q.section === 'aktuel' ? "Aktuelt spørgsmål · " : "";
+  qTitle.textContent = `${q.n}. ${tag}${q.text}`;
 
   choicesEl.innerHTML = "";
-
-  q.choices.forEach((c, idx) => {
+  q.options.forEach((opt, idx) => {
     const btn = document.createElement('button');
-    btn.className = 'choice' + (q.answered ? ' disabled' : '');
-    btn.textContent = c.text;
+    btn.className = 'choice' + (picks[qi] === idx ? ' facit-selected' : '');
+    btn.innerHTML = `<span class="facit-letter">${LETTERS[idx]}</span><span>${opt}</span>`;
     btn.addEventListener('click', () => pick(idx));
     choicesEl.appendChild(btn);
   });
 
   btnPrev.disabled = (qi === 0);
-  btnNext.disabled = false;
-
-  // show both scores in-progress (helps users understand values weight)
-  const valuesInfo = ` · Værdier ${valuesScore}/${VALUES_COUNT}`;
-  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}${valuesInfo}`;
-
-  if (q.answered) applyRevealStyles();
-
-  btnNext.textContent = (qi === total - 1) ? "Se resultat →" : "Næste →";
+  btnNext.textContent = (qi === TOTAL_QUESTIONS - 1) ? "Se resultat →" : "Næste →";
+  updateProgress();
 }
 
-/* --- Pick --- */
-function pick(idx) {
-  const q = model[qi];
-  if (q.answered) return;
-
-  q.answered = true;
-  q.pickedIndex = idx;
-
-  const correct = q.choices[idx].isCorrect;
-  if (correct) {
-    score++;
-    if (q.isValues) valuesScore++;
-  }
-
-  applyRevealStyles();
-
-  btnNext.disabled = false;
-
-  const valuesInfo = ` · Værdier ${valuesScore}/${VALUES_COUNT}`;
-  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}${valuesInfo}`;
-
-  btnNext.textContent = (qi === total - 1) ? "Se resultat →" : "Næste →";
+function pick(idx){
+  picks[qi] = idx;
+  // toggle selected styling without revealing correctness
+  Array.from(choicesEl.children).forEach((btn,i) =>
+    btn.classList.toggle('facit-selected', i === idx));
+  updateProgress();
 }
 
-/* --- Reveal styling (same behavior as your existing prototype) --- */
-function applyRevealStyles() {
-  const q = model[qi];
-  const buttons = Array.from(choicesEl.querySelectorAll('button'));
-  buttons.forEach((btn, i) => {
-    const choice = q.choices[i];
-    btn.classList.add('disabled');
-    if (choice.isCorrect) btn.classList.add('correct');
-    if (q.pickedIndex === i && !choice.isCorrect) btn.classList.add('wrong');
-  });
+function updateProgress(){
+  progressLabel.textContent = `Spørgsmål ${qi+1} af ${TOTAL_QUESTIONS} · besvaret ${answeredCount()}/${TOTAL_QUESTIONS}`;
+  const blanks = TOTAL_QUESTIONS - answeredCount();
+  answeredHint.textContent = blanks === 0
+    ? "Alle spørgsmål er besvaret."
+    : `${blanks} spørgsmål mangler at blive besvaret.`;
 }
 
-/* --- Navigation --- */
-btnPrev.addEventListener('click', () => {
-  if (qi > 0) { qi--; renderQuestion(); }
-});
-
+btnPrev.addEventListener('click', () => { if (qi>0){ qi--; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }});
 btnNext.addEventListener('click', () => {
-  if (!model[qi].answered) return;
-  if (qi === total - 1) finishTest();
-  else { qi++; renderQuestion(); }
+  if (qi === TOTAL_QUESTIONS - 1){ confirmFinish(); }
+  else { qi++; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }
 });
+$('btnFinishEarly').addEventListener('click', confirmFinish);
 
-/* --- Finish + grading (official rules) --- */
-function finishTest() {
+function confirmFinish(){
+  const blanks = TOTAL_QUESTIONS - answeredCount();
+  if (blanks > 0 && !confirm(`Du mangler at besvare ${blanks} spørgsmål. De tæller som forkerte. Vil du aflevere nu?`)) return;
+  finishTest(false);
+}
+
+/* ---------------------------------------------------------------------------
+   Scoring + results
+--------------------------------------------------------------------------- */
+function score(){
+  let total = 0, values = 0;
+  QUESTIONS.forEach((q,i) => {
+    if (picks[i] === q.correct){ total++; if (q.section === 'vaerdi') values++; }
+  });
+  return { total, values };
+}
+
+async function finishTest(byTimeout){
+  if (finished) return;
+  finished = true;
   clearInterval(timerInt);
 
-  const wrong = total - score;
-  const valuesWrong = VALUES_COUNT - valuesScore;
-
-  const passedTotal = score >= PASS_TOTAL;
-  const passedValues = valuesWrong <= MAX_VALUES_ERRORS;
+  const timeSpent = startTs ? Math.min(86400, Math.round((Date.now() - startTs)/1000)) : (TEST_MINUTES*60);
+  const { total, values } = score();
+  const passedTotal  = total >= PASS_TOTAL;
+  const passedValues = (VALUES_COUNT - values) <= MAX_VALUES_ERRORS;
   const pass = passedTotal && passedValues;
 
-  gradeStamp.textContent = pass ? "Bestået!" : "Ikke bestået";
-  gradeStamp.className = "result-stamp " + (pass ? "pass" : "fail");
+  testArea.classList.add('facit-hidden');
+  resultPanel.classList.remove('facit-hidden');
 
-  let reason = "";
-  if (pass) {
-    reason = "Du opfylder både kravet om mindst 36 rigtige og værdikravet (max 1 fejl).";
-  } else if (!passedTotal && passedValues) {
-    reason = `Du mangler rigtige svar samlet. Kravet er mindst ${PASS_TOTAL}/45.`;
-  } else if (passedTotal && !passedValues) {
-    reason = "Du har for mange fejl i danske værdier (max 1 fejl).";
-  } else {
-    reason = `Du opfylder hverken kravet om mindst ${PASS_TOTAL}/45 eller værdikravet.`;
+  const stamp = $('gradeStamp');
+  stamp.textContent = pass ? "Bestået!" : "Ikke bestået";
+  stamp.className = "result-stamp " + (pass ? "pass" : "fail");
+
+  let reason;
+  if (pass) reason = "Du opfylder både kravet om mindst 36 rigtige og værdikravet (højst 1 fejl).";
+  else if (!passedTotal && passedValues) reason = `Du mangler rigtige svar samlet. Kravet er mindst ${PASS_TOTAL}/45.`;
+  else if (passedTotal && !passedValues) reason = "Du har for mange fejl i danske værdier (højst 1 fejl tilladt).";
+  else reason = `Du opfylder hverken kravet om mindst ${PASS_TOTAL}/45 eller værdikravet.`;
+
+  $('resultText').textContent =
+    `${byTimeout ? "Tiden er udløbet. " : ""}Slutscore: ${total}/45 · ` +
+    `Danske værdier: ${values}/5 · Tid brugt: ${fmtTime(timeSpent)}. ${reason}`;
+
+  renderChart(total, TOTAL_QUESTIONS - total);
+  renderSectionBars();
+  renderReview(null); // render immediately without per-question stats
+
+  // record + fetch stats (never block the result on the network)
+  const stats = await recordAndFetchStats({ timeSpent, total });
+  if (stats){
+    statsCache = stats;
+    renderPercentile(stats, total);
+    renderGlobalStats(stats);
+    renderReview(stats);       // re-render review with per-question %
   }
-
-  resultText.textContent =
-    `Slutscore: ${score}/45. Forkerte: ${wrong}. ` +
-    `Danske værdier: ${valuesScore}/5 (fejl: ${valuesWrong}). ` +
-    reason;
-
-  renderChart(score, wrong);
-
-  // show result panel (same id as your prototype)
-  if (resultPanel) resultPanel.style.display = "block";
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-/* --- Chart --- */
-function renderChart(correct, wrong) {
-  const canvas = document.getElementById('resultChart');
-  if (!canvas || !window.Chart) return;
-
-  const ctx = canvas.getContext('2d');
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Korrekte', 'Forkerte'],
-      datasets: [{ data: [correct, wrong] }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { position: 'bottom' },
-        title: { display: true, text: 'Fordeling af svar (45 spørgsmål)' }
-      }
-    }
+function renderChart(correct, wrong){
+  const c = $('resultChart');
+  if (!c || !window.Chart) return;
+  if (c._chart) c._chart.destroy();
+  c._chart = new Chart(c.getContext('2d'), {
+    type:'doughnut',
+    data:{ labels:['Korrekte','Forkerte'],
+      datasets:[{ data:[correct,wrong], backgroundColor:['#1f9d5b','#d2453d'], borderWidth:0 }]},
+    options:{ responsive:true, plugins:{ legend:{position:'bottom'},
+      title:{display:true, text:`Dine svar (${correct}/${TOTAL_QUESTIONS} rigtige)`}}}
   });
 }
 
-/* --- Start --- */
-renderQuestion();
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const intro = document.getElementById("freeTestIntro");
-  if (!intro) return;
+function sectionScore(sec){
+  let got=0, tot=0;
+  QUESTIONS.forEach((q,i)=>{ if(q.section===sec){ tot++; if(picks[i]===q.correct) got++; }});
+  return { got, tot };
+}
+function renderSectionBars(){
+  const wrap = $('sectionBars'); wrap.innerHTML = "";
+  ['laere','aktuel','vaerdi'].forEach(sec=>{
+    const {got,tot} = sectionScore(sec);
+    const pct = tot ? Math.round(100*got/tot) : 0;
+    const row = document.createElement('div');
+    row.className = 'facit-bar-row';
+    row.innerHTML = `<div class="lbl">${SECTION_LABELS[sec]}</div>
+      <div class="facit-bar-track"><div class="facit-bar-fill" style="width:${pct}%"></div></div>
+      <div class="val">${got}/${tot}</div>`;
+    wrap.appendChild(row);
+  });
+}
 
-  function hideIntro() {
-    intro.style.display = "none";
+function renderPercentile(stats, myScore){
+  const hist = stats.score_histogram || {};
+  const totalN = stats.totals ? stats.totals.total_attempts : 0;
+  if (!totalN || totalN < 5){ return; } // not enough data to be meaningful
+  let below = 0;
+  Object.keys(hist).forEach(k => { if (parseInt(k,10) < myScore) below += hist[k]; });
+  const pct = Math.round(100 * below / totalN);
+  $('percentileWrap').style.display = "block";
+  $('percentileText').innerHTML =
+    `Du klarede dig bedre end <strong>${pct}%</strong> af de ` +
+    `<strong>${totalN.toLocaleString('da-DK')}</strong> personer, der har taget denne prøve.`;
+}
+
+function renderGlobalStats(stats){
+  const t = stats.totals; if (!t || !t.total_attempts) return;
+  const wrap = $('globalStats'); wrap.innerHTML = "";
+  const items = [
+    { v: Number(t.total_attempts).toLocaleString('da-DK'), l: "forsøg i alt" },
+    { v: (t.pass_rate_pct==null?'–':t.pass_rate_pct + '%'), l: "består" },
+    { v: (t.avg_score==null?'–':(Math.round(t.avg_score*10)/10).toString().replace('.',',') + '/45'), l: "gennemsnit" },
+    { v: (t.avg_time_seconds? fmtTime(Math.round(t.avg_time_seconds)) : '–'), l: "gns. tid" }
+  ];
+  items.forEach(it=>{
+    const d = document.createElement('div');
+    d.className = 'facit-metric';
+    d.innerHTML = `<div class="v">${it.v}</div><div class="l">${it.l}</div>`;
+    wrap.appendChild(d);
+  });
+  $('globalStatsWrap').style.display = "block";
+}
+
+/* Build a lookup: question num -> per-question stat object */
+function statByNum(stats){
+  const map = {};
+  if (stats && Array.isArray(stats.per_question)){
+    stats.per_question.forEach(pq => { map[pq.num] = pq; });
+  }
+  return map;
+}
+
+/* Render the review list. If `stats` is null, render without per-question %. */
+function renderReview(stats){
+  const map = statByNum(stats);
+  const list = $('reviewList'); list.innerHTML = "";
+  QUESTIONS.forEach((q,i) => list.appendChild(reviewItem(q, picks[i], map[q.n], true)));
+}
+
+/* shared renderer for both review (with user pick) and facit list (pick = -1) */
+function reviewItem(q, userPick, stat, showUserPick){
+  const item = document.createElement('div');
+  item.className = 'rev-item';
+
+  let tagHtml = "";
+  if (q.section === 'vaerdi') tagHtml = `<span class="rev-tag vaerdi">Værdier</span>`;
+  else if (q.section === 'aktuel') tagHtml = `<span class="rev-tag aktuel">Aktuelt</span>`;
+
+  const head = `<div class="rev-head">
+      <div class="rev-q"><span class="rev-num">${q.n}.</span>${q.text}</div>${tagHtml}
+    </div>`;
+
+  const optCounts = stat && stat.option_counts ? stat.option_counts : null;
+  const totalAns  = stat ? stat.n_answered : 0;
+
+  const opts = q.options.map((opt, idx) => {
+    const isCorrect = idx === q.correct;
+    const isUserWrong = showUserPick && userPick === idx && !isCorrect;
+    let cls = 'rev-opt' + (isCorrect ? ' is-correct' : '') + (isUserWrong ? ' is-userwrong' : '');
+    let mark = "";
+    if (isCorrect) mark = `<span class="rmark" style="color:#0f7a40">✓ Rigtigt svar</span>`;
+    else if (isUserWrong) mark = `<span class="rmark" style="color:#d2453d">✗ Dit svar</span>`;
+    else if (showUserPick && userPick === idx) mark = `<span class="rmark">Dit svar</span>`;
+
+    let dist = "";
+    if (optCounts && totalAns > 0){
+      const n = optCounts[idx] || optCounts[String(idx)] || 0;
+      const pct = Math.round(100 * n / totalAns);
+      dist = `<div class="rev-distbar"><div class="rev-distfill" style="width:${pct}%"></div></div>
+              <span class="rpct">${pct}%</span>`;
+    }
+    return `<div class="${cls}">
+        <span class="rletter">${LETTERS[idx]}</span>
+        <span>${opt}</span>${mark}${dist}
+      </div>`;
+  }).join("");
+
+  let statLine = "";
+  if (stat && stat.pct_correct != null){
+    statLine = `<div class="rev-stat"><strong>${stat.pct_correct}%</strong> har svaret rigtigt på dette spørgsmål
+      (${Number(stat.n_answered).toLocaleString('da-DK')} besvarelser).</div>`;
   }
 
-  const closeBtn = intro.querySelector(".intro-dismiss");
-  const ctaBtn   = intro.querySelector(".intro-cta");
+  item.innerHTML = head + `<div class="rev-opts">${opts}</div>` + statLine;
+  return item;
+}
 
-  if (closeBtn) closeBtn.addEventListener("click", hideIntro);
-  if (ctaBtn)   ctaBtn.addEventListener("click", hideIntro);
-});
+/* ---------------------------------------------------------------------------
+   Supabase: insert attempt, then fetch aggregate stats
+--------------------------------------------------------------------------- */
+async function recordAndFetchStats({ timeSpent, total }){
+  if (!hasSupabase()){
+    console.warn("[facit] Supabase anon key mangler – springer registrering og statistik over.");
+    return null;
+  }
+  // build answers object { "1": idx, ... } for answered questions only
+  const answers = {};
+  QUESTIONS.forEach((q,i) => { if (picks[i] >= 0) answers[String(q.n)] = picks[i]; });
+
+  const row = {
+    exam_id: EXAM_ID,
+    answers,
+    num_answered: answeredCount(),
+    time_spent_seconds: timeSpent,
+    device: deviceClass(),
+    ui_lang: "da",
+    referrer_host: referrerHost()
+  };
+
+  // insert (fire, but await so the new row is counted in the stats we fetch)
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/facit_attempts`, {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'apikey': SUPABASE_ANON,
+        'Authorization': 'Bearer ' + SUPABASE_ANON,
+        'Prefer':'return=minimal'
+      },
+      body: JSON.stringify(row)
+    });
+  } catch(e){ console.warn("[facit] kunne ikke gemme forsøg:", e); }
+
+  return fetchStats();
+}
+
+async function fetchStats(){
+  if (!hasSupabase()) return null;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_facit_stats`, {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'apikey': SUPABASE_ANON,
+        'Authorization': 'Bearer ' + SUPABASE_ANON
+      },
+      body: JSON.stringify({ p_exam_id: EXAM_ID })
+    });
+    if (!res.ok) throw new Error('stats http ' + res.status);
+    return await res.json();
+  } catch(e){
+    console.warn("[facit] kunne ikke hente statistik:", e);
+    return null;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Facit-only view (does NOT record an attempt)
+--------------------------------------------------------------------------- */
+async function showFacitOnly(){
+  introSec.style.display = "none";
+  testArea.classList.add('facit-hidden');
+  resultPanel.classList.add('facit-hidden');
+  facitPanel.classList.remove('facit-hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+
+  const stats = statsCache || await fetchStats();
+  if (stats) statsCache = stats;
+  const map = statByNum(stats);
+  const list = $('facitList'); list.innerHTML = "";
+  QUESTIONS.forEach(q => list.appendChild(reviewItem(q, -1, map[q.n], false)));
+}
+
+/* ---------------------------------------------------------------------------
+   Wiring
+--------------------------------------------------------------------------- */
+$('btnStart').addEventListener('click', startTest);
+$('btnTakeFromFacit').addEventListener('click', () => location.reload());
+$('btnFacitOnly').addEventListener('click', showFacitOnly);
+
+// The ✕ would otherwise hide the intro and leave a blank page (the test is
+// hidden until Start), so dismissing the intro simply begins the test.
+const introDismiss = introSec ? introSec.querySelector(".intro-dismiss") : null;
+if (introDismiss) introDismiss.addEventListener("click", startTest);
 </script>
-
-
-
 
 </body>
 </html>
