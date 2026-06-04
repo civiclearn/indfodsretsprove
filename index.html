@@ -552,14 +552,30 @@
 })();
 </script>
 
-<!-- GENERALPRØVE RESULTS NOTICE — Refresh or remove once content feels stale -->
+<!-- GENERALPRØVE DUAL BLOCK — Announcement (next) + Results (FYI). Update dates before each generalprøve. -->
 <section style="padding:8px 24px 0;">
   <div style="max-width:720px;margin:0 auto;">
+
+    <!-- 1) NEXT GENERALPRØVE — prominent announcement -->
+    <a href="/generalprove/" style="text-decoration:none;display:block;margin-bottom:12px;">
+      <div style="background:linear-gradient(135deg,#f3efff,#eaf3ff);border:1px solid #ddd6fe;border-radius:14px;padding:24px 26px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;box-shadow:0 6px 22px rgba(124,58,237,0.10);transition:box-shadow 0.15s;" onmouseover="this.style.boxShadow='0 8px 26px rgba(124,58,237,0.18)'" onmouseout="this.style.boxShadow='0 6px 22px rgba(124,58,237,0.10)'">
+        <div style="flex:1 1 320px;min-width:0;">
+          <div style="display:inline-block;background:#7c3aed;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:10px;">Næste generalprøve · 31. okt</div>
+          <h3 style="margin:0 0 6px;font-size:1.4rem;line-height:1.25;color:#1a1a2e;font-weight:800;">Generalprøven — lørdag den 31. oktober 2026, kl. 13:00</h3>
+          <p style="margin:0;font-size:0.95rem;line-height:1.5;color:#444b5a;">Gratis prøveeksamen under realistiske forhold — din sidste øvelse før indfødsretsprøven den 25. november. Åben for alle.</p>
+        </div>
+        <div style="flex:0 0 auto;">
+          <span style="display:inline-block;background:#7c3aed;color:#fff;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:10px;box-shadow:0 5px 16px rgba(124,58,237,0.28);white-space:nowrap;">Tilmeld dig gratis →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2) RESULTATER — smaller FYI strip -->
     <a href="/artikler/generalprove-2026-resultater/" style="text-decoration:none;display:block;">
-      <div style="background:#fff;border:1px solid #e5e1da;border-left:3px solid #7c3aed;border-radius:10px;padding:16px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;transition:border-color 0.15s,box-shadow 0.15s;" onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 2px 12px rgba(124,58,237,0.1)'" onmouseout="this.style.borderColor='#e5e1da';this.style.borderLeftColor='#7c3aed';this.style.boxShadow='none'">
-        <div style="background:#f5f0ff;color:#7c3aed;font-size:0.72rem;font-weight:700;padding:5px 10px;border-radius:6px;white-space:nowrap;flex:0 0 auto;">RESULTATER</div>
-        <div style="flex:1 1 200px;min-width:0;font-size:0.85rem;color:#444;line-height:1.45;">
-          <strong style="color:#1a1a2e;">Generalprøven 9. maj</strong> — 222 deltagere, kun 36,5% bestod. Se hvor folk dumpede, og hvad du kan lære før 3. juni.
+      <div style="background:#fff;border:1px solid #e5e1da;border-left:3px solid #7c3aed;border-radius:10px;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;transition:border-color 0.15s,box-shadow 0.15s;" onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 2px 12px rgba(124,58,237,0.1)'" onmouseout="this.style.borderColor='#e5e1da';this.style.borderLeftColor='#7c3aed';this.style.boxShadow='none'">
+        <div style="background:#f5f0ff;color:#7c3aed;font-size:0.7rem;font-weight:700;padding:5px 10px;border-radius:6px;white-space:nowrap;flex:0 0 auto;">RESULTATER</div>
+        <div style="flex:1 1 200px;min-width:0;font-size:0.82rem;color:#555;line-height:1.45;">
+          <strong style="color:#1a1a2e;">Generalprøven 9. maj</strong> — 222 deltagere, kun 36,5% bestod. Se hvor folk dumpede, og hvad du kan lære.
           <span style="color:#7c3aed;font-weight:600;white-space:nowrap;">Læs analysen →</span>
         </div>
       </div>
@@ -567,8 +583,10 @@
     <div style="text-align:center;margin-top:8px;font-size:0.78rem;color:#888;">
       <a href="/artikler/generalprove-2026-results/" style="color:#888;text-decoration:none;border-bottom:1px dotted #b8b1a8;">Also available in English</a>
     </div>
+
   </div>
 </section>
+
 
 <!-- TESTIMONIALS -->
 <section class="cl-testimonials">
