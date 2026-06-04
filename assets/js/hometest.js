@@ -154,20 +154,20 @@ const INLINE_TEST_QUESTIONS = [
     correct: 0
   },
   {
-    q: "Hvilken ændring i værnepligten blev omtalt i slutningen af 2025?",
+    q: "Hvad indføres fra 2026 i beskatningen af de højeste indkomster?",
     a: [
-      "Længere tjenestetid og flere værnepligtige, med kvinder registreringspligtige fra 2025",
-      "Fuld afskaffelse af værnepligten",
-      "Reduktion af tjenestetiden til to måneder"
+      "Mellemskat, topskat og toptopskat",
+      "Afskaffelse af topskat",
+      "Flad skat for alle"
     ],
     correct: 0
   },
   {
-    q: "Hvilken historisk ændring skete der for PostNord i Danmark fra den 1. januar 2026?",
+    q: "Hvilke partier dannede regering efter folketingsvalget i marts 2026?",
     a: [
-      "PostNord stoppede fuldstændig med at omdele landsdækkende breve",
-      "PostNord blev solgt til en privat amerikansk investorgruppe",
-      "Alle postbude blev erstattet af selvkørende leveringsrobotter"
+      "Socialdemokratiet, SF, Moderaterne og Radikale Venstre",
+      "Socialdemokratiet, Venstre og Moderaterne",
+      "Venstre, Konservative og Dansk Folkeparti"
     ],
     correct: 0
   },
