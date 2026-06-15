@@ -660,6 +660,20 @@
   <a href="/anmeldelser/">anmeldelsessiden</a>.
 </p>
 
+<!-- TRUSTPILOT — official TrustBox (Micro Combo): live TrustScore + antal anmeldelser.
+     SET data-businessunit-id nedenfor. Find id’et i din checkout-TrustBox eller i
+     Trustpilot Business → Integrér → TrustBox (24-tegns id, ikke domænet).
+     Bootstrap-scriptet indlæses én gang nederst før </body>. -->
+<div class="cl-trustpilot" style="text-align:center;max-width:760px;margin:18px auto 0;padding-top:16px;border-top:1px solid #ece7fb;">
+  <div style="font-size:.8rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:#9a9588;margin-bottom:8px;">Nu også på Trustpilot</div>
+  <div class="trustpilot-widget" data-locale="da-DK"
+       data-template-id="5419b6ffb0d04a076446a9af"
+       data-businessunit-id="REPLACE_WITH_CIVICLEARN_BUSINESSUNIT_ID"
+       data-style-height="24px" data-style-width="100%" data-theme="light">
+    <a href="https://www.trustpilot.com/review/civiclearn.com" target="_blank" rel="noopener">Trustpilot</a>
+  </div>
+</div>
+
   </div>
   </section>
 
@@ -1006,6 +1020,9 @@ document.addEventListener("DOMContentLoaded", updateExamStatus);
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 </script>
 
+
+<!-- Trustpilot TrustBox bootstrap (loads once; powers .trustpilot-widget) -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
 </body>
 </html>
