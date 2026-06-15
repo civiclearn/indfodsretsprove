@@ -207,6 +207,30 @@
 
     .facit-note-soft{font-size:.85rem;color:var(--facit-muted);margin-top:10px;}
     .facit-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 18px;}
+
+    /* ---- hardest-questions highlight (data-driven, reads live get_facit_stats) ---- */
+    .hard-intro{font-size:.9rem;color:var(--facit-muted);margin:0 0 12px;line-height:1.5;}
+    .hard-list{display:flex;flex-direction:column;gap:8px;}
+    .hard-row{display:block;text-decoration:none;border:1px solid var(--facit-line);
+      border-radius:var(--facit-radius);padding:11px 14px;background:var(--facit-card);
+      transition:border-color .15s ease,box-shadow .15s ease;}
+    .hard-row:hover{border-color:var(--facit-accent);box-shadow:0 2px 12px rgba(108,76,241,.10);}
+    .hard-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+    .hard-num{flex:0 0 auto;font-size:.74rem;font-weight:700;color:var(--facit-accent);
+      background:var(--facit-accent-soft);padding:3px 9px;border-radius:7px;white-space:nowrap;}
+    .hard-text{flex:1 1 auto;font-size:.82rem;line-height:1.4;color:var(--facit-ink);min-width:0;}
+    .hard-tag{flex:0 0 auto;font-size:.66rem;font-weight:600;color:var(--facit-muted);
+      background:var(--facit-bg-soft);padding:3px 8px;border-radius:6px;white-space:nowrap;}
+    .hard-bottom{display:flex;align-items:center;gap:10px;}
+    .hard-track{flex:1 1 auto;background:var(--facit-bg-soft);border-radius:999px;height:8px;overflow:hidden;}
+    .hard-fill{height:100%;border-radius:999px;background:var(--facit-red);}
+    .hard-pct{flex:0 0 auto;font-size:.8rem;font-weight:700;color:var(--facit-red);white-space:nowrap;}
+    @media(max-width:520px){
+      .hard-text{flex-basis:100%;order:3;}
+    }
+    /* gentle highlight when a hardest-row link jumps to a question below */
+    .rev-item:target{box-shadow:0 0 0 3px var(--facit-accent-soft);border-color:var(--facit-accent);
+      transition:box-shadow .2s ease,border-color .2s ease;}
   </style>
 </head>
 
@@ -366,6 +390,12 @@
       <p class="facit-note-soft" id="globalStatsNote"></p>
     </div>
 
+    <div class="facit-section hard-section" id="hardestResultWrap" style="display:none;">
+      <h3>De sværeste spørgsmål</h3>
+      <p class="hard-intro" id="hardestResultIntro"></p>
+      <div class="hard-list" id="hardestResult"></div>
+    </div>
+
     <div class="facit-section">
       <h3>Gennemgang af alle spørgsmål</h3>
       <div class="rev-list" id="reviewList"></div>
@@ -390,6 +420,12 @@
     <div class="facit-toolbar">
       <button class="btn" id="btnTakeFromFacit">Tag prøven selv</button>
     </div>
+    <div class="facit-section hard-section" id="hardestFacitWrap" style="display:none;">
+      <h3>De sværeste spørgsmål</h3>
+      <p class="hard-intro" id="hardestFacitIntro"></p>
+      <div class="hard-list" id="hardestFacit"></div>
+    </div>
+
     <div class="rev-list" id="facitList"></div>
 
     <div class="cta">
@@ -722,6 +758,7 @@ async function finishTest(byTimeout){
     renderPercentile(stats, total);
     renderGlobalStats(stats);
     renderReview(stats);       // re-render review with per-question %
+    renderHardest(stats, 'hardestResult', 'hardestResultWrap', 'hardestResultIntro', 'rev-');
   } else {
     // stats couldn't load (network/temporary) — surface it gently, never block the result
     $('globalStatsWrap').style.display = "block";
@@ -808,13 +845,59 @@ function statByNum(stats){
 function renderReview(stats){
   const map = statByNum(stats);
   const list = $('reviewList'); list.innerHTML = "";
-  QUESTIONS.forEach((q,i) => list.appendChild(reviewItem(q, picks[i], map[q.n], true)));
+  QUESTIONS.forEach((q,i) => list.appendChild(reviewItem(q, picks[i], map[q.n], true, 'rev-')));
+}
+
+/* ---- hardest-questions highlight: top questions by most wrong answers ----
+   Reads the same live get_facit_stats payload the page already fetches —
+   no hardcoded numbers, no schema changes. Sorts per_question by pct_correct
+   ascending (most-wrong first) and links each row to that question below. */
+function renderHardest(stats, listId, wrapId, introId, idPrefix){
+  const wrap = $(wrapId), list = $(listId);
+  if (!wrap || !list) return;
+  const pq = (stats && Array.isArray(stats.per_question)) ? stats.per_question : [];
+  const rows = pq
+    .filter(p => p && p.pct_correct != null && Number(p.n_answered) >= 20)
+    .map(p => {
+      const q = QUESTIONS.find(x => x.n === p.num);
+      return q ? { q, wrong: 100 - Number(p.pct_correct) } : null;
+    })
+    .filter(Boolean)
+    .sort((a,b) => b.wrong - a.wrong)
+    .slice(0, 5);
+
+  if (rows.length < 3){ wrap.style.display = "none"; return; }
+
+  const introEl = $(introId);
+  if (introEl){
+    introEl.textContent = rows.every(r => r.q.section === 'laere')
+      ? "Spørgsmålene med flest forkerte svar — alle fra lærematerialet. Tryk for at se det rigtige svar nedenfor."
+      : "Spørgsmålene med flest forkerte svar. Tryk for at se det rigtige svar nedenfor.";
+  }
+
+  list.innerHTML = rows.map(r => {
+    const w = Math.max(2, Math.min(100, Math.round(r.wrong)));
+    const tag = SECTION_LABELS[r.q.section] || "";
+    return '<a class="hard-row" href="#' + idPrefix + 'q-' + r.q.n + '">'
+      + '<div class="hard-top">'
+      +   '<span class="hard-num">Spm. ' + r.q.n + '</span>'
+      +   '<span class="hard-text">' + r.q.text + '</span>'
+      +   '<span class="hard-tag">' + tag + '</span>'
+      + '</div>'
+      + '<div class="hard-bottom">'
+      +   '<div class="hard-track"><div class="hard-fill" style="width:' + w + '%"></div></div>'
+      +   '<span class="hard-pct">' + Math.round(r.wrong) + '% forkert</span>'
+      + '</div>'
+      + '</a>';
+  }).join("");
+  wrap.style.display = "block";
 }
 
 /* shared renderer for both review (with user pick) and facit list (pick = -1) */
-function reviewItem(q, userPick, stat, showUserPick){
+function reviewItem(q, userPick, stat, showUserPick, idPrefix){
   const item = document.createElement('div');
   item.className = 'rev-item';
+  if (idPrefix) item.id = idPrefix + 'q-' + q.n;
 
   let tagHtml = "";
   if (q.section === 'vaerdi') tagHtml = `<span class="rev-tag vaerdi">Værdier</span>`;
@@ -955,7 +1038,8 @@ async function showFacitOnly(){
   if (stats) statsCache = stats;
   const map = statByNum(stats);
   const list = $('facitList'); list.innerHTML = "";
-  QUESTIONS.forEach(q => list.appendChild(reviewItem(q, -1, map[q.n], false)));
+  QUESTIONS.forEach(q => list.appendChild(reviewItem(q, -1, map[q.n], false, 'fac-')));
+  renderHardest(stats, 'hardestFacit', 'hardestFacitWrap', 'hardestFacitIntro', 'fac-');
   renderCoveragePitch('covPitchFacit');
 }
 
