@@ -352,65 +352,14 @@
 </div> <!-- /#questions-demo -->
 
 
-<!-- SVÆRESTE SPØRGSMÅL — data-driven block (replaces the old static "100 sværeste" teaser).
-     Numbers below are aggregated from facit_attempts for exam_id='indfodsret-2026-06'.
-     To refresh after a new exam, re-run the difficulty query and update HARDEST_Q + the two stat strings.
-     SQL (Supabase):
-       WITH ans AS (SELECT (kv.key)::int num,(kv.value)::int chosen
-                    FROM facit_attempts a, jsonb_each_text(a.answers) kv
-                    WHERE a.exam_id='indfodsret-2026-06')
-       SELECT k.num, ROUND(100.0*COUNT(*) FILTER (WHERE ans.chosen<>k.correct_idx)/COUNT(*),1) wrong_pct
-       FROM facit_answer_keys k LEFT JOIN ans ON ans.num=k.num
-       WHERE k.exam_id='indfodsret-2026-06' GROUP BY k.num ORDER BY wrong_pct DESC LIMIT 5; -->
-<section style="padding:24px;text-align:center;">
-  <div style="max-width:1100px;margin:0 auto;text-align:left;background:#fff;border:1px solid #ede9fe;border-radius:14px;padding:24px 28px;">
-
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
-      <h3 style="margin:0;font-size:1.2rem;font-weight:800;color:#1a1a2e;">De sværeste spørgsmål · 3. juni 2026</h3>
-      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;background:#ede9fe;padding:4px 11px;border-radius:999px;">Data</span>
-    </div>
-    <p style="margin:0 0 20px;font-size:.86rem;color:#6b7280;line-height:1.5;">Andel der svarede forkert — blandt 3.500+ besvarelser her på siden.</p>
-
-    <div id="hardestQuestions" style="display:flex;flex-direction:column;gap:11px;"></div>
-
-    <div style="margin-top:18px;padding:12px 16px;background:#faf8ff;border-radius:10px;font-size:.85rem;color:#4b4b5a;line-height:1.55;">
-      Alle de fem sværeste er <strong style="color:#1a1a2e;">vidensspørgsmål</strong>. Spørgsmålene om danske værdier var klart de letteste — alle under 12&nbsp;% forkert.
-    </div>
-
-    <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #f0eef7;padding-top:14px;">
-      <span style="font-size:.84rem;color:#555;">Gennemsnit: <strong style="color:#1a1a2e;">36,3 af 45 rigtige</strong> — lige på beståelsesgrænsen.</span>
-      <a href="/seneste-indfodsretsprove/#facit" style="font-size:.88rem;font-weight:700;color:#7c3aed;text-decoration:none;white-space:nowrap;">Se alle 45 i facitlisten &rarr;</a>
-    </div>
-
-  </div>
+<!-- SOCIAL PROOF — quiet trust line before pricing (replaced the data-driven "sværeste" block).
+     The "hardest questions" story now lives in the hero strip + the results page,
+     so this slot stays calm and does not send buyers away right before the price. -->
+<section style="padding:22px 24px 8px;text-align:center;">
+  <p style="max-width:760px;margin:0 auto;font-size:.95rem;color:#6b7280;line-height:1.55;">
+    <strong style="color:#1a1a2e;">3.500+</strong> har allerede taget prøven fra 3. juni her på siden — gennemsnit <strong style="color:#1a1a2e;">36,3 af 45 rigtige</strong>.
+  </p>
 </section>
-
-<script>
-(function(){
-  var HARDEST_Q = [
-    {q:14, pct:41.5},
-    {q:29, pct:39.7},
-    {q:19, pct:37.7},
-    {q:2,  pct:36.4},
-    {q:26, pct:33.6}
-  ];
-  var TRACK_MAX = 45; /* bar scale: 45% wrong fills the full track */
-  var wrap = document.getElementById("hardestQuestions");
-  if(!wrap) return;
-  wrap.innerHTML = HARDEST_Q.map(function(d){
-    var w = Math.min(100, (d.pct / TRACK_MAX * 100)).toFixed(1);
-    var label = d.pct.toLocaleString('da-DK', {minimumFractionDigits:1, maximumFractionDigits:1});
-    return '<div style="display:flex;align-items:center;gap:12px;">'
-      + '<span style="flex:0 0 64px;font-size:.84rem;font-weight:600;color:#1a1a2e;">Spm.\u00A0' + d.q + '</span>'
-      + '<div style="flex:1 1 auto;background:#f1eef7;border-radius:6px;height:22px;position:relative;overflow:hidden;">'
-      + '<div style="position:absolute;top:0;bottom:0;left:0;width:' + w + '%;background:#C8102E;border-radius:6px;"></div>'
-      + '</div>'
-      + '<span style="flex:0 0 52px;text-align:right;font-size:.84rem;font-weight:700;color:#C8102E;">' + label + '\u00A0%</span>'
-      + '<span style="flex:0 0 auto;font-size:.68rem;font-weight:600;color:#6b7280;background:#f1eff7;padding:3px 8px;border-radius:5px;">Viden</span>'
-      + '</div>';
-  }).join("");
-})();
-</script>
 
 
 <!-- PRICING -->
