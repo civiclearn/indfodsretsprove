@@ -90,22 +90,21 @@
       .pricing-tab.tab-combo{padding-top:9px;}
       .tab-save{margin-left:4px;font-size:.62rem;}
     }
-    /* Latest-exam hero callout — additive, links to the new interactive test */
-    .latest-exam-cta{display:flex;align-items:center;gap:16px;max-width:1100px;margin:18px auto 0;
-      padding:16px 22px;background:#fff;border:2px solid #ffd9dd;border-radius:16px;
-      text-decoration:none;color:#1d2230;box-shadow:0 6px 20px rgba(200,16,46,.08);
-      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
-    .latest-exam-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,16,46,.16);border-color:#C8102E;}
-    .lec-pill{flex:0 0 auto;background:#C8102E;color:#fff;font-weight:700;font-size:.72rem;
-      letter-spacing:.06em;padding:6px 12px;border-radius:999px;}
-    .lec-text{flex:1 1 auto;font-size:.96rem;line-height:1.45;}
-    .lec-text strong{display:block;font-size:1.04rem;margin-bottom:2px;}
-    .lec-go{flex:0 0 auto;background:#C8102E;color:#fff;font-weight:600;font-size:.92rem;
-      padding:11px 18px;border-radius:10px;white-space:nowrap;}
-    .latest-exam-cta:hover .lec-go{background:#a00d24;}
+    /* Latest-exam callout — calm post-exam results strip (replaces the old loud red box).
+       Quieter than the hero: thin left accent, neutral surface, no big button or shadow. */
+    .latest-exam-strip{display:flex;align-items:center;gap:14px;max-width:1100px;margin:14px auto 0;
+      padding:13px 20px;background:#fff;border:1px solid #e5e1da;border-left:3px solid #7c3aed;
+      border-radius:10px;text-decoration:none;color:#1d2230;
+      transition:border-color .15s ease,box-shadow .15s ease;}
+    .latest-exam-strip:hover{border-color:#7c3aed;box-shadow:0 2px 12px rgba(124,58,237,.10);}
+    .les-pill{flex:0 0 auto;background:#f5f0ff;color:#7c3aed;font-weight:700;font-size:.7rem;
+      letter-spacing:.02em;padding:5px 10px;border-radius:6px;}
+    .les-text{flex:1 1 240px;min-width:0;font-size:.84rem;line-height:1.5;color:#555;}
+    .les-text strong{color:#1a1a2e;font-weight:700;}
+    .les-go{flex:0 0 auto;color:#7c3aed;font-weight:600;font-size:.84rem;white-space:nowrap;}
     @media(max-width:640px){
-      .latest-exam-cta{flex-direction:column;align-items:flex-start;gap:10px;margin:14px 16px 0;}
-      .lec-go{width:100%;text-align:center;}
+      .latest-exam-strip{flex-wrap:wrap;gap:8px 12px;margin:12px 16px 0;}
+      .les-go{margin-left:auto;}
     }
   </style>
 </head>
@@ -185,15 +184,16 @@
     </div>
   </section>
 
-  <!-- LATEST EXAM CALLOUT (added) — links to /seneste-indfodsretsprove -->
-  <a href="/seneste-indfodsretsprove" class="latest-exam-cta">
-    <span class="lec-pill">NYT</span>
-    <span class="lec-text">
-      <strong>Prøven fra 3. juni 2026 er nu online.</strong>
-      Tag den seneste indfødsretsprøve med alle 45 officielle spørgsmål – få dit resultat
-      med det samme og se, hvor mange der svarer rigtigt på hvert spørgsmål.
+  <!-- LATEST EXAM CALLOUT — calm post-exam results strip.
+       (Replaces the prominent red NYT box once the exam is past.
+        Deep-links to the facitliste on the results page: add id="facit" to that section.) -->
+  <a href="/seneste-indfodsretsprove/#facit" class="latest-exam-strip">
+    <span class="les-pill">RESULTATER</span>
+    <span class="les-text">
+      <strong>Indfødsretsprøven 3. juni er afsluttet.</strong>
+      Se facitlisten og de sværeste spørgsmål — baseret på 3.500+ besvarelser.
     </span>
-    <span class="lec-go">Tag prøven &rarr;</span>
+    <span class="les-go">Se facitliste &rarr;</span>
   </a>
 
   <!-- HERO CENTER CONTENT (KEEP EXISTING WRAPPER CLASS) -->
@@ -352,21 +352,65 @@
 </div> <!-- /#questions-demo -->
 
 
-<!-- 100 HARDEST -->
-<section style="padding:24px 24px 40px;text-align:center;">
-  <div style="max-width:1100px;margin:0 auto;padding:20px 28px;background:#faf8ff;border-radius:14px;border:1px solid #ede9fe;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;">
+<!-- SVÆRESTE SPØRGSMÅL — data-driven block (replaces the old static "100 sværeste" teaser).
+     Numbers below are aggregated from facit_attempts for exam_id='indfodsret-2026-06'.
+     To refresh after a new exam, re-run the difficulty query and update HARDEST_Q + the two stat strings.
+     SQL (Supabase):
+       WITH ans AS (SELECT (kv.key)::int num,(kv.value)::int chosen
+                    FROM facit_attempts a, jsonb_each_text(a.answers) kv
+                    WHERE a.exam_id='indfodsret-2026-06')
+       SELECT k.num, ROUND(100.0*COUNT(*) FILTER (WHERE ans.chosen<>k.correct_idx)/COUNT(*),1) wrong_pct
+       FROM facit_answer_keys k LEFT JOIN ans ON ans.num=k.num
+       WHERE k.exam_id='indfodsret-2026-06' GROUP BY k.num ORDER BY wrong_pct DESC LIMIT 5; -->
+<section style="padding:24px;text-align:center;">
+  <div style="max-width:1100px;margin:0 auto;text-align:left;background:#fff;border:1px solid #ede9fe;border-radius:14px;padding:24px 28px;">
 
-    <span style="font-size:42px;font-weight:700;color:#7c3aed;line-height:1;flex:0 0 auto;">100</span>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
+      <h3 style="margin:0;font-size:1.2rem;font-weight:800;color:#1a1a2e;">De sværeste spørgsmål · 3. juni 2026</h3>
+      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;background:#ede9fe;padding:4px 11px;border-radius:999px;">Data</span>
+    </div>
+    <p style="margin:0 0 20px;font-size:.86rem;color:#6b7280;line-height:1.5;">Andel der svarede forkert — blandt 3.500+ besvarelser her på siden.</p>
 
-    <div style="text-align:left;flex:1 1 300px;min-width:0;">
-      <span style="font-size:15px;font-weight:700;color:#111;">De 100 sværeste spørgsmål</span>
-      <span style="font-size:13px;color:#6b7280;margin-left:6px;">— baseret på data fra alle brugere. Øv dig på det, der virkelig er svært.</span>
+    <div id="hardestQuestions" style="display:flex;flex-direction:column;gap:11px;"></div>
+
+    <div style="margin-top:18px;padding:12px 16px;background:#faf8ff;border-radius:10px;font-size:.85rem;color:#4b4b5a;line-height:1.55;">
+      Alle de fem sværeste er <strong style="color:#1a1a2e;">vidensspørgsmål</strong>. Spørgsmålene om danske værdier var klart de letteste — alle under 12&nbsp;% forkert.
     </div>
 
-    <span style="flex:0 0 auto;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;background:#ede9fe;padding:5px 12px;border-radius:999px;">Nyt</span>
+    <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #f0eef7;padding-top:14px;">
+      <span style="font-size:.84rem;color:#555;">Gennemsnit: <strong style="color:#1a1a2e;">36,3 af 45 rigtige</strong> — lige på beståelsesgrænsen.</span>
+      <a href="/seneste-indfodsretsprove/#facit" style="font-size:.88rem;font-weight:700;color:#7c3aed;text-decoration:none;white-space:nowrap;">Se alle 45 i facitlisten &rarr;</a>
+    </div>
 
   </div>
 </section>
+
+<script>
+(function(){
+  var HARDEST_Q = [
+    {q:14, pct:41.5},
+    {q:29, pct:39.7},
+    {q:19, pct:37.7},
+    {q:2,  pct:36.4},
+    {q:26, pct:33.6}
+  ];
+  var TRACK_MAX = 45; /* bar scale: 45% wrong fills the full track */
+  var wrap = document.getElementById("hardestQuestions");
+  if(!wrap) return;
+  wrap.innerHTML = HARDEST_Q.map(function(d){
+    var w = Math.min(100, (d.pct / TRACK_MAX * 100)).toFixed(1);
+    var label = d.pct.toLocaleString('da-DK', {minimumFractionDigits:1, maximumFractionDigits:1});
+    return '<div style="display:flex;align-items:center;gap:12px;">'
+      + '<span style="flex:0 0 64px;font-size:.84rem;font-weight:600;color:#1a1a2e;">Spm.\u00A0' + d.q + '</span>'
+      + '<div style="flex:1 1 auto;background:#f1eef7;border-radius:6px;height:22px;position:relative;overflow:hidden;">'
+      + '<div style="position:absolute;top:0;bottom:0;left:0;width:' + w + '%;background:#C8102E;border-radius:6px;"></div>'
+      + '</div>'
+      + '<span style="flex:0 0 52px;text-align:right;font-size:.84rem;font-weight:700;color:#C8102E;">' + label + '\u00A0%</span>'
+      + '<span style="flex:0 0 auto;font-size:.68rem;font-weight:600;color:#6b7280;background:#f1eff7;padding:3px 8px;border-radius:5px;">Viden</span>'
+      + '</div>';
+  }).join("");
+})();
+</script>
 
 
 <!-- PRICING -->
