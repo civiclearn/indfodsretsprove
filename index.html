@@ -352,36 +352,40 @@
 </div> <!-- /#questions-demo -->
 
 
-<!-- HARDEST-QUESTIONS FEATURE — product sell before pricing.
-     Two angles: the user’s own wrong answers (adaptive repetition) and the 100
-     questions most users fail (aggregate). Links into checkout to keep buy-intent. -->
+<!-- HARDEST-QUESTIONS FEATURE — product sell before pricing (structured: header bar + 2 framed cards).
+     Two angles: the user’s own wrong answers (adaptive) and the 100 most-failed questions (aggregate). -->
 <section style="padding:24px;">
-  <div style="max-width:1100px;margin:0 auto;background:#faf8ff;border:1px solid #ede9fe;border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;">
+  <div style="max-width:1100px;margin:0 auto;background:#faf8ff;border:1px solid #ede9fe;border-radius:16px;padding:22px 26px;">
 
-    <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;line-height:1;">
-      <span style="font-size:54px;font-weight:800;color:#7c3aed;">100</span>
-      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7c3aed;margin-top:4px;">sværeste</span>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid #ece7fb;margin-bottom:18px;">
+      <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+        <h3 style="margin:0;font-size:1.2rem;font-weight:800;color:#1a1a2e;">Træn fælderne — ikke bare spørgsmålene</h3>
+        <span style="flex:0 0 auto;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7c3aed;background:#ede9fe;padding:3px 9px;border-radius:999px;">Nyt</span>
+      </div>
+      <a href="https://civiclearn.com/indfodsret/checkout" style="flex:0 0 auto;background:#7c3aed;color:#fff;font-weight:700;font-size:.9rem;padding:11px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;">Med i fuld adgang &rarr;</a>
     </div>
 
-    <div style="flex:1 1 360px;min-width:0;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-        <h3 style="margin:0;font-size:1.15rem;font-weight:800;color:#1a1a2e;">Træn fælderne — ikke bare spørgsmålene</h3>
-        <span style="font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7c3aed;background:#ede9fe;padding:3px 9px;border-radius:999px;">Nyt</span>
-      </div>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <div style="flex:1 1 200px;min-width:0;">
-          <div style="font-size:.9rem;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Dine egne fejl</div>
-          <div style="font-size:.83rem;color:#6b7280;line-height:1.45;">De spørgsmål, du svarer forkert på, vender automatisk tilbage — til du mestrer dem.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #ece7fb;border-radius:12px;padding:16px 18px;">
+        <div style="flex:0 0 auto;width:44px;height:44px;border-radius:10px;background:#ede9fe;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#7c3aed" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="#7c3aed" stroke-width="2"/><circle cx="12" cy="12" r="1.5" fill="#7c3aed"/></svg>
         </div>
-        <div style="flex:1 1 200px;min-width:0;">
-          <div style="font-size:.9rem;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Det, flest dumper på</div>
-          <div style="font-size:.83rem;color:#6b7280;line-height:1.45;">De 100 spørgsmål, som flest brugere svarer forkert på — samlet ét sted.</div>
+        <div style="min-width:0;">
+          <div style="font-size:.95rem;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Dine egne fejl</div>
+          <div style="font-size:.84rem;color:#6b7280;line-height:1.5;">De spørgsmål, du svarer forkert på, vender automatisk tilbage — til du mestrer dem.</div>
         </div>
       </div>
+
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #ece7fb;border-radius:12px;padding:16px 18px;">
+        <div style="flex:0 0 auto;width:44px;height:44px;border-radius:10px;background:#ede9fe;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#7c3aed;letter-spacing:-.02em;">100</div>
+        <div style="min-width:0;">
+          <div style="font-size:.95rem;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Det, flest dumper på</div>
+          <div style="font-size:.84rem;color:#6b7280;line-height:1.5;">De 100 spørgsmål, som flest brugere svarer forkert på — samlet ét sted.</div>
+        </div>
+      </div>
+
     </div>
-
-    <a href="https://civiclearn.com/indfodsret/checkout" style="flex:0 0 auto;align-self:center;background:#7c3aed;color:#fff;font-weight:700;font-size:.9rem;padding:12px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;">Med i fuld adgang &rarr;</a>
-
   </div>
 </section>
 
