@@ -192,8 +192,16 @@
   </section>
 
   <!-- LATEST EXAM CALLOUT — calm post-exam results strip.
-       (Replaces the prominent red NYT box once the exam is past.
-        Deep-links to the facitliste on the results page: add id="facit" to that section.) -->
+       Shown only in the window right after an exam; HIDDEN between exams.
+
+       >>> TO RE-ENABLE after the next indfødsretsprøve:
+           1. Delete the line below marked  RESULTATER-STRIP:START
+           2. Delete the line below marked  RESULTATER-STRIP:END
+           3. Update the exam date in <strong> and the besvarelser count.
+           4. Make sure the results page has id="facit" for the deep-link.
+       (CSS for .latest-exam-strip / .les-* is kept in <head>, so it will
+        just work again once uncommented.) -->
+  <!-- RESULTATER-STRIP:START  (delete this line to re-enable)
   <a href="/seneste-indfodsretsprove/#facit" class="latest-exam-strip">
     <span class="les-pill">RESULTATER</span>
     <span class="les-text">
@@ -202,6 +210,7 @@
     </span>
     <span class="les-go">Se facitliste &rarr;</span>
   </a>
+  RESULTATER-STRIP:END  (delete this line to re-enable) -->
 
   <!-- HERO CENTER CONTENT (KEEP EXISTING WRAPPER CLASS) -->
   <div class="hero-center hero-center--spaced">
@@ -851,6 +860,7 @@
     <div>© <span id="footer-year"></span> Indfodsretsprove.dk</div>
     <div class="footer-links">
       <a href="/gratis-prove">Gratis test</a>
+      <a href="/seneste-indfodsretsprove/">Seneste prøve</a>
       <a href="/artikler/">Artikler</a>
       <a href="/find-dit-testcenter/">Find testcenter</a>
       <a href="/kontakt/">Kontakt</a>
