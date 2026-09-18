@@ -290,8 +290,8 @@ img {
 
 .hero-image-wide {
   width: 100%;
-  max-width: 800px;
-  margin: 40px auto 130px;
+  max-width: 1120px;
+  margin: 32px auto 110px;
   display: flex;
   justify-content: center;
   text-align: center;
