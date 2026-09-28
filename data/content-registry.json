@@ -540,7 +540,7 @@
   "section": "micro",
   "title": "Diskrimination i Danmark",
   "publish_at": "2027-06-13"
-}
-
-
+},
+  { "url": "/krydsord/", "type": "page", "section": "core", "title": "Krydsord til indfødsretsprøven", "publish_at": null },
+  { "url": "/artikler/krydsord-til-indfodsretsproeven/", "type": "article", "section": "artikler", "title": "Krydsord til indfødsretsprøven: Derfor virker det bedre end at læse", "publish_at": null }
 ]
