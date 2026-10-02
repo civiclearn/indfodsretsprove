@@ -53,43 +53,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/newhome.css">
+  <link rel="stylesheet" href="https://civiclearn.com/assets/css/presale-home.css?v=11">
   <link rel="stylesheet" href="/assets/css/pricing.css">
   <style>
-    /* Tab switcher — additive only, no overrides */
-    .pricing-tabs{display:flex;align-items:flex-end;max-width:1100px;margin:0 auto;padding:0 0 0 28px;position:relative;z-index:2;}
-    .pricing-tab{padding:12px 28px 16px;border-radius:14px 14px 0 0;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;user-select:none;margin-bottom:-2px;}
-    .pricing-tab.tab-solo{background:#fff;color:#7c3aed;border:2px solid #e2e5ea;border-bottom-color:#fff;z-index:10;}
-    .pricing-tab.tab-solo:not(.active){background:#f3f0ff;border-color:#ddd6fe;border-bottom-color:#e2e5ea;color:#8b7abf;z-index:4;}
-    .pricing-tab.tab-combo{background:#C8102E;color:#fff;border:2px solid #a00d24;border-bottom-color:transparent;margin-left:-6px;z-index:3;padding-top:11px;box-shadow:0 -4px 12px rgba(200,16,46,.15);}
-    .pricing-tab.tab-combo.active{z-index:10;border-bottom-color:#fff;box-shadow:0 -4px 16px rgba(200,16,46,.25);}
-    .pricing-tab.tab-combo:not(.active){z-index:4;border-bottom-color:#e2e5ea;animation:peek 4s ease-in-out infinite;}
-    .pricing-tab.tab-combo:not(.active):hover{animation:none;transform:translateY(-6px);box-shadow:0 8px 24px rgba(200,16,46,.35);}
-    @keyframes peek{0%,80%,100%{transform:translateY(0)}86%{transform:translateY(-5px)}92%{transform:translateY(0)}}
-    .tab-flag{display:inline-block;width:18px;height:12px;border-radius:2px;overflow:hidden;vertical-align:middle;margin-right:6px;position:relative;top:-1px;}
-    .tab-flag svg{display:block;}
-    .tab-save{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:8px;margin-left:8px;vertical-align:middle;}
-    .pricing-tab.tab-combo:not(.active) .tab-save{animation:spulse 4s ease-in-out infinite;}
-    @keyframes spulse{0%,80%,100%{background:rgba(255,255,255,.2)}86%{background:rgba(255,255,255,.4)}92%{background:rgba(255,255,255,.2)}}
-
-    /* Layer crossfade */
-    .pricing-layer{display:none;}
-    .pricing-layer.visible{display:contents;}
-
-    /* Combo-only additions */
-    .price-was{font-size:20px;color:#b0b0b0;text-decoration:line-through;font-weight:400;margin-right:4px;}
-    .pricing-badge.combo{background:#fef2f2;color:#C8102E;}
-    .trust-pill.green{background:#ecfdf5;color:#059669;}
-    .pricing-cta.combo{background:#C8102E;}
-    .pricing-cta.combo:hover{background:#a00d24;}
-    .feature-card.combo-card{background:#fef2f2;border-color:#fecaca;}
-    .feature-card.combo-card h4{color:#C8102E;}
-
-    @media(max-width:600px){
-      .pricing-tabs{padding-left:16px;}
-      .pricing-tab{padding:10px 16px 12px;font-size:.84rem;}
-      .pricing-tab.tab-combo{padding-top:9px;}
-      .tab-save{margin-left:4px;font-size:.62rem;}
-    }
+    /* (old tab switcher / combo styles removed Oct 2026: the v2 pricing is styled in presale-home.css) */
     /* Latest-exam callout — calm post-exam results strip (replaces the old loud red box).
        Quieter than the hero: thin left accent, neutral surface, no big button or shadow. */
     .latest-exam-strip{display:flex;align-items:center;gap:14px;max-width:1100px;margin:14px auto 0;
@@ -120,78 +87,80 @@
 <body>
 
 <!-- HEADER -->
-<header class="cl-header">
-  <div class="cl-header-inner">
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="/" class="logo logo-long"><img alt="DK" src="/assets/images/dk.svg"/><span>Indfodsretsprove.dk</span></a>
 
-    <a href="/" class="cl-logo">
-      <img src="/assets/images/dk.svg" alt="DK" />
-      <span>Indfodsretsprove.dk</span>
-    </a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"
+      onclick="var o=document.getElementById('hdr').classList.toggle('menu-open');this.setAttribute('aria-expanded',o)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
 
-    <nav class="cl-nav">
+    <nav class="nav" id="site-nav">
       <a href="/gratis-prove">Gratis test</a>
       <a href="/artikler/">Artikler</a>
       <a href="/kontakt">Kontakt</a>
-	  <a href="https://civiclearn.com/denmark/login">Login</a>
+      <a href="https://civiclearn.com/denmark/login">Login</a>
     </nav>
 
-    <div class="cl-right">
-      <div class="cl-powered">
-        drevet af <span>CivicLearn</span>
+    <div class="hdr-right">
+      <div class="powered">
+        <div>drevet af <b>CivicLearn</b></div>
+        <a class="tp" href="https://www.trustpilot.com/review/civiclearn.com" target="_blank" rel="noopener" aria-label="CivicLearn på Trustpilot: 4,5 ud af 5">
+          <span class="tp-stars" aria-hidden="true">
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="12.5" height="25" fill="#00b67a"/><rect x="12.5" width="12.5" height="25" fill="#dcdce6"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+          </span>
+          <span class="tp-word">Trustpilot</span>
+        </a>
       </div>
-
-      <a href="https://civiclearn.com/denmark/checkout" class="cl-btn">
-        Opret Konto
-      </a>
+      <a href="https://civiclearn.com/denmark/checkout" class="btn btn-primary">Opret Konto</a>
     </div>
-
   </div>
-</header>
-
 </header>
 
 <!-- HERO -->
 <section class="hero">
-
-  <!-- EXAM STATUS BAR (PART OF HERO) -->
-  <section class="exam-status">
-    <div class="exam-status-inner">
-
-      <!-- NEXT TEST -->
-      <div class="exam-status-row">
-        <div class="exam-status-counter" data-date="2026-06-03">
-          <span class="count-number">143</span>
-          <span class="count-unit">DAGE</span>
-        </div>
-
-        <div class="exam-status-text">
-          <p class="exam-status-sentence">
+  <div class="wrap hero-status">
+      <section class="exam-status exam-status-wide">
+<div class="exam-status-inner">
+<!-- NEXT TEST -->
+<div class="exam-status-row">
+<div class="exam-status-counter" data-date="2026-06-03">
+<span class="count-number">143</span>
+<span class="count-unit">DAGE</span>
+</div>
+<div class="exam-status-text">
+<p class="exam-status-sentence">
             Den næste indfødsretsprøve afholdes
             <strong>den 3. juni 2026</strong>.
             <span class="status-pill">Tilmelding lukket</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- REGISTRATION DEADLINE -->
-      <div class="exam-status-row exam-status-row--registration">
-        <div class="exam-status-counter" data-date="2026-04-29">
-          <span class="count-number"></span>
-          <span class="count-unit">DAGE</span>
-        </div>
-
-        <div class="exam-status-text">
-          <p class="exam-status-sentence">
+</p>
+</div>
+</div>
+<!-- REGISTRATION DEADLINE -->
+<div class="exam-status-row exam-status-row--registration">
+<div class="exam-status-counter" data-date="2026-04-29">
+<span class="count-number"></span>
+<span class="count-unit">DAGE</span>
+</div>
+<div class="exam-status-text">
+<p class="exam-status-sentence">
             Tilmeldingen til indfødsretsprøven lukker
             <strong>den 29. april 2026</strong>.
           </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LATEST EXAM CALLOUT — calm post-exam results strip.
+</div>
+</div>
+</div>
+</section>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      
+      <!-- LATEST EXAM CALLOUT — calm post-exam results strip.
        Shown only in the window right after an exam; HIDDEN between exams.
 
        >>> TO RE-ENABLE after the next indfødsretsprøve:
@@ -211,161 +180,71 @@
     <span class="les-go">Se facitliste &rarr;</span>
   </a>
   RESULTATER-STRIP:END  (delete this line to re-enable) -->
-
-  <!-- HERO CENTER CONTENT (KEEP EXISTING WRAPPER CLASS) -->
-  <div class="hero-center hero-center--spaced">
-
-    <h1 class="hero-title">
-      <span>Bestå indfødsretsprøven<br>og få dit danske pas</span>
-    </h1>
-
-    <p class="hero-subtitle">
-      Vores træningsprogram er baseret på det officielle undervisningsmateriale,
-      og vil hjælpe dig med hurtigt og nemt, at forberede dig til indfødsretsprøven.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://civiclearn.com/denmark/checkout" class="hero-primary-btn">Start forberedelsen</a>
-      <a href="#questions-demo" class="hero-secondary-btn">Se eksempelspørgsmål</a>
+      
+      
+      <h1><span>Bestå indfødsretsprøven</span> og få dit danske pas</h1>
+      <p class="hero-sub">Vores træningsprogram er baseret på det officielle undervisningsmateriale, og vil hjælpe dig med hurtigt og nemt, at forberede dig til indfødsretsprøven.</p>
+      <div class="hero-ctas">
+        <a href="https://civiclearn.com/denmark/checkout" class="btn btn-primary" id="hero-cta">Start forberedelsen</a>
+        <a href="#questions-demo" class="btn btn-ghost">Se eksempelspørgsmål</a>
+      </div>
+      <p class="hero-meta" id="v2Meta"><strong>499 kr, engangsbetaling</strong> · livstidsadgang · intet abonnement</p>
+      <a class="rating rating-link" href="/anmeldelser/">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>Fremragende</strong>
+        <span>Baseret på over 2.400 verificerede <span class="rating-link-word">anmeldelser</span> siden 2009.</span>
+      </a>
     </div>
-
-<a href="/anmeldelser/" class="hero-social hero-social-link">
-  <span class="rating-stars">★★★★★</span>
-  <span class="rating-word">Fremragende</span>
-  <span class="rating-subtext">
-    Baseret på over 2.400 verificerede
-    <span class="rating-link-word">anmeldelser</span>
-    siden 2009.
-  </span>
-</a>
-
-    <div class="hero-image-wide">
+    <div class="hero-img">
       <img src="/assets/images/devices-dk-v3.webp" alt="CivicLearn Indfødsretsprøven: dashboard med estimeret score og hurtig test på computer og iPhone, sammen med det officielle læremateriale" width="1920" height="1091" fetchpriority="high" decoding="async">
     </div>
-
   </div>
 </section>
 
 <!-- FEATURES SECTION -->
 
-<section class="features-section">
-
-  <div class="section-heading">
-    <div class="section-kicker">Struktureret forberedelse</div>
-    <h2 class="section-title">Alt hvad du behøver for at bestå</h2>
-    <p class="section-lead">
-      Overblik, klare krav og realistisk træning – baseret på den officielle prøve.
-    </p>
-  </div>
-
-  <div class="features-grid">
-
-    <!-- Card 1 — WHAT IS THE TEST -->
-    <div class="feature-card" onclick="location.href='/om-proeven/'">
-      <a href="/om-proeven/" class="feature-card-link feature-card--data">
-
-        <div class="feature-metric">
-          <span class="metric-number">45</span>
-          <span class="metric-label">SPØRGSMÅL</span>
-        </div>
-
-        <h3 class="feature-title">Indfødsretsprøven</h3>
-
-        <p class="feature-text">
-          Skriftlig prøve med spørgsmål om dansk historie, samfundsforhold
-          og værdier. Prøven varer 45 minutter.
-        </p>
-
-        <div class="feature-cta">
-          Læs om prøven <span class="arrow">›</span>
-        </div>
-
-      </a>
+<section class="section feat-v2">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">Struktureret forberedelse</span><h2>Alt hvad du behøver for at bestå</h2><p>Overblik, klare krav og realistisk træning – baseret på den officielle prøve.</p></div>
+    <div class="features">
+      <div class="feature feature-top">
+        <div class="feat-metric"><b>45</b><span>SPØRGSMÅL</span></div>
+        <h3>Indfødsretsprøven</h3>
+        <p>Skriftlig prøve med spørgsmål om dansk historie, samfundsforhold og værdier. Prøven varer 45 minutter.</p>
+        <a class="feat-link" href="/om-proeven/">Læs om prøven <span class="arrow">›</span></a>
+      </div>
+      <div class="feature feature-top">
+        <div class="feat-metric"><b>36</b><span>RIGTIGE SVAR</span></div>
+        <h3>Sådan består du</h3>
+        <p>For at bestå skal mindst 36 ud af 45 spørgsmål besvares korrekt, herunder mindst 4 ud af 5 spørgsmål om danske værdier.</p>
+        <a class="feat-link" href="/gratis-prove/">Prøv en test <span class="arrow">›</span></a>
+      </div>
+      <div class="feature feature-top">
+        <div class="feat-metric"><b>5</b><span>UGER FØR</span></div>
+        <h3>Tilmelding & teststeder</h3>
+        <p>Tilmelding sker via dit lokale testcenter og skal være gennemført senest fem uger før prøven afholdes.</p>
+        <a class="feat-link" href="/find-dit-testcenter/">Find dit testcenter <span class="arrow">›</span></a>
+      </div>
     </div>
-
-    <!-- Card 2 — HOW TO PASS -->
-    <div class="feature-card" onclick="location.href='/gratis-prove/'">
-      <a href="/gratis-prove/" class="feature-card-link feature-card--data">
-
-        <div class="feature-metric">
-          <span class="metric-number">36</span>
-          <span class="metric-label">RIGTIGE SVAR</span>
-        </div>
-
-        <h3 class="feature-title">Sådan består du</h3>
-
-        <p class="feature-text">
-          For at bestå skal mindst 36 ud af 45 spørgsmål besvares korrekt,
-          herunder mindst 4 ud af 5 spørgsmål om danske værdier.
-        </p>
-
-        <div class="feature-cta">
-          Prøv en test <span class="arrow">›</span>
-        </div>
-
-      </a>
-    </div>
-
-    <!-- Card 3 — PRACTICAL REGISTRATION -->
-    <div class="feature-card" onclick="location.href='/find-dit-testcenter/'">
-      <a href="/find-dit-testcenter/" class="feature-card-link feature-card--data">
-
-        <div class="feature-metric">
-          <span class="metric-number">5</span>
-          <span class="metric-label">UGER FØR</span>
-        </div>
-
-        <h3 class="feature-title">Tilmelding & teststeder</h3>
-
-        <p class="feature-text">
-          Tilmelding sker via dit lokale testcenter og skal være gennemført
-          senest fem uger før prøven afholdes.
-        </p>
-
-        <div class="feature-cta">
-          Find dit testcenter <span class="arrow">›</span>
-        </div>
-
-      </a>
-    </div>
-
   </div>
 </section>
 
 
 
 <!-- INLINE TEST -->
-<div id="questions-demo">
-<section class="inline-test">
-  <div class="inline-test-inner">
-
-    <h2 class="inline-test-title">Prøv gratis spørgsmål inspireret af den rigtige prøve</h2>
-    <p class="inline-test-subtitle">Se formatet og sværhedsgraden.</p>
-
-    <div class="inline-test-cta-top">
-      <a href="https://civiclearn.com/denmark/checkout" class="hero-primary-btn">
-        Fuld adgang · 3000+ spørgsmål
-      </a>
+<section class="section quiz" id="questions-demo">
+  <div class="wrap">
+    <div class="quiz-top">
+      <div class="section-head"><span class="kicker" id="v2QuizKicker">Gratis øvelse</span><h2>Prøv gratis spørgsmål inspireret af den rigtige prøve</h2><p>Se formatet og sværhedsgraden.</p></div>
+      <div class="quiz-actions"><a href="https://civiclearn.com/denmark/checkout" class="btn btn-ghost">Fuld adgang · 3000+ spørgsmål</a></div>
     </div>
-
-    <!-- Progress -->
-    <div class="inline-progress-container">
-      <div class="inline-test-inner">
-        <div id="inline-progress-text"></div>
-        <div class="inline-progressbar-wrapper">
-          <div id="inline-progressbar"></div>
-        </div>
-      </div>
+    <div class="progress">
+      <div id="inline-progress-text"></div>
+      <div class="progress-track"><div id="inline-progressbar"></div></div>
     </div>
-
-    <!-- QUESTIONS (unchanged) -->
-    <div class="inline-test-inner">
-      <div id="inline-test-questions"></div>
-    </div>
-
-  </div> <!-- /.inline-test-inner -->
-</section> <!-- /.inline-test -->
-</div> <!-- /#questions-demo -->
+    <div id="inline-test-questions"></div>
+  </div>
+</section> <!-- /#questions-demo -->
 
 
 <!-- HARDEST-QUESTIONS FEATURE — product sell before pricing (structured: header bar + 2 framed cards).
@@ -493,170 +372,63 @@
 
 
 <!-- PRICING -->
-<section class="premium-pricing">
-
-  <!-- FOLDER TABS -->
-  <div class="pricing-tabs">
-    <div class="pricing-tab tab-solo active" id="tabSolo">
-      <span class="tab-flag"><svg viewBox="0 0 18 12"><rect width="18" height="12" fill="#c8102e"/><rect x="0" y="4.8" width="18" height="2.4" fill="#fff"/><rect x="4.8" y="0" width="2.4" height="12" fill="#fff"/></svg></span>
+<section class="section pricing-v2 pricing-tabbed" id="pricing">
+  <div class="wrap">
+    <div class="section-head center"><span class="kicker">Én enkel pris</span><h2>Alt inkluderet, for altid</h2></div>
+    <div class="pricing-tabs">
+<div class="pricing-tab tab-solo active" id="tabSolo">
+<span class="tab-flag"><svg viewbox="0 0 18 12"><rect fill="#c8102e" height="12" width="18"></rect><rect fill="#fff" height="2.4" width="18" x="0" y="4.8"></rect><rect fill="#fff" height="12" width="2.4" x="4.8" y="0"></rect></svg></span>
       Indfødsretsprøven
     </div>
-    <div class="pricing-tab tab-combo" id="tabCombo">
+<div class="pricing-tab tab-combo" id="tabCombo">
       + Dansk 3
       <span class="tab-save">SPAR 399 kr</span>
+</div>
+</div>
+    <div class="price-card pricing-layer visible" id="layerSolo">
+      <div class="price-left">
+        <div class="price-badges"><span class="price-tag price-tag-primary">Premium adgang</span><span class="price-tag price-tag-subtle">Opdateret for 2026</span></div>
+        <h3 class="price-headline">Alt du behøver for at bestå indfødsretsprøven</h3>
+        <div class="price-amount">499 kr<small>én gang</small></div>
+        <p class="price-proof"><span class="stars" aria-hidden="true">★★★★★</span> Over <a class="pricing-proof-link" href="/anmeldelser/">2.400 anmeldelser</a></p>
+        <div class="price-pills"><span class="price-pill">Engangsbetaling</span><span class="price-pill">Livstidsadgang</span></div>
+        <a class="btn btn-primary" href="https://civiclearn.com/denmark/checkout">Start nu – få fuld adgang</a>
+        <p class="price-note">Sikker betaling · Øjeblikkelig adgang</p>
+      </div>
+      <div class="price-right">
+        <div class="price-intro"><strong>3000+ spørgsmål baseret på officielle kilder</strong> <p> Spørgsmål fra samtlige tidligere indfødsretsprøver samt det officielle undervisningsmateriale (2026). Inkluderer spørgsmål om danske værdier og aktuelle samfundsforhold. </p> <p class="muted"> Prioriteret efter relevans og sandsynlighed ved prøven. Inkl. det printbare revisionssæt (6 sider). </p></div>
+        <ul class="checks plan-feats">
+          <li class="highlight"><strong>Designet til beståelse</strong>Fokus på officielle emner, eksamensformat og dine svageste områder — ikke tilfældige quizzer.</li>
+          <li><strong>Forstå prøven</strong>Alle officielle emner: historie, kulturliv, økonomi, omverdenen og temaopslag — med særlig vægt på danske værdier.</li>
+          <li><strong>Eksamenssimulation</strong>Tidtagne prøver i samme format som den rigtige indfødsretsprøve samt hurtige tests til daglig træning.</li>
+          <li><strong>Adaptiv træning</strong>Systemet prioriterer automatisk de spørgsmål, du har sværest ved. Flashcards og personlig "My List" sikrer effektiv repetition.</li>
+          <li><strong>Hold rytmen</strong>Daglige quizzer via Telegram, historik og detaljeret statistik, så du altid ved, hvor du står.</li>
+          <li><strong>Lær på din måde</strong>Oplæsning af spørgsmål og manualens kapitler samt adgang fra computer, tablet og mobil.</li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <div class="pricing-shell">
-
-    <!-- SOLO LAYER (display:contents = transparent to grid) -->
-    <div class="pricing-layer visible" id="layerSolo">
-
-      <div class="pricing-main">
-        <div class="pricing-badges">
-          <span class="pricing-badge primary">Premium adgang</span>
-          <span class="pricing-badge subtle">Opdateret for 2026</span>
-        </div>
-        <h3 class="pricing-headline">
-          Alt du behøver for at bestå indfødsretsprøven
-        </h3>
-        <div class="pricing-price">
-          <span class="price-amount">499</span>
-          <span class="price-currency">kr</span>
-        </div>
-        <div class="pricing-proof">
-          <span class="pricing-stars">★★★★★</span>
-          <span class="pricing-proof-text">
-            Over
-            <a href="/anmeldelser/" class="pricing-proof-link">2.400 anmeldelser</a>
-          </span>
-        </div>
-        <div class="pricing-trust">
-          <span class="trust-pill">Engangsbetaling</span>
-          <span class="trust-pill">Livstidsadgang</span>
-        </div>
-        <div class="pricing-intro">
-          <strong>3000+ spørgsmål baseret på officielle kilder</strong>
-          <p>
-            Spørgsmål fra samtlige tidligere indfødsretsprøver samt det officielle undervisningsmateriale (2026).
-            Inkluderer spørgsmål om danske værdier og aktuelle samfundsforhold.
-          </p>
-          <p class="muted">
-            Prioriteret efter relevans og sandsynlighed ved prøven.
-            Inkl. det printbare revisionssæt (6 sider).
-          </p>
-        </div>
-        <a class="pricing-cta" href="https://civiclearn.com/denmark/checkout">
-          Start nu – få fuld adgang
-        </a>
-        <p class="pricing-guarantee">
-          Sikker betaling · Øjeblikkelig adgang
-        </p>
+    <div class="price-card pricing-layer" id="layerCombo">
+      <div class="price-left">
+        <div class="price-badges"><span class="price-tag price-tag-combo">Kombipakke</span><span class="price-tag price-tag-subtle">Alt til statsborgerskab</span></div>
+        <h3 class="price-headline">Indfødsretsprøven + Prøve i Dansk 3 — samlet</h3>
+        <div class="price-amount"><s class="price-was">1.398</s>999 kr<small>én gang</small></div>
+        <p class="price-proof"><span class="stars" aria-hidden="true">★★★★★</span> Over <a class="pricing-proof-link" href="/anmeldelser/">2.400 anmeldelser</a></p>
+        <div class="price-pills"><span class="price-pill">Engangsbetaling</span><span class="price-pill">Begge prøver</span><span class="price-pill green">Spar 399 kr</span></div>
+        <a class="btn btn-primary" href="https://civiclearn.com/denmark/checkout?plan=bundle">Få begge prøver — spar 399 kr</a>
+        <p class="price-note">Sikker betaling · Øjeblikkelig adgang</p>
       </div>
-
-      <div class="pricing-features">
-        <div class="feature-card highlight">
-          <h4>Designet til beståelse</h4>
-          <p>Fokus på officielle emner, eksamensformat og dine svageste områder — ikke tilfældige quizzer.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Forstå prøven</h4>
-          <p>Alle officielle emner: historie, kulturliv, økonomi, omverdenen og temaopslag — med særlig vægt på danske værdier.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Eksamenssimulation</h4>
-          <p>Tidtagne prøver i samme format som den rigtige indfødsretsprøve samt hurtige tests til daglig træning.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Adaptiv træning</h4>
-          <p>Systemet prioriterer automatisk de spørgsmål, du har sværest ved. Flashcards og personlig "My List" sikrer effektiv repetition.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Hold rytmen</h4>
-          <p>Daglige quizzer via Telegram, historik og detaljeret statistik, så du altid ved, hvor du står.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Lær på din måde</h4>
-          <p>Oplæsning af spørgsmål og manualens kapitler samt adgang fra computer, tablet og mobil.</p>
-        </div>
+      <div class="price-right">
+        <div class="price-intro"><strong>Komplet forberedelse til begge prøver med ét login</strong> <p> 3000+ spørgsmål til Indfødsretsprøven + 10 komplette Dansk 3-simulationer med AI-evaluering af læsning, skrivning og mundtlig. </p> <p class="muted"> Samme email og adgangskode til begge platforme. Inkl. det printbare revisionssæt (6 sider). </p></div>
+        <ul class="checks plan-feats">
+          <li class="combo-card"><strong>Prøve i Dansk 3</strong>10 komplette simulationer med læseforståelse, skriftlig fremstilling og mundtlig kommunikation.</li>
+          <li class="combo-card"><strong>AI-evaluering</strong>Karakterer på 7-trins-skalaen med detaljeret feedback om styrker, svagheder og forbedringspunkter.</li>
+          <li class="highlight"><strong>Indfødsretsprøven</strong>3000+ spørgsmål, eksamenssimulationer, adaptiv træning og daglige tests — alt du kender.</li>
+          <li class="combo-card"><strong>Mundtlig optagelse</strong>Optag dine mundtlige svar direkte i browseren. AI lytter, transskriberer og bedømmer din tale.</li>
+          <li><strong>Ét login, to platforme</strong>Samme email og adgangskode. Skift frit mellem Indfødsretsprøven og Dansk 3 fra dit dashboard.</li>
+          <li><strong>Bestå begge første gang</strong>De fleste ansøgere skal bestå begge prøver. Forbered dig samlet og spar tid og penge.</li>
+        </ul>
       </div>
-
     </div>
-
-    <!-- COMBO LAYER (hidden by default) -->
-    <div class="pricing-layer" id="layerCombo">
-
-      <div class="pricing-main">
-        <div class="pricing-badges">
-          <span class="pricing-badge combo">Kombipakke</span>
-          <span class="pricing-badge subtle">Alt til statsborgerskab</span>
-        </div>
-        <h3 class="pricing-headline">
-          Indfødsretsprøven + Prøve i Dansk 3 — samlet
-        </h3>
-        <div class="pricing-price">
-          <span class="price-was">1.398</span>
-          <span class="price-amount">999</span>
-          <span class="price-currency">kr</span>
-        </div>
-        <div class="pricing-proof">
-          <span class="pricing-stars">★★★★★</span>
-          <span class="pricing-proof-text">
-            Over
-            <a href="/anmeldelser/" class="pricing-proof-link">2.400 anmeldelser</a>
-          </span>
-        </div>
-        <div class="pricing-trust">
-          <span class="trust-pill">Engangsbetaling</span>
-          <span class="trust-pill">Begge prøver</span>
-          <span class="trust-pill green">Spar 399 kr</span>
-        </div>
-        <div class="pricing-intro">
-          <strong>Komplet forberedelse til begge prøver med ét login</strong>
-          <p>
-            3000+ spørgsmål til Indfødsretsprøven + 10 komplette Dansk 3-simulationer med AI-evaluering af læsning, skrivning og mundtlig.
-          </p>
-          <p class="muted">
-            Samme email og adgangskode til begge platforme. Inkl. det printbare revisionssæt (6 sider).
-          </p>
-        </div>
-        <a class="pricing-cta combo" href="https://civiclearn.com/denmark/checkout?plan=bundle">
-          Få begge prøver — spar 399 kr
-        </a>
-        <p class="pricing-guarantee">
-          Sikker betaling · Øjeblikkelig adgang
-        </p>
-      </div>
-
-      <div class="pricing-features">
-        <div class="feature-card combo-card">
-          <h4>Prøve i Dansk 3</h4>
-          <p>10 komplette simulationer med læseforståelse, skriftlig fremstilling og mundtlig kommunikation.</p>
-        </div>
-        <div class="feature-card combo-card">
-          <h4>AI-evaluering</h4>
-          <p>Karakterer på 7-trins-skalaen med detaljeret feedback om styrker, svagheder og forbedringspunkter.</p>
-        </div>
-        <div class="feature-card highlight">
-          <h4>Indfødsretsprøven</h4>
-          <p>3000+ spørgsmål, eksamenssimulationer, adaptiv træning og daglige tests — alt du kender.</p>
-        </div>
-        <div class="feature-card combo-card">
-          <h4>Mundtlig optagelse</h4>
-          <p>Optag dine mundtlige svar direkte i browseren. AI lytter, transskriberer og bedømmer din tale.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Ét login, to platforme</h4>
-          <p>Samme email og adgangskode. Skift frit mellem Indfødsretsprøven og Dansk 3 fra dit dashboard.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Bestå begge første gang</h4>
-          <p>De fleste ansøgere skal bestå begge prøver. Forbered dig samlet og spar tid og penge.</p>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 </section>
 
@@ -713,239 +485,115 @@
 
 
 <!-- TESTIMONIALS -->
-<section class="cl-testimonials">
-  <div class="cl-testimonials-inner">
-
-    <header class="cl-testimonials-header">
-<h2 class="cl-testimonials-title">Udpluk af brugererfaringer</h2>
-<p class="cl-testimonials-subtitle">
-  Korte citater fra tidligere kandidater, der har brugt træningsprogrammet
-</p>
-
-
-    <div class="cl-testimonials-grid">
-
-      <article class="cl-testimonial-card">
-        <div class="cl-testimonial-avatar">
-          <img src="/assets/images/avatar2.png" alt="">
-        </div>
-        <p class="cl-testimonial-text">
-          “Prøvesimulationerne gjorde det nemt at forstå niveauet.
-          På dagen følte jeg mig helt klar.”
-        </p>
-        <div class="cl-testimonial-author">Oleg L.</div>
-      </article>
-
-      <article class="cl-testimonial-card">
-        <div class="cl-testimonial-avatar">
-          <img src="/assets/images/avatar1.png" alt="">
-        </div>
-        <p class="cl-testimonial-text">
-          “De svære spørgsmål hjalp mig virkelig med at forbedre mig hurtigt.”
-        </p>
-        <div class="cl-testimonial-author">Marina R.</div>
-      </article>
-
-      <article class="cl-testimonial-card">
-        <div class="cl-testimonial-avatar">
-          <img src="/assets/images/avatar3.png" alt="">
-        </div>
-        <p class="cl-testimonial-text">
-          “Let at bruge, klart og effektivt. Jeg bestod ved første forsøg
-          takket være denne platform.”
-        </p>
-        <div class="cl-testimonial-author">Silvia P.</div>
-      </article>
-
+<section class="section testi-v2" style="padding-top:56px">
+  <div class="wrap">
+    <div class="section-head center"><span class="kicker">Fra vores brugere</span><h2>Udpluk af brugererfaringer</h2><p>Korte citater fra tidligere kandidater, der har brugt træningsprogrammet</p></div>
+    <div class="quotes">
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“Prøvesimulationerne gjorde det nemt at forstå niveauet. På dagen følte jeg mig helt klar.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar2.png" alt="" width="40" height="40">Oleg L.</figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“De svære spørgsmål hjalp mig virkelig med at forbedre mig hurtigt.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar1.png" alt="" width="40" height="40">Marina R.</figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“Let at bruge, klart og effektivt. Jeg bestod ved første forsøg takket være denne platform.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar3.png" alt="" width="40" height="40">Silvia P.</figcaption>
+      </figure>
     </div>
-<p class="cl-testimonials-more">
-  Læs flere autentiske brugeranmeldelser på
-  <a href="/anmeldelser/">anmeldelsessiden</a>.
-</p>
-
-<!-- TRUSTPILOT — same component as checkout (tp-inline). Count/year loaded from site_config.trustpilot (Supabase); hardcoded values are the fallback. -->
-<div style="text-align:center;max-width:760px;margin:18px auto 0;padding-top:16px;border-top:1px solid #ece7fb;">
-  <div style="font-size:.8rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:#9a9588;margin-bottom:10px;">Nu også på Trustpilot</div>
-  <a class="tp-inline" href="https://www.trustpilot.com/review/civiclearn.com" target="_blank" rel="noopener">
-    <span class="tp-stars">
-      <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
-      <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
-      <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
-      <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
-      <svg viewBox="0 0 25 25"><rect width="12.5" height="25" fill="#00b67a"/><rect x="12.5" width="12.5" height="25" fill="#dcdce6"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
-    </span>
-    <span class="tp-logo"><span>Trustpilot</span></span>
-    <span class="tp-count"><span class="tp-num">30</span> anmeldelser i <span class="tp-year">2026</span></span>
-  </a>
+    <p class="quotes-more">Læs flere autentiske brugeranmeldelser på <a href="/anmeldelser/">anmeldelsessiden</a>.</p>
+    <div style="text-align:center;max-width:760px;margin:18px auto 0;padding-top:16px;border-top:1px solid #ece7fb;">
+<div style="font-size:.8rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:#9a9588;margin-bottom:10px;">Nu også på Trustpilot</div>
+<a class="tp-inline" href="https://www.trustpilot.com/review/civiclearn.com" rel="noopener" target="_blank">
+<span class="tp-stars">
+<svg viewbox="0 0 25 25"><rect fill="#00b67a" height="25" width="25"></rect><path d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z" fill="#fff"></path></svg>
+<svg viewbox="0 0 25 25"><rect fill="#00b67a" height="25" width="25"></rect><path d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z" fill="#fff"></path></svg>
+<svg viewbox="0 0 25 25"><rect fill="#00b67a" height="25" width="25"></rect><path d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z" fill="#fff"></path></svg>
+<svg viewbox="0 0 25 25"><rect fill="#00b67a" height="25" width="25"></rect><path d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z" fill="#fff"></path></svg>
+<svg viewbox="0 0 25 25"><rect fill="#00b67a" height="25" width="12.5"></rect><rect fill="#dcdce6" height="25" width="12.5" x="12.5"></rect><path d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z" fill="#fff"></path></svg>
+</span>
+<span class="tp-logo"><span>Trustpilot</span></span>
+<span class="tp-count"><span class="tp-num">30</span> anmeldelser i <span class="tp-year">2026</span></span>
+</a>
 </div>
-
   </div>
-  </section>
+</section>
 
 
 
 
 
 <!-- FAQ -->
-<section class="cl-faq">
-
-  <div class="section-heading">
-    <div class="section-kicker">Ofte stillede spørgsmål</div>
-    <h2 class="section-title">FAQ</h2>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Er dette selve tilmeldingen til indfødsretsprøven?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Nej. Tilmelding til indfødsretsprøven sker altid via de officielle
-        testcentre.
-        <br><br>
-        Her tilbyder vi udelukkende et omfattende træningsprogram, der hjælper
-        dig med at forberede dig bedst muligt.
-        <br><br>
-        Du kan finde dit testcenter her:
-        <a href="/find-dit-testcenter/">Find dit testcenter</a>.
-      </p>
+<section class="section" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="section-head"><span class="kicker">Ofte stillede spørgsmål</span><h2>FAQ</h2><p id="v2FaqMore">Andre spørgsmål? <a href="/kontakt">Skriv til os</a>.</p></div>
+    <div class="faq-list">
+      <details><summary>Er dette selve tilmeldingen til indfødsretsprøven?</summary><p> Nej. Tilmelding til indfødsretsprøven sker altid via de officielle testcentre. <br/><br/> Her tilbyder vi udelukkende et omfattende træningsprogram, der hjælper dig med at forberede dig bedst muligt. <br/><br/> Du kan finde dit testcenter her: <a href="/find-dit-testcenter/">Find dit testcenter</a>. </p></details>
+      <details><summary>Gælder adgangen kun til den næste indfødsretsprøve?</summary><p> Nej. Du får ubegrænset adgang og kan bruge platformen så længe, du har behov. <br/><br/> Det eneste krav er, at du fortsætter med samme e-mailadresse. </p></details>
+      <details><summary>Hvor lang tid skal jeg bruge på at forberede mig?</summary><p> Det afhænger af dit forhåndskendskab til dansk historie, geografi, kultur og det politiske system – samt hvor meget tid du bruger på træning. <br/><br/> Træner du cirka 30 minutter om dagen, hver dag, vil de fleste have brug for mindst én måned for at være godt forberedt. </p></details>
+      <details><summary>Hvordan er træningsprogrammet opbygget?</summary><p> Træningen er opdelt i prioriterede faser. <br/><br/> <strong>Fase 1</strong> indeholder cirka 500 kernespørgsmål baseret på tidligere officielle prøver. Det er de vigtigste spørgsmål, og vi anbefaler, at du træner dem emne for emne. <br/><br/> Du får korte spørgebatches, og spørgsmål, du svarer forkert på, vender automatisk tilbage, indtil du mestrer dem. Når alle emner er gennemført, kan du teste dig selv med realistiske prøvesimulationer. <br/><br/> <strong>Fase 2</strong> indeholder cirka 1.000 spørgsmål baseret på den officielle lærebog og fungerer på samme måde. <br/><br/> Når disse to faser er gennemført, vurderer vi, at du er klar til prøven. Ønsker du ekstra sikkerhed, kan du fortsætte til en avanceret fase med mere detaljerede spørgsmål. </p></details>
+      <details><summary>Indeholder træningen spørgsmål om aktuelle begivenheder?</summary><p> Ja. Vi tilføjer løbende spørgsmål om aktuelle begivenheder. <br/><br/> På grund af emnets karakter opdateres disse spørgsmål typisk én gang om måneden. <br/><br/> Vi anbefaler desuden, at du under din forberedelse følger danske nyheder – for eksempel ved at læse forsiden af en dansk avis eller se nyhedsudsendelser. </p></details>
     </div>
   </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Gælder adgangen kun til den næste indfødsretsprøve?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Nej. Du får ubegrænset adgang og kan bruge platformen så længe, du har
-        behov.
-        <br><br>
-        Det eneste krav er, at du fortsætter med samme e-mailadresse.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Hvor lang tid skal jeg bruge på at forberede mig?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Det afhænger af dit forhåndskendskab til dansk historie, geografi,
-        kultur og det politiske system – samt hvor meget tid du bruger på
-        træning.
-        <br><br>
-        Træner du cirka 30 minutter om dagen, hver dag, vil de fleste have brug
-        for mindst én måned for at være godt forberedt.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Hvordan er træningsprogrammet opbygget?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Træningen er opdelt i prioriterede faser.
-        <br><br>
-        <strong>Fase 1</strong> indeholder cirka 500 kernespørgsmål baseret på
-        tidligere officielle prøver. Det er de vigtigste spørgsmål, og vi
-        anbefaler, at du træner dem emne for emne.
-        <br><br>
-        Du får korte spørgebatches, og spørgsmål, du svarer forkert på, vender
-        automatisk tilbage, indtil du mestrer dem. Når alle emner er gennemført,
-        kan du teste dig selv med realistiske prøvesimulationer.
-        <br><br>
-        <strong>Fase 2</strong> indeholder cirka 1.000 spørgsmål baseret på den
-        officielle lærebog og fungerer på samme måde.
-        <br><br>
-        Når disse to faser er gennemført, vurderer vi, at du er klar til
-        prøven. Ønsker du ekstra sikkerhed, kan du fortsætte til en
-        avanceret fase med mere detaljerede spørgsmål.
-      </p>
-    </div>
-  </div>
-  
-  <div class="faq-item">
-  <div class="faq-question">
-    <span>Indeholder træningen spørgsmål om aktuelle begivenheder?</span>
-  </div>
-  <div class="faq-answer">
-    <p>
-      Ja. Vi tilføjer løbende spørgsmål om aktuelle begivenheder.
-      <br><br>
-      På grund af emnets karakter opdateres disse spørgsmål typisk én gang om
-      måneden.
-      <br><br>
-      Vi anbefaler desuden, at du under din forberedelse følger danske nyheder
-      – for eksempel ved at læse forsiden af en dansk avis eller se
-      nyhedsudsendelser.
-    </p>
-  </div>
-</div>
-
 </section>
 
 
 <!-- FEATURED ARTICLES -->
-<section class="home-articles">
-  <div class="section-heading">
-    <div class="section-kicker">Videre læsning</div>
-    <h2 class="section-title">Udvalgte artikler til indfødsretsprøven</h2>
-    <p class="section-lead">
-      Baggrund, forklaringer og vigtige emner fra prøvens pensum.
-    </p>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">Videre læsning</span><h2>Udvalgte artikler til indfødsretsprøven</h2><p>Baggrund, forklaringer og vigtige emner fra prøvens pensum.</p></div>
+    <div class="home-articles-grid" id="homeArticlesGrid"></div>
+    <p class="articles-more"><a href="/artikler/">Se alle artikler →</a></p>
   </div>
-
-  <!-- PASSPORT RANKING STRIP — Videre læsning (further-reading pointer → ranking page) -->
-  <a href="https://civiclearn.com/passport-ranking"
-     style="display:flex;align-items:center;gap:14px;max-width:820px;margin:0 auto 24px;padding:13px 22px;background:#fff;border:1px solid #e5e1da;border-left:3px solid #7c3aed;border-radius:12px;text-decoration:none;color:#1d2230;text-align:left;transition:border-color .15s,box-shadow .15s;"
-     onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 4px 16px rgba(124,58,237,.12)'"
-     onmouseout="this.style.borderColor='#e5e1da';this.style.borderLeftColor='#7c3aed';this.style.boxShadow='none'">
-    <span style="flex:0 0 auto;background:#f5f0ff;color:#7c3aed;font-weight:700;font-size:.7rem;letter-spacing:.02em;padding:5px 10px;border-radius:6px;white-space:nowrap;">PAS-RANGLISTE</span>
-    <span style="flex:1 1 auto;min-width:0;font-size:.86rem;line-height:1.45;color:#555;text-align:left;">
-      <strong style="color:#1a1a2e;">Danmark har verdens 3.-bedste pas</strong> — ikke målt på turisme.
-    </span>
-    <span style="flex:0 0 auto;color:#7c3aed;font-weight:600;font-size:.84rem;white-space:nowrap;">Se ranglisten &rarr;</span>
-  </a>
-
-  <div class="home-articles-grid" id="homeArticlesGrid"></div>
-
-  <p class="home-articles-more">
-    <a href="/artikler/">Se alle artikler →</a>
-  </p>
 </section>
 
 
 
 <!-- COMPATIBILITY -->
-<section class="compat-section">
-  <div class="compat-inner">
-
-    <h2 class="compat-title">Kompatibel med alle enheder og moderne browsere</h2>
-
-    <div class="compat-grid">
-      <div class="compat-item"><img src="/assets/images/logos/windows.svg"><p>Windows</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/macos.svg"><p>macOS</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/android.svg"><p>Android</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/ios.svg"><p>iPhone / iPad</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/chrome.svg"><p>Chrome</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/safari.svg"><p>Safari</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/firefox.svg"><p>Firefox</p></div>
+<!-- CLOSING CTA -->
+<section class="closing-wrap" style="padding:24px 0 40px">
+  <div class="wrap">
+    <div class="closing">
+      <div>
+        <h2 id="v2ClosingH">Klar til at bestå indfødsretsprøven?</h2>
+        <p id="v2ClosingP">3000+ spørgsmål fra tidligere prøver og det officielle undervisningsmateriale, prøvesimulationer og det printbare revisionssæt. 499 kr, én gang.</p>
+      </div>
+      <a href="https://civiclearn.com/denmark/checkout" class="btn btn-primary" id="v2ClosingBtn">Start forberedelsen</a>
     </div>
+  </div>
+</section>
 
+<section style="padding:24px 0 0">
+  <div class="wrap">
+    <a class="rank" href="https://civiclearn.com/passport-ranking">
+      <span class="rank-tag">PAS-RANGLISTE</span>
+      <span><strong>Danmark har verdens 3.-bedste pas</strong> — ikke målt på turisme.</span>
+      <span class="rank-go">Se ranglisten →</span>
+    </a>
+    <div class="devices" aria-label="Kompatibel med alle enheder og moderne browsere">
+      <span class="sr-only">Kompatibel med alle enheder og moderne browsere</span>
+      <span><img src="/assets/images/logos/windows.svg" alt="">Windows</span>
+      <span><img src="/assets/images/logos/macos.svg" alt="">macOS</span>
+      <span><img src="/assets/images/logos/android.svg" alt="">Android</span>
+      <span><img src="/assets/images/logos/ios.svg" alt="">iPhone / iPad</span>
+      <span><img src="/assets/images/logos/chrome.svg" alt="">Chrome</span>
+      <span><img src="/assets/images/logos/safari.svg" alt="">Safari</span>
+      <span><img src="/assets/images/logos/firefox.svg" alt="">Firefox</span>
+    </div>
   </div>
 </section>
 
 
 
 <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
+<footer class="foot">
+  <div class="wrap">
     <div>© <span id="footer-year"></span> Indfodsretsprove.dk</div>
-    <div class="footer-links">
+    <nav>
       <a href="https://civiclearn.com/insights">Insights</a>
       <a href="/gratis-prove">Gratis test</a>
       <a href="/seneste-indfodsretsprove/">Seneste prøve</a>
@@ -955,11 +603,12 @@
       <a href="/privatlivspolitik/">Privatliv</a>
       <a href="/handelsbetingelser/">Handelsbetingelser</a>
       <a href="/ansvarsfraskrivelse/">Ansvarsfraskrivelse</a>
-    </div>
+    </nav>
   </div>
 </footer>
 
 <script src="/assets/js/hometest.js"></script>
+<script src="https://civiclearn.com/assets/js/presale-quiz.js?v=1"></script>
 <script>
 document.querySelectorAll(".faq-item").forEach(item => {
   const q = item.querySelector(".faq-question");
@@ -1157,5 +806,22 @@ document.addEventListener("DOMContentLoaded", updateExamStatus);
 </script>
 
 <script src="/assets/js/src-track.js" defer></script>
+<!-- Mobile sticky CTA (appears once the hero button scrolls away, hides over the quiz and pricing) -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <span id="v2Sticky"><b>499 kr, én gang</b>Livstidsadgang</span>
+  <a href="https://civiclearn.com/denmark/checkout" class="btn btn-primary" tabindex="-1" id="v2StickyBtn">Kom i gang</a>
+</div>
+
+<script>
+(function(){
+  var s=document.getElementById('sticky-cta'), h=document.querySelector('.hero-ctas .btn-primary'), p=document.getElementById('pricing'), q=document.getElementById('questions-demo');
+  if(!('IntersectionObserver' in window)||!s||!h) return;
+  var heroGone=false, priceVisible=false, quizVisible=false;
+  function upd(){var on=heroGone&&!priceVisible&&!quizVisible;s.classList.toggle('show',on);s.setAttribute('aria-hidden',on?'false':'true');}
+  new IntersectionObserver(function(e){heroGone=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;upd();}).observe(h);
+  if(p) new IntersectionObserver(function(e){priceVisible=e[0].isIntersecting;upd();},{threshold:.15}).observe(p);
+  if(q) new IntersectionObserver(function(e){quizVisible=e[0].isIntersecting;upd();},{threshold:.05}).observe(q);
+})();
+</script>
 </body>
 </html>
