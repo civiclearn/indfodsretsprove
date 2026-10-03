@@ -81,6 +81,28 @@
     .tp-inline .tp-logo span{font-size:.7rem;font-weight:600;color:#0f172a;letter-spacing:-.01em;}
     .tp-inline .tp-count{font-size:.68rem;font-weight:400;color:#a8a29e;}
   </style>
+<style>
+  /* ── Exam countdown: calm > 21 days, warm 8–21 days, urgent ≤ 7 days (soft "live" dot). Oct 2026 ── */
+  .hero .exam-status-wide a.exam-status-row,.hero a.exam-status-row{padding-right:36px!important}
+  .hero a.exam-status-row{color:inherit;text-decoration:none;transition:border-color .2s ease,background-color .4s ease}
+  .hero a.exam-status-row::after{content:"\203A";position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:1.3rem;line-height:1;color:var(--muted);transition:transform .2s ease,color .2s ease}
+  .hero a.exam-status-row:hover{border-color:var(--brand)}
+  .hero a.exam-status-row:hover::after{color:var(--brand);transform:translateY(-50%) translateX(2px)}
+  .hero .exam-status-row .count-number.is-word{font-size:1.05rem}
+  .hero .exam-status-row.dl-soon{border-color:#f2c3a7}
+  .hero .exam-status-row.dl-soon .exam-status-counter .count-number{color:#d9480f}
+  .hero .exam-status-row.dl-urgent{background:#fff5ef;border-color:#eea98a}
+  .hero .exam-status-row.dl-urgent .exam-status-counter .count-number{color:#c2410c}
+  .hero .exam-status-row.dl-urgent .dl-dot{color:#e8590c}
+  .hero .exam-status-row.dl-urgent:hover{border-color:#c2410c}
+  .dl-dot{position:relative;display:inline-block;width:7px;height:7px;margin-right:5px;border-radius:50%;background:currentColor;vertical-align:1px}
+  .dl-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:currentColor;animation:dlRing 2.4s ease-out infinite}
+  @keyframes dlRing{0%{transform:scale(1);opacity:.55}100%{transform:scale(3);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.dl-dot::after{animation:none;display:none}}
+  .dl-late-link{display:block;margin-top:6px;font-size:.8rem;font-weight:600;color:var(--brand-dark);text-decoration:none}
+  .dl-late-link:hover{text-decoration:underline}
+  #for-sent-tilmelding{scroll-margin-top:110px}
+</style>
 </head>
 
 
@@ -127,33 +149,32 @@
   <div class="wrap hero-status">
       <section class="exam-status exam-status-wide">
 <div class="exam-status-inner">
-<!-- NEXT TEST -->
+<!-- NEXT TEST (filled in by the EXAM STATUS CONTROLLER near the bottom of this page) -->
 <div class="exam-status-row">
-<div class="exam-status-counter" data-date="2026-06-03">
-<span class="count-number">143</span>
-<span class="count-unit">DAGE</span>
+<div class="exam-status-counter">
+<span class="count-number"></span>
+<span class="count-unit">DAGE TILBAGE</span>
 </div>
 <div class="exam-status-text">
 <p class="exam-status-sentence">
             Den næste indfødsretsprøve afholdes
-            <strong>den 3. juni 2026</strong>.
-            <span class="status-pill">Tilmelding lukket</span>
+            <strong>den 25. november 2026</strong>.
 </p>
 </div>
 </div>
-<!-- REGISTRATION DEADLINE -->
-<div class="exam-status-row exam-status-row--registration">
-<div class="exam-status-counter" data-date="2026-04-29">
+<!-- REGISTRATION DEADLINE (the whole card links to the test centre finder) -->
+<a class="exam-status-row exam-status-row--registration" href="/find-dit-testcenter/" title="Find dit testcenter">
+<div class="exam-status-counter">
 <span class="count-number"></span>
-<span class="count-unit">DAGE</span>
+<span class="count-unit">DAGE TILBAGE</span>
 </div>
 <div class="exam-status-text">
 <p class="exam-status-sentence">
             Tilmeldingen til indfødsretsprøven lukker
-            <strong>den 29. april 2026</strong>.
+            <strong>den 21. oktober 2026</strong>.
           </p>
 </div>
-</div>
+</a>
 </div>
 </section>
   </div>
@@ -533,6 +554,7 @@
     <div class="section-head"><span class="kicker">Ofte stillede spørgsmål</span><h2>FAQ</h2><p id="v2FaqMore">Andre spørgsmål? <a href="/kontakt">Skriv til os</a>.</p></div>
     <div class="faq-list">
       <details><summary>Er dette selve tilmeldingen til indfødsretsprøven?</summary><p> Nej. Tilmelding til indfødsretsprøven sker altid via de officielle testcentre. <br/><br/> Her tilbyder vi udelukkende et omfattende træningsprogram, der hjælper dig med at forberede dig bedst muligt. <br/><br/> Du kan finde dit testcenter her: <a href="/find-dit-testcenter/">Find dit testcenter</a>. </p></details>
+      <details id="for-sent-tilmelding"><summary>Jeg har overskredet tilmeldingsfristen – er der undtagelser?</summary><p> Ja, du kan søge om tilladelse til at tilmelde dig efter fristen. Ansøgningen sendes til Styrelsen for International Rekruttering og Integration (SIRI). <br/><br/> Udfyld <a href="https://danskogproever.dk/media/kyrbm2ma/ansoegningsskema-overskridelse-af-tilmeldingsfristen-ved-vidensproeverne.pdf" target="_blank" rel="noopener">SIRI's ansøgningsskema om overskridelse af tilmeldingsfristen</a>, og send det til SIRI via Digital Post (vælg underkategorien "Danskprøver"). Læs mere hos <a href="https://danskogproever.dk/tilmeldingsfrister-og-proevedatoer/" target="_blank" rel="noopener">Dansk og Prøver</a>. <br/><br/> Bemærk: Selv hvis SIRI giver tilladelse, kan testcentret afvise tilmeldingen, hvis der ikke er flere ledige pladser. Kontakt derfor <a href="/find-dit-testcenter/">dit testcenter</a> så hurtigt som muligt. Ellers kan du tilmelde dig den næste prøve. </p></details>
       <details><summary>Gælder adgangen kun til den næste indfødsretsprøve?</summary><p> Nej. Du får ubegrænset adgang og kan bruge platformen så længe, du har behov. <br/><br/> Det eneste krav er, at du fortsætter med samme e-mailadresse. </p></details>
       <details><summary>Hvor lang tid skal jeg bruge på at forberede mig?</summary><p> Det afhænger af dit forhåndskendskab til dansk historie, geografi, kultur og det politiske system – samt hvor meget tid du bruger på træning. <br/><br/> Træner du cirka 30 minutter om dagen, hver dag, vil de fleste have brug for mindst én måned for at være godt forberedt. </p></details>
       <details><summary>Hvordan er træningsprogrammet opbygget?</summary><p> Træningen er opdelt i prioriterede faser. <br/><br/> <strong>Fase 1</strong> indeholder cirka 500 kernespørgsmål baseret på tidligere officielle prøver. Det er de vigtigste spørgsmål, og vi anbefaler, at du træner dem emne for emne. <br/><br/> Du får korte spørgebatches, og spørgsmål, du svarer forkert på, vender automatisk tilbage, indtil du mestrer dem. Når alle emner er gennemført, kan du teste dig selv med realistiske prøvesimulationer. <br/><br/> <strong>Fase 2</strong> indeholder cirka 1.000 spørgsmål baseret på den officielle lærebog og fungerer på samme måde. <br/><br/> Når disse to faser er gennemført, vurderer vi, at du er klar til prøven. Ønsker du ekstra sikkerhed, kan du fortsætte til en avanceret fase med mere detaljerede spørgsmål. </p></details>
@@ -648,139 +670,117 @@ document.querySelectorAll(".faq-item").forEach(item => {
 </script>
 <script>
 /* ======================================================
-   INDØDSRETPRØVE — EXAM STATUS CONTROLLER (FINAL)
-   Single source of truth: 4 dates
+   INDFØDSRETSPRØVE — EXAM STATUS CONTROLLER (Oct 2026)
+   EDIT THE DATES IN "EXAMS" ONLY.
+   - Add new dates as soon as SIRI publishes them (one line per exam).
+   - registrationEnd = the last day people can register (that day counts as open).
+   - Past exams are skipped automatically, so old lines can stay.
    ====================================================== */
+const EXAMS = [
+  { test: "2026-11-25", registrationEnd: "2026-10-21" }
+  /* , { test: "2027-06-??", registrationEnd: "2027-??-??" }   <- add the 2027 dates here */
+];
+const DL_SOON_DAYS = 21;   /* warm colour from this many days before the deadline */
+const DL_URGENT_DAYS = 7;  /* soft tint + "live" dot from this many days before */
+const DL_LATE_FAQ = "#for-sent-tilmelding";
 
-/* -------- CONFIG: EDIT DATES HERE ONLY -------- */
+(function () {
+  function dayNum(s) { var p = s.split("-"); return Date.UTC(+p[0], p[1] - 1, +p[2]) / 864e5; }
+  function daysTo(s) { var n = new Date(); return Math.round(dayNum(s) - Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 864e5); }
+  function toDate(s) { var p = s.split("-"); return new Date(+p[0], p[1] - 1, +p[2]); }
+  function fmt(s) { return toDate(s).toLocaleDateString("da-DK", { day: "numeric", month: "long", year: "numeric" }); }
+  function fmtShort(s) { return toDate(s).toLocaleDateString("da-DK", { day: "numeric", month: "long" }); }
+  function unit(n) { return n === 1 ? "DAG TILBAGE" : "DAGE TILBAGE"; }
 
-const EXAM_SCHEDULE = {
-  next: {
-    test: "2026-06-03",
-    registrationEnd: "2026-04-29"
-  },
-  subsequent: {
-    test: "2026-11-25",
-    registrationEnd: "2026-10-21"
+  function setCounter(row, num, unitText, withDot) {
+    var n = row.querySelector(".count-number"), u = row.querySelector(".count-unit");
+    n.textContent = num;
+    n.classList.toggle("is-word", typeof num !== "number");
+    u.innerHTML = (withDot ? '<span class="dl-dot" aria-hidden="true"></span>' : "") + unitText;
   }
-};
 
-/* -------- HELPERS -------- */
+  function update() {
+    var rows = document.querySelectorAll(".exam-status-row");
+    if (rows.length < 2) return;
+    var L = rows[0], R = rows[1];
+    var Ls = L.querySelector(".exam-status-sentence"), Rs = R.querySelector(".exam-status-sentence");
+    [L, R].forEach(function (r) { r.classList.remove("is-urgent", "is-closed", "dl-soon", "dl-urgent"); });
+    R.style.display = "";
 
-function daysUntil(dateStr) {
-  const now = new Date();
-  const target = new Date(dateStr + "T00:00:00");
-  const diff = target - now;
-  return Math.max(0, Math.ceil(diff / 86400000));
-}
+    var upcoming = EXAMS.filter(function (x) { return daysTo(x.test) >= 0; })
+                        .sort(function (a, b) { return a.test < b.test ? -1 : 1; });
+    var next = upcoming[0], after = upcoming[1];
 
-function dayLabel(n) {
-  return n === 1 ? "DAG TILBAGE" : "DAGE TILBAGE";
-}
+    /* no known future date */
+    if (!next) {
+      setCounter(L, "–", "");
+      Ls.innerHTML = "Datoen for den næste indfødsretsprøve er endnu ikke offentliggjort. Vi opdaterer siden, så snart den kendes.";
+      R.style.display = "none";
+      return;
+    }
 
-function formatDateDA(dateStr) {
-  const d = new Date(dateStr).toLocaleDateString("da-DK", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
+    var dTest = daysTo(next.test), dReg = daysTo(next.registrationEnd);
+
+    /* LEFT CARD: next exam */
+    if (dTest === 0) {
+      setCounter(L, "I dag", "PRØVEDAG");
+      Ls.innerHTML = "Indfødsretsprøven afholdes <strong>i dag</strong>. Held og lykke!";
+    } else {
+      setCounter(L, dTest, unit(dTest));
+      Ls.innerHTML = "Den næste indfødsretsprøve afholdes <strong>den " + fmt(next.test) + "</strong>.";
+    }
+
+    /* RIGHT CARD */
+    if (dReg >= 0) {
+      /* registration open: calm -> warm -> urgent */
+      var urgent = dReg <= DL_URGENT_DAYS, soon = !urgent && dReg <= DL_SOON_DAYS;
+      if (urgent) R.classList.add("dl-urgent"); else if (soon) R.classList.add("dl-soon");
+      if (dReg === 0) {
+        setCounter(R, "I dag", "SIDSTE FRIST", true);
+        Rs.innerHTML = "<strong>Sidste chance:</strong> Tilmeldingen til indfødsretsprøven lukker <strong>i dag</strong>.";
+      } else if (dReg === 1) {
+        setCounter(R, 1, unit(1), true);
+        Rs.innerHTML = "Tilmeldingen til indfødsretsprøven lukker <strong>i morgen, den " + fmtShort(next.registrationEnd) + "</strong>.";
+      } else {
+        setCounter(R, dReg, unit(dReg), urgent);
+        Rs.innerHTML = "Tilmeldingen til indfødsretsprøven lukker <strong>den " + fmt(next.registrationEnd) + "</strong>.";
+      }
+    } else {
+      /* registration closed: pill + small link to the late-registration FAQ on the left card */
+      if (dTest > 0) {
+        Ls.innerHTML += '<span class="status-pill">Tilmelding lukket</span>' +
+          '<a class="dl-late-link" href="' + DL_LATE_FAQ + '">Overskredet fristen? Se dine muligheder ›</a>';
+      }
+      if (after) {
+        var dA = daysTo(after.test), regOpen = daysTo(after.registrationEnd) >= 0;
+        setCounter(R, dA, unit(dA));
+        Rs.innerHTML = "Den efterfølgende indfødsretsprøve afholdes <strong>den " + fmt(after.test) + "</strong>." +
+          (regOpen ? " Tilmeldingsfrist: den " + fmt(after.registrationEnd) + "." : "");
+      } else {
+        setCounter(R, "–", "");
+        Rs.innerHTML = "Datoen for den efterfølgende indfødsretsprøve er endnu ikke offentliggjort.";
+      }
+    }
+  }
+
+  /* open the late-registration FAQ when someone follows a link to it */
+  function openLateFaq() {
+    var d = document.querySelector(DL_LATE_FAQ);
+    if (d && d.tagName === "DETAILS") d.open = true;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href="' + DL_LATE_FAQ + '"]');
+    if (a) openLateFaq();
   });
-  return `den ${d}`;
-}
+  window.addEventListener("hashchange", function () { if (location.hash === DL_LATE_FAQ) openLateFaq(); });
 
-/* -------- MAIN LOGIC -------- */
-
-function updateExamStatus() {
-  const now = new Date();
-
-  const nextTestDate = new Date(EXAM_SCHEDULE.next.test + "T00:00:00");
-  const nextRegEnd   = new Date(EXAM_SCHEDULE.next.registrationEnd + "T00:00:00");
-
-  const rows = document.querySelectorAll(".exam-status-row");
-  if (rows.length < 2) return;
-
-  const leftCard  = rows[0]; // NEXT TEST
-  const rightCard = rows[1]; // REGISTRATION / SECONDARY
-
-  const leftNum  = leftCard.querySelector(".count-number");
-  const leftUnit = leftCard.querySelector(".count-unit");
-  const leftText = leftCard.querySelector(".exam-status-sentence");
-
-  const rightNum  = rightCard.querySelector(".count-number");
-  const rightUnit = rightCard.querySelector(".count-unit");
-  const rightText = rightCard.querySelector(".exam-status-sentence");
-
-  leftCard.classList.remove("is-urgent", "is-closed");
-  rightCard.classList.remove("is-urgent", "is-closed");
-
-  /* =============================
-     PHASE 1 — REGISTRATION OPEN
-     now < registration deadline
-     ============================= */
-  if (now < nextRegEnd) {
-
-    const dTest = daysUntil(EXAM_SCHEDULE.next.test);
-    const dReg  = daysUntil(EXAM_SCHEDULE.next.registrationEnd);
-
-    leftNum.textContent  = dTest;
-    leftUnit.textContent = dayLabel(dTest);
-    leftText.innerHTML = `
-      Den næste indfødsretsprøve afholdes
-      <strong>${formatDateDA(EXAM_SCHEDULE.next.test)}</strong>.
-      <span class="status-pill is-hidden">Tilmelding lukket</span>
-    `;
-
-    rightNum.textContent  = dReg;
-    rightUnit.textContent = dayLabel(dReg);
-    rightText.innerHTML = `
-      Tilmeldingen til indfødsretsprøven lukker
-      <strong>${formatDateDA(EXAM_SCHEDULE.next.registrationEnd)}</strong>.
-    `;
-
-    rightCard.classList.add("is-urgent");
-    return;
+  function init() {
+    update();
+    if (location.hash === DL_LATE_FAQ) openLateFaq();
+    setInterval(update, 30 * 60 * 1000); /* keeps the count right if the page stays open past midnight */
   }
-
-  /* =============================
-     PHASE 2 — REGISTRATION CLOSED
-     reg end ≤ now < test date
-     ============================= */
-  if (now >= nextRegEnd && now < nextTestDate) {
-
-    const dTest = daysUntil(EXAM_SCHEDULE.next.test);
-    const dSub  = daysUntil(EXAM_SCHEDULE.subsequent.test);
-
-    leftNum.textContent  = dTest;
-    leftUnit.textContent = dayLabel(dTest);
-    leftText.innerHTML = `
-      Den næste indfødsretsprøve afholdes
-      <strong>${formatDateDA(EXAM_SCHEDULE.next.test)}</strong>.
-      <span class="status-pill">Tilmelding lukket</span>
-    `;
-
-    rightNum.textContent  = dSub;
-    rightUnit.textContent = dayLabel(dSub);
-    rightText.innerHTML = `
-      Den efterfølgende indfødsretsprøve afholdes
-      <strong>${formatDateDA(EXAM_SCHEDULE.subsequent.test)}</strong>.
-    `;
-
-    return;
-  }
-
-  /* =============================
-     PHASE 3 — TEST PASSED
-     now ≥ test date
-     rotate schedule
-     ============================= */
-
-  EXAM_SCHEDULE.next = { ...EXAM_SCHEDULE.subsequent };
-
-  updateExamStatus();
-}
-
-/* -------- INIT -------- */
-
-document.addEventListener("DOMContentLoaded", updateExamStatus);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
 </script>
 
 
