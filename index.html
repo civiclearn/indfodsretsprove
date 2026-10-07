@@ -677,8 +677,10 @@ document.querySelectorAll(".faq-item").forEach(item => {
    - Past exams are skipped automatically, so old lines can stay.
    ====================================================== */
 const EXAMS = [
-  { test: "2026-11-25", registrationEnd: "2026-10-21" }
-  /* , { test: "2027-06-??", registrationEnd: "2027-??-??" }   <- add the 2027 dates here */
+  { test: "2026-11-25", registrationEnd: "2026-10-21" },
+  { test: "2027-05-26", registrationEnd: "2027-04-21" },
+  { test: "2027-11-24", registrationEnd: "2027-10-20" }
+  /* 2027 dates per SIRI "Prøvedatoer 2027" (sags nr. 2026-2189); add 2028 here when published */
 ];
 const DL_SOON_DAYS = 21;   /* warm colour from this many days before the deadline */
 const DL_URGENT_DAYS = 7;  /* soft tint + "live" dot from this many days before */
