@@ -280,7 +280,7 @@
     </nav>
     <div class="cl-right">
       <div class="cl-powered">drevet af <span>CivicLearn</span></div>
-      <a href="https://civiclearn.com/denmark/checkout" class="cl-btn">Opret Konto</a>
+      <a href="https://civiclearn.com/indfodsret/checkout" class="cl-btn">Opret Konto</a>
     </div>
   </div>
 </header>
@@ -511,7 +511,7 @@
 <!-- TRAINING PROGRAM NUDGE — now carries the printable revisionssæt (fan image) as the visual argument -->
 <div style="max-width:820px;margin:0 auto;padding:24px 24px 8px;">
   <div style="background:#fff;border:1px solid #e5e1da;border-radius:12px;padding:22px 26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:22px;align-items:center;" class="rs-nudge">
-    <a href="https://civiclearn.com/denmark/checkout" aria-label="Se træningsprogrammet" style="display:block;min-width:0;">
+    <a href="https://civiclearn.com/indfodsret/checkout" aria-label="Se træningsprogrammet" style="display:block;min-width:0;">
       <picture>
         <source type="image/webp" srcset="/assets/images/revisionssaet/hero-revisionssaet@1x.webp">
         <img src="/assets/images/revisionssaet/hero-revisionssaet@1x.png" alt="Revisionssæt til indfødsretsprøven – seks printbare sider" loading="lazy" style="display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);">
@@ -522,7 +522,7 @@
       <p style="font-size:1.02rem;font-weight:700;color:#1a1a2e;margin-bottom:6px;line-height:1.3;">Struktureret træning til indfødsretsprøven</p>
       <p style="font-size:0.84rem;color:#6b7280;line-height:1.5;margin-bottom:10px;">3.000+ øvespørgsmål, eksamenssimulationer og daglige Telegram-quizzer. Brug tiden inden generalprøven — og bestå den rigtige prøve den 25. november.</p>
       <p style="font-size:0.84rem;color:#444;line-height:1.5;margin-bottom:16px;"><strong style="color:#1a1a2e;">Nyt:</strong> et printbart revisionssæt på seks sider – tidslinje, personer, kort, staten, tal og begreber – til væggen over skrivebordet. Følger med fuld adgang.</p>
-      <a href="https://civiclearn.com/denmark/checkout" style="display:inline-block;background:#7c3aed;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.88rem;font-weight:600;">Se træningsprogrammet →</a>
+      <a href="https://civiclearn.com/indfodsret/checkout" style="display:inline-block;background:#7c3aed;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.88rem;font-weight:600;">Se træningsprogrammet →</a>
     </div>
   </div>
 </div>
@@ -553,7 +553,7 @@
 
 <script>
 // Countdown (exam-status style)
-// gpTarget gets overwritten by generalprove-config on load; hardcoded value
+// gpTarget gets overwritten by /generalprove/event.json on load; hardcoded value
 // below is the safety-net fallback if config is unreachable or returns 204.
 var gpTarget = new Date('2026-10-31T13:00:00+01:00');
 var examTarget = new Date('2026-11-25T00:00:00+01:00'); // real exam, fixed
@@ -590,8 +590,8 @@ function updateGPCountdown() {
   var done = false;
   var ctrl = new AbortController();
   setTimeout(function(){ if (!done) ctrl.abort(); }, 4000);
-  fetch('https://htgliokekeaovdiafrgs.supabase.co/functions/v1/generalprove-config', { signal: ctrl.signal })
-    .then(function(r){ done = true; return r.status === 200 ? r.json() : null; })
+  fetch('/generalprove/event.json?t=' + Math.floor(Date.now()/3600000), { cache: 'no-store', signal: ctrl.signal })
+    .then(function(r){ done = true; return r.ok ? r.json() : null; })
     .then(function(ev){
       if (ev && ev.exam_start_at) gpTarget = new Date(ev.exam_start_at);
     })
@@ -642,10 +642,10 @@ document.getElementById('gp-submit-btn').addEventListener('click', async functio
       '<h2 style="color:#7c3aed;margin-bottom:6px;">Du er tilmeldt!</h2>' +
       '<p style="color:#6b7280;font-size:0.92rem;">Vi har sendt en bekræftelse til <strong>' + email + '</strong>.</p>' +
       '<p style="color:#6b7280;font-size:0.85rem;margin-top:8px;">Lørdag den 31. oktober kl. 13:00 — gå til prøvesiden 5 minutter før:</p>' +
-      '<a href="https://civiclearn.com/generalprove/" style="display:inline-block;margin-top:12px;background:#7c3aed;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;">Gå til prøvesiden →</a>' +
+      '<a href="/generalprove/eksamen/" style="display:inline-block;margin-top:12px;background:#7c3aed;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;">Gå til prøvesiden →</a>' +
       '<div style="margin-top:28px;padding-top:20px;border-top:1px solid #e5e7eb;">' +
       '<p style="font-size:0.82rem;color:#999;margin-bottom:10px;">Vil du forberede dig inden den 31. oktober?</p>' +
-      '<a href="https://civiclearn.com/denmark/checkout" style="display:inline-block;background:#fff;color:#7c3aed;border:1.5px solid #7c3aed;padding:9px 22px;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;">Se træningsprogrammet →</a>' +
+      '<a href="https://civiclearn.com/indfodsret/checkout" style="display:inline-block;background:#fff;color:#7c3aed;border:1.5px solid #7c3aed;padding:9px 22px;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;">Se træningsprogrammet →</a>' +
       '</div>' +
       '</div>';
 

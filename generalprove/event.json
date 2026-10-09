@@ -1,0 +1,655 @@
+{
+ "slug": "oct-31-2026",
+ "title": "Generalprøve 2026 · Efterår",
+ "exam_start_at": "2026-10-31T13:00:00+01:00",
+ "duration_minutes": 45,
+ "late_start_minutes": 30,
+ "official_exam_date": "2026-11-25",
+ "pass_rule": {
+  "total": 36,
+  "vaerdi": 4
+ },
+ "questions": [
+  {
+   "n": 1,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvad hedder den ældste by i Danmark?",
+   "options": [
+    "Frederikshavn",
+    "Esbjerg",
+    "Ribe"
+   ],
+   "correct": 2,
+   "src": "DK-0204",
+   "official": true
+  },
+  {
+   "n": 2,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvem fik mere magt med enevælden, der blev indført i Danmark 1660-61?",
+   "options": [
+    "Kirken",
+    "Kongen",
+    "Adelen"
+   ],
+   "correct": 1,
+   "src": "DK-0241",
+   "official": true
+  },
+  {
+   "n": 3,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvilket parti stemte arbejdere typisk på i midten af 1900-tallet?",
+   "options": [
+    "Venstre",
+    "Socialdemokratiet",
+    "Radikale Venstre"
+   ],
+   "correct": 1,
+   "src": "DK-0197",
+   "official": true
+  },
+  {
+   "n": 4,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvilket af følgende politiske partier er ældst?",
+   "options": [
+    "Liberal Alliance",
+    "Radikale Venstre",
+    "Socialistisk Folkeparti"
+   ],
+   "correct": 1,
+   "src": "DK-0176",
+   "official": true
+  },
+  {
+   "n": 5,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Ved systemskiftet i 1901 blev parlamentarismen indført i Danmark. Hvad indebærer det parlamentariske princip?",
+   "options": [
+    "Der kan kun udskrives valg hvert fjerde år.",
+    "En regering må ikke have et flertal i Folketinget imod sig.",
+    "En regering skal bestå af mere end ét parti."
+   ],
+   "correct": 1,
+   "src": "DK-0162",
+   "official": true
+  },
+  {
+   "n": 6,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvornår fandt Den Florissante Periode sted?",
+   "options": [
+    "Efter 1849",
+    "I sidste fjerdedel af 1700-tallet",
+    "I begyndelsen af 1600-tallet",
+    "I midten af 1800-tallet"
+   ],
+   "correct": 1,
+   "src": "DK-1056",
+   "official": false
+  },
+  {
+   "n": 7,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvilken udenrigspolitik førte Danmark i det meste af 1700-tallet?",
+   "options": [
+    "Neutralitet",
+    "Kontinuerlig krigsførelse",
+    "Alliancer med Sverige",
+    "Militær alliance med Frankrig"
+   ],
+   "correct": 0,
+   "src": "DK-1057",
+   "official": false
+  },
+  {
+   "n": 8,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvad måtte Danmark afstå efter nederlaget i 1864?",
+   "options": [
+    "Norge og Island",
+    "Slesvig, Holsten og Lauenborg",
+    "Skåne, Halland og Blekinge",
+    "Bornholm, Fyn og Sjælland"
+   ],
+   "correct": 1,
+   "src": "DK-0924",
+   "official": false
+  },
+  {
+   "n": 9,
+   "section": "laere",
+   "topic": "Historie",
+   "text": "Hvem kæmpede i borgerkrigen 1848-50?",
+   "options": [
+    "Danmark mod Sverige",
+    "Danmark mod Rusland",
+    "Danmark mod England",
+    "Kongeriget Danmark mod tysksindede oprørere"
+   ],
+   "correct": 3,
+   "src": "DK-0908",
+   "official": false
+  },
+  {
+   "n": 10,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvem er den øverste politiske leder af en kommune?",
+   "options": [
+    "En kontorchef",
+    "En dommer",
+    "En borgmester"
+   ],
+   "correct": 2,
+   "src": "DK-0091",
+   "official": true
+  },
+  {
+   "n": 11,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvad er politiets opgave blandt andet?",
+   "options": [
+    "At godkende politiske beslutninger, der vedrører straffeloven",
+    "At opklare kriminalitet",
+    "At dømme kriminelle i retssager"
+   ],
+   "correct": 1,
+   "src": "DK-0012",
+   "official": true
+  },
+  {
+   "n": 12,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvor stor en andel af vælgerne stemmer normalt ved valg til Folketinget?",
+   "options": [
+    "60-69 %",
+    "80-89 %",
+    "70-79 %"
+   ],
+   "correct": 1,
+   "src": "DK-0110",
+   "official": true
+  },
+  {
+   "n": 13,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvornår skete der sidst en ændring af grundloven?",
+   "options": [
+    "I 1953",
+    "I 1972",
+    "I 2001"
+   ],
+   "correct": 0,
+   "src": "DK-0103",
+   "official": true
+  },
+  {
+   "n": 14,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvilken opgave varetager KL i forhold til staten?",
+   "options": [
+    "At repræsentere kommunerne i forhandlinger om økonomi og lovgivning",
+    "At udarbejde finansloven",
+    "At føre retssager for kommunerne",
+    "At kontrollere regeringen"
+   ],
+   "correct": 0,
+   "src": "DK-0842",
+   "official": false
+  },
+  {
+   "n": 15,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Kan Ombudsmanden tilsidesætte en myndigheds afgørelse?",
+   "options": [
+    "Kun i særlige sager",
+    "Kun efter domstolsprøvelse",
+    "Ja, altid",
+    "Nej"
+   ],
+   "correct": 3,
+   "src": "DK-0605",
+   "official": false
+  },
+  {
+   "n": 16,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvad handler statsministerens åbningstale om?",
+   "options": [
+    "Forslag til ny grundlov",
+    "Regeringens vurdering af rigets situation og planer",
+    "Regeringens regnskab for året",
+    "Udnævnelse af ministre"
+   ],
+   "correct": 1,
+   "src": "DK-0704",
+   "official": false
+  },
+  {
+   "n": 17,
+   "section": "laere",
+   "topic": "Demokrati",
+   "text": "Hvad stemte vælgerne ja til ved folkeafstemningen i 2022?",
+   "options": [
+    "Afskaffelse af EU-forsvarsforbeholdet",
+    "Indførelse af euroen",
+    "Nedsættelse af valgretsalderen",
+    "Ændring af Grundloven"
+   ],
+   "correct": 0,
+   "src": "DK-0811",
+   "official": false
+  },
+  {
+   "n": 18,
+   "section": "laere",
+   "topic": "Temaopslag",
+   "text": "Kan et ægtepar blive skilt uden først at være separeret i en periode?",
+   "options": [
+    "Ja",
+    "Nej"
+   ],
+   "correct": 0,
+   "src": "DK-0434",
+   "official": true
+  },
+  {
+   "n": 19,
+   "section": "laere",
+   "topic": "Temaopslag",
+   "text": "Der er religionsfrihed i Danmark. Konkret betyder det, at borgerne har ret til at dyrke deres religion",
+   "options": [
+    "så længe de øvrige regler, der gælder i samfundet, respekteres",
+    "helt uden nogen begrænsninger",
+    "hvis staten har godkendt religionen"
+   ],
+   "correct": 0,
+   "src": "DK-0490",
+   "official": true
+  },
+  {
+   "n": 20,
+   "section": "laere",
+   "topic": "Temaopslag",
+   "text": "Hvilken styreform har Danmark i dag?",
+   "options": [
+    "Republik.",
+    "Føderation.",
+    "Konstitutionelt monarki.",
+    "Absolut monarki."
+   ],
+   "correct": 2,
+   "src": "DK-1873",
+   "official": false
+  },
+  {
+   "n": 21,
+   "section": "laere",
+   "topic": "Temaopslag",
+   "text": "Hvad hedder Færøernes højeste punkt?",
+   "options": [
+    "Gunnbjørn Fjeld.",
+    "Himmelbjerget.",
+    "Slættaratindur.",
+    "Møllehøj."
+   ],
+   "correct": 2,
+   "src": "DK-2014",
+   "official": false
+  },
+  {
+   "n": 22,
+   "section": "laere",
+   "topic": "Økonomi",
+   "text": "Hvor mange procent af børn mellem 3 og 5 år i Danmark bliver passet uden for hjemmet?",
+   "options": [
+    "Ca. 97 %",
+    "Ca. 67 %",
+    "Ca. 37 %"
+   ],
+   "correct": 0,
+   "src": "DK-0375",
+   "official": true
+  },
+  {
+   "n": 23,
+   "section": "laere",
+   "topic": "Økonomi",
+   "text": "Hvilket af følgende områder har kommunerne ansvaret for driften af?",
+   "options": [
+    "Sygehuse",
+    "Domstole",
+    "Vuggestuer"
+   ],
+   "correct": 2,
+   "src": "DK-0391",
+   "official": true
+  },
+  {
+   "n": 24,
+   "section": "laere",
+   "topic": "Økonomi",
+   "text": "Hvor stor en del af de beskæftigede arbejder i den offentlige sektor?",
+   "options": [
+    "Ca. en tredjedel",
+    "Ca. to tredjedele"
+   ],
+   "correct": 0,
+   "src": "DK-0363",
+   "official": true
+  },
+  {
+   "n": 25,
+   "section": "laere",
+   "topic": "Økonomi",
+   "text": "Hvilken type uddannelser er primært statens ansvar?",
+   "options": [
+    "Ungdomsuddannelser og videregående uddannelser",
+    "Dagtilbud",
+    "Voksenundervisning i kommuner",
+    "Folkeskoler"
+   ],
+   "correct": 0,
+   "src": "DK-1431",
+   "official": false
+  },
+  {
+   "n": 26,
+   "section": "laere",
+   "topic": "Økonomi",
+   "text": "Hvad kendetegner et videns- og servicesamfund?",
+   "options": [
+    "Fokus på lavtlønsarbejde",
+    "Fokus på højtuddannet arbejdskraft og tjenesteydelser",
+    "Fokus på statslig produktion",
+    "Fokus på råvareproduktion"
+   ],
+   "correct": 1,
+   "src": "DK-1347",
+   "official": false
+  },
+  {
+   "n": 27,
+   "section": "laere",
+   "topic": "Kulturliv",
+   "text": "Bertel Thorvaldsen (1770-1844) er en af Danmarkshistoriens kendte kunstnere. Hvad er han især kendt for?",
+   "options": [
+    "Digte",
+    "Symfonier",
+    "Skulpturer"
+   ],
+   "correct": 2,
+   "src": "DK-0277",
+   "official": true
+  },
+  {
+   "n": 28,
+   "section": "laere",
+   "topic": "Kulturliv",
+   "text": "Hvilken dansk komponist er kendt for blandt andet sine operaer?",
+   "options": [
+    "Carl Nielsen",
+    "Kim Larsen",
+    "C.V. Jørgensen"
+   ],
+   "correct": 0,
+   "src": "DK-0320",
+   "official": true
+  },
+  {
+   "n": 29,
+   "section": "laere",
+   "topic": "Kulturliv",
+   "text": "Hvilken kendt dansk arkitekt er bl.a. berømt som revyforfatter og for sine lamper?",
+   "options": [
+    "C.F. Møller",
+    "Poul Henningsen",
+    "Jørn Utzon"
+   ],
+   "correct": 1,
+   "src": "DK-0271",
+   "official": true
+  },
+  {
+   "n": 30,
+   "section": "laere",
+   "topic": "Kulturliv",
+   "text": "Hvilken dansk forfatter skrev romanen Kongens Fald om 1500-tallets Danmark?",
+   "options": [
+    "Karen Blixen.",
+    "Johannes V. Jensen.",
+    "Henrik Pontoppidan.",
+    "Martin Andersen Nexø."
+   ],
+   "correct": 1,
+   "src": "DK-1248",
+   "official": false
+  },
+  {
+   "n": 31,
+   "section": "laere",
+   "topic": "Kulturliv",
+   "text": "Hvem var Danmarks første filmstjerne?",
+   "options": [
+    "Paprika Steen.",
+    "Trine Dyrholm.",
+    "Bodil Ipsen.",
+    "Asta Nielsen."
+   ],
+   "correct": 3,
+   "src": "DK-1203",
+   "official": false
+  },
+  {
+   "n": 32,
+   "section": "laere",
+   "topic": "Omverdenen",
+   "text": "Der har de seneste ca. 40 år været afholdt en række folkeafstemninger om Danmarks forhold til et internationalt samarbejde. Hvilket?",
+   "options": [
+    "EU",
+    "NATO",
+    "FN"
+   ],
+   "correct": 0,
+   "src": "DK-0393",
+   "official": true
+  },
+  {
+   "n": 33,
+   "section": "laere",
+   "topic": "Omverdenen",
+   "text": "Hvilket kontinent modtager den største andel af Danmarks udviklingsbistand?",
+   "options": [
+    "Asien",
+    "Sydamerika",
+    "Afrika"
+   ],
+   "correct": 2,
+   "src": "DK-0416",
+   "official": true
+  },
+  {
+   "n": 34,
+   "section": "laere",
+   "topic": "Omverdenen",
+   "text": "Hvordan ændres værnepligtens længde for de fleste?",
+   "options": [
+    "Fra 11 til fire måneder",
+    "Afskaffes",
+    "Fra fire til 11 måneder",
+    "Fastholdes uændret"
+   ],
+   "correct": 2,
+   "src": "DK-1649",
+   "official": false
+  },
+  {
+   "n": 35,
+   "section": "laere",
+   "topic": "Omverdenen",
+   "text": "Hvem vedtager EU-lovgivning i fællesskab?",
+   "options": [
+    "Kommissionen alene",
+    "Det Europæiske Råd alene",
+    "Europa-Parlamentet og Rådet",
+    "EU-Domstolen og Rådet"
+   ],
+   "correct": 2,
+   "src": "DK-1500",
+   "official": false
+  },
+  {
+   "n": 36,
+   "section": "aktuel",
+   "topic": "Aktuelle begivenheder",
+   "text": "Hvilke partier dannede regering i Danmark i juni 2026?",
+   "options": [
+    "Venstre, Konservative, Liberal Alliance og Dansk Folkeparti",
+    "Socialdemokratiet, SF, Moderaterne og Radikale Venstre",
+    "Socialdemokratiet, Venstre og Moderaterne"
+   ],
+   "correct": 1,
+   "src": "DK-9001",
+   "official": false
+  },
+  {
+   "n": 37,
+   "section": "aktuel",
+   "topic": "Aktuelle begivenheder",
+   "text": "Hvad indviede Kong Frederik den 17. juni 2026 ved at køre en gravemaskine?",
+   "options": [
+    "Femern-tunnelens første element",
+    "Perimeteren (den ydre kant) af Lynetteholm i Københavns Havn",
+    "Den nye Storstrømsbro"
+   ],
+   "correct": 1,
+   "src": "DK-9047",
+   "official": false
+  },
+  {
+   "n": 38,
+   "section": "aktuel",
+   "topic": "Aktuelle begivenheder",
+   "text": "Hvilken nordisk monark døde den 28. august 2026?",
+   "options": [
+    "Kong Harald V af Norge",
+    "Kong Carl XVI Gustaf af Sverige",
+    "Dronning Margrethe II"
+   ],
+   "correct": 0,
+   "src": "DK-9059",
+   "official": false
+  },
+  {
+   "n": 39,
+   "section": "aktuel",
+   "topic": "Aktuelle begivenheder",
+   "text": "Hvilken dansk cykelrytter vandt den grønne pointtrøje i Tour de France 2026 – som den første dansker nogensinde?",
+   "options": [
+    "Mads Pedersen",
+    "Mattias Skjelmose",
+    "Jonas Vingegaard"
+   ],
+   "correct": 0,
+   "src": "DK-9062",
+   "official": false
+  },
+  {
+   "n": 40,
+   "section": "aktuel",
+   "topic": "Aktuelle begivenheder",
+   "text": "Hvem underskrev den 22. september 2026 en aftale om sikkerheden i Arktis og det nordatlantiske område?",
+   "options": [
+    "Danmark, Norge og Island",
+    "EU, Canada og Grønland",
+    "Grønland, Danmark og USA"
+   ],
+   "correct": 2,
+   "src": "DK-9093",
+   "official": false
+  },
+  {
+   "n": 41,
+   "section": "vaerdi",
+   "topic": "Danske værdier",
+   "text": "Er det som udgangspunkt strafbart at udtale sig kritisk om andres religion?",
+   "options": [
+    "Nej",
+    "Ja"
+   ],
+   "correct": 0,
+   "src": "DK-3024",
+   "official": true
+  },
+  {
+   "n": 42,
+   "section": "vaerdi",
+   "topic": "Danske værdier",
+   "text": "Kan man ifølge dansk lov blive straffet med fængsel i 16 år, hvis man med vold eller trussel om vold forsøger at forhindre Folketinget i at træffe en beslutning?",
+   "options": [
+    "Ja",
+    "Nej"
+   ],
+   "correct": 0,
+   "src": "DK-3022",
+   "official": true
+  },
+  {
+   "n": 43,
+   "section": "vaerdi",
+   "topic": "Danske værdier",
+   "text": "Kan en regering bestemme, at en forening skal opløses for altid?",
+   "options": [
+    "Nej",
+    "Ja"
+   ],
+   "correct": 0,
+   "src": "DK-3035",
+   "official": true
+  },
+  {
+   "n": 44,
+   "section": "vaerdi",
+   "topic": "Danske værdier",
+   "text": "Hvilken placering indtager Danmark ud af 167 lande i verden, når det gælder om at have det bedst fungerende demokrati (ifølge The Economist Democracy Index 2025)?",
+   "options": [
+    "1-5",
+    "41-45",
+    "21-25"
+   ],
+   "correct": 0,
+   "src": "DK-3150",
+   "official": true
+  },
+  {
+   "n": 45,
+   "section": "vaerdi",
+   "topic": "Danske værdier",
+   "text": "Hvad er den seksuelle lavalder i Danmark?",
+   "options": [
+    "13 år",
+    "18 år",
+    "15 år"
+   ],
+   "correct": 2,
+   "src": "DK-3038",
+   "official": true
+  }
+ ]
+}
