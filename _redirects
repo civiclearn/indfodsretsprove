@@ -9,9 +9,7 @@
 /facebook  /?utm_source=facebook&utm_medium=social&utm_campaign=page-dk    302
 
 
-# --- Generalprøve exam moved to civiclearn.com (May 2026) ---
-/generalprove/eksamen/*                 https://civiclearn.com/generalprove/    301
-/generalprove/eksamen                   https://civiclearn.com/generalprove/    301
+# --- Generalprøve exam is served here again (Oct 2026): /generalprove/eksamen/ — no redirect ---
 
 # --- Core pages (extension cleanup / removed features) ---
 /spoergsmaal/*  /  301
